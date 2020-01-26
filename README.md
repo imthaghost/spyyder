@@ -1,4 +1,4 @@
-<h1 align="center">Welcome</h1>
+<h1 align="center">Welcome to Zeus</h1>
 <!-- <img align="center" src="docs/media/icon.png" title="Icon"></a> -->
 <p>
     <img alt="downloads" src="https://img.shields.io/github/contributors/imthaghost/ghostChat?color=green" target="_blank" />
@@ -15,7 +15,7 @@
   
 </p>
 
-> To be determined
+> Zeus is a lighting fast cryptocurrency trading application
 
 ## 🚀 Getting Started
 
