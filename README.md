@@ -17,6 +17,8 @@
 
 > Zeus is a lighting fast cryptocurrency trading application
 
+![landing](/docs/media/landing.png)
+
 ## 🚀 Getting Started
 
 ## 🤝 Contribution Guidlines
