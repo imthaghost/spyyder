@@ -31,8 +31,6 @@
   </a>
 </p>
 
-## Table Of Contents
-
 ## Table of Contents
 
 -   [Introduction](#introduction)
@@ -44,7 +42,7 @@
 
 ## Contributors
 
-Contributions are welcome! Please see our [Contributing Guide](https://imthaghost/zeus)for more details.
+Contributions are welcome! Please see our [Contributing Guide](https://imthaghost/zeus) for more details.
 
 <table>
   <tr>
@@ -57,6 +55,6 @@ Contributions are welcome! Please see our [Contributing Guide](https://imthaghos
 
 ## 📝 License
 
-In short, when you submit code changes, your submissions are understood to be under the same [MIT License](http://choosealicense.com/licenses/mit/) that covers the project. Feel free to contact the maintainers if that's a concern.
-
 By contributing, you agree that your contributions will be licensed under its MIT License.
+
+In short, when you submit code changes, your submissions are understood to be under the same [MIT License](http://choosealicense.com/licenses/mit/) that covers the project. Feel free to contact the maintainers if that's a concern.
