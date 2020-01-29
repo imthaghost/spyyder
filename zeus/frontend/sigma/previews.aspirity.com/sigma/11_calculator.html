@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from previews.aspirity.com/sigma/11_calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Jan 2020 03:11:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="assets/css/tablesaw.css">
+  <link rel="stylesheet" href="assets/css/main.css" id="main_style">
+  <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,800" rel="stylesheet">
+  <link href="https://cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+  <script src="assets/js/vendor/tablesaw.js"></script>
+  <script src="assets/js/vendor/tablesaw-init.js"></script>
+  <title>Sigma</title>
+  <link rel="icon" href="assets/img/Logo_32x32.png" type="image/png">
+  <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter47747431 = new Ya.Metrika({ id:47747431, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/47747431" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+</head>
+<body>
+
+<!--Switcher-->
+<div class="style-switcher">
+  <span class="style-switcher__control"></span>
+  <div class="style-switcher__list">
+    <a class="style-switcher__link style-switcher__link--red active" href="assets/css/red.css"></a>
+    <a class="style-switcher__link style-switcher__link--blue" href="assets/css/blue.css"></a>
+    <a class="style-switcher__link style-switcher__link--violet" href="assets/css/violet.css"></a>
+    <a class="style-switcher__link style-switcher__link--green" href="assets/css/green.css"></a> <br/>
+    <a class="style-switcher__link style-switcher__link--red-gradient" href="assets/css/red-gradient.css"></a>
+    <a class="style-switcher__link style-switcher__link--blue-gradient" href="assets/css/blue-gradient.css"></a>
+    <a class="style-switcher__link style-switcher__link--violet-gradient" href="assets/css/violet-gradient.css"></a>
+    <a class="style-switcher__link style-switcher__link--green-gradient" href="assets/css/green-gradient.css"></a>
+  </div>
+</div>
+<!--Switcher-->
+
+<!--Main menu-->
+<div class="menu">
+  <div class="container menu__wrapper">
+    <div class="row">
+      <div class="menu__logo menu__item">
+        <a href="01_mobileapp.html">
+          <svg class="menu__logo-img" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+            <path data-name="Sigma symbol" class="svg-element"
+                  d="M237.418,8583.56a12.688,12.688,0,0,0,.419-3.37c-0.036-5.24-2.691-9.68-7.024-13.2h-3.878a20.819,20.819,0,0,1,4.478,13.01c0,4.56-2.456,10.2-6.413,11.4a16.779,16.779,0,0,1-2.236.51c-10.005,1.55-14.109-17.54-9.489-23.31,2.569-3.21,6.206-4.08,11.525-4.08h17.935A24.22,24.22,0,0,1,237.418,8583.56Zm-12.145-24.45c-8.571.02-12.338,0.98-16.061,4.84-6.267,6.49-6.462,20.69,4.754,27.72a24.092,24.092,0,1,1,27.3-32.57h-16v0.01Z"
+                  transform="translate(-195 -8544)"/>
+          </svg>
+          <p class="menu__logo-title">Sigma</p>
+        </a>
+      </div>
+      <div class="menu__item d-t-none">
+        <nav class="menu__center-nav">
+          <ul>
+            <li>
+              <div class="menu__dropdown">
+                <a class="link link--gray menu__dropdown-btn">Home
+                  <span><i class="mdi mdi-chevron-down"></i></span>
+                </a>
+                <div class="menu__dropdown-content">
+                  <a class="link link--gray" href="01_mobileapp.html">Mobile App</a>
+                  <a class="link link--gray" href="02_messenger.html">Messenger</a>
+                  <a class="link link--gray" href="03_webapp.html">Web App</a>
+                  <a class="link link--gray" href="04_desktop.html">Desktop App</a>
+                </div>
+              </div>
+            </li>
+            <li><a href="05_features.html" class="link link--gray">Features</a></li>
+            <li><a href="06_pricing.html" class="link link--gray">Pricing</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="menu__item">
+        <nav class="menu__right-nav d-l-none">
+          <ul>
+            <li><a href="10_get-app.html" class="site-btn site-btn--accent">Get the Sigma</a></li>
+            <li>
+              <div class="menu__dropdown d-t-none">
+                <a class="link link--gray menu__dropdown-btn">En
+                  <span><i class="mdi mdi-chevron-down"></i></span>
+                </a>
+                <div class="menu__dropdown-content">
+                  <a class="link link--gray link--gray-active" href="#">En</a>
+                  <a class="link link--gray" href="#">Fr</a>
+                  <a class="link link--gray" href="#">Ch</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <div class="d-none d-t-block">
+          <button type="button" class="menu__mobile-button">
+            <span><i class="mdi mdi-menu" aria-hidden="true"></i></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Main menu-->
+
+<!--Mobile menu-->
+<div class="mobile-menu d-none d-t-block">
+  <div class="container">
+    <div class="mobile-menu__logo">
+      <svg class="menu__logo-img" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+        <path data-name="Sigma symbol" class="svg-element"
+              d="M237.418,8583.56a12.688,12.688,0,0,0,.419-3.37c-0.036-5.24-2.691-9.68-7.024-13.2h-3.878a20.819,20.819,0,0,1,4.478,13.01c0,4.56-2.456,10.2-6.413,11.4a16.779,16.779,0,0,1-2.236.51c-10.005,1.55-14.109-17.54-9.489-23.31,2.569-3.21,6.206-4.08,11.525-4.08h17.935A24.22,24.22,0,0,1,237.418,8583.56Zm-12.145-24.45c-8.571.02-12.338,0.98-16.061,4.84-6.267,6.49-6.462,20.69,4.754,27.72a24.092,24.092,0,1,1,27.3-32.57h-16v0.01Z"
+              transform="translate(-195 -8544)"/>
+      </svg>
+    </div>
+    <button type="button" class="mobile-menu__close">
+      <span><i class="mdi mdi-close" aria-hidden="true"></i></span>
+    </button>
+    <nav class="mobile-menu__wrapper">
+      <ul class="mobile-menu__ul">
+        <li class="mobile-menu__li mobile-menu__li-collapse"><a class="link link--dark-gray">Home
+          <span><i class="mdi mdi-chevron-down"></i></span>
+        </a></li>
+        <li class="mobile-menu__ul--collapsed">
+          <ul class="mobile-menu__ul">
+            <li class="mobile-menu__li"><a class="link link--gray" href="01_mobileapp.html">Mobile App</a></li>
+            <li class="mobile-menu__li"><a class="link link--gray" href="02_messenger.html">Messenger</a></li>
+            <li class="mobile-menu__li"><a class="link link--gray" href="03_webapp.html">Web App</a></li>
+            <li class="mobile-menu__li"><a class="link link--gray" href="04_desktop.html">Desktop App</a></li>
+          </ul>
+        </li>
+        <li class="mobile-menu__li"><a href="05_features.html" class="link link--dark-gray">Features</a></li>
+        <li class="mobile-menu__li"><a href="06_pricing.html" class="link link--dark-gray">Pricing</a></li>
+        <li class="mobile-menu__li"><a href="10_get-app.html" class="site-btn site-btn--accent">Get the Sigma</a></li>
+        <li class="mobile-menu__li mobile-menu__li-collapse"><a class="link link--dark-gray">En
+          <span><i class="mdi mdi-chevron-down"></i></span></a></li>
+        <li class="mobile-menu__ul--collapsed">
+          <ul class="mobile-menu__ul">
+            <li class="mobile-menu__li"><a href="#" class="link link--gray link--gray-active">En</a></li>
+            <li class="mobile-menu__li"><a href="#" class="link link--gray">Fr</a></li>
+            <li class="mobile-menu__li"><a href="#" class="link link--gray">Ch</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!--Mobile menu-->
+
+<!--Header-->
+<header class="header-home header-home--color header-home--center-content">
+  <div class="background background--wave">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="header-home__title header-home__title--big">Estimate My Plan</h2>
+          <p class="header-home__description header-home__description--big header-home__description--calculator">
+            Please, select the items below which best describe your plan and the features you require. All estimates are
+            approximate but should give you a rough idea of what it will take to build your own custom plan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!--Header-->
+
+<!--Calculator-->
+<div class="section section--first">
+  <div class="container calculator">
+    <div class="row">
+      <div id="top" class="col-offset-1 col-6 col-t-12 col-m-8">
+        <div class="calculator__content">
+          <form class="form calculator-form">
+            <h4>Number of Projects</h4>
+            <p>The number of different projects is a good indicator for the total lan size and is used as base value for
+              calculation. A typical value for an average plan would be 10.</p>
+
+            <!--Number of projects-->
+            <div class="form__form-group calculator__form-group form__form-group--small">
+              <input id="projects" class="form__input calculator__input js-field__project" type="text" value="1">
+              <label class="form__label calculator__input-label">Projects
+                <span class="calculator__color_label"><span class="mdi mdi-note-multiple-outline"></span> x $10</span>
+              </label>
+            </div>
+
+            <h4>Number of Pages</h4>
+            <p>The cost is directly related to the maximum quantity of pages.</p>
+
+            <!--Number of pages-->
+            <div class="form__form-group">
+              <label class="radio-btn calculator__radio-btn">
+                <input class="radio-btn__radio" type="radio" value="1" name="number-page" data-value=" x 10" checked>
+                <span class="radio-btn__radio-custom"></span>
+                <span class="radio-btn__label">10
+                  <span class="calculator__color_label"><span class="mdi mdi-note-multiple-outline"></span> + $1</span>
+                </span>
+              </label>
+              <label class="radio-btn calculator__radio-btn">
+                <input class="radio-btn__radio" type="radio" value="2" data-value=" x 20" name="number-page">
+                <span class="radio-btn__radio-custom"></span>
+                <span class="radio-btn__label">20
+                  <span class="calculator__color_label"><span class="mdi mdi-note-multiple-outline"></span> + $2</span>
+                </span>
+              </label>
+              <label class="radio-btn calculator__radio-btn">
+                <input class="radio-btn__radio" type="radio" value="5" data-value=" x 50" name="number-page">
+                <span class="radio-btn__radio-custom"></span>
+                <span class="radio-btn__label">50
+                  <span class="calculator__color_label"><span class="mdi mdi-note-multiple-outline"></span> + $5</span>
+                </span>
+              </label>
+              <label class="radio-btn calculator__radio-btn">
+                <input class="radio-btn__radio" type="radio" value="10" data-value=" x 100" name="number-page">
+                <span class="radio-btn__radio-custom"></span>
+                <span class="radio-btn__label">100
+                  <span class="calculator__color_label"><span class="mdi mdi-note-multiple-outline"></span> + $10</span>
+                </span>
+              </label>
+              <label class="radio-btn calculator__radio-btn">
+                <input class="radio-btn__radio" type="radio" value="20" data-value=" x 200" name="number-page">
+                <span class="radio-btn__radio-custom"></span>
+                <span class="radio-btn__label">200
+                  <span class="calculator__color_label"><span class="mdi mdi-note-multiple-outline"></span> + $20</span>
+                </span>
+              </label>
+              <label class="radio-btn calculator__radio-btn">
+                <input class="radio-btn__radio" type="radio" value="50" data-value=" x 500" name="number-page">
+                <span class="radio-btn__radio-custom"></span>
+                <span class="radio-btn__label">500
+                  <span class="calculator__color_label"><span class="mdi mdi-note-multiple-outline"></span> + $50</span>
+                </span>
+              </label>
+              <label class="radio-btn calculator__radio-btn">
+                <input class="radio-btn__radio" type="radio" value="100" data-value=" Unlimited" name="number-page">
+                <span class="radio-btn__radio-custom"></span>
+                <span class="radio-btn__label">Unlimited
+                  <span class="calculator__color_label"><span
+                          class="mdi mdi-note-multiple-outline"></span> + $100</span>
+                </span>
+              </label>
+            </div>
+
+            <h4>Storage</h4>
+            <p>Development costs for the different storages are comparable. </p>
+
+            <!--Storage-->
+            <div class="form__form-group">
+              <label class="radio-btn calculator__radio-btn">
+                <input class="radio-btn__radio" type="radio" value="2" name="storage" data-value="2Gb" checked>
+                <span class="radio-btn__radio-custom"></span>
+                <span class="radio-btn__label">2Gb
+                  <span class="calculator__color_label">$2</span>
+                </span>
+              </label>
+              <label class="radio-btn calculator__radio-btn">
+                <input class="radio-btn__radio" type="radio" value="16" name="storage" data-value="16Gb">
+                <span class="radio-btn__radio-custom"></span>
+                <span class="radio-btn__label">16Gb
+                  <span class="calculator__color_label">$16</span>
+                </span>
+              </label>
+              <label class="radio-btn calculator__radio-btn">
+                <input class="radio-btn__radio" type="radio" value="50" name="storage" data-value="500Gb">
+                <span class="radio-btn__radio-custom"></span>
+                <span class="radio-btn__label">500Gb
+                  <span class="calculator__color_label">$50</span>
+                </span>
+              </label>
+              <label class="radio-btn calculator__radio-btn">
+                <input class="radio-btn__radio" type="radio" value="100" name="storage" data-value="1Tb">
+                <span class="radio-btn__radio-custom"></span>
+                <span class="radio-btn__label">1Tb
+                  <span class="calculator__color_label">$100</span>
+                </span>
+              </label>
+              <label class="radio-btn calculator__radio-btn">
+                <input class="radio-btn__radio" type="radio" value="500" name="storage" data-value="5Tb">
+                <span class="radio-btn__radio-custom"></span>
+                <span class="radio-btn__label">5Tb
+                  <span class="calculator__color_label">$500</span>
+                </span>
+              </label>
+            </div>
+
+            <h4>Export</h4>
+            <p>Please, select the features you require.</p>
+
+            <!--Exports-->
+            <div class="form__form-group sum-input plus-input">
+              <label class="checkbox-btn">
+                <input class=" checkbox-btn__checkbox" type="checkbox" name="google" value="10"
+                       data-title="Export to Google Drive" data-value="+ 10 $">
+                <span class="checkbox-btn__checkbox-custom"><i class="mdi mdi-check"></i></span>
+                <span class="checkbox-btn__label">Export to Google Drive
+                  <span class="calculator__color_label">$10</span>
+                </span>
+              </label>
+            </div>
+            <div class="form__form-group sum-input plus-input">
+              <label class="checkbox-btn">
+                <input class=" checkbox-btn__checkbox" type="checkbox" name="dropbox" value="10"
+                       data-title="Export to Dropbox" data-value="+ 10 $">
+                <span class="checkbox-btn__checkbox-custom"><i class="mdi mdi-check"></i></span>
+                <span class="checkbox-btn__label">Export to Dropbox
+                  <span class="calculator__color_label">$10</span>
+                </span>
+              </label>
+            </div>
+            <div class="form__form-group sum-input plus-input">
+              <label class="checkbox-btn">
+                <input class=" checkbox-btn__checkbox" type="checkbox" name="pdf" value="5"
+                       data-title="Export to PDF" data-value="+ 5 $">
+                <span class="checkbox-btn__checkbox-custom"><i class="mdi mdi-check"></i></span>
+                <span class="checkbox-btn__label">Export to PDF
+                  <span class="calculator__color_label">$5</span>
+                </span>
+              </label>
+            </div>
+            <div class="form__form-group sum-input plus-input">
+              <label class="checkbox-btn">
+                <input class=" checkbox-btn__checkbox" type="checkbox" name="jpg" value="5"
+                       data-title="Export to JPG" data-value="+ 5 $">
+                <span class="checkbox-btn__checkbox-custom"><i class="mdi mdi-check"></i></span>
+                <span class="checkbox-btn__label">Export to JPG
+                  <span class="calculator__color_label">$5</span>
+                </span>
+              </label>
+            </div>
+            <div class="form__form-group sum-input plus-input">
+              <label class="checkbox-btn">
+                <input class=" checkbox-btn__checkbox" type="checkbox" name="png" value="5"
+                       data-title="Export to PNG" data-value="+ 5 $">
+                <span class="checkbox-btn__checkbox-custom"><i class="mdi mdi-check"></i></span>
+                <span class="checkbox-btn__label">Export to PNG
+                  <span class="calculator__color_label">$5</span>
+                </span>
+              </label>
+            </div>
+
+            <h4>Features</h4>
+
+            <!--E-commerce-->
+            <div class="form__form-group sum-input plus-input">
+              <label class="checkbox-btn">
+                <input class=" checkbox-btn__checkbox" type="checkbox" name="e-commerce" value="100"
+                       data-title="Integrated e-commerce" data-value="+ 100 $">
+                <span class="checkbox-btn__checkbox-custom"><i class="mdi mdi-check"></i></span>
+                <span class="checkbox-btn__label">Integrated e-commerce
+                  <span class="calculator__color_label">$100</span>
+                </span>
+              </label>
+            </div>
+            <p class="calculator__checkbox-description">Integrate online shopping to your account</p>
+
+            <!--Custom domain-->
+            <div class="form__form-group plus-input">
+              <label class="checkbox-btn">
+                <input id="domain" class=" checkbox-btn__checkbox" type="checkbox" name="domain" value="10"
+                       data-title="Custom domain" data-value="+ 10 $">
+                <span class="checkbox-btn__checkbox-custom"><i class="mdi mdi-check"></i></span>
+                <span class="checkbox-btn__label">Custom domain
+                  <span id="domain_label" class="calculator__color_label">10 $</span>
+                </span>
+              </label>
+            </div>
+            <p class="calculator__checkbox-description">Choose your own damain. If total cost more $100 domain is
+              free.</p>
+
+            <!--Donation-->
+            <div class="form__form-group sum-input plus-input">
+              <label class="checkbox-btn">
+                <input class=" checkbox-btn__checkbox" type="checkbox" name="donations" value="20"
+                       data-title="Donations" data-value="+ 20 $">
+                <span class="checkbox-btn__checkbox-custom"><i class="mdi mdi-check"></i></span>
+                <span class="checkbox-btn__label">Donations
+                  <span class="calculator__color_label">$20</span>
+                </span>
+              </label>
+            </div>
+            <p class="calculator__checkbox-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            <!--Your design-->
+            <div class="form__form-group page-input">
+              <label class="checkbox-btn">
+                <input id="design" class="checkbox-btn__checkbox" type="checkbox" name="design" value="1.5"
+                       data-title="Your own designs" data-value=" x 1.5">
+                <span class="checkbox-btn__checkbox-custom"><i class="mdi mdi-check"></i></span>
+                <span class="checkbox-btn__label">Your own designs
+                  <span class="calculator__color_label"><span class="mdi mdi-note-multiple-outline"></span> x 1.5</span>
+                </span>
+              </label>
+            </div>
+            <p class="calculator__checkbox-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            <!--Comments-->
+            <div class="form__form-group sum-input plus-input">
+              <label class="checkbox-btn">
+                <input class=" checkbox-btn__checkbox" type="checkbox" name="comments" value="100"
+                       data-title="Unlimited comments" data-value="+ 100 $">
+                <span class="checkbox-btn__checkbox-custom"><i class="mdi mdi-check"></i></span>
+                <span class="checkbox-btn__label">Unlimited comments
+                  <span class="calculator__color_label">$100</span>
+                </span>
+              </label>
+            </div>
+            <p class="calculator__checkbox-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            <!--Analytics-->
+            <div class="form__form-group multiple-input">
+              <label class="checkbox-btn">
+                <input id="analytics" class="checkbox-btn__checkbox" type="checkbox" name="analytics" value="1.2"
+                       data-title="Analytics" data-value="x 1.2">
+                <span class="checkbox-btn__checkbox-custom"><i class="mdi mdi-check"></i></span>
+                <span class="checkbox-btn__label">Analytics
+                  <span class="calculator__color_label">x 1.2</span>
+                </span>
+              </label>
+            </div>
+            <p class="calculator__checkbox-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            <!--Team-->
+            <div class="form__form-group page-input">
+              <label class="checkbox-btn">
+                <input id="team" class=" checkbox-btn__checkbox" type="checkbox" name="team" value="1.5"
+                       data-title="Collaborate with Team Members" data-value=" x 1.5">
+                <span class="checkbox-btn__checkbox-custom"><i class="mdi mdi-check"></i></span>
+                <span class="checkbox-btn__label">Collaborate with Team Members
+                  <span class="calculator__color_label"><span class="mdi mdi-note-multiple-outline"></span> x 1.5</span>
+                </span>
+              </label>
+            </div>
+            <p class="calculator__checkbox-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            <!--Task-->
+            <div class="form__form-group multiple-input">
+              <label class="checkbox-btn">
+                <input id="task" class=" checkbox-btn__checkbox" type="checkbox" name="task" value="1.2"
+                       data-title="Task Automation" data-value="x 1.2">
+                <span class="checkbox-btn__checkbox-custom"><i class="mdi mdi-check"></i></span>
+                <span class="checkbox-btn__label">Task Automation
+                  <span class="calculator__color_label">x 1.2</span>
+                </span>
+              </label>
+            </div>
+            <p class="calculator__checkbox-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            <div class="form__card calculator__card-form card js-form" id="card-form">
+              <div class="calculator__card-send">
+                <h4>Save your estimate</h4>
+                <p>Enter your email address and we’ll send you the calculation.</p>
+                <div class="form__form-group">
+                  <label class="form__label">Email</label>
+                  <input class="form__input js-field__email" type="email" placeholder="example@mail.com" required>
+                  <span class="form-validation"></span>
+                </div>
+                <div class="form__form-group form__form-group--read-and-agree">
+                  <label class="checkbox-btn">
+                    <input class=" checkbox-btn__checkbox" type="checkbox" name="terms" required>
+                    <span class="checkbox-btn__checkbox-custom"><i class="mdi mdi-check"></i></span>
+                    <span class="checkbox-btn__label">I read and agree to
+										<a href="09_privacy.html" target="_blank" class="link link--accent link--accent-bold">Terms & Conditions</a></span>
+                  </label>
+                </div>
+                <button class="site-btn site-btn--accent form__submit disable" type="submit" value="Send" disabled>Save
+                  Estimate
+                </button>
+              </div>
+
+              <div class="calculator__card-success calculator__card-form card hidden">
+                <h4>Congratulations!</h4>
+                <p>Your calculations have been successfully sent to the email address!<br>
+                  Please check your mail.</p>
+                <button class="site-btn site-btn--light js-reset">Great! Thank you</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-offset-1 col-3 col-m-4 d-t-none calculator__sidebar-wrap">
+        <div class="sidebar calculator__sidebar card">
+          <div class="calculator__sidebar-elements">
+            <ul class="calculator__sidebar-ul" id="page">
+              <ul class="calculator__sidebar-main" id="main">
+                <li>Projects
+                  <span><span class="mdi mdi-note-multiple-outline"></span><span id="projects-number"> x 1</span></span>
+                  <span id="projects-price" class="calculator__sidebar-price">10 $</span>
+                </li>
+                <li>Pages <span id="pages-number"> x 10</span>
+                  <span id="pages-price" class="calculator__sidebar-price">+ 1 $</span>
+                </li>
+              </ul>
+            </ul>
+            <ul class="calculator__sidebar-ul" id="plus">
+              <li>Storage <span id="storage-price" class="calculator__sidebar-price">+ 2 $</span></li>
+            </ul>
+            <ul class="calculator__sidebar-ul hidden" id="multiple">
+            </ul>
+          </div>
+          <div class="calculator__sidebar-total">
+            <h4>Total <span class="calculator__sidebar-price-total">13 $</span></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Calculator-->
+
+<div id="endMenu" class="section section--last">
+  <img alt="" class="section__img" src="assets/img/img_backgroud_footer.png">
+</div>
+
+<!--Footer menu-->
+<div class="container footer-menu">
+  <div class="row">
+    <div class="col-12">
+      <a href="01_mobileapp.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+          <path data-name="Sigma symbol" class="svg-element"
+                d="M237.418,8583.56a12.688,12.688,0,0,0,.419-3.37c-0.036-5.24-2.691-9.68-7.024-13.2h-3.878a20.819,20.819,0,0,1,4.478,13.01c0,4.56-2.456,10.2-6.413,11.4a16.779,16.779,0,0,1-2.236.51c-10.005,1.55-14.109-17.54-9.489-23.31,2.569-3.21,6.206-4.08,11.525-4.08h17.935A24.22,24.22,0,0,1,237.418,8583.56Zm-12.145-24.45c-8.571.02-12.338,0.98-16.061,4.84-6.267,6.49-6.462,20.69,4.754,27.72a24.092,24.092,0,1,1,27.3-32.57h-16v0.01Z"
+                transform="translate(-195 -8544)"/>
+        </svg>
+      </a>
+      <nav class="footer-menu__nav">
+        <ul>
+          <li><a class="link link--gray" href="07_about.html">About</a></li>
+          <li><a class="link link--gray" href="08_faq.html">FAQ</a></li>
+          <li><a class="link link--gray" href="09_privacy.html">Privacy</a></li>
+          <li><a href="blog/12_blog.html" class="link link--gray">Blog</a></li>
+        </ul>
+      </nav>
+      <p class="footer-menu__social">
+        <a class="link link--gray" href="#">
+          <i class="mdi mdi-twitter" aria-hidden="true"></i>
+        </a>
+        <a class="link link--gray" href="#">
+          <i class="mdi mdi-facebook" aria-hidden="true"></i>
+        </a>
+        <a class="link link--gray" href="#">
+          <i class="mdi mdi-linkedin" aria-hidden="true"></i>
+        </a>
+        <a class="link link--gray" href="#">
+          <i class="mdi mdi-instagram" aria-hidden="true"></i>
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+<!--Footer menu-->
+
+<hr>
+
+<!--Footer-->
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <p>© 2017 Sigma – Featured as App Presentation HTML Template | Made by
+          <a href="http://themes.aspirity.com/" class="link link--gray">Aspirity</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Footer-->
+
+<script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+<script src="assets/js/vendor/jquery.waypoints.js"></script>
+<script src="assets/js/menu.js"></script>
+<script src="assets/js/vendor/jquery.mask.min.js"></script>
+<script src="assets/js/mobile-menu.js"></script>
+<script src="assets/js/style-switcher.js"></script>
+<script src="assets/js/sidebar.js"></script>
+<script src="assets/js/vendor/device.js"></script>
+<script src="assets/js/calculator.js"></script>
+<script src="assets/js/validation.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139591409-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-139591409-1');
+</script>
+</body>
+
+<!-- Mirrored from previews.aspirity.com/sigma/11_calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Jan 2020 03:11:50 GMT -->
+</html>
