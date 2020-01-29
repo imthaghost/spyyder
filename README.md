@@ -1,5 +1,5 @@
 <h1 align="center">Welcome to Zeus</h1>
-<img align="center" src="docs/media/logo.png" title="Icon"></a>
+<!-- <img align="center" src="docs/media/logo.png" title="Icon"></a> -->
 <p>
     <img alt="downloads" src="https://img.shields.io/github/contributors/imthaghost/ghostChat?color=green" target="_blank" />
 
@@ -44,8 +44,7 @@
 
 ## Contributors
 
-Contributions are welcome! Please see our `Contributing Guide <https://dvc.org/doc/user-guide/contributing/core>`\_ for more
-details.
+Contributions are welcome! Please see our [Contributing Guide](https://imthaghost/zeus)for more details.
 
 <table>
   <tr>
