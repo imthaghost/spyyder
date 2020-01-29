@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  StocksVC.swift
 //  ZeusApp
 //
 //  Created by Macbook Pro 15 on 1/29/20.
@@ -8,13 +8,29 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class StocksVC: UIViewController {
+//MARK: Properties
+    
+//MARK: IBOutlets
+    
+//MARK: App Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupViews()
     }
-
-
+    
+//MARK: Private Methods
+    fileprivate func setupViews() {
+        view.backgroundColor = .red
+    }
+    
+//MARK: IBActions
+    
+//MARK: Helpers
+    
 }
+
+//MARK: Extensions
+
+
 
