@@ -1,0 +1,27 @@
+HTTrack3.49-2 launched on Mon, 27 Jan 2020 19:09:07 at https://previews.aspirity.com/sigma/01_mobileapp.html
+(httrack https://previews.aspirity.com/sigma/01_mobileapp.html )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+19:11:43	Error: 	"Not Found" (404) at link https://previews.aspirity.com/sigma/assets/css/ajax-loader.gif (from https://previews.aspirity.com/sigma/assets/css/main.css)
+19:11:43	Error: 	"Not Found" (404) at link https://previews.aspirity.com/sigma/fonts/lg.eot?n1z373 (from https://previews.aspirity.com/sigma/assets/css/main.css)
+19:11:43	Error: 	"Not Found" (404) at link https://previews.aspirity.com/sigma/fonts/lg.eot? (from https://previews.aspirity.com/sigma/assets/css/main.css)
+19:11:43	Error: 	"Not Found" (404) at link https://previews.aspirity.com/sigma/fonts/lg.woff?n1z373 (from https://previews.aspirity.com/sigma/assets/css/main.css)
+19:11:43	Error: 	"Not Found" (404) at link https://previews.aspirity.com/sigma/fonts/lg.ttf?n1z373 (from https://previews.aspirity.com/sigma/assets/css/main.css)
+19:11:43	Error: 	"Not Found" (404) at link https://previews.aspirity.com/sigma/fonts/lg.svg?n1z373 (from https://previews.aspirity.com/sigma/assets/css/main.css)
+19:11:43	Error: 	"Not Found" (404) at link https://previews.aspirity.com/sigma/assets/img/vimeo-play.png (from https://previews.aspirity.com/sigma/assets/css/main.css)
+19:11:43	Error: 	"Not Found" (404) at link https://previews.aspirity.com/sigma/assets/img/video-play.png (from https://previews.aspirity.com/sigma/assets/css/main.css)
+19:11:43	Error: 	"Not Found" (404) at link https://previews.aspirity.com/sigma/assets/img/youtube-play.png (from https://previews.aspirity.com/sigma/assets/css/main.css)
+19:11:43	Error: 	"Not Found" (404) at link https://previews.aspirity.com/sigma/assets/img/loading.gif (from https://previews.aspirity.com/sigma/assets/css/main.css)
+19:12:17	Error: 	"Not Found" (404) at link https://previews.aspirity.com/sigma/assets/css/images/ui-icons_444444_256x240.png (from https://previews.aspirity.com/sigma/assets/css/jquery-ui.min.css)
+19:12:17	Error: 	"Not Found" (404) at link https://previews.aspirity.com/sigma/assets/css/images/ui-icons_555555_256x240.png (from https://previews.aspirity.com/sigma/assets/css/jquery-ui.min.css)
+19:12:17	Error: 	"Not Found" (404) at link https://previews.aspirity.com/sigma/assets/css/images/ui-icons_ffffff_256x240.png (from https://previews.aspirity.com/sigma/assets/css/jquery-ui.min.css)
+19:12:17	Error: 	"Not Found" (404) at link https://previews.aspirity.com/sigma/assets/css/images/ui-icons_777620_256x240.png (from https://previews.aspirity.com/sigma/assets/css/jquery-ui.min.css)
+19:12:17	Error: 	"Not Found" (404) at link https://previews.aspirity.com/sigma/assets/css/images/ui-icons_cc0000_256x240.png (from https://previews.aspirity.com/sigma/assets/css/jquery-ui.min.css)
+19:12:17	Error: 	"Not Found" (404) at link https://previews.aspirity.com/sigma/assets/css/images/ui-icons_777777_256x240.png (from https://previews.aspirity.com/sigma/assets/css/jquery-ui.min.css)
+
+HTTrack Website Copier/3.49-2 mirror complete in 4 minutes 58 seconds : 177 links scanned, 160 files written (37339268 bytes overall) [35729937 bytes received at 119899 bytes/sec], 2111688 bytes transferred using HTTP compression in 72 files, ratio 21%, 14.7 requests per connection
+(16 errors, 0 warnings, 0 messages)
