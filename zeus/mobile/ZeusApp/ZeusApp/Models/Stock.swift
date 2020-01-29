@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+class Stock {
+    var name: String
+    var shortName: String
+    var price: String
+    var imageUrl: String
+    
+    init(_name: String, _shortName: String, _price: String, _imageUrl: String) {
+        self.name = _name
+        self.shortName = _shortName
+        self.price = _price
+        self.imageUrl = _imageUrl
+    }
+}
