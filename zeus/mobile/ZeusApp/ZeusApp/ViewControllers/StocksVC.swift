@@ -13,6 +13,9 @@ class StocksVC: UIViewController {
     var stocks: [Stock] = []
     
 //MARK: IBOutlets
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
