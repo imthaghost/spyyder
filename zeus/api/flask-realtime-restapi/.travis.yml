@@ -1,0 +1,26 @@
+sudo: required
+services:
+  - docker
+language: python
+python:
+  - "3.6"
+before_install:
+  - docker build -t blgo/flask-realtime-restapi .
+  - docker network create -d bridge my-bridge-network
+  - docker run --network-alias=db --network=my-bridge-network --name mongo -d mongo:3.6.2
+  - echo "waiting 15 seconds to allow mongo database to startup"; sleep 15
+  - docker run -e MONGODB_NETWORK_ALIAS=db --network=my-bridge-network --name realtimeapp -p 80:80 -d blgo/flask-realtime-restapi
+  - docker ps -a
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+  - pip install nose
+# Run tests
+script:
+  - nosetests
+  - python tests/integration.py
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]  && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+    docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+    docker push blgo/flask-realtime-restapi;
+    fi
