@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--StocksVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ZeusApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StocksVC" customModule="ZeusApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,6 +41,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="AXF-4K-9ui"/>
                     <connections>
+                        <outlet property="segmentedControl" destination="XnJ-74-flu" id="ccy-Rp-Njr"/>
+                        <outlet property="tableView" destination="47m-u7-Axz" id="0tM-Ew-Pr4"/>
                         <segue destination="GqM-aS-6aZ" kind="presentation" id="cwl-U8-3sB"/>
                     </connections>
                 </viewController>
@@ -48,14 +50,30 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Stock DetailsVC-->
         <scene sceneID="gnQ-XL-Ef3">
             <objects>
-                <viewController id="GqM-aS-6aZ" sceneMemberID="viewController">
+                <viewController id="GqM-aS-6aZ" customClass="StockDetailsVC" customModule="ZeusApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bMg-Vk-A2O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K7d-Do-e3g">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem title="Title" id="Ehc-JT-jS5">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="zpt-lk-Www"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="K7d-Do-e3g" firstAttribute="width" secondItem="bMg-Vk-A2O" secondAttribute="width" id="gFz-nT-IER"/>
+                            <constraint firstItem="K7d-Do-e3g" firstAttribute="top" secondItem="bMg-Vk-A2O" secondAttribute="top" id="hVP-cf-bIr"/>
+                            <constraint firstAttribute="leading" secondItem="K7d-Do-e3g" secondAttribute="leading" id="sDW-bZ-xSr"/>
+                            <constraint firstAttribute="trailing" secondItem="K7d-Do-e3g" secondAttribute="trailing" id="wJX-gN-vst"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qUm-f1-2Vd"/>
                     </view>
                 </viewController>
