@@ -44,7 +44,9 @@ class StocksVC: UIViewController {
 
 //MARK: Extensions
 extension StocksVC: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
 }
 
 extension StocksVC: UITableViewDataSource {
@@ -53,8 +55,8 @@ extension StocksVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: MailCell = tableView.dequeueReusableCell(withIdentifier: "mailCell") as! MailCell
-        cell.mail = mails[indexPath.row]
+        let cell: StockCell = tableView.dequeueReusableCell(withIdentifier: "stockCell") as! StockCell
+        cell.stock = stocks[indexPath.row]
         cell.populateViews()
         return cell
     }
