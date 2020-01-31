@@ -43,6 +43,21 @@ class StocksVC: UIViewController {
 }
 
 //MARK: Extensions
+extension StocksVC: UITableViewDelegate {
+    
+}
 
-
-
+extension StocksVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return stocks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: MailCell = tableView.dequeueReusableCell(withIdentifier: "mailCell") as! MailCell
+        cell.mail = mails[indexPath.row]
+        cell.populateViews()
+        return cell
+    }
+    
+    
+}
