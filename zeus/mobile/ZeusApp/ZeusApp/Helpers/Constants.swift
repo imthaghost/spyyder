@@ -8,5 +8,9 @@
 
 import UIKit
 
+//Segues
+let kSEGUETOSTOCKDETAILSVC: String = "toStockDetailVC"
+
+//Images
 let kDEFAULTIMAGE: UIImage = UIImage(named: "blankImage")!
 let kMENUIMAGE: UIImage = UIImage(named: "menu")!
