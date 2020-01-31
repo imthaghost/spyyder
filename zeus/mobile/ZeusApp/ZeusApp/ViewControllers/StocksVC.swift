@@ -14,12 +14,53 @@ class StocksVC: UIViewController {
     
 //MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var categorieSegmentedControl: UISegmentedControl!
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+//        segmentedControl.backgroundColor = .red
+//        if categorieSegmentedControl.selectedSegmentIndex
+
+        if categorieSegmentedControl.selectedSegmentIndex == 0 {
+            categorieSegmentedControl.backgroundColor = .black //set unselected segments's background color
+            
+            
+    //        categorieSegmentedControl.ref
+            print(categorieSegmentedControl.isSelected)
+    //        print(categorieSegmentedControl.isEnabled) //true
+            print(categorieSegmentedControl.isHighlighted)
+            print(categorieSegmentedControl.isMomentary) //f
+            print(categorieSegmentedControl.isTouchInside) //f
+            
+            categorieSegmentedControl.selectedSegmentTintColor = .red //how you change the selected view's background color
+    //        if categorieSegmentedControl.isSelected {
+    //            categorieSegmentedControl.backgroundColor = .green
+    //        } else { //MARK: For some reason isSelected is always FALSE, why?
+    //            categorieSegmentedControl.backgroundColor = .yellow
+    //        }
+            
+            
+            let attributes = [NSAttributedString.Key.foregroundColor : UIColor.white, ]
+//            let attributes = [NSAttributedString.Key.font : UIColor.green,] //MARK: This key.font CRASHES when passed to setTitleAttributes
+//            attributes[NSAttributedString.Key.font] = UIColor.green
+            categorieSegmentedControl.setTitleTextAttributes(attributes, for: .normal)
+//            categorieSegmentedControl.setTitleTextAttributes(attributes + attributes2, for: .normal)
+//            categorieSegmentedControl?.setTitleTextAttributes(attributes, [attributes, attributes2], for: .normal)
+            
+//            [NSAttributedString.Key.font : .green, NSAttributedString.Key.foregroundColor : UIColor.blue,]
+        } else if categorieSegmentedControl.selectedSegmentIndex == 1 {
+            categorieSegmentedControl.backgroundColor = .white //should be clear or white
+            categorieSegmentedControl.selectedSegmentTintColor = .red
+            let attributes = [NSAttributedString.Key.foregroundColor : UIColor.white,] //[NSAttributedString.Key.backgroundColor : .green, NSAttributedString.Key.foregroundColor : UIColor.white,]
+            categorieSegmentedControl?.setTitleTextAttributes(attributes, for: .normal)
+        } else {
+            categorieSegmentedControl.backgroundColor = .green //should be clear or white
+            categorieSegmentedControl.selectedSegmentTintColor = .systemPink
+            let attributes = [NSAttributedString.Key.foregroundColor : UIColor.white,] //[NSAttributedString.Key.backgroundColor : .green, NSAttributedString.Key.foregroundColor : UIColor.white,]
+            categorieSegmentedControl?.setTitleTextAttributes(attributes, for: .normal)
+        }
     }
     
 //MARK: Navigation
@@ -74,7 +115,7 @@ extension StocksVC: UITableViewDelegate {
 //        let stock = stocks[indexPath.row]
 //        self.performSegue(withIdentifier: kSEGUETOSTOCKDETAILSVC, sender: stock)
         self.tableView.beginUpdates()
-        let view = UIView(frame: CGRect(x: 10, y: 70, width: self.view.frame.width - 20, height: 120))
+        let view = UIView(frame: CGRect(x: 10, y: 70, width: self.view.frame.width - 20, height: 200))
         view.backgroundColor = .red
         let cell: StockCell = tableView.cellForRow(at: indexPath) as! StockCell
         cell.addSubview(view)
