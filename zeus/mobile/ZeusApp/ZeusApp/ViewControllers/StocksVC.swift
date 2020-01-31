@@ -16,7 +16,6 @@ class StocksVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    
 //MARK: App Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +24,13 @@ class StocksVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
+        setupTableView()
         createTestStocks()
+    }
+    
+    fileprivate func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     fileprivate func createTestStocks() {
@@ -34,6 +39,7 @@ class StocksVC: UIViewController {
         let stock3 = Stock(_name: "Tesla", _shortName: "TSL", _price: "600", _imageUrl: "")
         let stock4 = Stock(_name: "Apple", _shortName: "APL", _price: "8,900", _imageUrl: "")
         stocks.append(contentsOf: [stock1, stock2, stock3, stock4])
+//        tableView.reloadData()
     }
     
 //MARK: IBActions
