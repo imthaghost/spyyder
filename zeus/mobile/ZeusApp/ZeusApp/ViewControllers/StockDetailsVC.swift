@@ -14,6 +14,7 @@ class StockDetailsVC: UIViewController {
     
 //MARK: IBOutlets
     @IBOutlet weak var stockImageView: UIImageView!
+    @IBOutlet weak var navItem: UINavigationItem!
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
@@ -23,7 +24,8 @@ class StockDetailsVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
-        navigationItem.title = stock.name
+        navItem.title = stock.name
+        stockImageView.contentMode = .scaleAspectFill
         stockImageView.image = kDEFAULTIMAGE
     }
     
