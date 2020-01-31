@@ -80,7 +80,7 @@
                     <connections>
                         <outlet property="segmentedControl" destination="XnJ-74-flu" id="ccy-Rp-Njr"/>
                         <outlet property="tableView" destination="47m-u7-Axz" id="0tM-Ew-Pr4"/>
-                        <segue destination="GqM-aS-6aZ" kind="presentation" id="cwl-U8-3sB"/>
+                        <segue destination="GqM-aS-6aZ" kind="presentation" identifier="toStockDetailVC" id="cwl-U8-3sB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
