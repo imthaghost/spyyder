@@ -13,6 +13,7 @@ class StockDetailsVC: UIViewController {
     var stock: Stock!
     
 //MARK: IBOutlets
+    @IBOutlet weak var stockImageView: UIImageView!
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
@@ -22,10 +23,15 @@ class StockDetailsVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
-//        view.backgroundColor = .red
+        navigationItem.title = stock.name
+        stockImageView.image = kDEFAULTIMAGE
     }
     
 //MARK: IBActions
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
 //MARK: Helpers
     
