@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="47m-u7-Axz">
-                                <rect key="frame" x="0.0" y="93" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="112" width="375" height="555"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stockCell" rowHeight="61" id="Vb5-Ev-oIG" customClass="StockCell" customModule="ZeusApp" customModuleProvider="target">
@@ -57,7 +57,10 @@
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XnJ-74-flu">
-                                <rect key="frame" x="10" y="54" width="355" height="32"/>
+                                <rect key="frame" x="10" y="54" width="355" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="FCu-p7-EuU"/>
+                                </constraints>
                                 <segments>
                                     <segment title="Trending"/>
                                     <segment title="Recommendations"/>
@@ -78,7 +81,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="AXF-4K-9ui"/>
                     <connections>
-                        <outlet property="segmentedControl" destination="XnJ-74-flu" id="ccy-Rp-Njr"/>
+                        <outlet property="categorieSegmentedControl" destination="XnJ-74-flu" id="q7e-ek-uBG"/>
                         <outlet property="tableView" destination="47m-u7-Axz" id="0tM-Ew-Pr4"/>
                         <segue destination="GqM-aS-6aZ" kind="presentation" identifier="toStockDetailVC" id="cwl-U8-3sB"/>
                     </connections>
