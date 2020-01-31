@@ -113,7 +113,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="f4o-eP-ESB" userLabel="main Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="596.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7ib-Cg-jgV">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blankImage" translatesAutoresizingMaskIntoConstraints="NO" id="7ib-Cg-jgV">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="GfJ-7U-bbq"/>
@@ -339,6 +339,7 @@
                         <viewLayoutGuide key="safeArea" id="qUm-f1-2Vd"/>
                     </view>
                     <connections>
+                        <outlet property="navItem" destination="Ehc-JT-jS5" id="zo6-EN-ue6"/>
                         <outlet property="stockImageView" destination="7ib-Cg-jgV" id="rso-0E-ebb"/>
                     </connections>
                 </viewController>
@@ -365,4 +366,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blankImage" width="300" height="300"/>
+    </resources>
 </document>
