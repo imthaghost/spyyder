@@ -10,6 +10,7 @@ import UIKit
 
 class StockDetailsVC: UIViewController {
 //MARK: Properties
+    var stock: Stock!
     
 //MARK: IBOutlets
     
@@ -21,7 +22,7 @@ class StockDetailsVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
-        view.backgroundColor = .red
+//        view.backgroundColor = .red
     }
     
 //MARK: IBActions
