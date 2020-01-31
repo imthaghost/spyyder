@@ -22,6 +22,18 @@ class StocksVC: UIViewController {
         setupViews()
     }
     
+//MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case kSEGUETOSTOCKDETAILSVC:
+            guard let stock = sender as? Stock else { return }
+            let vc: StockDetailsVC = (segue.destination as? StockDetailsVC)!
+            vc.stock = stock
+        default:
+            break
+        }
+    }
+    
 //MARK: Private Methods
     fileprivate func setupViews() {
         setupTableView()
@@ -31,6 +43,7 @@ class StocksVC: UIViewController {
     fileprivate func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView() //removes extra unpopulated cells
     }
     
     fileprivate func createTestStocks() {
@@ -39,7 +52,6 @@ class StocksVC: UIViewController {
         let stock3 = Stock(_name: "Tesla", _shortName: "TSL", _price: "600", _imageUrl: "")
         let stock4 = Stock(_name: "Apple", _shortName: "APL", _price: "8,900", _imageUrl: "")
         stocks.append(contentsOf: [stock1, stock2, stock3, stock4])
-//        tableView.reloadData()
     }
     
 //MARK: IBActions
@@ -50,6 +62,11 @@ class StocksVC: UIViewController {
 
 //MARK: Extensions
 extension StocksVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let stock = stocks[indexPath.row]
+        self.performSegue(withIdentifier: "toRequestIdentifier", sender: stock)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
@@ -66,6 +83,4 @@ extension StocksVC: UITableViewDataSource {
         cell.populateViews()
         return cell
     }
-    
-    
 }
