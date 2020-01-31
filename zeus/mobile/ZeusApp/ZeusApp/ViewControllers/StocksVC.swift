@@ -51,7 +51,15 @@ class StocksVC: UIViewController {
         let stock2 = Stock(_name: "Etherium", _shortName: "ETH", _price: "80", _imageUrl: "")
         let stock3 = Stock(_name: "Tesla", _shortName: "TSL", _price: "600", _imageUrl: "")
         let stock4 = Stock(_name: "Apple", _shortName: "APL", _price: "8,900", _imageUrl: "")
-        stocks.append(contentsOf: [stock1, stock2, stock3, stock4])
+        let stock5 = Stock(_name: "Bitcoin", _shortName: "BTC", _price: "8,900", _imageUrl: "")
+        let stock6 = Stock(_name: "Etherium", _shortName: "ETH", _price: "80", _imageUrl: "")
+        let stock7 = Stock(_name: "Tesla", _shortName: "TSL", _price: "600", _imageUrl: "")
+        let stock8 = Stock(_name: "Apple", _shortName: "APL", _price: "8,900", _imageUrl: "")
+        let stock9 = Stock(_name: "Bitcoin", _shortName: "BTC", _price: "8,900", _imageUrl: "")
+        let stock10 = Stock(_name: "Etherium", _shortName: "ETH", _price: "80", _imageUrl: "")
+        let stock11 = Stock(_name: "Tesla", _shortName: "TSL", _price: "600", _imageUrl: "")
+        let stock12 = Stock(_name: "Apple", _shortName: "APL", _price: "8,900", _imageUrl: "")
+        stocks.append(contentsOf: [stock1, stock2, stock3, stock4, stock5, stock6, stock7, stock8, stock9, stock10, stock11, stock12])
     }
     
 //MARK: IBActions
@@ -63,12 +71,22 @@ class StocksVC: UIViewController {
 //MARK: Extensions
 extension StocksVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let stock = stocks[indexPath.row]
-        self.performSegue(withIdentifier: kSEGUETOSTOCKDETAILSVC, sender: stock)
+//        let stock = stocks[indexPath.row]
+//        self.performSegue(withIdentifier: kSEGUETOSTOCKDETAILSVC, sender: stock)
+        self.tableView.beginUpdates()
+        let view = UIView(frame: CGRect(x: 10, y: 70, width: self.view.frame.width - 20, height: 120))
+        view.backgroundColor = .red
+        let cell: StockCell = tableView.cellForRow(at: indexPath) as! StockCell
+        cell.addSubview(view)
+        self.tableView.endUpdates()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        if self.tableView.indexPathForSelectedRow?.row == indexPath.row {
+            return 200 //make cell's height 200 if is selected
+        } else {
+            return 70
+        }
     }
 }
 
@@ -79,6 +97,7 @@ extension StocksVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: StockCell = tableView.dequeueReusableCell(withIdentifier: "stockCell") as! StockCell
+        cell.selectionStyle = .none //remove the selection indicator
         cell.stock = stocks[indexPath.row]
         cell.populateViews()
         return cell
