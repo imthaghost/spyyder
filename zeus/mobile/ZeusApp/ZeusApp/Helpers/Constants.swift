@@ -8,6 +8,9 @@
 
 import UIKit
 
+//Colors
+let kMAINCOLOR: UIColor = UIColor(hexString: "aec6cf", alpha: 1)
+
 //Segues
 let kSEGUETOSTOCKDETAILSVC: String = "toStockDetailVC"
 
