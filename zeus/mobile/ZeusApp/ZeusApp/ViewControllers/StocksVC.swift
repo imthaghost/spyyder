@@ -22,11 +22,8 @@ class StocksVC: UIViewController {
         setupViews()
 //        segmentedControl.backgroundColor = .red
 //        if categorieSegmentedControl.selectedSegmentIndex
-
         if categorieSegmentedControl.selectedSegmentIndex == 0 {
             categorieSegmentedControl.backgroundColor = .black //set unselected segments's background color
-            
-            
     //        categorieSegmentedControl.ref
             print(categorieSegmentedControl.isSelected)
     //        print(categorieSegmentedControl.isEnabled) //true
@@ -40,15 +37,12 @@ class StocksVC: UIViewController {
     //        } else { //MARK: For some reason isSelected is always FALSE, why?
     //            categorieSegmentedControl.backgroundColor = .yellow
     //        }
-            
-            
             let attributes = [NSAttributedString.Key.foregroundColor : UIColor.white, ]
 //            let attributes = [NSAttributedString.Key.font : UIColor.green,] //MARK: This key.font CRASHES when passed to setTitleAttributes
 //            attributes[NSAttributedString.Key.font] = UIColor.green
             categorieSegmentedControl.setTitleTextAttributes(attributes, for: .normal)
 //            categorieSegmentedControl.setTitleTextAttributes(attributes + attributes2, for: .normal)
 //            categorieSegmentedControl?.setTitleTextAttributes(attributes, [attributes, attributes2], for: .normal)
-            
 //            [NSAttributedString.Key.font : .green, NSAttributedString.Key.foregroundColor : UIColor.blue,]
         } else if categorieSegmentedControl.selectedSegmentIndex == 1 {
             categorieSegmentedControl.backgroundColor = .white //should be clear or white
