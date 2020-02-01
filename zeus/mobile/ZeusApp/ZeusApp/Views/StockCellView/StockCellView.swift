@@ -10,4 +10,10 @@ import UIKit
 
 class StockCellView: UIView {
     
+    @IBOutlet var contentView: UIView!
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var button: UIButton!
+    
+    
+    
 }
