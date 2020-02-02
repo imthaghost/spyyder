@@ -14,7 +14,6 @@ class StockCell: UITableViewCell {
     var stock: Stock!
     
 //MARK: IBOutlets
-//    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var riskLabel: UILabel!
