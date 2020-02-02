@@ -13,7 +13,7 @@ class StockDetailsVC: UIViewController {
     var stock: Stock!
     
 //MARK: IBOutlets
-    @IBOutlet weak var stockImageView: UIImageView!
+    @IBOutlet weak var stockView: UIView!
     @IBOutlet weak var navItem: UINavigationItem!
     
 //MARK: App Life Cycle
@@ -25,12 +25,10 @@ class StockDetailsVC: UIViewController {
 //MARK: Private Methods
     fileprivate func setupViews() {
         navItem.title = stock.name
-        stockImageView.contentMode = .scaleAspectFill
-        stockImageView.image = kDEFAULTIMAGE
+        stockView.backgroundColor = kMAINCOLOR
     }
     
 //MARK: IBActions
-    
     @IBAction func backButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -40,5 +38,3 @@ class StockDetailsVC: UIViewController {
 }
 
 //MARK: Extensions
-
-
