@@ -15,11 +15,12 @@
 		3309912423E213DC00880CC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3309912223E213DC00880CC5 /* LaunchScreen.storyboard */; };
 		3309913123E24BA800880CC5 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309913023E24BA800880CC5 /* Stock.swift */; };
 		3309913323E24CE100880CC5 /* StockDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309913223E24CE100880CC5 /* StockDetailsVC.swift */; };
-		332C9B2C23E3C9CC002BB57A /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332C9B2B23E3C9CC002BB57A /* StockCell.swift */; };
 		332C9B2E23E3CA51002BB57A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332C9B2D23E3CA51002BB57A /* Constants.swift */; };
 		33CA31A423E608A7009AA3DF /* StockCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CA31A323E608A7009AA3DF /* StockCellView.xib */; };
 		33CA31A623E608B6009AA3DF /* StockCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31A523E608B6009AA3DF /* StockCellView.swift */; };
 		33CA31A923E6286A009AA3DF /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31A823E6286A009AA3DF /* UIColor+extensions.swift */; };
+		33CA31AE23E6444D009AA3DF /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31AC23E6444D009AA3DF /* StockCell.swift */; };
+		33CA31AF23E6444D009AA3DF /* StockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CA31AD23E6444D009AA3DF /* StockCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,11 +34,12 @@
 		3309912523E213DC00880CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3309913023E24BA800880CC5 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		3309913223E24CE100880CC5 /* StockDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailsVC.swift; sourceTree = "<group>"; };
-		332C9B2B23E3C9CC002BB57A /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
 		332C9B2D23E3CA51002BB57A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		33CA31A323E608A7009AA3DF /* StockCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockCellView.xib; sourceTree = "<group>"; };
 		33CA31A523E608B6009AA3DF /* StockCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCellView.swift; sourceTree = "<group>"; };
 		33CA31A823E6286A009AA3DF /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
+		33CA31AC23E6444D009AA3DF /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
+		33CA31AD23E6444D009AA3DF /* StockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +106,7 @@
 		3309912D23E24AF400880CC5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				332C9B2B23E3C9CC002BB57A /* StockCell.swift */,
+				33CA31B023E64471009AA3DF /* StockCell */,
 				33CA31A723E6098B009AA3DF /* StockCellView */,
 			);
 			path = Views;
@@ -134,6 +136,15 @@
 				33CA31A523E608B6009AA3DF /* StockCellView.swift */,
 			);
 			path = StockCellView;
+			sourceTree = "<group>";
+		};
+		33CA31B023E64471009AA3DF /* StockCell */ = {
+			isa = PBXGroup;
+			children = (
+				33CA31AC23E6444D009AA3DF /* StockCell.swift */,
+				33CA31AD23E6444D009AA3DF /* StockCell.xib */,
+			);
+			path = StockCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +207,7 @@
 			files = (
 				3309912423E213DC00880CC5 /* LaunchScreen.storyboard in Resources */,
 				33CA31A423E608A7009AA3DF /* StockCellView.xib in Resources */,
+				33CA31AF23E6444D009AA3DF /* StockCell.xib in Resources */,
 				3309912123E213DC00880CC5 /* Assets.xcassets in Resources */,
 				3309911F23E213DA00880CC5 /* Main.storyboard in Resources */,
 			);
@@ -210,10 +222,10 @@
 			files = (
 				3309911C23E213DA00880CC5 /* StocksVC.swift in Sources */,
 				3309911823E213DA00880CC5 /* AppDelegate.swift in Sources */,
-				332C9B2C23E3C9CC002BB57A /* StockCell.swift in Sources */,
 				3309913123E24BA800880CC5 /* Stock.swift in Sources */,
 				332C9B2E23E3CA51002BB57A /* Constants.swift in Sources */,
 				33CA31A923E6286A009AA3DF /* UIColor+extensions.swift in Sources */,
+				33CA31AE23E6444D009AA3DF /* StockCell.swift in Sources */,
 				33CA31A623E608B6009AA3DF /* StockCellView.swift in Sources */,
 				3309911A23E213DA00880CC5 /* SceneDelegate.swift in Sources */,
 				3309913323E24CE100880CC5 /* StockDetailsVC.swift in Sources */,

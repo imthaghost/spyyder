@@ -9,7 +9,18 @@
 import UIKit
 
 class StockCell: UITableViewCell {
-
+    
+//MARK: Properties
+    var stock: Stock!
+    
+//MARK: IBOutlets
+//    @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var riskLabel: UILabel!
+    @IBOutlet weak var rankLabel: UILabel!
+    @IBOutlet weak var stockImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -17,8 +28,14 @@ class StockCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
+    func populateViews() {
+//        stockImageView.downloaded(fromLink: mail.imageUrl)
+        stockImageView.image = kDEFAULTIMAGE
+        nameLabel.text = stock.name
+        categoryLabel.text = "Technology"
+        riskLabel.text = "High Risk"
+    }
 }
