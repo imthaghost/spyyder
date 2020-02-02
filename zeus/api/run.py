@@ -3,7 +3,7 @@
 __author__ = "Gary Frederick"
 __version__ = "1.0"
 
-from server import app
+from zeus_api import app
 import os
 import sys
 
