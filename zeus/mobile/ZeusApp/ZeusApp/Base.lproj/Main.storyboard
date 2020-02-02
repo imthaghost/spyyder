@@ -80,12 +80,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="f4o-eP-ESB" userLabel="main Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="596.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blankImage" translatesAutoresizingMaskIntoConstraints="NO" id="7ib-Cg-jgV">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iai-BF-xp4">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="GfJ-7U-bbq"/>
+                                                    <constraint firstAttribute="height" constant="200" id="CPs-uE-PFM"/>
                                                 </constraints>
-                                            </imageView>
+                                            </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rb4-cf-fMH" userLabel="why Stack View">
                                                 <rect key="frame" x="9.5" y="220" width="356" height="49.5"/>
                                                 <subviews>
@@ -273,9 +274,9 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="7ib-Cg-jgV" firstAttribute="width" secondItem="f4o-eP-ESB" secondAttribute="width" id="9jm-ed-HMo"/>
                                             <constraint firstItem="mSI-yi-LgC" firstAttribute="width" secondItem="rb4-cf-fMH" secondAttribute="width" id="azi-07-RYw"/>
                                             <constraint firstItem="rb4-cf-fMH" firstAttribute="width" secondItem="f4o-eP-ESB" secondAttribute="width" multiplier="0.95" id="bsI-oH-icz"/>
+                                            <constraint firstItem="Iai-BF-xp4" firstAttribute="width" secondItem="f4o-eP-ESB" secondAttribute="width" id="hiD-6c-GXZ"/>
                                             <constraint firstItem="RvQ-RB-g36" firstAttribute="width" secondItem="rb4-cf-fMH" secondAttribute="width" id="sJ5-NA-oF4"/>
                                         </constraints>
                                     </stackView>
@@ -307,7 +308,6 @@
                     </view>
                     <connections>
                         <outlet property="navItem" destination="Ehc-JT-jS5" id="zo6-EN-ue6"/>
-                        <outlet property="stockImageView" destination="7ib-Cg-jgV" id="rso-0E-ebb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6W-IJ-4oH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -333,7 +333,4 @@
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="blankImage" width="300" height="300"/>
-    </resources>
 </document>

@@ -107,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				33CA31B023E64471009AA3DF /* StockCell */,
-				33CA31A723E6098B009AA3DF /* StockCellView */,
+				33CA31A723E6098B009AA3DF /* StockCellView-Dropdown */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -129,13 +129,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		33CA31A723E6098B009AA3DF /* StockCellView */ = {
+		33CA31A723E6098B009AA3DF /* StockCellView-Dropdown */ = {
 			isa = PBXGroup;
 			children = (
 				33CA31A323E608A7009AA3DF /* StockCellView.xib */,
 				33CA31A523E608B6009AA3DF /* StockCellView.swift */,
 			);
-			path = StockCellView;
+			path = "StockCellView-Dropdown";
 			sourceTree = "<group>";
 		};
 		33CA31B023E64471009AA3DF /* StockCell */ = {
