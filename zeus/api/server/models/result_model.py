@@ -1,14 +1,17 @@
-import server
 from sqlalchemy.dialects.postgresql import JSON
 
+try:
+    from server import db
+except Exception as e:
+    print(e)
 
-class Result(server.db.Model):
+
+class Result(db.Model):
     __tablename__ = 'results'
-
-    id = server.db.Column(server.db.Integer, primary_key=True)
-    url = server.db.Column(server.db.String())
-    result_all = server.db.Column(JSON)
-    result_no_stop_words = server.db.Column(JSON)
+    id = db.Column(server.db.Integer, primary_key=True)
+    url = db.Column(server.db.String())
+    result_all = db.Column(JSON)
+    result_no_stop_words = db.Column(JSON)
 
     def __init__(self, url, result_all, result_no_stop_words):
         self.url = url
