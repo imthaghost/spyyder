@@ -6,7 +6,7 @@ class User(object):
     def get_email(self):
         return self.email
 
-    def json(self):
+    def serialize(self):
         return {
             'email': self.email
         }
