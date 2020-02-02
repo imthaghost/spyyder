@@ -66,6 +66,7 @@ class StocksVC: UIViewController {
     }
     
     fileprivate func setupTableView() {
+        tableView.register(UINib(nibName: "StockCell", bundle: nil), forCellReuseIdentifier: "stockCell")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView() //removes extra unpopulated cells
@@ -100,7 +101,7 @@ extension StocksVC: UITableViewDelegate {
         self.performSegue(withIdentifier: kSEGUETOSTOCKDETAILSVC, sender: stock)
 //        self.tableView.beginUpdates()
 //        let view = UIView(frame: CGRect(x: 10, y: 70, width: self.view.frame.width - 20, height: 200))
-//        view.backgroundColor = .red
+//        view.backgroundColor = kMAINCOLOR
 //        let cell: StockCell = tableView.cellForRow(at: indexPath) as! StockCell
 //        cell.addSubview(view)
 //        self.tableView.endUpdates()
