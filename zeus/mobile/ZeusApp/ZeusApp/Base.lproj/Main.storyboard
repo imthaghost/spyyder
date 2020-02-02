@@ -308,6 +308,7 @@
                     </view>
                     <connections>
                         <outlet property="navItem" destination="Ehc-JT-jS5" id="zo6-EN-ue6"/>
+                        <outlet property="stockView" destination="Iai-BF-xp4" id="6gc-rc-RV2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6W-IJ-4oH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
