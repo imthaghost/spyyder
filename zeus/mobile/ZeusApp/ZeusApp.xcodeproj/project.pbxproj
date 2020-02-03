@@ -21,6 +21,9 @@
 		33CA31A923E6286A009AA3DF /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31A823E6286A009AA3DF /* UIColor+extensions.swift */; };
 		33CA31AE23E6444D009AA3DF /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31AC23E6444D009AA3DF /* StockCell.swift */; };
 		33CA31AF23E6444D009AA3DF /* StockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CA31AD23E6444D009AA3DF /* StockCell.xib */; };
+		33CA31B823E8AB56009AA3DF /* UILayoutGuide+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31B723E8AB56009AA3DF /* UILayoutGuide+extensions.swift */; };
+		33CA31BA23E8AC2D009AA3DF /* StockDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31B923E8AC2D009AA3DF /* StockDescriptionView.swift */; };
+		33CA31BC23E8AC48009AA3DF /* StockDescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CA31BB23E8AC48009AA3DF /* StockDescriptionView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		33CA31A823E6286A009AA3DF /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
 		33CA31AC23E6444D009AA3DF /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
 		33CA31AD23E6444D009AA3DF /* StockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockCell.xib; sourceTree = "<group>"; };
+		33CA31B723E8AB56009AA3DF /* UILayoutGuide+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutGuide+extensions.swift"; sourceTree = "<group>"; };
+		33CA31B923E8AC2D009AA3DF /* StockDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDescriptionView.swift; sourceTree = "<group>"; };
+		33CA31BB23E8AC48009AA3DF /* StockDescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockDescriptionView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,8 @@
 			children = (
 				33CA31B023E64471009AA3DF /* StockCell */,
 				33CA31A723E6098B009AA3DF /* StockCellView-Dropdown */,
+				33CA31B923E8AC2D009AA3DF /* StockDescriptionView.swift */,
+				33CA31BB23E8AC48009AA3DF /* StockDescriptionView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -125,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				33CA31A823E6286A009AA3DF /* UIColor+extensions.swift */,
+				33CA31B723E8AB56009AA3DF /* UILayoutGuide+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -209,6 +218,7 @@
 				33CA31A423E608A7009AA3DF /* StockCellView.xib in Resources */,
 				33CA31AF23E6444D009AA3DF /* StockCell.xib in Resources */,
 				3309912123E213DC00880CC5 /* Assets.xcassets in Resources */,
+				33CA31BC23E8AC48009AA3DF /* StockDescriptionView.xib in Resources */,
 				3309911F23E213DA00880CC5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,6 +238,8 @@
 				33CA31AE23E6444D009AA3DF /* StockCell.swift in Sources */,
 				33CA31A623E608B6009AA3DF /* StockCellView.swift in Sources */,
 				3309911A23E213DA00880CC5 /* SceneDelegate.swift in Sources */,
+				33CA31B823E8AB56009AA3DF /* UILayoutGuide+extensions.swift in Sources */,
+				33CA31BA23E8AC2D009AA3DF /* StockDescriptionView.swift in Sources */,
 				3309913323E24CE100880CC5 /* StockDetailsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

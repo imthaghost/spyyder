@@ -19,13 +19,6 @@ class StockDetailsVC: UIViewController {
     }()
     var descriptionView: StockDescriptionView!
     var isDescriptionView: Bool = false
-//    {
-////        let view: StockDescriptionView = UIView(frame: .zero)
-//        let view = StockDescriptionView(stock: stock)
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = kMAINCOLOR
-//        return view
-//    }()
     
 //MARK: IBOutlets
     @IBOutlet weak var stockView: UIView!
@@ -46,7 +39,6 @@ class StockDetailsVC: UIViewController {
         stockView.addGestureRecognizer(tap)
         
         descriptionView = StockDescriptionView(stock: stock)
-        descriptionView.translatesAutoresizingMaskIntoConstraints = false
         stockView.addSubview(descriptionView)
         NSLayoutConstraint.activate(
             descriptionView.pinToEdges(view: self.stockView) //pin to edges of stockView

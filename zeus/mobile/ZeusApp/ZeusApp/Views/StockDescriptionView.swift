@@ -40,15 +40,19 @@ class StockDescriptionView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    override func layoutSubviews() { //where you can set
         setupBackgroundLayer()
-        
     }
     
     fileprivate func setupBackgroundLayer() {
         let gradientLayer: CAGradientLayer = CAGradientLayer()
         gradientLayer.frame = self.bounds
-        gradientLayer.colors = [kMAINCOLOR.cgColor, UIColor.black.cgColor] //add colors, first one will be at the top
+        gradientLayer.colors = [UIColor.white.cgColor, kMAINCOLOR.cgColor] //add colors, first one will be at the top
         gradientLayer.locations = [0.5, 1]
-        self.layer.insertSublayer(gradientLayer, at: 0)
+        self.contentView.layer.insertSublayer(gradientLayer, at: 0)
+        
     }
 }
