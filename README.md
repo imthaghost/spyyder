@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Zeus</h1>
+<h1 align="center">Welcome to Bagger</h1>
 <!-- <img align="center" src="docs/media/logo.png" title="Icon"></a> -->
 <p>
     <img alt="downloads" src="https://img.shields.io/github/contributors/imthaghost/ghostChat?color=green" target="_blank" />
