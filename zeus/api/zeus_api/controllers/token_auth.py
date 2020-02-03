@@ -12,7 +12,8 @@ tk_auth = Blueprint('token', __name__)
 
 @tk_auth.route('/token')
 def auth():
-    user = User(email=randint(0, 300))
-    data = user.serialize()
-    zeus_api.visitor.insert_one(json.loads(json.dumps(data)))
+    # user = User(email=randint(0, 300))
+    # data = user.serialize()
+    # zeus_api.visitor.insert_one(json.loads(json.dumps(data)))
+    data = randint(0, 900)
     return jsonify({'token': data})
