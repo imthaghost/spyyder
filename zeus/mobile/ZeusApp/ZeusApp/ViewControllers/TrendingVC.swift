@@ -1,5 +1,5 @@
 //
-//  StocksVC.swift
+//  TrendingVC.swift
 //  ZeusApp
 //
 //  Created by Macbook Pro 15 on 1/29/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StocksVC: UIViewController {
+class TrendingVC: UIViewController {
 //MARK: Properties
     var stocks: [Stock] = []
     
@@ -69,7 +69,7 @@ class StocksVC: UIViewController {
 }
 
 //MARK: Extensions
-extension StocksVC: UITableViewDelegate {
+extension TrendingVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let stock = stocks[indexPath.row]
         self.performSegue(withIdentifier: kSEGUETOSTOCKDETAILSVC, sender: stock)
@@ -80,7 +80,7 @@ extension StocksVC: UITableViewDelegate {
     }
 }
 
-extension StocksVC: UITableViewDataSource {
+extension TrendingVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stocks.count
     }
