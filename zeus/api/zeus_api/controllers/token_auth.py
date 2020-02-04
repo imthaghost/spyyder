@@ -1,19 +1,18 @@
 """Authentication route"""
 
-from flask import jsonify, Blueprint
-from random import randint
-import json
-
 from zeus_api.models.user import User
+from flask_restful import Resource
+from random import randint
+from flask import jsonify
 import zeus_api
+import json
+from bson import json_util
 
-tk_auth = Blueprint('token', __name__)
 
-
-@tk_auth.route('/token')
-def auth():
-    # user = User(email=randint(0, 300))
-    # data = user.serialize()
-    # zeus_api.visitor.insert_one(json.loads(json.dumps(data)))
-    data = randint(0, 900)
-    return jsonify({'token': data})
+class tokenAuth(Resource):
+    def get(self):
+        user = User(email=randint(0, 300))
+        data = user.serialize()
+        print(data)
+        zeus_api.user.insert_one(json.loads(json_util.dumps(data)))
+        return jsonify(data)
