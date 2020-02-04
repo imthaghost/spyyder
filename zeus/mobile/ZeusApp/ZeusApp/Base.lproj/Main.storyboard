@@ -389,10 +389,10 @@
             </objects>
             <point key="canvasLocation" x="1046" y="136"/>
         </scene>
-        <!--View Controller-->
+        <!--My StocksVC-->
         <scene sceneID="c0K-7a-qjc">
             <objects>
-                <viewController id="2Bd-I2-6z8" sceneMemberID="viewController">
+                <viewController id="2Bd-I2-6z8" customClass="MyStocksVC" customModule="ZeusApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ads-Sz-XLb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -412,6 +412,9 @@
                         <viewLayoutGuide key="safeArea" id="Ri0-hV-mc5"/>
                     </view>
                     <navigationItem key="navigationItem" id="tNJ-TV-d2w"/>
+                    <connections>
+                        <outlet property="tableView" destination="9I1-ao-k1s" id="xhq-X2-urE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGD-2a-3vS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
