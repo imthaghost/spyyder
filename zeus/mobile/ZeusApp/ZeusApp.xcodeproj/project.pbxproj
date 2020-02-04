@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3309911823E213DA00880CC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309911723E213DA00880CC5 /* AppDelegate.swift */; };
 		3309911A23E213DA00880CC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309911923E213DA00880CC5 /* SceneDelegate.swift */; };
-		3309911C23E213DA00880CC5 /* StocksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309911B23E213DA00880CC5 /* StocksVC.swift */; };
+		3309911C23E213DA00880CC5 /* TrendingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309911B23E213DA00880CC5 /* TrendingVC.swift */; };
 		3309911F23E213DA00880CC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3309911D23E213DA00880CC5 /* Main.storyboard */; };
 		3309912123E213DC00880CC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3309912023E213DC00880CC5 /* Assets.xcassets */; };
 		3309912423E213DC00880CC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3309912223E213DC00880CC5 /* LaunchScreen.storyboard */; };
@@ -24,13 +24,16 @@
 		33CA31B823E8AB56009AA3DF /* UILayoutGuide+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31B723E8AB56009AA3DF /* UILayoutGuide+extensions.swift */; };
 		33CA31BA23E8AC2D009AA3DF /* StockDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31B923E8AC2D009AA3DF /* StockDescriptionView.swift */; };
 		33CA31BC23E8AC48009AA3DF /* StockDescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CA31BB23E8AC48009AA3DF /* StockDescriptionView.xib */; };
+		33CA31BE23E90E4A009AA3DF /* RecommendationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31BD23E90E4A009AA3DF /* RecommendationVC.swift */; };
+		33CA31C023E91C15009AA3DF /* MyStocksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31BF23E91C15009AA3DF /* MyStocksVC.swift */; };
+		33CA31C223E91C2B009AA3DF /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31C123E91C2B009AA3DF /* ProfileVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3309911423E213DA00880CC5 /* ZeusApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeusApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3309911723E213DA00880CC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3309911923E213DA00880CC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3309911B23E213DA00880CC5 /* StocksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksVC.swift; sourceTree = "<group>"; };
+		3309911B23E213DA00880CC5 /* TrendingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingVC.swift; sourceTree = "<group>"; };
 		3309911E23E213DA00880CC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3309912023E213DC00880CC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3309912323E213DC00880CC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,6 +49,9 @@
 		33CA31B723E8AB56009AA3DF /* UILayoutGuide+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutGuide+extensions.swift"; sourceTree = "<group>"; };
 		33CA31B923E8AC2D009AA3DF /* StockDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDescriptionView.swift; sourceTree = "<group>"; };
 		33CA31BB23E8AC48009AA3DF /* StockDescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockDescriptionView.xib; sourceTree = "<group>"; };
+		33CA31BD23E90E4A009AA3DF /* RecommendationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationVC.swift; sourceTree = "<group>"; };
+		33CA31BF23E91C15009AA3DF /* MyStocksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStocksVC.swift; sourceTree = "<group>"; };
+		33CA31C123E91C2B009AA3DF /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +101,11 @@
 		3309912B23E24AB800880CC5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3309911B23E213DA00880CC5 /* StocksVC.swift */,
+				3309911B23E213DA00880CC5 /* TrendingVC.swift */,
+				33CA31BD23E90E4A009AA3DF /* RecommendationVC.swift */,
 				3309913223E24CE100880CC5 /* StockDetailsVC.swift */,
+				33CA31BF23E91C15009AA3DF /* MyStocksVC.swift */,
+				33CA31C123E91C2B009AA3DF /* ProfileVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -230,8 +239,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3309911C23E213DA00880CC5 /* StocksVC.swift in Sources */,
+				3309911C23E213DA00880CC5 /* TrendingVC.swift in Sources */,
 				3309911823E213DA00880CC5 /* AppDelegate.swift in Sources */,
+				33CA31C223E91C2B009AA3DF /* ProfileVC.swift in Sources */,
 				3309913123E24BA800880CC5 /* Stock.swift in Sources */,
 				332C9B2E23E3CA51002BB57A /* Constants.swift in Sources */,
 				33CA31A923E6286A009AA3DF /* UIColor+extensions.swift in Sources */,
@@ -241,6 +251,8 @@
 				33CA31B823E8AB56009AA3DF /* UILayoutGuide+extensions.swift in Sources */,
 				33CA31BA23E8AC2D009AA3DF /* StockDescriptionView.swift in Sources */,
 				3309913323E24CE100880CC5 /* StockDetailsVC.swift in Sources */,
+				33CA31C023E91C15009AA3DF /* MyStocksVC.swift in Sources */,
+				33CA31BE23E90E4A009AA3DF /* RecommendationVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
