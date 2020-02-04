@@ -30,8 +30,9 @@ class StockCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func populateViews() {
+    func populateViews(showRank: Bool) {
 //        stockImageView.downloaded(fromLink: mail.imageUrl)
+        rankLabel.isHidden = showRank ? false : true
         stockImageView.image = kDEFAULTIMAGE
         nameLabel.text = stock.name
         categoryLabel.text = "Technology"
