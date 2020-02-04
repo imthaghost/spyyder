@@ -35,6 +35,7 @@ class TrendingVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
+        self.title = "Trending"
         setupTableView()
         createTestStocks()
     }
@@ -89,7 +90,7 @@ extension TrendingVC: UITableViewDataSource {
         let cell: StockCell = tableView.dequeueReusableCell(withIdentifier: "stockCell") as! StockCell
         cell.selectionStyle = .none //remove the selection indicator
         cell.stock = stocks[indexPath.row]
-        cell.populateViews()
+        cell.populateViews(showRank: true)
         return cell
     }
 }

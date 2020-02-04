@@ -40,6 +40,7 @@ class RecommendationVC: UIViewController {
     }
     
     fileprivate func setupTableView() {
+        self.title = "Recommendations"
         tableView.register(UINib(nibName: "StockCell", bundle: nil), forCellReuseIdentifier: "stockCell")
         tableView.delegate = self
         tableView.dataSource = self
@@ -89,7 +90,7 @@ extension RecommendationVC: UITableViewDataSource {
         let cell: StockCell = tableView.dequeueReusableCell(withIdentifier: "stockCell") as! StockCell
         cell.selectionStyle = .none //remove the selection indicator
         cell.stock = stocks[indexPath.row]
-        cell.populateViews()
+        cell.populateViews(showRank: true)
         return cell
     }
 }
