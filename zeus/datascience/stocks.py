@@ -1,3 +1,5 @@
+### Script to buy or sell stock from a particular company
+
 import pandas as pd
 from alpha_vantage.timeseries import TimeSeries
 import time 
@@ -6,7 +8,7 @@ import time
 
 api_key = 'IOLIXAXKGPI3A4QM'
 
-ts = TimeSeries(key=api_key, output_format='pandas')
+ts = TimeSeries(key=api_key, output_format='pandas') # use pandas instead of json
 data, meta_data = ts.get_intraday(symbol='MSFT', interval = '1min', outputsize = 'full')
 print(data)
 
