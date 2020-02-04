@@ -1,6 +1,6 @@
 class Model(dict):
     """
-    A simple model that wraps mongodb document
+    A simple model that wraps mongodb functions
     """
     __getattr__ = dict.get
     __delattr__ = dict.__delitem__
