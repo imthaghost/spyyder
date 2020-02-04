@@ -22,7 +22,6 @@ class StockDetailsVC: UIViewController {
     
 //MARK: IBOutlets
     @IBOutlet weak var stockView: UIView!
-    @IBOutlet weak var navItem: UINavigationItem!
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
@@ -32,7 +31,7 @@ class StockDetailsVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
-        navItem.title = stock.name
+        self.title = stock.name
         stockView.backgroundColor = kMAINCOLOR
         stockView.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(flipStockViewTap(_:)))
