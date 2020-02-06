@@ -5,11 +5,12 @@ load_dotenv()
 basedir = os.path.abspath(os.path.dirname(__file__))
 DATABASE_URL = os.getenv('DATABASE_URL')
 
+
 class Config(object):
     DEBUG = False
     TESTING = False
     CSRF_ENABLED = True
-    SECRET_KEY = 'this-really-needs-to-be-changed'
+    SECRET_KEY = os.getenv('secret_key')
     MONGODB_URI = DATABASE_URL
 
 
