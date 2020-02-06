@@ -1,53 +1,28 @@
-"""
-login route blueprint
-"""
-# built-in modules
-import os
-
-# external Python Modules
-from flask import session, send_file, render_template, redirect, url_for, flash, Blueprint, request
-from bson import json_util
+# built in modules
+import datetime
+# external modules
+from flask import jsonify, make_response, request
+from flask_restful import Resource
 import bcrypt
-import json
+import jwt
 # local modules
-try:
-    os.environ['PYTHONPATH'] = '~/Projects/huttl-flask'
-    import app
-except ImportError as e:
-    print(e)
+import zeus_api
 
 
-# create Blue print for login route
-login_route = Blueprint('login_route', __name__, static_folder='static')
-
-
-@login_route.route('/login', methods=['GET', 'POST'])
-def login():
-    if 'user' in session:
-        return redirect(url_for('dashboard.dashboard'))
-    else:
-        if request.method == 'GET':
-            return render_template('login.html')
-        if request.method == 'POST':
-            email_field = request.form.get('email')
-            password_field = request.form.get('password')
-            login_user = app.user.find_one({'email': email_field})
-            if login_user:
-                if bcrypt.hashpw(password_field.encode('utf-8'), login_user['password']) == login_user['password']:
-                    # set up session
-                    data = {
-                        'email': login_user['email'],
-                        'id': login_user['_id'],
-                        'created': login_user['created_at'],
-                        'ip': login_user['client_ip'],
-                        'interests': login_user['interests'],
-                        'projects': login_user['projects'],
-                        'full_name': login_user['full_name']
-                    }
-                    session['user'] = json.loads(json_util.dumps(data))
-
-                    return redirect(url_for('dashboard.dashboard'))
-                else:
-                    return render_template('login.html')
-            else:
-                return render_template('login.html')
+class authenticate(Resource):
+    def post(self):
+        # store the sent over json from client
+        credentials = request.get_json()
+        email = credentials.get('email')
+        password = credentials.get('password')
+        # todo: make sure to sanitize unless you want SQL Injection :)
+        verify_user = zeus_api.user.find_one({'email': email})
+        # if the users email is foudd in the database and check to see if the password credential matches the encrypted field in the database
+        if verify_user is not None and bcrypt.hashpw(password.encode('utf-8'), verify_user['password']) == password:
+            # create unique token when user is verified
+            token = jwt.encode({'user': username, 'exp': datetime.datetime.utcnow(
+            ) + datetime.timedelta(seconds=30)}, 'key')
+            # send the token back
+            return jsonify({'token': token.decode('UTF-8')})
+        else:
+            return make_response('Cannot verify', 401, {'Authencation': 'Basic realm="Login Reqiured"'})
