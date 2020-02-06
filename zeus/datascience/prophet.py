@@ -14,6 +14,9 @@ from itertools import zip_longest
 from flask import request, redirect
 import pandas_datareader.data as web
 from flask import Flask, render_template
+from alpha_vantage.timeseries import TimeSeries
+import datetime 
+
 
 app = Flask(__name__)
 
@@ -39,13 +42,13 @@ def yahoo_stocks(symbol, start, end):
 
 def get_historical_stock_price(stock):
     print ("Getting historical stock prices for stock ", stock)
-    
+    d = datetime.datetime.today() # makes object for current time today
     #get 7 year stock data for Apple
-    startDate = datetime.datetime(2015, 1, 4)
-    #date = datetime.datetime.now().date()
+    startDate = datetime.datetime(2019, 1, 4)
+    date = datetime.datetime.now().date()
     #endDate = pd.to_datetime(date)
-    endDate = datetime.datetime(2020, 1, 28)
-    stockData = yahoo_stocks(stock, startDate, endDate)
+    #endDate = datetime.datetime(2020, 1, 28)
+    stockData = yahoo_stocks(stock, startDate, date)
     return stockData
 
 @app.route("/plot" , methods = ['POST', 'GET'] )
@@ -63,7 +66,7 @@ def main():
         model = Prophet()
         model.fit(df)
 
-        num_days = 10
+        num_days = 20
         future = model.make_future_dataframe(periods=num_days)
         forecast = model.predict(future)
         

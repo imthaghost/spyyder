@@ -1,4 +1,4 @@
-"""Trending Data Endpoint"""
+"""Company Details Endpoint"""
 
 from zeus_api.models.company import Company
 from flask_restful import Resource
