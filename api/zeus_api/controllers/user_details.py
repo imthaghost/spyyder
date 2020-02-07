@@ -15,12 +15,12 @@ from zeus_api.controllers.auth import access_token_required, token_required
 
 
 class User_details(Resource):
-    @access_token_required
-    def get(self, son):
-        print(son)
-        # identifier = JSONEncoder(userid)
-        # print("Current user: ", current_user)
-        # if not current_user:
-        #     return jsonify({'message': 'must authenticate'})
-        # print(current_user)
-        return jsonify({'success': 'hello user'})
+    @token_required
+    def get(self, data, token):
+        uuid = data.get('uuid')
+        current_user = zeus_api.user.find_one({'uuid': uuid})
+        if current_user is not None:
+            print(current_user)
+            return jsonify({'success': current_user.get('fullname')})
+        else:
+            return jsonify({'error': 'server error'})

@@ -14,6 +14,7 @@ pymongo = "*"
 flask-restful = "*"
 pyjwt = "*"
 bcrypt = "*"
+uuid = "*"
 
 [requires]
 python_version = "3.7"
