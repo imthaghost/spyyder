@@ -23,9 +23,13 @@ def token_required(f):
                 return jsonify({'message': 'token is missing'})
         try:
             data = jwt.decode(token, os.getenv('secret_key'))
+            kwargs['data'] = data
+            kwargs['token'] = token
         except:
             return jsonify({'Error: ': 'server error'})
+
         return f(*args, **kwargs)
+
     return wrapper
 
 
@@ -41,7 +45,8 @@ def access_token_required(f):
         try:
             data = jwt.decode(token, os.getenv('secret_key'))
             current_user = zeus_api.user.find_one({'uuid': data.get('uuid')})
-            son = {current_user}
+            son = {'user': str(current_user)}
+
         except:
             return jsonify({'message': 'Token is invalid'})
 

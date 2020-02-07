@@ -36,11 +36,14 @@ try:
     graph = db.graph
 except Exception as error:
     print(error)
-# instantiate resource endpoints
-api.add_resource(tokenAuth, '/token')
+########### user enpoints ##################
 api.add_resource(User_details, '/user')
-api.add_resource(companyDetails, '/company/<companyid>')
+api.add_resource(create, '/create')
+############# company enpoints ###############
+api.add_resource(companyDetails, '/company')
+############## authentication endpoints ###############
+api.add_resource(tokenAuth, '/token')
 api.add_resource(authenticate, '/login')
+############### test endpoints #####################
 api.add_resource(grabber, '/grabber')
 api.add_resource(up, '/up')
-api.add_resource(create, '/create')
