@@ -1,51 +1,62 @@
+"""User Model"""
+# built in python modules
+
+# external python modules
+import uuid
+# local python modules
+from zeus_api.models.company import Company
+import zeus_api
 
 
 class User(object):
-    # TODO: Company needs all the properties from whiteboard drawings from last meeting
-    def __init__(self, premium, portfolio, name, identification, investor_type, email='None', password='None'):
+    def __init__(self, full_name, email='None', password='None'):
+        self.full_name = full_name  # users full name
         # password is not required because a user can sign up with OAUTH
-        self.premium = premium
-        self.portfolio = portfolio
-        self.name = name
-        self.identification = identification
-        self.investor_type = investor_type
+        self.premium = False  # intialize premium to false
+        self.portfolio = [Company]  # user porfolio is a list of companies
+        self.uuid = None  # initalize no uuid
+        self.investor_type = None  # initialize the investor type to None
         self.email = email  # email will be the username
-        
+        self.password = password  # set password
+
+################ getters #########################
 
     def get_email(self):
+        # get user email
         return self.email
 
-    def serialize(self):
-        return {
-            'email': self.email
-        }
+    def get_is_premium(self):
+        # get user subscription status
+        return self.premium
 
-    def is_premium(self):
-        if self.premium:
-            return self.premium
-        else:
-            return 'Upgrade to Premium for more features'
-    # TODO: all models must utalize handler module to perform writing and retrieving data from database
-    
-    def has_portfolio(self):
-        if self.portfolio:
-            return self.portfolio
-        else: 
-            return 'Your portfolio is empty'
-    
-    def user_identification(self):
-        return self.identification
+    def get_portforlio(self):
+        # returns a list of Companies
+        return self.portfolio
 
-    def user_investor_type(self):
+    def get_investor_type(self):
+        # returns type of investor
         return self.investor_type
 
-    def user_name(self):
-        return {
-            'Name' : self.name
-        }
-        
-    def update(self):
-        pass
+    def get_uuid(self):
+        # returns uuid
+        return self.uuid
 
-    def read(self):
-        pass
+################ setters #########################
+    def set_uuid(self):
+        self.uuid = str(uuid.uuid4())
+################ user model helper functions #######################
+
+    def serialize(self):
+        # serialize user details
+        return {
+            'email': self.email,
+            'uuid': self.uuid,
+            'password': self.password,
+            'fullname': self.full_name
+        }
+
+    def save_new(self):
+        # todo refactor to make more DRY for all Models
+        # todo generate a token and sent to users email
+        # saves new user to database
+        zeus_api.user.insert_one(self.serialize())

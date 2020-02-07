@@ -10,6 +10,7 @@ from zeus_api.controllers.token_auth import tokenAuth, grabber, up
 from zeus_api.controllers.user_details import User_details
 from zeus_api.controllers.company_details import companyDetails
 from zeus_api.controllers.login import authenticate
+from zeus_api.controllers.create_user import create
 
 
 # load enviornment variables
@@ -37,8 +38,9 @@ except Exception as error:
     print(error)
 # instantiate resource endpoints
 api.add_resource(tokenAuth, '/token')
-api.add_resource(User_details, '/user/<userid>')
+api.add_resource(User_details, '/user')
 api.add_resource(companyDetails, '/company/<companyid>')
 api.add_resource(authenticate, '/login')
 api.add_resource(grabber, '/grabber')
 api.add_resource(up, '/up')
+api.add_resource(create, '/create')
