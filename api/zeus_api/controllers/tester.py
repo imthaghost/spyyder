@@ -13,14 +13,6 @@ from flask import request
 import os
 
 
-class tokenAuth(Resource):
-    def post(self):
-        r = request.get_json().get('email')
-        user = User(email=r)
-        user_data = user.serialize()
-        return jsonify(user_data)
-
-
 class grabber(Resource):
     @token_required
     def get(self):
@@ -31,3 +23,9 @@ class up(Resource):
     def get(self):
         key = os.getenv('secret_key')
         return key
+
+
+class wipe(Resource):
+    def get(self):
+        zeus_api.user.delete_many({})
+    return jsonify({'message': 'fresh start :) '})

@@ -1,7 +1,9 @@
-class Model(dict):
-    """
-    A simple model that wraps mongodb functions
-    """
+"""
+A simple model that wraps mongodb functions
+"""
+
+
+class Handler(dict):
     __getattr__ = dict.get
     __delattr__ = dict.__delitem__
     __setattr__ = dict.__setitem__

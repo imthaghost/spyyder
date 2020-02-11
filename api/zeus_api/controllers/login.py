@@ -22,6 +22,7 @@ class authenticate(Resource):
         if verify_user is not None:
             # and bcrypt.hashpw(password.encode('utf-8'), verify_user['password']) == password
             # create unique token when user is verified
+            # todo make expiration time reasonable
             token = jwt.encode({'uuid': verify_user.get('uuid'), 'exp': datetime.datetime.utcnow(
             ) + datetime.timedelta(minutes=4)}, os.getenv('secret_key'))
             # send the token back
