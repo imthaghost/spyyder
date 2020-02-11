@@ -12,18 +12,23 @@ class Graph(object):
     # TODO: all models must utalize handler module to perform writing and retrieving data from database
 
     def graph_prediction(self):
+        #predicts stock data
         return self.prediction
 
     def graph_current_price(self):
+        #sets the graphs current price
         return self.current_price
 
     def graph_sell_stock(self):
+        #returns when the user should sell stock
         return self.sell_stock
 
     def graph_buy_stock(self):
+        #returns when the user should buy stock
         return self.buy_stock
 
     def graph_data(self):
+        #displays graph data
         if self.data:
             return self.data
         else:
