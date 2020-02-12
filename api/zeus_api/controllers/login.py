@@ -11,13 +11,16 @@ import zeus_api
 
 
 class authenticate(Resource):
+    def get(self):
+        return make_response('Method Not Allowed', 405)
+
     def post(self):
         # store the sent over json from client
         credentials = request.get_json()
+        # if there is no json data send a message of a bad request
         if credentials is None:
             return jsonify({'message': 'no data was sent'})
 
-        print(credentials)
         email = credentials.get('email')
         password = credentials.get('password')
         # todo: make sure to sanitize unless you want SQL Injection :)
