@@ -2,6 +2,7 @@
 import os
 # external python modules
 from flask import Flask, render_template, redirect, jsonify
+from flask_session import Session
 from pymongo import MongoClient
 from dotenv import load_dotenv
 from flask_restful import Api
@@ -17,6 +18,10 @@ load_dotenv()
 app = Flask("api")
 # api instantiation
 api = Api(app)
+# allow sessions
+sess = Session()
+# init session object
+sess.init_app(app)
 # application configuration from .env file
 app.config.from_object(os.getenv('APP_SETTINGS'))
 # try to set mongo database

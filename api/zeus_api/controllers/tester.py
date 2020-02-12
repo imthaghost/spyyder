@@ -28,4 +28,4 @@ class up(Resource):
 class wipe(Resource):
     def get(self):
         zeus_api.user.delete_many({})
-    return jsonify({'message': 'fresh start :) '})
+        return jsonify({'message': 'fresh start :) '})
