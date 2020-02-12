@@ -2,23 +2,26 @@
 import os
 # external python modules
 from flask import Flask, render_template, redirect, jsonify
+from flask_session import Session
 from pymongo import MongoClient
-from flask_restful import Api
 from dotenv import load_dotenv
+from flask_restful import Api
 # local controller modules
-from zeus_api.controllers.token_auth import tokenAuth, grabber, up
-from zeus_api.controllers.user_details import User_details
 from zeus_api.controllers.company_details import companyDetails
+from zeus_api.controllers.user_details import User_details
+from zeus_api.controllers.tester import grabber, wipe, up
 from zeus_api.controllers.login import authenticate
 from zeus_api.controllers.create_user import create
-
-
 # load enviornment variables
 load_dotenv()
 # application instantiation
 app = Flask("api")
 # api instantiation
 api = Api(app)
+# allow sessions
+sess = Session()
+# init session object
+sess.init_app(app)
 # application configuration from .env file
 app.config.from_object(os.getenv('APP_SETTINGS'))
 # try to set mongo database
@@ -42,8 +45,9 @@ api.add_resource(create, '/create')
 ############# company enpoints ###############
 api.add_resource(companyDetails, '/company')
 ############## authentication endpoints ###############
-api.add_resource(tokenAuth, '/token')
 api.add_resource(authenticate, '/login')
 ############### test endpoints #####################
 api.add_resource(grabber, '/grabber')
 api.add_resource(up, '/up')
+# !  be careful wipes all users from database this will not be in production obviously
+api.add_resource(wipe, '/wipe')

@@ -15,6 +15,7 @@ flask-restful = "*"
 pyjwt = "*"
 bcrypt = "*"
 uuid = "*"
+flask-session = "*"
 
 [requires]
 python_version = "3.7"

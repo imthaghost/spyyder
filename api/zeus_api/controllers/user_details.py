@@ -1,17 +1,11 @@
 """User details"""
-from flask_restful import Resource, abort
-from bson.objectid import ObjectId
-from bson import json_util
+from flask_restful import Resource
 from flask import jsonify
 import zeus_api
 import json
 
 # local python modules
-from zeus_api.controllers.auth import access_token_required, token_required
-
-# def missing_user_id(id):
-#     if id not in zeus_api.user.find_one({"_id": id}):
-#         abort(404, message="User {} doesn't exist".format(id))
+from zeus_api.controllers.auth import token_required
 
 
 class User_details(Resource):
