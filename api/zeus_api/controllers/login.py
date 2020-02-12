@@ -14,6 +14,10 @@ class authenticate(Resource):
     def post(self):
         # store the sent over json from client
         credentials = request.get_json()
+        if credentials is None:
+            return jsonify({'message': 'no data was sent'})
+
+        print(credentials)
         email = credentials.get('email')
         password = credentials.get('password')
         # todo: make sure to sanitize unless you want SQL Injection :)
