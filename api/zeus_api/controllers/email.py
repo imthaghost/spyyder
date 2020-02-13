@@ -65,81 +65,10 @@ class Email(Resource):
     def post(self):
         data = request.get_json()
         # grab email key
-        to_email = data.get('email')
-        x = send_email(to_email, company_email, subject, body,
-                       dkim_private_key_path=dkim_private_key_path, dkim_selector=dkim_selector_path)
-        # # start email credentials to send over to
-        # # sender_domain = sender_email.split("@")[-1]
-        # msg = MIMEMultipart("alternative")
-        # message_text = "Thanks for subscribing"
-        # # type of email to send
-        # msg.attach(MIMEText(message_text, "plain"))
-        # #msg.attach(MIMEText(message_html, "html"))
-        # # email to user
-        # msg["To"] = to_email
-        # # from email
-        # msg["From"] = company_email
-        # # email subject
-        # msg["Subject"] = 'Subscription'
-        # # nontype check for dkim signature path
-        # # read the private key file
-        # with open(dkim_private_key_path) as fh:
-        #     key = fh.read()
-        #     # setup the headers
-        #     headers = ["To", "From", "Subject"]
-        #     # sign the message
-        #     sig = dkim.sign(
-        #         message=msg.as_string(),
-        #         selector=dkim_selector,
-        #         domain=sender_domain,
-        #         privkey=key,
-        #         include_headers=headers)
-        #     msg["DKIM-Signature"] = sig.lstrip("DKIM-Signature: ")
-
-        # # TODO: react if connecting to postfix is a socket error.
-        # s = smtplib.SMTP(relay)
-        # server.set_debuglevel(debug_level)
-        # s.sendmail(sender_email, [to_email], msg.as_string())
-        # s.quit()
-        return jsonify({'response': str(x)})
-#!################################ Gmail Connection ###########################################
-    # server = {
-    #     'gmail': 'smtp.gmail.com',  # gmail smtp server
-    # }
-    # # SSL connection port numbers
-    # SSL_ports = {"lower_port": 465, "high_port": 25025}
-    # # log debug level
-    # debug_level = 3
-    # # generic email string
-    # mail_content = """Thank you for subscribing to our newsletter :) """
-
-    # try:
-    #     server = SMTP(server['gmail'], SSL_ports['lower_port'])
-    #     # set the debug level
-    #     server.set_debuglevel(debug_level)
-    #     # identify ourselves to smtp gmail client
-
-    #     username = os.environ['email']
-    #     password = os.environ['email_password']
-    #     receiver = request.form['email']
-    #     message = MIMEMultipart()
-    #     message['From'] = username
-    #     message['To'] = receiver
-    #     # The subject line
-    #     message['Subject'] = '(Important) E-store NewsLetter'
-    #     # The body and the attachments for the mail
-    #     message.attach(MIMEText(mail_content, 'plain'))
-    #     sys.stdout.write('\x1b[1;32m' + receiver + '\x1b[0m' + '\n')
-    #     server.ehlo()
-    #     server.login(username, password)
-    #     text = message.as_string()
-    #     sys.stdout.write(
-    #         '\x1b[1;32m' + " [+] Connection successful" + '\x1b[0m' + '\n')
-
-    #     server.sendmail(username, receiver, text)
-    #     server.close()
-
-    # except:
-    #     sys.stdout.write(" [x] Connection Failed")
-    # return redirect(url_for('index'))
-#!################################ Gmail Connection ###########################################
+        if data:
+            to_email = data.get('email')
+            x = send_email(to_email, company_email, subject, body,
+                           dkim_private_key_path=dkim_private_key_path, dkim_selector=dkim_selector_path)
+            return jsonify({'response': str(x)})
+        else:
+            return jsonify({'message': 'empty requests'})

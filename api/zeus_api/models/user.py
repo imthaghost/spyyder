@@ -32,7 +32,7 @@ class User(object):
             "fullname": self.full_name,
             "premium": self.premium,
             "investor_type": self.investor_type,
-            "portfolio": self.portfolio,
+            # "portfolio": self.portfolio,
             "phonenumber":  self.phonenumber
         }
 

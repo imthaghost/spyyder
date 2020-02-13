@@ -12,6 +12,7 @@ from zeus_api.controllers.user_details import User_details
 from zeus_api.controllers.tester import grabber, wipe, up
 from zeus_api.controllers.login import authenticate
 from zeus_api.controllers.create_user import create
+from zeus_api.controllers.email import Email
 # load enviornment variables
 load_dotenv()
 # application instantiation
@@ -39,13 +40,14 @@ try:
     graph = db.graph
 except Exception as error:
     print(error)
+########### ds enpoints ##################
+api.add_resource(companyDetails, '/company')
 ########### user enpoints ##################
 api.add_resource(User_details, '/user')
 api.add_resource(create, '/create')
-############# company enpoints ###############
-api.add_resource(companyDetails, '/company')
 ############## authentication endpoints ###############
 api.add_resource(authenticate, '/login')
+api.add_resource(Email, '/email')
 ############### test endpoints #####################
 api.add_resource(grabber, '/grabber')
 api.add_resource(up, '/up')
