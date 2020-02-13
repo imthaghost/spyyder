@@ -46,6 +46,10 @@ class companyDetails(Resource):
                 print(token)
                 print(company)
             return jsonify({'success': 'returned company'})
+    def get(self):
+
+        return jsonify({'company': 'some name goes here'})
 
     def post(self):
-        pass
+        # todo later
+        return jsonify({'message': 'hi'})
