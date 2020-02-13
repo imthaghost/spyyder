@@ -39,11 +39,11 @@ try:
     graph = db.graph
 except Exception as error:
     print(error)
+########### ds enpoints ##################
+api.add_resource(companyDetails, '/company')
 ########### user enpoints ##################
 api.add_resource(User_details, '/user')
 api.add_resource(create, '/create')
-############# company enpoints ###############
-api.add_resource(companyDetails, '/company')
 ############## authentication endpoints ###############
 api.add_resource(authenticate, '/login')
 ############### test endpoints #####################

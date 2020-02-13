@@ -10,17 +10,10 @@ import json
 
 
 class companyDetails(Resource):
-    @token_required
-    def get(self, data, token):
-        if data is None or token is None:
-            return jsonify({'message' 'empty data or token variable'})
+    def get(self):
 
-        company = zeus_api.company.find_one(
-            {'_id': ObjectId(data.get('uuid'))})
-        print(data)
-        print(token)
-        print(company)
-        return jsonify({'success': 'returned company'})
+        return jsonify({'company': 'some name goes here'})
 
     def post(self):
-        pass
+        # todo later
+        return jsonify({'message': 'hi'})
