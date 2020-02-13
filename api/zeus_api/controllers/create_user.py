@@ -7,7 +7,6 @@ import bcrypt
 import jwt
 # local modules
 import zeus_api
-from zeus_api.models.user import User
 
 
 class create(Resource):
@@ -21,7 +20,8 @@ class create(Resource):
         verify_email = zeus_api.user.find_one({'email': email})
         # if the users email is foudd in the database and check to see if the password credential matches the encrypted field in the database
         if verify_email is None:
-            current_user = User(fullname, email=email, password=password)
+            current_user = zeus_api.models.user.User(
+                fullname, email=email, password=password)
             # generate UUID
             current_user.set_uuid()
             # save user to proper collection in database

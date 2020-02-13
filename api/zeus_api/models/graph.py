@@ -8,7 +8,7 @@ class Graph(object):
         self.sell_stock = sell_stock
         self.buy_stock = buy_stock
         self.data = data
-        
+
     # TODO: all models must utalize handler module to perform writing and retrieving data from database
 
     def graph_prediction(self):
@@ -28,7 +28,7 @@ class Graph(object):
             return self.data
         else:
             return 'No data available at the moment.'
-    
+
     def update(self):
         # this function will update the model to its proper collection
         pass

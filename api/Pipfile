@@ -16,6 +16,7 @@ pyjwt = "*"
 bcrypt = "*"
 uuid = "*"
 flask-session = "*"
+dkimpy = "*"
 
 [requires]
 python_version = "3.7"
