@@ -17,6 +17,7 @@ bcrypt = "*"
 uuid = "*"
 flask-session = "*"
 dkimpy = "*"
+alpha-vantage = "*"
 
 [requires]
 python_version = "3.7"
