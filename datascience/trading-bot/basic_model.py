@@ -11,7 +11,10 @@ import tensorflow
 # np.random.seed(4)
 # set_random_seed(4)
 tensorflow.random.set_seed(4)
-# dataset
+
+
+# dataset testing and trainig 
+
 
 ohlcv_histories, _, next_day_open_values, unscaled_y, y_normaliser = csv_to_dataset('MSFT_intraday.csv')
 
@@ -58,6 +61,9 @@ real_mse = np.mean(np.square(unscaled_y_test - y_test_predicted))
 scaled_mse = real_mse / (np.max(unscaled_y_test) - np.min(unscaled_y_test)) * 100
 print(scaled_mse)
 
+
+
+# Plotting the predictions and model 
 import matplotlib.pyplot as plt
 
 plt.gcf().set_size_inches(22, 15, forward=True)

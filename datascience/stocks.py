@@ -17,8 +17,9 @@ print(data)
 #     data, meta_data = ts.get_intraday(symbol='MSFT', interval = '1min', outputsize = 'full')
 #     data.to_excel("output.xlsx")
 #     time.sleep(60)
-
+print('this is data: ' + str(data))
 close_data = data['4. close']
+print("Closing data: " + str(close_data))
 percentage_change = close_data.pct_change()
 
 print(percentage_change)

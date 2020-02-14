@@ -21,12 +21,12 @@ data_ti, meta_data_ti = ti.get_sma(symbol='MSFT', interval='1min', time_period=p
 
   
 df1 = data_ti # the calculation of the 60 
-df2 = data_ts['4. close'].iloc[period-1::] # we only want the closing column
+df2 = data_ts['4. close'].iloc[-1] # we only want the last item in the closing column
+print(df2)
+#df2.index = df1.index
 
-df2.index = df1.index
+# total_df = pd.concat([df1, df2], axis=1)
+# print(total_df)
 
-total_df = pd.concat([df1, df2], axis=1)
-print(total_df)
-
-total_df.plot()
-plt.show()
+# total_df.plot()
+# plt.show()
