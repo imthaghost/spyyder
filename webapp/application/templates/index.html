@@ -45,7 +45,7 @@
       <a href="templates/index.html" class="logo"><img src="static/logo.svg" alt="logo"/></a>
       <h2 class="modal-title">Join the DiGift Waitlist</h2>
       <p class="modal-subtitle">We're still in early stages, and we'll let you know once we're ready for more beta testers.</p>
-      <form class='form' name='DiGift' method='POST'><input type='hidden' name='form-name' value='DiGift' />
+      <form class='form' name='DiGift' action={{url_for('email_route')}} method='POST'><input type='hidden' name='form-name' value='DiGift' />
         <div class="group">
           <input type="text" id="firstName" name="first-name" placeholder="&nbsp;" autocomplete="off" required>
           <label for="first-name">First name</label>
