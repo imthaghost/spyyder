@@ -1,15 +1,15 @@
 from flask import session, render_template, request, redirect, Blueprint, jsonify
 import json
 
-email_page = Blueprint('index', __name__, static_folder='static')
+email_route = Blueprint('email', __name__, static_folder='static')
 
 
-@email_page.route('/email', methods=['GET', 'POST'])
-def get_email():
+@email_route.route('/email', methods=['GET', 'POST'])
+def email():
     
-     email_user = {}
+    email = request.form.get('email')
 
     if request.method == 'POST':
-        email_user = user.insert_one({'email': request.form['email']})
-
-    return jsonify({'email': "You're on the waitlist!"})
+        return jsonify({'email': email})
+    else:
+        return render_template('index.html')
