@@ -11,6 +11,7 @@ class Subscribe(Resource):
 
     def post(self):
         data = request.get_json()
+        print('Data: ', data)
         if data:
             email = data.get('email')
             first_name = data.get('firstname')
@@ -19,7 +20,9 @@ class Subscribe(Resource):
                 'email': email,
                 'firstname': first_name
             }
-        # update database
-        zeus_api.user.insert_one(subscribers)
+            print(subscribers)
+            print(data)
+            # update database
+            zeus_api.user.insert_one(subscribers)
         return jsonify({'message': 'Thanks for subscribing'})
     
