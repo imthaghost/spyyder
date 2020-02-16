@@ -3,13 +3,6 @@
 
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38404388-27"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-38404388-27');
-  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <title>DiGift</title>
@@ -36,16 +29,16 @@
   <button type="button" class="modal-close modal-toggle"><i class="icon" data-feather="x"></i><span class="hide-mobile">ESC</span></button>
   <div class="modal-content">
     <div class="success">
-      <a href="templates/index.html" class="logo"><img src="static/logo.svg" alt="logo"/></a>
+      <a href="{{url_for('index.index')}}" class="logo"><img src="static/logo.svg" alt="logo"/></a>
       <h2 class="modal-title first-name" id="title-name"></h2>
       <p>You're on the list! We'll be in touch.</p>
-      <a href="templates/index.html" class="button">Back home</a>
+      <a href="{{url_for('index.index')}}" class="button">Back home</a>
     </div>
     <div class="form-content">
-      <a href="templates/index.html" class="logo"><img src="static/logo.svg" alt="logo"/></a>
+      <a href="{{url_for('index.index')}}" class="logo"><img src="static/logo.svg" alt="logo"/></a>
       <h2 class="modal-title">Join the DiGift Waitlist</h2>
       <p class="modal-subtitle">We're still in early stages, and we'll let you know once we're ready for more beta testers.</p>
-      <form class='form' name='DiGift' action={{url_for('email.email')}} method='POST'><input type='hidden' name='form-name' value='DiGift' />
+      <form class='form' name='DiGift' action="{{url_for('email.email')}}" method='POST'><input type='hidden' name='form-name' value='DiGift' />
         <div class="group">
           <input type="text" id="firstName" name="firstname" placeholder="&nbsp;" autocomplete="off" required>
           <label for="first-name">First name</label>
@@ -62,7 +55,6 @@
   </div>
 </div>
   <div class="content">
-    <!-- <a href="templates/index.html" class="logo"><img src="static/logo.svg" alt="logo"/></a> -->
     <div class="hero">
       <h1 class="title">A stock application for</h1>
       <h1 class="title shift clip">
