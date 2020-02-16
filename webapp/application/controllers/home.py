@@ -8,4 +8,4 @@ home = Blueprint('index', __name__, static_folder='static')
 @home.route('/index', methods=['GET', 'POST'])
 def index():
     if request.method == 'GET':
-        return render_template('webapp.html')
+        return render_template('index.html')
