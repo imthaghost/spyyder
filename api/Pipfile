@@ -18,6 +18,7 @@ uuid = "*"
 flask-session = "*"
 dkimpy = "*"
 alpha-vantage = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.7"
