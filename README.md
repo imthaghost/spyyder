@@ -1,25 +1,31 @@
-<h1 align="center">Welcome to Bagger</h1>
-<!-- <img align="center" src="docs/media/logo.png" title="Icon"></a> -->
-<p>
-    <img alt="downloads" src="https://img.shields.io/github/contributors/imthaghost/ghostChat?color=green" target="_blank" />
+<p align="center">
+  <!-- <a href="https://github.com/adamfaliq42/jivesearch/edit/master/README.md">
+    <img alt="jive-search logo" src="frontend/static/icons/logo.png"> 
+  </a>-->
+</p>
+
+<br>
+
+<p align="center">
+Bagger is a powerful machine learning trading application. Our main focus is to have an algorithm that gives information with concise and coherent explinations. We aim to deliever information so well that even a 4 year old can understand why they should give money to a particular company. Our goal is to make each individual user feel empowered by their decisons. Leave the big words and scary terms to the professionals we make investing easier for everyone!
+</p>
+
+<br>
+
+<p align="center">
+<a href=#>
+
+  <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/imthaghost/digift?style=flat-square">
 
   </a> 
   
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000" />
-  <a href="#" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a>
-   <a href="https://github.com/imthaghost/gitmoji-changelog">
-    <img src="https://img.shields.io/badge/changelog-gitmoji-brightgreen.svg" alt="gitmoji-changelog">
-  </a>
   <a href="https://github.com/imthaghost/gitmoji-changelog">
     <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg"alt="gitmoji-changelog">
   </a>
 </p>
+<br>
 
-> Zeus is a lighting fast cryptocurrency trading application
-
-![landing](/docs/media/landing.png)
+![landing](/docs/media/bagger.png)
 
 <p align="center">
   <a href="https://itunes.apple.com/us/app/gitpoint/id1251245162?mt=8">
