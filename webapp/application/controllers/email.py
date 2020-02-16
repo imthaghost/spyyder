@@ -9,6 +9,10 @@ def email():
 
     if request.method == 'POST':
         email = request.form.get('email')
-        return jsonify({'email': email})
+        first_name = request.form.get('firstname')
+        print(email)
+        print(first_name)
+
+        return jsonify({'email': email, 'first_name': first_name})
     else:
         return render_template('index.html')
