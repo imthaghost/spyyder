@@ -8,6 +8,9 @@ from flask import jsonify
 import zeus_api
 import json
 import alpha_vantage
+import pandas as pd 
+from alpha_vantage.timeseries import TimeSeries
+from alpha_vantage.techindicators import TechIndicators # calculate sma for us
 
 
 class companyDetails(Resource):
