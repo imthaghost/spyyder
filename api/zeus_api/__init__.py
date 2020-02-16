@@ -13,6 +13,7 @@ from zeus_api.controllers.tester import grabber, wipe, up
 from zeus_api.controllers.login import authenticate
 from zeus_api.controllers.create_user import create
 from zeus_api.controllers.email import Email
+from zeus_api.controllers.subscriptions import Subscribe
 # load enviornment variables
 load_dotenv()
 # application instantiation
@@ -28,18 +29,22 @@ app.config.from_object(os.getenv('APP_SETTINGS'))
 # try to set mongo database
 try:
     client = MongoClient(host=os.getenv('DATABASE_URL'))
-    # instantiate and get default db name
-    db = client.get_default_database()
-    # vistitor collection
-    visitor = db.visitor
-    # user collection
-    user = db.user
-    # company collection
-    company = db.company
-    # graph collection
-    graph = db.graph
 except Exception as error:
     print(error)
+# instantiate and get default db name
+db = client.get_default_database()
+# vistitor collection
+visitor = db.visitor
+# user collection
+user = db.user
+# company collection
+company = db.company
+# graph collection
+graph = db.graph
+# user subscription collection
+subscribers = db.subscriptions
+########### subscription enpoints ################
+api.add_resource(Subscribe, '/subscribe')
 ########### ds enpoints ##################
 api.add_resource(companyDetails, '/company')
 ########### user enpoints ##################
