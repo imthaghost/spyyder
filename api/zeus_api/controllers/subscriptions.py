@@ -60,6 +60,7 @@ def send_email(
     s.quit()
     return msg
 
+
 class Subscribe(Resource):
     def get(self):
         return jsonify({'message': 'method not allowed'})
@@ -75,13 +76,11 @@ class Subscribe(Resource):
                 'firstname': first_name
             }
             to_email = email
-            x = send_email(to_email, company_email, subject, body,dkim_private_key_path=dkim_private_key_path, dkim_selector=dkim_selector_path)
+            x = send_email(to_email, company_email, subject, body,
+                           dkim_private_key_path=dkim_private_key_path, dkim_selector=dkim_selector_path)
             print(x)
-            # update database
-            zeus_api.user.insert_one(subscribers)
+            # insert person into database
+            zeus_api.subscribers.insert_one(subscribers)
             return jsonify({'message': 'Thanks for subscribing'})
         else:
             return jsonify({'message': 'empty requests'})
-              
-   
-    
