@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from tinymail.co/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Feb 2020 20:34:21 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38404388-27"></script>
   <script>
@@ -13,42 +12,42 @@
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  <title>TinyMail</title>
-  <meta name="title" content="TinyMail">
+  <title>DiGift</title>
+  <meta name="title" content="DiGift">
   <meta name="description" content="A minimal email client for inbox zero enthusiasts.">
-  <meta name="keywords" content="tiny, mail, client, gmail, icloud, minimal, superhuman">
+  <meta name="keywords" content="DiGift, mail, client, gmail, icloud, minimal, superhuman">
   <meta name="author" content="@traf">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tinymail.co/">
-  <meta property="og:title" content="TinyMail">
+  <meta property="og:url" content="https://DiGift.co/">
+  <meta property="og:title" content="DiGift">
   <meta property="og:description" content="A minimal email client for inbox zero enthusiasts.">
-  <meta property="og:image" content="https://tinymail.co/images/social.jpg">
+  <meta property="og:image" content="https://DiGift.co/images/social.jpg">
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://tinymail.co/">
-  <meta property="twitter:title" content="TinyMail">
+  <meta property="twitter:url" content="https://DiGift.co/">
+  <meta property="twitter:title" content="DiGift">
   <meta property="twitter:description" content="A minimal email client for inbox zero enthusiasts.">
-  <meta property="twitter:image" content="https://tinymail.co/images/social.jpg">
-  <link href="images/thumbnail.jpg" rel="apple-touch-icon">
-  <link href="images/favicon.png" rel="shortcut icon">
-  <link href="css/styles.css" rel="stylesheet">
+  <meta property="twitter:image" content="https://DiGift.co/images/social.jpg">
+  <link href="static/thumbnail.jpg" rel="apple-touch-icon">
+  <!-- <link href="static/favicon.png" rel="shortcut icon"> -->
+  <link href="static/styles.css" rel="stylesheet">
 </head>
 <body>
   <div class="modal">
   <button type="button" class="modal-close modal-toggle"><i class="icon" data-feather="x"></i><span class="hide-mobile">ESC</span></button>
   <div class="modal-content">
     <div class="success">
-      <a href="index.html" class="logo"><img src="images/logo.svg" alt="logo"/></a>
+      <a href="templates/index.html" class="logo"><img src="static/logo.svg" alt="logo"/></a>
       <h2 class="modal-title first-name" id="title-name"></h2>
       <p>You're on the list! We'll be in touch.</p>
-      <a href="index.html" class="button">Back home</a>
+      <a href="templates/index.html" class="button">Back home</a>
     </div>
     <div class="form-content">
-      <a href="index.html" class="logo"><img src="images/logo.svg" alt="logo"/></a>
-      <h2 class="modal-title">Join the Tiny Waitlist</h2>
+      <a href="templates/index.html" class="logo"><img src="static/logo.svg" alt="logo"/></a>
+      <h2 class="modal-title">Join the DiGift Waitlist</h2>
       <p class="modal-subtitle">We're still in early stages, and we'll let you know once we're ready for more beta testers.</p>
-      <form class='form' name='tinymail' method='POST'><input type='hidden' name='form-name' value='tinymail' />
+      <form class='form' name='DiGift' action={{url_for('email.email')}} method='POST'><input type='hidden' name='form-name' value='DiGift' />
         <div class="group">
-          <input type="text" id="firstName" name="first-name" placeholder="&nbsp;" autocomplete="off" required>
+          <input type="text" id="firstName" name="firstname" placeholder="&nbsp;" autocomplete="off" required>
           <label for="first-name">First name</label>
           <span class="border"></span>
         </div>
@@ -63,48 +62,48 @@
   </div>
 </div>
   <div class="content">
-    <a href="index.html" class="logo"><img src="images/logo.svg" alt="logo"/></a>
+    <!-- <a href="templates/index.html" class="logo"><img src="static/logo.svg" alt="logo"/></a> -->
     <div class="hero">
-      <h1 class="title">An email client for</h1>
+      <h1 class="title">A stock application for</h1>
       <h1 class="title shift clip">
         <span class="word-shift">
-          <b class="is-visible">inbox zero enthusiasts&nbsp;</b>
-          <b>minimalists</b>
-          <b>indie hackers</b>
-          <b>mindful people</b>
-          <b>designers</b>
-          <b>side project junkies</b>
-          <b>people who want less</b>
+          <b class="is-visible">beginners&nbsp;</b>
+          <b>the average person</b>
+          <b>learners</b>
+          <!-- <b>mindful people</b> -->
+          <b>balance</b>
+          <!-- <b></b> -->
+          <b>everyone</b>
         </span>
       </h1>
       <button class="button modal-toggle">Join the waitlist</button>
-      <p class="subtitle">Available soon for iPhone <img src="images/logo-apple.svg" alt="apple"/></p>
+      <p class="subtitle">Available soon for iPhone <img src="static/logo-apple.svg" alt="apple"/></p>
     </div>
     <div class="screen-wrapper">
-      <img src="images/screen.png" class="screen" alt="screen"/>
+      <img src="static/mac.png" class="screen" alt="screen"/>
     </div>
-    
+
     </section>
     <section class="section section-providers">
       <h2 class="title">Use with any and all of your email providers</h2>
       <div class="cards">
-        <img src="images/overlay-left.svg" class="overlay-left hide-mobile" alt="overlay"/>
-        <img src="images/overlay-right.svg" class="overlay-right hide-mobile" alt="overlay"/>
+        <img src="static/overlay-left.svg" class="overlay-left hide-mobile" alt="overlay"/>
+        <img src="static/overlay-right.svg" class="overlay-right hide-mobile" alt="overlay"/>
         <div class="slider">
-          <div class="slide"><img src="images/card-icloud.svg" alt="icloud"/></div>
-          <div class="slide"><img src="images/card-gmail.svg" alt="gmail"/></div>
-          <div class="slide"><img src="images/card-outlook.svg" alt="outlook"/></div>
-          <div class="slide"><img src="images/card-yahoo.svg" alt="yahooe"/></div>
-          <div class="slide"><img src="images/card-pop3.svg" alt="pop3"/></div>
-          <div class="slide"><img src="images/card-imap.svg" alt="imap"/></div>
+          <div class="slide"><img src="static/card-icloud.svg" alt="icloud"/></div>
+          <div class="slide"><img src="static/card-gmail.svg" alt="gmail"/></div>
+          <div class="slide"><img src="static/card-outlook.svg" alt="outlook"/></div>
+          <div class="slide"><img src="static/card-yahoo.svg" alt="yahooe"/></div>
+          <div class="slide"><img src="static/card-pop3.svg" alt="pop3"/></div>
+          <div class="slide"><img src="static/card-imap.svg" alt="imap"/></div>
         </div>
       </div>
     </section>
-    
+
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="js/scripts.min.js"></script>
+<script src="static/scripts.min.js"></script>
 <script>
 
   // Close modal on escape key
@@ -184,5 +183,4 @@
 
 </body>
 
-<!-- Mirrored from tinymail.co/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Feb 2020 20:34:47 GMT -->
 </html>
