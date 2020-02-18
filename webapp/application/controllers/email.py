@@ -12,7 +12,7 @@ def email():
         email = request.form.get('email')
         first_name = request.form.get('firstname')
         # url for api
-        API_ENDPOINT = 'http://0.0.0.0:8000/subscribe'
+        API_ENDPOINT = 'http://3.17.150.127:8000/subscribe'
         # params to send to api
         PARAMS = {'email':email, 'firstname': first_name} 
 
