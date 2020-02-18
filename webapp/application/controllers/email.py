@@ -8,7 +8,7 @@ email_route = Blueprint('email', __name__, static_folder='static')
 def email():
     #if statement to add each email and first name to the database
     if request.method == 'POST':
-        email = request.form.get('subscribe')
+        email = request.form.get('email')
         first_name = request.form.get('firstname')
 
         #return the email and first name of each user
