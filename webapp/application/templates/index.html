@@ -22,7 +22,7 @@
       <a href="{{url_for('index.index')}}" class="logo"></a>
       <h2 class="modal-title">Join the DiGift Waitlist</h2>
       <p class="modal-subtitle">We're still in early stages, and we'll let you know once we're ready for more beta testers.</p>
-      <form class='form' name='DiGift' action="{{url_for('email.email')}}" method='POST'><input type='hidden' name='form-name' value='DiGift' />
+      <form class='form' name='DiGift' action="{{url_for('subscribe.email')}}" method='POST'><input type='hidden' name='form-name' value='DiGift' />
         <div class="group">
           <input type="text" id="firstName" name="firstname" placeholder="&nbsp;" autocomplete="off" required>
           <label for="first-name">First name</label>
@@ -55,9 +55,9 @@
       <button class="button modal-toggle">Join the waitlist</button>
       <p class="subtitle">Available soon for iPhone <img src="static/logo-apple.svg" alt="apple"/></p>
     </div>
-    <div class="screen-wrapper">
+    <!-- <div class="screen-wrapper">
       <img src="static/mac.png" class="screen" alt="screen"/>
-    </div>
+    </div> -->
 
     <!-- </section>
     <section class="section section-providers">
