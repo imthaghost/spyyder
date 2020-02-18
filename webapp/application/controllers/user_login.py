@@ -54,5 +54,6 @@ login_route = Blueprint('login', __name__, static_folder='static')
 
 @login_route.route('/login', methods=['GET', 'POST'])
 def login():
+        #take the user to the login page
     if request.method == 'GET':
         return render_template('login.html')
