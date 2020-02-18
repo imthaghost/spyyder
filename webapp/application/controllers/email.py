@@ -1,10 +1,10 @@
 from flask import session, render_template, request, redirect, Blueprint, jsonify
 import json
 
-email_route = Blueprint('subscribe', __name__, static_folder='static')
+email_route = Blueprint('email', __name__, static_folder='static')
 
 
-@email_route.route('/subscribe', methods=['GET', 'POST'])
+@email_route.route('/email', methods=['GET', 'POST'])
 def email():
     #if statement to add each email and first name to the database
     if request.method == 'POST':
