@@ -1,14 +1,14 @@
 from flask import session, render_template, request, redirect, Blueprint, jsonify
 import json
 
-email_route = Blueprint('email', __name__, static_folder='static')
+email_route = Blueprint('subscribe', __name__, static_folder='static')
 
 
-@email_route.route('/email', methods=['GET', 'POST'])
+@email_route.route('/subscribe', methods=['GET', 'POST'])
 def email():
 
     if request.method == 'POST':
-        email = request.form.get('email')
+        email = request.form.get('subscribe')
         first_name = request.form.get('firstname')
         print(email)
         print(first_name)
