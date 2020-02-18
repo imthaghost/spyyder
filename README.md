@@ -26,7 +26,7 @@ Bagger is a powerful machine learning trading application. Our main focus is to 
 <br>
 <p align="center">
 <a href=#>
-  <img src="https://github.com/imthaghost/gochat/blob/master/docs/media/chat.png">
+  <img src="https://github.com/imthaghost/digift/blob/master/docs/media/what.png">
   </a>
 </p>
 <br>
