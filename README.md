@@ -66,7 +66,7 @@ Contributions are welcome! Please see our [Contributing Guide](https://imthaghos
     <td align="center"><a href="https://github.com/SamuelFolledo"><img src="https://avatars3.githubusercontent.com/u/30268383?s=460&v=4" width="75px;" alt="Tyler"/><br /><sub><b>Samuel P. Folledo</b></sub></a><br/></td>
     <td align="center"><a href="https://github.com/tylerholland12"><img src="https://avatars1.githubusercontent.com/u/29693747?s=460&v=4" width="75px;" alt="Tyler"/><br /><sub><b>Tyler Holland</b></sub></a><br/></td>
      <td align="center"><a href="https://github.com/Andre-Williams22"><img src="https://avatars1.githubusercontent.com/u/36347732?s=460&v=4" width="75px;" alt="Tyler"/><br /><sub><b>Andre Williams</b></sub></a><br/></td>
-     <td align="center"><a href="https://github.com/tempor1s"><img src="https://avatars1.githubusercontent.com/u/36347732?s=460&v=4" width="75px;" alt="Ben"/><br /><sub><b>Ben Lafferty></sub></a><br/></td>
+     <td align="center"><a href="https://github.com/tempor1s"><img src="https://avatars3.githubusercontent.com/u/29741401?s=460&v=4" width="75px;" alt="Ben"/><br /><sub><b>Ben Lafferty</sub></a><br/></td>
     </tr>  
 </table>
 
