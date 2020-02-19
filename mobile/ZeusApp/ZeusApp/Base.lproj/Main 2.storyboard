@@ -257,40 +257,25 @@
                                 <constraints>
                                     <constraint firstItem="f4o-eP-ESB" firstAttribute="leading" secondItem="eB4-Hd-Lpg" secondAttribute="leading" id="HGg-eI-yi2"/>
                                     <constraint firstItem="f4o-eP-ESB" firstAttribute="width" secondItem="WmN-fE-cPS" secondAttribute="width" id="flo-TA-J2v"/>
-                                    <constraint firstItem="f4o-eP-ESB" firstAttribute="bottom" secondItem="eB4-Hd-Lpg" secondAttribute="bottom" constant="-90" id="o9g-FA-2xc"/>
+                                    <constraint firstItem="f4o-eP-ESB" firstAttribute="bottom" secondItem="eB4-Hd-Lpg" secondAttribute="bottom" id="o9g-FA-2xc"/>
                                     <constraint firstItem="f4o-eP-ESB" firstAttribute="trailing" secondItem="eB4-Hd-Lpg" secondAttribute="trailing" id="rmp-uk-9em"/>
                                     <constraint firstItem="f4o-eP-ESB" firstAttribute="top" secondItem="eB4-Hd-Lpg" secondAttribute="top" id="vjT-Wg-bxy"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="eB4-Hd-Lpg"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="WmN-fE-cPS"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwh-t2-rzV">
-                                <rect key="frame" x="37.5" y="558" width="300" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="h6p-Zq-1Ec"/>
-                                </constraints>
-                                <state key="normal" title="Follow"/>
-                                <connections>
-                                    <action selector="followButtonTapped:" destination="GqM-aS-6aZ" eventType="touchUpInside" id="lhg-91-Wkb"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="qUm-f1-2Vd" firstAttribute="trailing" secondItem="yIP-hj-2vN" secondAttribute="trailing" id="6sg-Iz-8FJ"/>
                             <constraint firstItem="yIP-hj-2vN" firstAttribute="top" secondItem="qUm-f1-2Vd" secondAttribute="top" id="MQo-6E-rPF"/>
-                            <constraint firstItem="cwh-t2-rzV" firstAttribute="bottom" secondItem="yIP-hj-2vN" secondAttribute="bottom" constant="-10" id="SNu-pJ-CEN"/>
-                            <constraint firstItem="cwh-t2-rzV" firstAttribute="bottom" secondItem="qUm-f1-2Vd" secondAttribute="bottom" constant="-10" id="WmH-VQ-7FK"/>
+                            <constraint firstItem="qUm-f1-2Vd" firstAttribute="bottom" secondItem="yIP-hj-2vN" secondAttribute="bottom" id="SNu-pJ-CEN"/>
                             <constraint firstItem="yIP-hj-2vN" firstAttribute="leading" secondItem="qUm-f1-2Vd" secondAttribute="leading" id="YoQ-fD-mc2"/>
-                            <constraint firstItem="cwh-t2-rzV" firstAttribute="centerX" secondItem="qUm-f1-2Vd" secondAttribute="centerX" id="iLa-GA-g6g"/>
-                            <constraint firstItem="cwh-t2-rzV" firstAttribute="width" secondItem="qUm-f1-2Vd" secondAttribute="width" multiplier="0.8" id="uxx-uo-PEA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qUm-f1-2Vd"/>
                     </view>
                     <navigationItem key="navigationItem" id="DA7-21-Sl5"/>
                     <connections>
-                        <outlet property="followButton" destination="cwh-t2-rzV" id="Ziz-hF-HSe"/>
                         <outlet property="stockView" destination="Iai-BF-xp4" id="6gc-rc-RV2"/>
                     </connections>
                 </viewController>
@@ -305,28 +290,10 @@
                     <view key="view" contentMode="scaleToFill" id="reh-VU-Zam">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eC2-1B-nZO">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="eC2-1B-nZO" firstAttribute="leading" secondItem="zEG-z3-hru" secondAttribute="leading" id="5lP-s1-XuD"/>
-                            <constraint firstItem="eC2-1B-nZO" firstAttribute="top" secondItem="zEG-z3-hru" secondAttribute="top" id="DSa-85-2YV"/>
-                            <constraint firstItem="zEG-z3-hru" firstAttribute="trailing" secondItem="eC2-1B-nZO" secondAttribute="trailing" id="olH-eX-W8y"/>
-                            <constraint firstItem="zEG-z3-hru" firstAttribute="bottom" secondItem="eC2-1B-nZO" secondAttribute="bottom" id="wBZ-fx-LLl"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zEG-z3-hru"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hEg-5P-acK">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="u99-If-90d"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="settingsButton" destination="u99-If-90d" id="K8t-7O-PBX"/>
-                        <outlet property="table" destination="eC2-1B-nZO" id="Z6s-hs-afN"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="hEg-5P-acK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wI8-w7-uKq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -364,10 +331,10 @@
             </objects>
             <point key="canvasLocation" x="1985" y="135"/>
         </scene>
-        <!--Main Tab Bar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="fub-bt-ze0">
             <objects>
-                <tabBarController id="8WF-Cf-18M" customClass="MainTabBarController" customModule="ZeusApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="8WF-Cf-18M" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fb9-Ab-rXj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -403,11 +370,11 @@
             </objects>
             <point key="canvasLocation" x="1046" y="-672"/>
         </scene>
-        <!--Suggestions-->
+        <!--Recommendations-->
         <scene sceneID="joQ-zY-dA2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XsL-1K-RQp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Suggestions" image="timer" catalog="system" id="JoX-jw-3A5"/>
+                    <tabBarItem key="tabBarItem" title="Recommendations" image="timer" catalog="system" id="JoX-jw-3A5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0nB-Ol-zMm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

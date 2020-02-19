@@ -14,7 +14,7 @@ class StockDetailsVC: UIViewController {
     let graphView: UIView = {
         let view: UIView = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = SettingsService.blackColor
+        view.backgroundColor = .black
         return view
     }()
     var descriptionView: StockDescriptionView!
@@ -22,7 +22,6 @@ class StockDetailsVC: UIViewController {
     
 //MARK: IBOutlets
     @IBOutlet weak var stockView: UIView!
-    @IBOutlet weak var followButton: UIButton!
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
@@ -33,18 +32,6 @@ class StockDetailsVC: UIViewController {
 //MARK: Private Methods
     fileprivate func setupViews() {
         self.title = stock.name
-        self.navigationController!.navigationBar.isTranslucent = false
-        setupStockView()
-        setupFollowButton()
-    }
-    
-    fileprivate func setupFollowButton() {
-        followButton.setTitle("Follow", for: .normal)
-//        followButton.setfo
-        followButton.isMainButton()
-    }
-    
-    fileprivate func setupStockView() {
         stockView.backgroundColor = kMAINCOLOR
         stockView.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(flipStockViewTap(_:)))
@@ -55,16 +42,18 @@ class StockDetailsVC: UIViewController {
         NSLayoutConstraint.activate(
             descriptionView.pinToEdges(view: self.stockView) //pin to edges of stockView
         )
+        
         stockView.addSubview(graphView)
         NSLayoutConstraint.activate(
             graphView.pinToEdges(view: self.stockView)
         )
         descriptionView.isHidden = false
+        
     }
     
 //MARK: IBActions
-    @IBAction func followButtonTapped(_ sender: UIButton) {
-        print("Add to Follow")
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 //MARK: Helpers

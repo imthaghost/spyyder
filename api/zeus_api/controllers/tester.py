@@ -1,7 +1,7 @@
 """Authentication route"""
 
 from zeus_api.models.user import User
-from zeus_api.controllers.auth import token_required
+from zeus_api.utils.auth import token_required
 from zeus_api.models.company import Company
 from flask_restful import Resource
 from random import randint
