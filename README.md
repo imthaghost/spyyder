@@ -1,4 +1,3 @@
-
 <h1 align="center">Welcome to Spyyder</h1>
 <p align="center">
   <!-- <a href="https://github.com/adamfaliq42/jivesearch/edit/master/README.md">
@@ -23,6 +22,9 @@ Spyyder is a powerful machine learning trading application. Our main focus is to
   
   <a href="https://github.com/imthaghost/gitmoji-changelog">
     <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg"alt="gitmoji-changelog">
+  </a>
+  <a href="https://goreportcard.com/badge/github.com/imthaghost/spyyder">
+    <img src="https://goreportcard.com/badge/github.com/imthaghost/spyyder"alt="gitmoji-changelog">
   </a>
 </p>
 <br>
