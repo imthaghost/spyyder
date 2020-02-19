@@ -1,3 +1,5 @@
+
+<h1 align="center">Welcome to Spyyder</h1>
 <p align="center">
   <!-- <a href="https://github.com/adamfaliq42/jivesearch/edit/master/README.md">
     <img alt="jive-search logo" src="frontend/static/icons/logo.png"> 
@@ -7,7 +9,7 @@
 <br>
 
 <p align="center">
-Bagger is a powerful machine learning trading application. Our main focus is to have an algorithm that gives information with concise and coherent explinations. We aim to deliever information so well that even a 4 year old can understand why they should give money to a particular company. Our goal is to make each individual user feel empowered by their decisons. Leave the big words and scary terms to the professionals we make investing easier for everyone!
+Spyyder is a powerful machine learning trading application. Our main focus is to have an algorithm that gives information with concise and coherent explinations. We aim to deliever information so well that even a 4 year old can understand why they should give money to a particular company. Our goal is to make each individual user feel empowered by their decisons. Leave the big words and scary terms to the professionals we make investing easier for everyone!
 </p>
 
 <br>
@@ -15,7 +17,7 @@ Bagger is a powerful machine learning trading application. Our main focus is to 
 <p align="center">
 <a href=#>
 
-  <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/imthaghost/digift?style=flat-square">
+  <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/imthaghost/spyyder?style=flat-square">
 
   </a> 
   
@@ -26,7 +28,7 @@ Bagger is a powerful machine learning trading application. Our main focus is to 
 <br>
 <p align="center">
 <a href=#>
-  <img src="https://github.com/imthaghost/digift/blob/master/docs/media/what.png">
+  <img src="https://github.com/imthaghost/spyyder/blob/master/docs/media/what.png">
   </a>
 </p>
 <br>
