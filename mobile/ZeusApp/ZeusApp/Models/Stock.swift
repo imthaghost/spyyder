@@ -13,11 +13,13 @@ class Stock {
     var shortName: String
     var price: String
     var imageUrl: String
+    var rank: Int
     
-    init(_name: String, _shortName: String, _price: String, _imageUrl: String) {
+    init(_name: String, _shortName: String, _price: String, _imageUrl: String, _rank: Int = 0) {
         self.name = _name
         self.shortName = _shortName
         self.price = _price
         self.imageUrl = _imageUrl
+        self.rank = _rank
     }
 }
