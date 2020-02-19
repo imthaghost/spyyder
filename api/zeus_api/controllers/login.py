@@ -31,7 +31,7 @@ class authenticate(Resource):
             # create unique token when user is verified
             # todo make expiration time reasonable
             token = jwt.encode({'uuid': verify_user.get('uuid'), 'exp': datetime.datetime.utcnow(
-            ) + datetime.timedelta(minutes=4)}, os.getenv('secret_key'))
+            ) + datetime.timedelta(seconds=9327483652)}, os.getenv('secret_key'))
             # send the token back
             return jsonify({'token': token.decode('UTF-8')})
         else:
