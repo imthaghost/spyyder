@@ -13,7 +13,7 @@ def token_required(f):
     @wraps(f)
     def wrapper(*args, **kwargs):
         # {'token' : hfwe86732tv2hjr4h827ybuf}
-        token = request.get_json().get('token')
+        token = request.headers.get('token')
         if not token:
             return jsonify({'message': 'token is missing'})
         try:

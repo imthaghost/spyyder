@@ -5,7 +5,7 @@ import zeus_api
 import json
 
 # local python modules
-from zeus_api.controllers.auth import token_required
+from zeus_api.utils.auth import token_required
 
 
 class User_details(Resource):
