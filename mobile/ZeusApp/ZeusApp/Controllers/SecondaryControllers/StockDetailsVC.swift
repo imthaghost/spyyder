@@ -21,8 +21,32 @@ class StockDetailsVC: UIViewController {
     var isDescriptionView: Bool = false
     
 //MARK: IBOutlets
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var pricePercentLabel: UILabel!
+    @IBOutlet weak var predictedLabel: UILabel!
+    @IBOutlet weak var predictedPercentLabel: UILabel!
     @IBOutlet weak var stockView: UIView!
     @IBOutlet weak var followButton: UIButton!
+    
+    
+    
+    @IBOutlet weak var dayButton: UIButton!
+    @IBOutlet weak var weekButton: UIButton!
+    @IBOutlet weak var monthButton: UIButton!
+    @IBOutlet weak var month3Button: UIButton!
+    @IBOutlet weak var yearButton: UIButton!
+    @IBOutlet weak var year5Button: UIButton!
+    @IBOutlet weak var allButton: UIButton!
+    @IBOutlet weak var decisionStackView: UIStackView!
+    @IBOutlet weak var decisionLabel: UILabel!
+    
+    @IBOutlet weak var volumeLabel: UILabel!
+    
+    @IBOutlet weak var ceoLabel: UILabel!
+    
+    @IBOutlet weak var headquartersLabel: UILabel!
+    
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
