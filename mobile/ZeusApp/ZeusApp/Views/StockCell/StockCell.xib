@@ -20,7 +20,7 @@
                         <rect key="frame" x="10" y="5" width="299" height="90"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bkF-xw-ZCC" userLabel="main Stack View">
-                                <rect key="frame" x="10" y="5" width="279" height="80"/>
+                                <rect key="frame" x="5" y="5" width="279" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKJ-KN-JTB">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="80"/>
@@ -31,7 +31,7 @@
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hks-1x-WFg" userLabel="labels Stack View">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hks-1x-WFg" userLabel="name Stack View">
                                         <rect key="frame" x="55" y="0.0" width="152.5" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stockName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5o-ll-4r4">
@@ -57,7 +57,7 @@
                                             <constraint firstItem="B5o-ll-4r4" firstAttribute="height" secondItem="hks-1x-WFg" secondAttribute="height" multiplier="0.5" id="y5M-cO-RF4"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0BN-7b-fcK">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0BN-7b-fcK" userLabel="price Stack View">
                                         <rect key="frame" x="217.5" y="0.0" width="61.5" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1900.32" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0X-69-Vy6">
@@ -81,8 +81,8 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="bkF-xw-ZCC" secondAttribute="bottom" constant="5" id="CQc-Sc-psj"/>
                             <constraint firstItem="bkF-xw-ZCC" firstAttribute="top" secondItem="7aX-2C-ybJ" secondAttribute="top" constant="5" id="E2k-sO-3Ew"/>
-                            <constraint firstItem="bkF-xw-ZCC" firstAttribute="leading" secondItem="7aX-2C-ybJ" secondAttribute="leading" constant="10" id="KN6-MS-XdS"/>
-                            <constraint firstAttribute="trailing" secondItem="bkF-xw-ZCC" secondAttribute="trailing" constant="10" id="Rft-IE-v2Z"/>
+                            <constraint firstItem="bkF-xw-ZCC" firstAttribute="leading" secondItem="7aX-2C-ybJ" secondAttribute="leading" constant="5" id="KN6-MS-XdS"/>
+                            <constraint firstAttribute="trailing" secondItem="bkF-xw-ZCC" secondAttribute="trailing" constant="15" id="Rft-IE-v2Z"/>
                         </constraints>
                     </view>
                 </subviews>
