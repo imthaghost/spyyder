@@ -90,6 +90,8 @@ class StockDetailsVC: UIViewController {
     @IBAction func followButtonTapped(_ sender: UIButton) {
         print("Add to Follow")
     }
+    @IBAction func dateButtonTap(_ sender: UIButton) {
+    }
     
 //MARK: Helpers
     @objc func flipStockViewTap(_ gesture: UITapGestureRecognizer) { //dismiss fields

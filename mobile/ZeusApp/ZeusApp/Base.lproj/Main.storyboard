@@ -51,7 +51,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="f4o-eP-ESB" userLabel="main Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="620.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="595"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xa9-X0-oxo" userLabel="top Stack View">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="440"/>
@@ -134,30 +134,51 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCh-An-QZx">
                                                                         <rect key="frame" x="0.0" y="0.0" width="39.5" height="32"/>
                                                                         <state key="normal" title="1D"/>
+                                                                        <connections>
+                                                                            <action selector="dateButtonTap:" destination="GqM-aS-6aZ" eventType="touchUpInside" id="BgV-5o-TDN"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55l-jQ-RWY">
                                                                         <rect key="frame" x="49.5" y="0.0" width="39.5" height="32"/>
                                                                         <state key="normal" title="1W"/>
+                                                                        <connections>
+                                                                            <action selector="dateButtonTap:" destination="GqM-aS-6aZ" eventType="touchUpInside" id="tA5-MO-0Tu"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvS-RT-JCj">
                                                                         <rect key="frame" x="99" y="0.0" width="39.5" height="32"/>
                                                                         <state key="normal" title="1M"/>
+                                                                        <connections>
+                                                                            <action selector="dateButtonTap:" destination="GqM-aS-6aZ" eventType="touchUpInside" id="0BK-mI-2xT"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jew-NR-K43">
                                                                         <rect key="frame" x="148.5" y="0.0" width="40" height="32"/>
                                                                         <state key="normal" title="3M"/>
+                                                                        <connections>
+                                                                            <action selector="dateButtonTap:" destination="GqM-aS-6aZ" eventType="touchUpInside" id="xOc-WF-C7e"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vd9-xq-xW5">
                                                                         <rect key="frame" x="198.5" y="0.0" width="39.5" height="32"/>
                                                                         <state key="normal" title="1Y"/>
+                                                                        <connections>
+                                                                            <action selector="dateButtonTap:" destination="GqM-aS-6aZ" eventType="touchUpInside" id="Wbh-EK-4kB"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2Q-wH-LXz">
                                                                         <rect key="frame" x="248" y="0.0" width="39.5" height="32"/>
                                                                         <state key="normal" title="5Y"/>
+                                                                        <connections>
+                                                                            <action selector="dateButtonTap:" destination="GqM-aS-6aZ" eventType="touchUpInside" id="TDp-co-x3A"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPd-bY-spY">
                                                                         <rect key="frame" x="297.5" y="0.0" width="40" height="32"/>
                                                                         <state key="normal" title="ALL"/>
+                                                                        <connections>
+                                                                            <action selector="dateButtonTap:" destination="GqM-aS-6aZ" eventType="touchUpInside" id="gF6-I2-UJR"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -174,7 +195,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rb4-cf-fMH" userLabel="why Stack View">
-                                                <rect key="frame" x="9.5" y="450" width="356" height="49.5"/>
+                                                <rect key="frame" x="9.5" y="450" width="356" height="24"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DECISION LABEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea9-nK-Dsv">
                                                         <rect key="frame" x="0.0" y="0.0" width="356" height="24"/>
@@ -182,20 +203,13 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Because we the shitttt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7E-zo-ejp">
-                                                        <rect key="frame" x="0.0" y="29" width="356" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="ea9-nK-Dsv" firstAttribute="width" secondItem="rb4-cf-fMH" secondAttribute="width" id="8uh-I9-IIB"/>
-                                                    <constraint firstItem="A7E-zo-ejp" firstAttribute="width" secondItem="ea9-nK-Dsv" secondAttribute="width" id="A9O-9c-qpe"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RvQ-RB-g36" userLabel="details Stack View">
-                                                <rect key="frame" x="9.5" y="509.5" width="356" height="111"/>
+                                                <rect key="frame" x="9.5" y="484" width="356" height="111"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DETAILS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1IK-Qm-aI5">
                                                         <rect key="frame" x="0.0" y="0.0" width="356" height="24"/>
