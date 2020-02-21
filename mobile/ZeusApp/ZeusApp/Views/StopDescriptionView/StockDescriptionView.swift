@@ -53,6 +53,5 @@ class StockDescriptionView: UIView {
         gradientLayer.colors = [UIColor.white.cgColor, kMAINCOLOR.cgColor] //add colors, first one will be at the top
         gradientLayer.locations = [0.5, 1]
         self.contentView.layer.insertSublayer(gradientLayer, at: 0)
-        
     }
 }

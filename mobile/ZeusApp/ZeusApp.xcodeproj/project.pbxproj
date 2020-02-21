@@ -34,6 +34,9 @@
 		3344298623FB23F200F0E345 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3344298523FB23F200F0E345 /* SettingsCell.swift */; };
 		334599F123F7C3D3002C13D5 /* UITextField+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334599F023F7C3D3002C13D5 /* UITextField+extensions.swift */; };
 		3385A04023FDBE8400879E19 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3385A03F23FDBE8400879E19 /* SettingsService.swift */; };
+		3385A04B23FE741600879E19 /* DecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3385A04A23FE741600879E19 /* DecisionView.swift */; };
+		3385A04D23FE745C00879E19 /* DecisionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3385A04C23FE745C00879E19 /* DecisionView.xib */; };
+		3385A05223FF0B8800879E19 /* TransitioningObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3385A05123FF0B8800879E19 /* TransitioningObject.swift */; };
 		339D771123F48EE300C85169 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339D771023F48EE300C85169 /* User.swift */; };
 		33A8BFC423ECA01B00056A0F /* UINavigationController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8BFC323ECA01B00056A0F /* UINavigationController+extensions.swift */; };
 		33CA31A423E608A7009AA3DF /* StockCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CA31A323E608A7009AA3DF /* StockCellView.xib */; };
@@ -76,6 +79,9 @@
 		3344298523FB23F200F0E345 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		334599F023F7C3D3002C13D5 /* UITextField+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+extensions.swift"; sourceTree = "<group>"; };
 		3385A03F23FDBE8400879E19 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
+		3385A04A23FE741600879E19 /* DecisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionView.swift; sourceTree = "<group>"; };
+		3385A04C23FE745C00879E19 /* DecisionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DecisionView.xib; sourceTree = "<group>"; };
+		3385A05123FF0B8800879E19 /* TransitioningObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitioningObject.swift; sourceTree = "<group>"; };
 		339D771023F48EE300C85169 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		33A8BFC323ECA01B00056A0F /* UINavigationController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+extensions.swift"; sourceTree = "<group>"; };
 		33CA31A323E608A7009AA3DF /* StockCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockCellView.xib; sourceTree = "<group>"; };
@@ -161,8 +167,9 @@
 				3344298523FB23F200F0E345 /* SettingsCell.swift */,
 				33CA31B023E64471009AA3DF /* StockCell */,
 				33CA31A723E6098B009AA3DF /* StockCellView-Dropdown */,
-				33CA31B923E8AC2D009AA3DF /* StockDescriptionView.swift */,
-				33CA31BB23E8AC48009AA3DF /* StockDescriptionView.xib */,
+				3385A04923FE73EB00879E19 /* StopDescriptionView */,
+				3385A04A23FE741600879E19 /* DecisionView.swift */,
+				3385A04C23FE745C00879E19 /* DecisionView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -262,6 +269,15 @@
 			path = SecondaryControllers;
 			sourceTree = "<group>";
 		};
+		3385A04923FE73EB00879E19 /* StopDescriptionView */ = {
+			isa = PBXGroup;
+			children = (
+				33CA31B923E8AC2D009AA3DF /* StockDescriptionView.swift */,
+				33CA31BB23E8AC48009AA3DF /* StockDescriptionView.xib */,
+			);
+			path = StopDescriptionView;
+			sourceTree = "<group>";
+		};
 		33CA31A723E6098B009AA3DF /* StockCellView-Dropdown */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				3344297623FB228700F0E345 /* MainTabBarController.swift */,
+				3385A05123FF0B8800879E19 /* TransitioningObject.swift */,
 			);
 			path = TabBarController;
 			sourceTree = "<group>";
@@ -348,6 +365,7 @@
 			files = (
 				3309912423E213DC00880CC5 /* LaunchScreen.storyboard in Resources */,
 				33CA31A423E608A7009AA3DF /* StockCellView.xib in Resources */,
+				3385A04D23FE745C00879E19 /* DecisionView.xib in Resources */,
 				33CA31AF23E6444D009AA3DF /* StockCell.xib in Resources */,
 				3309912123E213DC00880CC5 /* Assets.xcassets in Resources */,
 				33CA31BC23E8AC48009AA3DF /* StockDescriptionView.xib in Resources */,
@@ -375,6 +393,7 @@
 				3344297723FB228700F0E345 /* MainTabBarController.swift in Sources */,
 				332C9B2E23E3CA51002BB57A /* Constants.swift in Sources */,
 				334044DB23F1F4B800CEA9A9 /* RegisterVC.swift in Sources */,
+				3385A04B23FE741600879E19 /* DecisionView.swift in Sources */,
 				334044DD23F1F69A00CEA9A9 /* UnderlinedTextField.swift in Sources */,
 				334044DF23F1F6B800CEA9A9 /* UnderlinedTextField+extensions.swift in Sources */,
 				3344298123FB22CC00F0E345 /* SettingsVC.swift in Sources */,
@@ -382,6 +401,7 @@
 				33CA31AE23E6444D009AA3DF /* StockCell.swift in Sources */,
 				3344298323FB22CC00F0E345 /* ProfileVC.swift in Sources */,
 				3344298623FB23F200F0E345 /* SettingsCell.swift in Sources */,
+				3385A05223FF0B8800879E19 /* TransitioningObject.swift in Sources */,
 				3344298223FB22CC00F0E345 /* TrendingVC.swift in Sources */,
 				33CA31A623E608B6009AA3DF /* StockCellView.swift in Sources */,
 				3309911A23E213DA00880CC5 /* SceneDelegate.swift in Sources */,
