@@ -25,48 +25,23 @@ class MainTabBarController: UITabBarController {
     
     func setupTabBar() {
         self.delegate = self
-//        self.tabBar.isTranslucent = false
     }
 }
 
-extension MainTabBarController: UITabBarControllerDelegate {    
-//    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool { //add a sliding animation whenever switching tabs
-//        if let fromView = tabBarController.selectedViewController?.view,
-//            let toView = viewController.view, fromView != toView,
-//            let controllerIndex = self.viewControllers?.firstIndex(of: viewController) {
-//
-//            let viewSize = fromView.frame
-//            let scrollRight = controllerIndex > tabBarController.selectedIndex
-//
-//            if fromView.superview?.subviews.contains(toView) == true { // Avoid UI issues when switching tabs fast
-//                return false
-//            }
-//
-//            fromView.superview?.addSubview(toView)
-//
-//            let screenWidth = UIScreen.main.bounds.size.width
-//            toView.frame = CGRect(x: (scrollRight ? screenWidth : -screenWidth), y: viewSize.origin.y, width: screenWidth, height: viewSize.size.height)
-//
-//            UIView.animate(withDuration: 0.25, delay: TimeInterval(0.0), options: [.curveEaseOut, .preferredFramesPerSecond60], animations: {
-//                fromView.frame = CGRect(x: (scrollRight ? -screenWidth : screenWidth), y: viewSize.origin.y, width: screenWidth, height: viewSize.size.height)
-//                toView.frame = CGRect(x: 0, y: viewSize.origin.y, width: screenWidth, height: viewSize.size.height)
-//            }, completion: { finished in
-//                if finished {
-//                    fromView.removeFromSuperview()
-//                    tabBarController.selectedIndex = controllerIndex
-//                }
-//            })
-//            return true
-//        }
-//        return false
-//    }
-    
-    ///Adds a sliding animation whenever switching between VC on the tab
+extension MainTabBarController: UITabBarControllerDelegate {
+///Adds a left or right sliding VC animation on tabbar tap
     func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return TransitioningObject()
+        var fromIndex = 0
+        for vc in viewControllers! { //get the index of current index before transitioning
+            if vc == fromVC {
+                break
+            }
+            fromIndex += 1
+        }
+        return TransitioningObject(tabBarController: tabBarController, fromIndex: fromIndex)
     }
     
-    /// didSelect that can trigger animation
+/// didSelect that can bar item trigger animation
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         // find index if the selected tab bar item, then find the corresponding view and get its image, the view position is offset by 1 because the first item is the background (at least in this case)
         guard let idx = tabBar.items?.firstIndex(of: item), tabBar.subviews.count > idx + 1, let imageView = tabBar.subviews[idx + 1].subviews.compactMap ({ $0 as? UIImageView }).first else {
