@@ -63,11 +63,28 @@
                                                                 <rect key="frame" x="10" y="5" width="355" height="90"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stockName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwJ-ew-g8L">
-                                                                        <rect key="frame" x="99.5" y="0.0" width="156.5" height="44"/>
+                                                                        <rect key="frame" x="99.5" y="0.0" width="156.5" height="27"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4z3-jc-dNP" userLabel="stack View">
+                                                                        <rect key="frame" x="0.0" y="27" width="355" height="17"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjT-wL-RDi">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="167.5" height="17"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Predicted Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oS5-yD-Y1V">
+                                                                                <rect key="frame" x="187.5" y="0.0" width="167.5" height="17"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Mb7-3e-yIH" userLabel="price Stack View">
                                                                         <rect key="frame" x="0.0" y="44" width="355" height="29"/>
                                                                         <subviews>
@@ -106,6 +123,7 @@
                                                                 <constraints>
                                                                     <constraint firstItem="Mb7-3e-yIH" firstAttribute="width" secondItem="vX4-i7-pj7" secondAttribute="width" id="HwF-hF-k0q"/>
                                                                     <constraint firstItem="KMS-Nw-Zl4" firstAttribute="width" secondItem="Mb7-3e-yIH" secondAttribute="width" id="aKu-li-53s"/>
+                                                                    <constraint firstItem="4z3-jc-dNP" firstAttribute="width" secondItem="Mb7-3e-yIH" secondAttribute="width" id="liY-0a-ezg"/>
                                                                 </constraints>
                                                             </stackView>
                                                         </subviews>
