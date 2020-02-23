@@ -136,7 +136,7 @@
                                                             <constraint firstAttribute="trailing" secondItem="vX4-i7-pj7" secondAttribute="trailing" constant="10" id="uDR-Bi-G7w"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iai-BF-xp4" userLabel="graph View">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iai-BF-xp4" userLabel="graph View" customClass="LineChartView" customModule="Charts">
                                                         <rect key="frame" x="0.0" y="100" width="375" height="300"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -344,6 +344,7 @@
                         <outlet property="decisionLabel" destination="ea9-nK-Dsv" id="Td5-gY-caX"/>
                         <outlet property="decisionStackView" destination="rb4-cf-fMH" id="Gf8-4u-jet"/>
                         <outlet property="followButton" destination="cwh-t2-rzV" id="Ziz-hF-HSe"/>
+                        <outlet property="graphView" destination="Iai-BF-xp4" id="81P-Zb-zio"/>
                         <outlet property="headquartersLabel" destination="aC1-2L-Buc" id="lh6-8w-XPV"/>
                         <outlet property="month3Button" destination="Jew-NR-K43" id="i1n-9y-7gH"/>
                         <outlet property="monthButton" destination="tvS-RT-JCj" id="ibq-tz-VmL"/>
@@ -352,7 +353,6 @@
                         <outlet property="predictedPercentLabel" destination="ec1-fF-MoR" id="v0E-PU-Y9z"/>
                         <outlet property="priceLabel" destination="ALU-f0-Jgt" id="6ue-nw-jkD"/>
                         <outlet property="pricePercentLabel" destination="1lX-la-Xup" id="EpW-l0-XwP"/>
-                        <outlet property="stockView" destination="Iai-BF-xp4" id="6gc-rc-RV2"/>
                         <outlet property="volumeLabel" destination="7ub-Tc-E0e" id="EZX-mI-4ed"/>
                         <outlet property="weekButton" destination="55l-jQ-RWY" id="gXf-mP-SM7"/>
                         <outlet property="year5Button" destination="E2Q-wH-LXz" id="9La-j1-alB"/>
