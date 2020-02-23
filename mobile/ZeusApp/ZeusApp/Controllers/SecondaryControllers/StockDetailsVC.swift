@@ -17,9 +17,12 @@ struct WhyModel {
 class StockDetailsVC: UIViewController {
 //MARK: Properties
     var stock: Stock!
-    let dummyWhyData: [WhyModel] = [WhyModel(title: "Because Trump sold it", description: "sdjsfj sljfksjkf sjfklsjf "), WhyModel(title: "Release an update", description: "Update your app and invest ment"), WhyModel(title: "Because Trump sold it", description: "sdjsfj sljfksjkf sjfklsjf "), WhyModel(title: "Release an update", description: "Update your app and invest ment")]
-    var descriptionView: StockDescriptionView!
-    var isDescriptionView: Bool = false
+    lazy var dummyWhyData: [WhyModel] = [
+        WhyModel(title: "Because Trump sold all his \(stock.name) shares", description: "sdjsfj sljfksjkf sjfklsjf "),
+        WhyModel(title: "\(stock.name) release an update", description: "Update your app and invest ment"),
+        WhyModel(title: "Tesla increase may affect \(stock.name) prices", description: "sdjsfj sljfksjkf sjfklsjf "),
+        WhyModel(title: "\(stock.name) raise $5 million on 2nd round", description: "Update your app and invest ment")
+    ]
     
 //MARK: IBOutlets
     @IBOutlet weak var nameLabel: UILabel!
@@ -51,12 +54,12 @@ class StockDetailsVC: UIViewController {
 //MARK: Private Methods
     fileprivate func setupViews() {
 //        self.title = stock.name
-        nameLabel.text = stock.name
         self.navigationController!.navigationBar.isTranslucent = false
         setupFollowButton()
         setupTopLabels()
-        ceoLabel.text = "Mr. CEO"
         populateWhyStackView()
+        ceoLabel.text = "Mr. CEO"
+        nameLabel.text = stock.name
     }
     
     fileprivate func populateWhyStackView() {
@@ -68,19 +71,14 @@ class StockDetailsVC: UIViewController {
     }
     
     fileprivate func setupTopLabels() {
-        nameLabel.textColor = SettingsService.blackColor
-        nameLabel.font = UIFont.systemFont(ofSize: 32, weight: .bold)
-        priceLabel.textColor = SettingsService.greenColor
-        priceLabel.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+        SettingsService.isXLargeLabel(label: &nameLabel)
+        SettingsService.isMediumLabel(label: &priceLabel, color: SettingsService.greenColor)
+        SettingsService.isSmallLabel(label: &pricePercentLabel, color: SettingsService.greenColor)
+        SettingsService.isMediumLabel(label: &predictedLabel, color: SettingsService.mainColor)
+        SettingsService.isSmallLabel(label: &predictedPercentLabel, color: SettingsService.mainColor)
         priceLabel.text = "$1078.32"
-        pricePercentLabel.textColor = SettingsService.greenColor
-        pricePercentLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         pricePercentLabel.text = "+25%"
-        predictedLabel.textColor = SettingsService.mainColor
-        predictedLabel.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
         predictedLabel.text = "$1203.98"
-        predictedPercentLabel.textColor = SettingsService.mainColor
-        predictedPercentLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         predictedPercentLabel.text = "+34%"
     }
     
