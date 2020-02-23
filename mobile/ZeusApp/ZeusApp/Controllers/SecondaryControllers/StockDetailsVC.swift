@@ -16,52 +16,13 @@ struct WhyModel {
 class StockDetailsVC: UIViewController {
 //MARK: Properties
     var stock: Stock!
+    let dummyWhyData: [WhyModel] = [WhyModel(title: "Because Trump sold it", description: "sdjsfj sljfksjkf sjfklsjf "), WhyModel(title: "Release an update", description: "Update your app and invest ment"), WhyModel(title: "Because Trump sold it", description: "sdjsfj sljfksjkf sjfklsjf "), WhyModel(title: "Release an update", description: "Update your app and invest ment")]
     let graphView: UIView = {
         let view: UIView = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = SettingsService.blackColor
         return view
     }()
-//    let whyBGView : UIView = {
-//            let background = UIView()
-//            background.translatesAutoresizingMaskIntoConstraints = false
-//        background.backgroundColor = .clear
-////        background.backgroundColor = #colorLiteral(red: 0.8186396956, green: 0.7955000997, blue: 1, alpha: 1)
-////            background.layer.cornerRadius = 5
-////            background.layer.masksToBounds = true
-//            return background
-//        }()
-//    lazy var whyTitleLabel: UILabel = {
-//        let label: UILabel = UILabel()
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-//        label.sizeToFit()
-//        label.numberOfLines = 0
-//        label.textColor = .black
-//        label.textAlignment = .left
-////        label.text = "Box"
-//        return label
-//    }()
-//    let whyDescriptionLabel: UILabel = {
-//        let label: UILabel = UILabel()
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-//        label.sizeToFit()
-//        label.numberOfLines = 0
-//        label.textColor = .gray
-//        label.textAlignment = .left
-////        label.text = "Box"
-//        return label
-//    }()
-//    lazy var whyStackView: UIStackView = {
-//        let stackView: UIStackView = UIStackView(frame: .zero)
-//        stackView.translatesAutoresizingMaskIntoConstraints = false
-//        stackView.axis = .vertical
-//        stackView.alignment = .leading
-//        stackView.distribution = .fill
-//        stackView.spacing = 2
-//        return stackView
-//    }()
     var descriptionView: StockDescriptionView!
     var isDescriptionView: Bool = false
     
@@ -94,51 +55,26 @@ class StockDetailsVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
-//        self.title = stock.name
         nameLabel.text = stock.name
         self.navigationController!.navigationBar.isTranslucent = false
         setupStockView()
         setupFollowButton()
         setupTopLabels()
-//        populateWhyStackView()
-        ceoLabel.text = "CEOOO"
+        ceoLabel.text = "Mr. CEO"
+        populateDecisionStack()
     }
     
-//    fileprivate func populateWhyStackView() {
-//        let dummyWhyData: [WhyModel] = [WhyModel(title: "Because Trump sold it", description: "sdjsfj sljfksjkf sjfklsjf "), WhyModel(title: "Release an update", description: "Update your app and invest ment"), WhyModel(title: "Because Trump sold it", description: "sdjsfj sljfksjkf sjfklsjf "), WhyModel(title: "Release an update", description: "Update your app and invest ment")]
-////        decisionStackView.addArrangedSubview(whyStackView) //create stack
-//        for whyData in dummyWhyData { //add to decision stack a view with title and decriptions each news from whyData
-//            let whyView = DecisionView(whyModel: whyData)
-//            decisionStackView.addArrangedSubview(whyView)
-////            whyStackView.addArrangedSubview(whyView)
-//            NSLayoutConstraint.activate([
-//                whyView.widthAnchor.constraint(equalTo: self.decisionStackView.widthAnchor),
-//                whyView.heightAnchor.constraint(equalToConstant: 100
-//                )
-//            ])
-////            let titleLabel = whyTitleLabel
-////            decisionStackView.addArrangedSubview(titleLabel)
-////            titleLabel.text = whyData.title
-////            NSLayoutConstraint.activate([
-////                titleLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-////                titleLabel.heightAnchor.constraint(equalToConstant: 30),
-////                titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 5),
-////                titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
-////                titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
-////            ])
-////            let descriptionLabel = whyDescriptionLabel
-////            decisionStackView.addArrangedSubview(descriptionLabel)
-////            descriptionLabel.text = whyData.description
-////            NSLayoutConstraint.activate([
-////                descriptionLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-////                descriptionLabel.heightAnchor.constraint(equalToConstant: 30),
-////                descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
-////                descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
-////                descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
-////                descriptionLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5),
-////            ])
-//        }
-//    }
+    fileprivate func populateDecisionStack() {
+        decisionStackView.spacing = 10
+        for whyData in dummyWhyData { //add to decision stack a view with title and decriptions each news from whyData'
+            let label = UILabel(frame: .zero)
+//            label.translatesAutoresizingMaskIntoConstraints = false
+//            label.widthAnchor.constraint(equalTo: decisionStackView.widthAnchor, constant: -10).isActive = true
+            label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+            label.text = "• " + whyData.title
+            decisionStackView.addArrangedSubview(label)
+        }
+    }
     
     fileprivate func setupTopLabels() {
         nameLabel.textColor = SettingsService.blackColor
@@ -162,7 +98,7 @@ class StockDetailsVC: UIViewController {
         followButton.isMainButton()
     }
     
-    fileprivate func setupStockView() {
+    fileprivate func setupStockView() { //setup stock view graph
         stockView.backgroundColor = kMAINCOLOR
         stockView.isUserInteractionEnabled = true
         descriptionView = StockDescriptionView(stock: stock)
