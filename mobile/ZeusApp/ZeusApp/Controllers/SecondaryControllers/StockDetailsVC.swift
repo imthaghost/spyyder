@@ -14,8 +14,14 @@ struct WhyModel {
     let description: String
 }
 
+protocol StockDetailProtocol {
+    /* parameters here is what the parent class will receive */
+    func didUpdateStock(stock: Stock)
+}
+
 class StockDetailsVC: UIViewController {
 //MARK: Properties
+    var delegate: StockDetailProtocol!
     var stock: Stock!
     lazy var dummyWhyData: [WhyModel] = [
         WhyModel(title: "Because Trump sold all his \(stock.name) shares", description: "sdjsfj sljfksjkf sjfklsjf "),
@@ -89,6 +95,8 @@ class StockDetailsVC: UIViewController {
     fileprivate func updateFollowButton() {
         let buttonTitle: String = stock.isFollowing ? "Unfollow" : "Follow"
         followButton.setTitle(buttonTitle, for: .normal)
+        guard let delegate = delegate else { return }
+        delegate.didUpdateStock(stock: stock)
     }
     
 //MARK: IBActions
