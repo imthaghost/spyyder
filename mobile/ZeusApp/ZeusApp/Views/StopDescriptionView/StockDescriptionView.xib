@@ -9,11 +9,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StockDescriptionView" customModule="ZeusApp" customModuleProvider="target">
             <connections>
-                <outlet property="ceoLabel" destination="GvL-J1-I7M" id="gXE-pd-ajo"/>
-                <outlet property="contentView" destination="iN0-l3-epB" id="A9Z-Do-pdN"/>
-                <outlet property="foundedLabel" destination="y1s-BW-Ogi" id="0ab-zi-pwo"/>
-                <outlet property="hqLabel" destination="mm9-YD-Pk3" id="r36-XE-x3X"/>
-                <outlet property="sharesLabel" destination="OKG-Cy-8Hr" id="DTP-jM-akd"/>
+                <outlet property="ceoLabel" destination="GvL-J1-I7M" id="nIE-AZ-Z8c"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="62J-gZ-4Nt"/>
+                <outlet property="foundedLabel" destination="y1s-BW-Ogi" id="ftG-F4-Sju"/>
+                <outlet property="hqLabel" destination="mm9-YD-Pk3" id="s9H-wn-JRq"/>
+                <outlet property="sharesLabel" destination="OKG-Cy-8Hr" id="9B0-4c-aID"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

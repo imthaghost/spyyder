@@ -20,9 +20,9 @@ class StockDescriptionView: UIView {
     
     required init(stock: Stock) {
         super.init(frame: .zero)
+        commonInit()
         self.stock = stock
 //        self.ceoLabel.text = stock.shortName
-        commonInit()
     }
     
     override init(frame: CGRect) {

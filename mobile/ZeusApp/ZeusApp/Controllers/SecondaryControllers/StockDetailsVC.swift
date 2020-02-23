@@ -55,22 +55,19 @@ class StockDetailsVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
+//        self.title = stock.name
         nameLabel.text = stock.name
         self.navigationController!.navigationBar.isTranslucent = false
         setupStockView()
         setupFollowButton()
         setupTopLabels()
         ceoLabel.text = "Mr. CEO"
-        populateDecisionStack()
+        populateWhyStackView()
     }
     
-    fileprivate func populateDecisionStack() {
-        decisionStackView.spacing = 10
+    fileprivate func populateWhyStackView() {
         for whyData in dummyWhyData { //add to decision stack a view with title and decriptions each news from whyData'
             let label = UILabel(frame: .zero)
-//            label.translatesAutoresizingMaskIntoConstraints = false
-//            label.widthAnchor.constraint(equalTo: decisionStackView.widthAnchor, constant: -10).isActive = true
-            label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
             label.text = "• " + whyData.title
             decisionStackView.addArrangedSubview(label)
         }
