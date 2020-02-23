@@ -32,11 +32,22 @@ class SettingsService {
         return kGREENCOLOR
     }
     
+    static func isMainTabBar(tabBar: inout UITabBar) {
+//        tabBar.layer.masksToBounds = true
+//        tabBar.layer.cornerRadius = 20
+//        tabBar.barStyle = .black
+        //MARK: Color customization
+        tabBar.backgroundColor = .clear
+        tabBar.backgroundImage = UIImage()
+        tabBar.barTintColor = SettingsService.whiteColor //bar color
+        tabBar.tintColor = kMAINCOLOR //selected tab
+        tabBar.unselectedItemTintColor = .gray
+    }
+    
     static func isXSmallLabel(label: inout UILabel, color: UIColor = SettingsService.blackColor, weight: UIFont.Weight = .thin) {
         label.font = UIFont.systemFont(ofSize: 9, weight: weight)
         label.textColor = color
     }
-    
     static func isSmallLabel(label: inout UILabel, color: UIColor = SettingsService.blackColor, weight: UIFont.Weight = .regular) {
         label.font = UIFont.systemFont(ofSize: 12, weight: weight)
         label.textColor = color
