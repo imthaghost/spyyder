@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28965C5A4DF3DBB0B4D938ED /* Pods_ZeusApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF439251C7442548493D07BF /* Pods_ZeusApp.framework */; };
 		3309911823E213DA00880CC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309911723E213DA00880CC5 /* AppDelegate.swift */; };
 		3309911A23E213DA00880CC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309911923E213DA00880CC5 /* SceneDelegate.swift */; };
 		3309911F23E213DA00880CC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3309911D23E213DA00880CC5 /* Main.storyboard */; };
@@ -92,6 +93,9 @@
 		33CA31B723E8AB56009AA3DF /* UILayoutGuide+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutGuide+extensions.swift"; sourceTree = "<group>"; };
 		33CA31B923E8AC2D009AA3DF /* StockDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDescriptionView.swift; sourceTree = "<group>"; };
 		33CA31BB23E8AC48009AA3DF /* StockDescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockDescriptionView.xib; sourceTree = "<group>"; };
+		B4F256AEDE0F2881E9A8CF95 /* Pods-ZeusApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZeusApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZeusApp/Pods-ZeusApp.release.xcconfig"; sourceTree = "<group>"; };
+		D358281AD3236C67DFA9AAA5 /* Pods-ZeusApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZeusApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZeusApp/Pods-ZeusApp.debug.xcconfig"; sourceTree = "<group>"; };
+		FF439251C7442548493D07BF /* Pods_ZeusApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZeusApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,17 +103,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28965C5A4DF3DBB0B4D938ED /* Pods_ZeusApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05EF12804489082F92851019 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF439251C7442548493D07BF /* Pods_ZeusApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2E4D7EF449DECF22CD68C561 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D358281AD3236C67DFA9AAA5 /* Pods-ZeusApp.debug.xcconfig */,
+				B4F256AEDE0F2881E9A8CF95 /* Pods-ZeusApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3309910B23E213DA00880CC5 = {
 			isa = PBXGroup;
 			children = (
 				3309911623E213DA00880CC5 /* ZeusApp */,
 				3309911523E213DA00880CC5 /* Products */,
+				2E4D7EF449DECF22CD68C561 /* Pods */,
+				05EF12804489082F92851019 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -312,9 +336,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3309912823E213DC00880CC5 /* Build configuration list for PBXNativeTarget "ZeusApp" */;
 			buildPhases = (
+				FBD1ED5BA721759B3AA14657 /* [CP] Check Pods Manifest.lock */,
 				3309911023E213DA00880CC5 /* Sources */,
 				3309911123E213DA00880CC5 /* Frameworks */,
 				3309911223E213DA00880CC5 /* Resources */,
+				502CA25FB91C349AF006863C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -375,6 +401,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		502CA25FB91C349AF006863C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ZeusApp/Pods-ZeusApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZeusApp/Pods-ZeusApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBD1ED5BA721759B3AA14657 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZeusApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3309911023E213DA00880CC5 /* Sources */ = {
@@ -554,6 +619,7 @@
 		};
 		3309912923E213DC00880CC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D358281AD3236C67DFA9AAA5 /* Pods-ZeusApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -572,6 +638,7 @@
 		};
 		3309912A23E213DC00880CC5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4F256AEDE0F2881E9A8CF95 /* Pods-ZeusApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
