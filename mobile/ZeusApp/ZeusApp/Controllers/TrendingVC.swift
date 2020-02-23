@@ -45,7 +45,7 @@ class TrendingVC: UIViewController {
         tabBar.tintColor = kMAINCOLOR //selected tab
         tabBar.unselectedItemTintColor = SettingsService.blackColor
         //MARK: Tab Bar Size Customization
-        let width = self.view.frame.width - 100
+        let width = self.view.frame.width - 40
         var newFrame = tabBar.frame
 //        newFrame.size.height = 100
 //        newFrame.origin.y = view.frame.size.height - 100
