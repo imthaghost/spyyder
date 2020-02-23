@@ -18,12 +18,6 @@ class StockDetailsVC: UIViewController {
 //MARK: Properties
     var stock: Stock!
     let dummyWhyData: [WhyModel] = [WhyModel(title: "Because Trump sold it", description: "sdjsfj sljfksjkf sjfklsjf "), WhyModel(title: "Release an update", description: "Update your app and invest ment"), WhyModel(title: "Because Trump sold it", description: "sdjsfj sljfksjkf sjfklsjf "), WhyModel(title: "Release an update", description: "Update your app and invest ment")]
-//    let graphView: UIView = {
-//        let view: UIView = UIView(frame: .zero)
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = SettingsService.blackColor
-//        return view
-//    }()
     var descriptionView: StockDescriptionView!
     var isDescriptionView: Bool = false
     
@@ -59,7 +53,6 @@ class StockDetailsVC: UIViewController {
 //        self.title = stock.name
         nameLabel.text = stock.name
         self.navigationController!.navigationBar.isTranslucent = false
-//        setupStockView()
         setupFollowButton()
         setupTopLabels()
         ceoLabel.text = "Mr. CEO"
@@ -95,21 +88,6 @@ class StockDetailsVC: UIViewController {
         followButton.setTitle("Follow", for: .normal)
         followButton.isMainButton()
     }
-    
-//    fileprivate func setupStockView() { //setup stock view graph
-//        stockView.backgroundColor = kMAINCOLOR
-//        stockView.isUserInteractionEnabled = true
-//        descriptionView = StockDescriptionView(stock: stock)
-//        stockView.addSubview(descriptionView)
-//        NSLayoutConstraint.activate(
-//            descriptionView.pinToEdges(view: self.stockView) //pin to edges of stockView
-//        )
-//        stockView.addSubview(graphView)
-//        NSLayoutConstraint.activate(
-//            graphView.pinToEdges(view: self.stockView)
-//        )
-//        descriptionView.isHidden = false
-//    }
     
 //MARK: IBActions
     @IBAction func followButtonTapped(_ sender: UIButton) {
