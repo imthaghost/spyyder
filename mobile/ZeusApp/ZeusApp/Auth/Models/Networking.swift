@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Networking.swift
 //  ZeusApp
 //
 //  Created by Macbook Pro 15 on 2/12/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct User: Encodable { //sending
+struct UserAPI: Encodable { //sending
     let email: String
     let password: String
 }
