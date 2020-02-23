@@ -58,8 +58,6 @@ class StockDetailsVC: UIViewController {
         setupFollowButton()
         setupTopLabels()
         populateWhyStackView()
-        ceoLabel.text = "Mr. CEO"
-        nameLabel.text = stock.name
     }
     
     fileprivate func populateWhyStackView() {
@@ -76,6 +74,7 @@ class StockDetailsVC: UIViewController {
         SettingsService.isSmallLabel(label: &pricePercentLabel, color: SettingsService.greenColor)
         SettingsService.isMediumLabel(label: &predictedLabel, color: SettingsService.mainColor)
         SettingsService.isSmallLabel(label: &predictedPercentLabel, color: SettingsService.mainColor)
+        nameLabel.text = stock.name
         priceLabel.text = "$1078.32"
         pricePercentLabel.text = "+25%"
         predictedLabel.text = "$1203.98"
@@ -83,13 +82,19 @@ class StockDetailsVC: UIViewController {
     }
     
     fileprivate func setupFollowButton() {
-        followButton.setTitle("Follow", for: .normal)
         followButton.isMainButton()
+        updateFollowButton()
+    }
+    
+    fileprivate func updateFollowButton() {
+        let buttonTitle: String = stock.isFollowing ? "Unfollow" : "Follow"
+        followButton.setTitle(buttonTitle, for: .normal)
     }
     
 //MARK: IBActions
     @IBAction func followButtonTapped(_ sender: UIButton) {
-        print("Add to Follow")
+        stock.isFollowing = !stock.isFollowing
+        updateFollowButton()
     }
     @IBAction func dateButtonTap(_ sender: UIButton) {
         if sender == dayButton {
