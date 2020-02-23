@@ -36,14 +36,8 @@ class TrendingVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupTabBar() {
-        guard let tabBar = self.tabBarController?.tabBar else { return }
-        tabBar.layer.masksToBounds = true
-        tabBar.layer.cornerRadius = 20
-        tabBar.backgroundColor = .clear
-        tabBar.backgroundImage = UIImage()
-        tabBar.barTintColor = .clear //bar color
-        tabBar.tintColor = kMAINCOLOR //selected tab
-        tabBar.unselectedItemTintColor = SettingsService.blackColor
+        guard var tabBar = self.tabBarController?.tabBar else { return }
+        SettingsService.isMainTabBar(tabBar: &tabBar)
         //MARK: Tab Bar Size Customization
         let width = self.view.frame.width - 40
         var newFrame = tabBar.frame
