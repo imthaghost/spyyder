@@ -20,7 +20,6 @@ let kGREENCOLOR: UIColor = UIColor(hexString: "10c44c", alpha: 1.0)
 let kREDCOLOR: UIColor = UIColor(hexString: "bf2811", alpha: 1.0)
 
 //MARK: Storyboard Idenfitifiers
-let kMAINTABBARCONTROLLERID: String = "mainTabBarController"
 
 //MARK: Storyboard Segues
 let kSEGUETOSTOCKDETAILSVC: String = "toStockDetailVC"
