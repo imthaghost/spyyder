@@ -21,6 +21,15 @@ class MyStocksVC: UIViewController {
         setupViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let user = getCurrentUser() {
+            user.setNeedsToReloadStocks()
+            self.stocks = user.stocks
+            tableView.reloadData()
+        }
+    }
+    
 //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
@@ -37,8 +46,17 @@ class MyStocksVC: UIViewController {
     fileprivate func setupViews() {
         self.title = "My Stocks"
         self.navigationController!.navigationBar.isTranslucent = false
+//        createTestStocks()
         setupTableView()
-        createTestStocks()
+        if let user = getCurrentUser() {
+            user.setNeedsToReloadStocks()
+            self.stocks = user.stocks
+            tableView.reloadData()
+        } else { //if no user...
+            deleteCurrentUser()
+            let vc = UIStoryboard(name: "Auth", bundle: nil).instantiateInitialViewController()!
+            self.navigationController?.present(vc, animated: true, completion: nil)
+        }
     }
     
     fileprivate func setupTableView() {
