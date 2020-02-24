@@ -32,7 +32,7 @@ class User: NSObject {
     }
     
     init(_dictionary: [String: Any]) {
-        self.userId = _dictionary[kTOKEN] as! String
+        self.userId = _dictionary[kUSERID] as! String
         self.firstName = _dictionary[kFIRSTNAME] as? String ?? ""
         self.lastName = _dictionary[kLASTNAME] as? String ?? ""
         if let fullName = _dictionary[kFULLNAME] as? String {

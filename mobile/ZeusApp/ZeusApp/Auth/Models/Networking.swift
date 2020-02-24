@@ -22,8 +22,8 @@ struct Message: Decodable {
 }
 
 //MARK: Network Calls
-func postRequest(url: String, dic: [String: Any], completion: @escaping(_ error: String?, _ user: User?) -> Void) { //user for Registering user
-    if (!JSONSerialization.isValidJSONObject(dic)) {
+func postRequest(url: String, userDic: [String: Any], completion: @escaping(_ error: String?, _ user: User?) -> Void) { //user for Registering user
+    if (!JSONSerialization.isValidJSONObject(userDic)) {
         completion("Invalid email and password data", nil)
     }
     let session = URLSession.shared
@@ -32,7 +32,7 @@ func postRequest(url: String, dic: [String: Any], completion: @escaping(_ error:
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     request.addValue("application/json", forHTTPHeaderField: "Accept")
     do {
-        request.httpBody = try JSONSerialization.data(withJSONObject: dic, options: .prettyPrinted)
+        request.httpBody = try JSONSerialization.data(withJSONObject: userDic, options: .prettyPrinted)
         let task = session.dataTask(with: request as URLRequest, completionHandler: {(data, response, error) in
             if let response = response {
                 let nsHTTPResponse = response as! HTTPURLResponse
@@ -55,8 +55,14 @@ func postRequest(url: String, dic: [String: Any], completion: @escaping(_ error:
                         print("Error = \(errorMessage)")
                         completion(errorMessage, nil)
                     }
+                    if let _ = response["success"] { //if we have a success key then create user
+                        let user = User(_dictionary: userDic)
+                        completion(nil, user)
+                    }
                     if let token = response[kTOKEN] {
-                        print("Token = ", response[kTOKEN] ?? "No token")
+                        print("Token = ", token)
+                    } else {
+                        print("No token found")
                     }
                     //Should not reach here, display unknown error
                     completion("Unknown response error", nil)
@@ -98,6 +104,7 @@ func login(email: String, password: String, completion: @escaping(_ error: Strin
             if let data = data {
                 do {
                     let response = try JSONDecoder().decode(Token.self, from: data) //MARK: Handle Error here in case request does not return any Token
+                    userDic[kUSERID] = UUID().uuidString
                     userDic[kTOKEN] = response.token
                     getRequestUser(userDic: userDic) { (error, user) in
                         if let error = error {
@@ -139,10 +146,29 @@ func getRequestUser(userDic: [String: Any], completion: @escaping(_ error: Strin
         }
         if let data = data {
             do {
-                let response = try JSONDecoder().decode(Message.self, from: data)
-                print(response.success)
-                let user = User(_dictionary: userDic)
-                completion(nil, user)
+                let jsonResponse = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions())
+                print ("jsonResponse: \(jsonResponse)")
+                guard let response = jsonResponse as? [String: Any] else { completion("Error converting json received", nil); return }
+                if let errorMessage = response[kMESSAGE] as? String { //if we get a message response, it means there is an error
+                    print("Error = \(errorMessage)")
+                    completion(errorMessage, nil)
+                }
+                if let _ = response["success"] { //if we have a success key then create user
+                    let user = User(_dictionary: userDic)
+                    completion(nil, user)
+                    return
+                }
+                if let token = response[kTOKEN] {
+                    print("Token = ", token)
+                } else {
+                    print("No token found")
+                }
+                //Should not reach here, display unknown error
+                completion("Unknown response error", nil)
+//                let response = try JSONDecoder().decode(Message.self, from: data)
+//                print(response.success)
+//                let user = User(_dictionary: userDic)
+//                completion(nil, user)
             } catch {
                 completion(error.localizedDescription, nil)
             }

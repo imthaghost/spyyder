@@ -58,13 +58,14 @@ class LoginVC: UIViewController {
                 }
             }
         } else {
-            let dic:[String: String] = [kFULLNAME: "Kobe Bryant", kEMAIL: email, "password": password]
-            postRequest(url: kAPIURL + "/create", dic: dic) { (error, user) in
+            let dic:[String: String] = [kUSERID: UUID().uuidString, kFULLNAME: "Kobe Bryant", kEMAIL: email, "password": password]
+            postRequest(url: kAPIURL + "/create", userDic: dic) { (error, user) in
                 DispatchQueue.main.async {
                     if let error = error {
                         Service.presentAlert(on: self, title: "Register Error", message: error); return
                     }
                     print("Registered ", user?.email) //Register currently does not return token
+                    self.performSegue(withIdentifier: kSEGUETOTABBAR, sender: nil)
                 }
             }
         }
