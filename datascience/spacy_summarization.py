@@ -20,7 +20,6 @@ def text_summarizer(raw_docx):
             else:
                 word_frequencies[word.text] += 1
 
-
     maximum_frequncy = max(word_frequencies.values())
 
     for word in word_frequencies.keys():  

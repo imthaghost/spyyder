@@ -9,7 +9,7 @@ import zeus_api
 import json
 import alpha_vantage
 import pandas as pd
-from alpha_vantage.timeseries import TimeSeries
+from alpha_vantage.timeseries import TimeSeries #api for realtime stock data
 from alpha_vantage.techindicators import TechIndicators  # calculate sma for us
 
 
@@ -18,8 +18,8 @@ class companyDetails(Resource):
     def get(self, data, token):
         data = str(data)
         data = data.lower()
-        # companies = { 'microsoft': 'MSFT', 'apple': 'AAPL', 'amazon':'AMZN', 'facebook':'FB', 'bank of america': 'BAC', 'boeing':'BA', 'intel','INTC', 'johnson&johnson': 'JNJ'}
-        companies = {}
+        companies = { 'microsoft': 'MSFT', 'apple': 'AAPL', 'amazon':'AMZN', 'facebook':'FB', 'bank of america': 'BAC', 'boeing':'BA', 'intel','INTC', 'johnson&johnson': 'JNJ'}
+        #companies = {}
         for item in companies:
             if data in companies:
                 new_data = companies.get(item)
@@ -46,6 +46,10 @@ class companyDetails(Resource):
         # print(data)
         # print(token)
         # print(company)
+
+# Example 
+# company = companyDetails()
+# company.get(microsoft)
 
         return jsonify({'success': 'returned company'})
 
