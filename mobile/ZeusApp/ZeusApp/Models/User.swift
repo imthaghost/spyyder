@@ -87,6 +87,8 @@ class User: NSObject {
         }
         let userDefaults = UserDefaults.standard
         userDefaults.set(stocksData, forKey: kSTOCKS)
+        userDefaults.synchronize()
+        saveUserLocally(user: self)
     }
     
     func delete(_ stockIndex: Int) {
@@ -202,6 +204,7 @@ func updateCurrentUser(withValues: [String : Any], completion: @escaping(_ error
 
 func deleteCurrentUser() {
     UserDefaults.standard.removeObject(forKey: kCURRENTUSER)
+    UserDefaults.standard.removeObject(forKey: kSTOCKS)
     UserDefaults.standard.synchronize()
     print("Current user deleted")
 }
