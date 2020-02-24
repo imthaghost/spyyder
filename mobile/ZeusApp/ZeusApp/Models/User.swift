@@ -76,7 +76,7 @@ class User: NSObject {
         self.stocks = stocks
     }
     
-    private func createNewStock(stock: Stock) {
+    func createNewStock(stock: Stock) {
         self.stocks.insert(stock, at: 0) // Prepend the stocks to the array
         self.saveStocks()
     }
@@ -143,7 +143,7 @@ func userDictionaryFrom(user: User) -> NSDictionary { //take a user and return a
     let updatedAt = Service.dateFormatter().string(from: user.updatedAt)
     return NSDictionary(
         objects: [user.userId, user.firstName, user.lastName, user.fullName, user.email, user.phoneNumber, createdAt, updatedAt, user.stocks],
-        forKeys: [kTOKEN as NSCopying, kFIRSTNAME as NSCopying, kLASTNAME as NSCopying, kFULLNAME as NSCopying, kEMAIL as NSCopying, kPHONENUMBER as NSCopying, kCREATEDAT as NSCopying, kUPDATEDAT as NSCopying, kSTOCKS as NSCopying])
+        forKeys: [kUSERID as NSCopying, kFIRSTNAME as NSCopying, kLASTNAME as NSCopying, kFULLNAME as NSCopying, kEMAIL as NSCopying, kPHONENUMBER as NSCopying, kCREATEDAT as NSCopying, kUPDATEDAT as NSCopying, kSTOCKS as NSCopying])
 }
 
 ///returns full name if first name and last name is not empty
