@@ -200,7 +200,7 @@ func updateCurrentUser(withValues: [String : Any], completion: @escaping(_ error
     completion("Found no current user")
 }
 
-func deleteCurrentUser(completion: @escaping(_ error: String?) -> Void) {
+func deleteCurrentUser() {
     UserDefaults.standard.removeObject(forKey: kCURRENTUSER)
     UserDefaults.standard.synchronize()
 }
