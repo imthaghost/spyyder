@@ -25,3 +25,16 @@ let kSEGUETOONBOARDINGVC: String = "toOnboardingVC"
 //Images
 let kDEFAULTIMAGE: UIImage = UIImage(named: "blankImage")!
 let kMENUIMAGE: UIImage = UIImage(named: "menu")!
+
+//for User model
+public let kUSERID: String = "userId"
+public let kFIRSTNAME: String = "firstName"
+public let kLASTNAME: String = "lastName"
+public let kFULLNAME: String = "fullName"
+public let kEMAIL: String = "email"
+public let kCREATEDAT: String = "createdAt"
+public let kUPDATEDAT: String = "updatedAt"
+public let kPHONENUMBER: String = "phoneNumber"
+public let kSTOCKS: String = "stocks"
+
+public let kCURRENTUSER: String = "currentUser" //for userDefaults
