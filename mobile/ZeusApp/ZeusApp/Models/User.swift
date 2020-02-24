@@ -169,3 +169,38 @@ func assignFullName(fName: String, lName: String) -> String {
 //    UserDefaults.standard.removeObject(forKey: id)
 //    UserDefaults.standard.synchronize()
 //}
+
+//MARK: Create/Save User
+func saveUserLocally(user: User) { //save user to UserDefaults
+    UserDefaults.standard.set(userDictionaryFrom(user: user), forKey: kCURRENTUSER)
+    UserDefaults.standard.synchronize()
+    print("Finished saving user \(user.fullName) locally...")
+}
+
+//MARK: Update User
+func getCurrentUser() -> User? {
+    guard let userDic = UserDefaults.standard.object(forKey: kCURRENTUSER) as? [String: Any] else { return nil }
+    let user = User(_dictionary: userDic)
+    print("Current User = \(user.fullName)")
+    return user
+}
+
+//MARK: Update User
+func updateCurrentUser(withValues: [String : Any], completion: @escaping(_ error: String?) -> Void) {
+    if UserDefaults.standard.object(forKey: kCURRENTUSER) != nil {
+        guard let currentUser = getCurrentUser() else {
+            completion("Found no current user"); return }
+        let userObject = userDictionaryFrom(user: currentUser).mutableCopy() as! NSMutableDictionary
+        userObject.setValuesForKeys(withValues)
+        UserDefaults.standard.set(userObject, forKey: kCURRENTUSER)
+        UserDefaults.standard.synchronize()
+        completion(nil)
+        return
+    }
+    completion("Found no current user")
+}
+
+func deleteCurrentUser(completion: @escaping(_ error: String?) -> Void) {
+    UserDefaults.standard.removeObject(forKey: kCURRENTUSER)
+    UserDefaults.standard.synchronize()
+}
