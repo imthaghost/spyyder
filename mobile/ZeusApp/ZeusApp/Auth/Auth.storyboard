@@ -100,13 +100,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fsV-VX-eGU"/>
                     </view>
-                    <navigationItem key="navigationItem" id="deA-aP-0Im">
-                        <barButtonItem key="rightBarButtonItem" title="Home" id="QUg-Gx-hmi">
-                            <connections>
-                                <action selector="homeButtonTapped:" destination="44c-hw-GRe" id="ciL-Eg-WUw"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="deA-aP-0Im"/>
                     <connections>
                         <outlet property="continueButton" destination="GDk-h7-Rmu" id="xca-7b-dOE"/>
                         <outlet property="emailTextField" destination="dJd-Ll-eDb" id="a80-dh-miS"/>
@@ -184,7 +178,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Dh3-hW-5sg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J0s-XQ-91q" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="J0s-XQ-91q" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yZK-XX-tZM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
