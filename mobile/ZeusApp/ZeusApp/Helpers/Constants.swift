@@ -8,6 +8,8 @@
 
 import UIKit
 
+public let kAPIURL: String = "http://3.17.150.127:8000"
+
 //Colors
 let kMAINCOLOR: UIColor = UIColor(hexString: "0066e3", alpha: 1.0)
 let kOFFWHITECOLOR: UIColor = UIColor(hexString: "#f0f0f0")
@@ -17,10 +19,13 @@ let kLIGHTGRAYCOLOR: UIColor = .lightGray
 let kGREENCOLOR: UIColor = UIColor(hexString: "10c44c", alpha: 1.0)
 let kREDCOLOR: UIColor = UIColor(hexString: "bf2811", alpha: 1.0)
 
+//MARK: Storyboard Idenfitifiers
+let kMAINTABBARCONTROLLERID: String = "mainTabBarController"
 
-//Segues
+//MARK: Storyboard Segues
 let kSEGUETOSTOCKDETAILSVC: String = "toStockDetailVC"
 let kSEGUETOONBOARDINGVC: String = "toOnboardingVC"
+let kSEGUETOTABBAR: String = "toMainTabBarController"
 
 //Images
 let kDEFAULTIMAGE: UIImage = UIImage(named: "blankImage")!
@@ -38,3 +43,5 @@ public let kPHONENUMBER: String = "phoneNumber"
 public let kSTOCKS: String = "stocks"
 
 public let kCURRENTUSER: String = "currentUser" //for userDefaults
+public let kTOKEN: String = "token"
+public let kMESSAGE: String = "message"
