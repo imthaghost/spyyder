@@ -432,7 +432,7 @@
         <!--Main Tab Bar Controller-->
         <scene sceneID="fub-bt-ze0">
             <objects>
-                <tabBarController id="8WF-Cf-18M" customClass="MainTabBarController" customModule="ZeusApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabBarController" modalPresentationStyle="fullScreen" id="8WF-Cf-18M" customClass="MainTabBarController" customModule="ZeusApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fb9-Ab-rXj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
