@@ -53,9 +53,8 @@ class LoginVC: UIViewController {
                     }
                     print("Login, ", user!.email)
                     saveUserLocally(user: user!)
-//                    let vc: MainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: kMAINTABBARCONTROLLERID) as! MainTabBarController
-//                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-                    self.performSegue(withIdentifier: kSEGUETOTABBAR, sender: nil)
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: kMAINTABBARCONTROLLERID) as! MainTabBarController
+                    self.present(vc, animated: true, completion: nil)
                 }
             }
         } else {
@@ -65,9 +64,11 @@ class LoginVC: UIViewController {
                     if let error = error {
                         Service.presentAlert(on: self, title: "Register Error", message: error); return
                     }
-                    print("Registered ", user?.email)
+                    print("Registered ", user!.email)
                     saveUserLocally(user: user!)//Register currently does not return token
-                    self.performSegue(withIdentifier: kSEGUETOTABBAR, sender: nil)
+                    //self.performSegue(withIdentifier: kSEGUETOTABBAR, sender: nil)
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: kMAINTABBARCONTROLLERID) as! MainTabBarController
+                    self.present(vc, animated: true, completion: nil)
                 }
             }
         }

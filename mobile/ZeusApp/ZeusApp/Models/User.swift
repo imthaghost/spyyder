@@ -203,4 +203,5 @@ func updateCurrentUser(withValues: [String : Any], completion: @escaping(_ error
 func deleteCurrentUser() {
     UserDefaults.standard.removeObject(forKey: kCURRENTUSER)
     UserDefaults.standard.synchronize()
+    print("Current user deleted")
 }
