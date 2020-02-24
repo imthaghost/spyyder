@@ -21,8 +21,10 @@ protocol StockDetailProtocol {
 
 class StockDetailsVC: UIViewController {
 //MARK: Properties
+    var user: User!
     var delegate: StockDetailProtocol!
     var stock: Stock!
+    var stockIndex: Int = -1
     lazy var dummyWhyData: [WhyModel] = [
         WhyModel(title: "Because Trump sold all his \(stock.name) shares", description: "sdjsfj sljfksjkf sjfklsjf "),
         WhyModel(title: "\(stock.name) release an update", description: "Update your app and invest ment"),
@@ -59,6 +61,12 @@ class StockDetailsVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
+        if let user = getCurrentUser() {
+            self.user = user
+            self.followButton.isHidden = false
+        } else {
+            self.followButton.isHidden = true
+        }
 //        self.title = stock.name
         self.navigationController!.navigationBar.isTranslucent = false
         setupFollowButton()
@@ -93,10 +101,21 @@ class StockDetailsVC: UIViewController {
     }
     
     fileprivate func updateFollowButton() {
+//        for (index, favStock) in user.stocks.enumerated() {
+//            print("Stock index =", index)
+//            if favStock.name == stock.name {
+//                stock = favStock
+//                self.stockIndex = index
+//                break
+//            }
+//        }
         let buttonTitle: String = stock.isFollowing ? "Unfollow" : "Follow"
         followButton.setTitle(buttonTitle, for: .normal)
-        guard let delegate = delegate else { return }
-        delegate.didUpdateStock(stock: stock)
+//        user.createNewStock(stock: stock)
+//        user.delete(stockIndex)
+//        user.createNewStock(stock: stock)
+//        guard let delegate = delegate else { return }
+//        delegate.didUpdateStock(stock: stock)
     }
     
 //MARK: IBActions
