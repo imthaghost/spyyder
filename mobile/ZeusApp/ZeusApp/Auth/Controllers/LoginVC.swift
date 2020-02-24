@@ -52,6 +52,7 @@ class LoginVC: UIViewController {
                         Service.presentAlert(on: self, title: "Login Error", message: error); return
                     }
                     print("Login, ", user!.email)
+                    saveUserLocally(user: user!)
 //                    let vc: MainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: kMAINTABBARCONTROLLERID) as! MainTabBarController
 //                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
                     self.performSegue(withIdentifier: kSEGUETOTABBAR, sender: nil)
@@ -64,7 +65,8 @@ class LoginVC: UIViewController {
                     if let error = error {
                         Service.presentAlert(on: self, title: "Register Error", message: error); return
                     }
-                    print("Registered ", user?.email) //Register currently does not return token
+                    print("Registered ", user?.email)
+                    saveUserLocally(user: user!)//Register currently does not return token
                     self.performSegue(withIdentifier: kSEGUETOTABBAR, sender: nil)
                 }
             }
@@ -83,9 +85,6 @@ class LoginVC: UIViewController {
         let switchButtonTitle: String = isLogin ? "Switch to Register" : "Switch to Login"
         switchButton.setTitle(switchButtonTitle, for: .normal)
         continueButton.setTitle(authTitle, for: .normal)
-    }
-    
-    @IBAction func homeButtonTapped(_ sender: Any) {
     }
     
 //MARK: Helpers
