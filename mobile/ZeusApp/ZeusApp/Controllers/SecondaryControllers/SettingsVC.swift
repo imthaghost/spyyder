@@ -61,6 +61,11 @@ class SettingsVC: UIViewController {
 //MARK: Extensions
 extension SettingsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == settingsData.count - 1 {
+            deleteCurrentUser()
+            let vc = UIStoryboard(name: "Auth", bundle: nil).instantiateInitialViewController()!
+            self.navigationController?.present(vc, animated: true, completion: nil)
+        }
     }
 }
 
