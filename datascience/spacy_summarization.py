@@ -1,5 +1,4 @@
 import spacy 
-
 nlp = spacy.load('en_core_web_sm')
 
 # Pkgs for Normalizing Text
@@ -7,8 +6,6 @@ from spacy.lang.en.stop_words import STOP_WORDS
 from string import punctuation
 # Import Heapq for Finding the Top N Sentences
 from heapq import nlargest
-
-
 
 def text_summarizer(raw_docx):
     raw_text = raw_docx

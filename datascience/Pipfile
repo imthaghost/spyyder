@@ -13,6 +13,7 @@ matplotlib = "*"
 fbprophet = "*"
 pystan = "*"
 pytrends = "*"
+spacy = "*"
 
 [requires]
 python_version = "3.7"
