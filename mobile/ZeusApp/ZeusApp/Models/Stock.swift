@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Stock {
+class Stock: Codable {
     var name: String
     var shortName: String
     var price: String
