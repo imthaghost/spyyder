@@ -113,11 +113,20 @@
                         <outlet property="passwordTextField" destination="Lm8-Qz-vWD" id="35x-f7-we1"/>
                         <outlet property="switchButton" destination="fOD-6g-SKx" id="VG8-iE-LbJ"/>
                         <segue destination="tjl-og-chW" kind="show" identifier="toOnboardingVC" id="pXh-hu-3zz"/>
+                        <segue destination="VOV-cy-VDx" kind="presentation" identifier="toMainTabBarController" modalPresentationStyle="fullScreen" id="bXW-NH-nlT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nMX-uI-gkh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1200" y="292.63392857142856"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="qdX-kN-3vP">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Main" storyboardName="Main" id="VOV-cy-VDx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zMi-iw-o3L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2039" y="98"/>
         </scene>
         <!--OnboardingVC-->
         <scene sceneID="mzA-Qs-LOt">
