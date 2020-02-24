@@ -38,7 +38,7 @@
 		3385A04B23FE741600879E19 /* DecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3385A04A23FE741600879E19 /* DecisionView.swift */; };
 		3385A04D23FE745C00879E19 /* DecisionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3385A04C23FE745C00879E19 /* DecisionView.xib */; };
 		3385A05223FF0B8800879E19 /* TransitioningObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3385A05123FF0B8800879E19 /* TransitioningObject.swift */; };
-		339D771123F48EE300C85169 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339D771023F48EE300C85169 /* User.swift */; };
+		339D771123F48EE300C85169 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339D771023F48EE300C85169 /* Networking.swift */; };
 		33A8BFC423ECA01B00056A0F /* UINavigationController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8BFC323ECA01B00056A0F /* UINavigationController+extensions.swift */; };
 		33CA31A423E608A7009AA3DF /* StockCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CA31A323E608A7009AA3DF /* StockCellView.xib */; };
 		33CA31A623E608B6009AA3DF /* StockCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31A523E608B6009AA3DF /* StockCellView.swift */; };
@@ -48,6 +48,7 @@
 		33CA31B823E8AB56009AA3DF /* UILayoutGuide+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31B723E8AB56009AA3DF /* UILayoutGuide+extensions.swift */; };
 		33CA31BA23E8AC2D009AA3DF /* StockDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31B923E8AC2D009AA3DF /* StockDescriptionView.swift */; };
 		33CA31BC23E8AC48009AA3DF /* StockDescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CA31BB23E8AC48009AA3DF /* StockDescriptionView.xib */; };
+		33EC1D86240344EF00B92645 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EC1D85240344EF00B92645 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,7 +84,7 @@
 		3385A04A23FE741600879E19 /* DecisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionView.swift; sourceTree = "<group>"; };
 		3385A04C23FE745C00879E19 /* DecisionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DecisionView.xib; sourceTree = "<group>"; };
 		3385A05123FF0B8800879E19 /* TransitioningObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitioningObject.swift; sourceTree = "<group>"; };
-		339D771023F48EE300C85169 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		339D771023F48EE300C85169 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		33A8BFC323ECA01B00056A0F /* UINavigationController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+extensions.swift"; sourceTree = "<group>"; };
 		33CA31A323E608A7009AA3DF /* StockCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockCellView.xib; sourceTree = "<group>"; };
 		33CA31A523E608B6009AA3DF /* StockCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCellView.swift; sourceTree = "<group>"; };
@@ -93,6 +94,7 @@
 		33CA31B723E8AB56009AA3DF /* UILayoutGuide+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutGuide+extensions.swift"; sourceTree = "<group>"; };
 		33CA31B923E8AC2D009AA3DF /* StockDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDescriptionView.swift; sourceTree = "<group>"; };
 		33CA31BB23E8AC48009AA3DF /* StockDescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockDescriptionView.xib; sourceTree = "<group>"; };
+		33EC1D85240344EF00B92645 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B4F256AEDE0F2881E9A8CF95 /* Pods-ZeusApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZeusApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZeusApp/Pods-ZeusApp.release.xcconfig"; sourceTree = "<group>"; };
 		D358281AD3236C67DFA9AAA5 /* Pods-ZeusApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZeusApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZeusApp/Pods-ZeusApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FF439251C7442548493D07BF /* Pods_ZeusApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZeusApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				3309913023E24BA800880CC5 /* Stock.swift */,
+				33EC1D85240344EF00B92645 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,7 +266,7 @@
 		334044D223F1EF9C00CEA9A9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				339D771023F48EE300C85169 /* User.swift */,
+				339D771023F48EE300C85169 /* Networking.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -447,7 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3385A04023FDBE8400879E19 /* SettingsService.swift in Sources */,
-				339D771123F48EE300C85169 /* User.swift in Sources */,
+				339D771123F48EE300C85169 /* Networking.swift in Sources */,
 				334044D723F1F49F00CEA9A9 /* OnboardingVC.swift in Sources */,
 				3309911823E213DA00880CC5 /* AppDelegate.swift in Sources */,
 				33232DBC23F25CA200CF722D /* Dictionary+extensions.swift in Sources */,
@@ -478,6 +481,7 @@
 				334599F123F7C3D3002C13D5 /* UITextField+extensions.swift in Sources */,
 				33A8BFC423ECA01B00056A0F /* UINavigationController+extensions.swift in Sources */,
 				3344297E23FB22CC00F0E345 /* MyStocksVC.swift in Sources */,
+				33EC1D86240344EF00B92645 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

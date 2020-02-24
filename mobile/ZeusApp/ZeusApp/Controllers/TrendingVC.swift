@@ -109,3 +109,10 @@ extension TrendingVC: UITableViewDataSource {
         return cell
     }
 }
+
+//MARK: StockDetailsProtocol
+extension TrendingVC: StockDetailProtocol {
+    func didUpdateStock(stock: Stock) {
+        print(stock.name)
+    }
+}
