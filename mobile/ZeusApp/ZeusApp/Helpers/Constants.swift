@@ -45,3 +45,7 @@ public let kSTOCKS: String = "stocks"
 public let kCURRENTUSER: String = "currentUser" //for userDefaults
 public let kTOKEN: String = "token"
 public let kMESSAGE: String = "message"
+
+//Stock
+public let kTRENDINGSTOCKS: String = "trendingStocks"
+public let kSUGGESTEDSTOCKS: String = "suggestedStocks"
