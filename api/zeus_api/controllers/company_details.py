@@ -13,13 +13,13 @@ from alpha_vantage.timeseries import TimeSeries #api for realtime stock data
 from alpha_vantage.techindicators import TechIndicators  # calculate sma for us
 
 
-api_key = 'IOLIXAXKGPI3A4QM'
-# turns data into a pandas dataframe
-ts = TimeSeries(key=api_key, output_format='pandas')
-# all data, every minute, from MSFT
-data_ts, meta_data_ts = ts.get_intraday(symbol=new_data, interval='1min', outputsize='full')  
-# we only want the closing column
-df2 = data_ts['4. close'].iloc[-1]
+# api_key = 'IOLIXAXKGPI3A4QM'
+# # turns data into a pandas dataframe
+# ts = TimeSeries(key=api_key, output_format='pandas')
+# # all data, every minute, from MSFT
+# data_ts, meta_data_ts = ts.get_intraday(symbol=new_data, interval='1min', outputsize='full')  
+# # we only want the closing column
+# df2 = data_ts['4. close'].iloc[-1]
 # prints last closing price of chosen company
 #print('this is data: ' + str(df2))
 
