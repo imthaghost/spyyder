@@ -116,12 +116,12 @@ class StockDetailsVC: UIViewController {
         let index = user.getStockIndex(stock: stock) //get index of stock
         if stock.isFollowing { //stock is in favorites
             buttonTitle = "Unfollow"
-            if isSetUp { //if it is not initial set up, meaning user tapped on button
+            if senderIsButton { //if it is not initial set up, meaning user tapped on button
                 user.createNewStock(stock: stock)
             }
         } else {
             buttonTitle = "Follow"
-            if isSetUp { //if user tapped unfollow button
+            if senderIsButton { //if user tapped unfollow button
                 user.deleteStock(index)
             }
         }
