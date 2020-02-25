@@ -14,7 +14,7 @@ from alpha_vantage.techindicators import TechIndicators  # calculate sma for us
 
 
 # helper function
-def api(self, new_data, token):
+def api(new_data):
     api_key = 'IOLIXAXKGPI3A4QM'
     ts = TimeSeries(key=api_key, output_format='pandas') # turns data into a pandas dataframe
     data_ts, meta_data_ts = ts.get_intraday(symbol=new_data, interval='1min', outputsize='full') # all data, every minute, from MSFT
