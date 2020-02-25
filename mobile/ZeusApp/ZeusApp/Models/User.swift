@@ -17,9 +17,9 @@ class User: NSObject {
     var phoneNumber: String
     let createdAt: Date
     var updatedAt: Date
-    var stocks: [Stock] = []
+    var stocks: [String] = []
 
-    init(_userId: String, _firstName: String = "", _lastName: String = "", _email: String = "", _phoneNumber: String = "", _createdAt: Date, _updatedAt: Date = Date(), _stocks: [Stock] = []) {
+    init(_userId: String, _firstName: String = "", _lastName: String = "", _email: String = "", _phoneNumber: String = "", _createdAt: Date, _updatedAt: Date = Date(), _stocks: [String] = []) {
         userId = _userId
         firstName = _firstName
         lastName = _lastName
@@ -56,7 +56,7 @@ class User: NSObject {
         } else {
             self.updatedAt = Date()
         }
-        if let stocks = _dictionary[kSTOCKS] as? [Stock] {
+        if let stocks = _dictionary[kSTOCKS] as? [String] {
             self.stocks = stocks
         }
     }
@@ -70,19 +70,27 @@ class User: NSObject {
         let userDefaults = UserDefaults.standard
         guard
             let stockData = userDefaults.data(forKey: kSTOCKS),
-            let stocks = try? JSONDecoder().decode([Stock].self, from: stockData) else {
+            let stocksDecoded = try? JSONDecoder().decode([Stock].self, from: stockData) else { //decode stockData
                 return
         }
-        self.stocks = stocks
+        for stock in stocksDecoded {
+            self.stocks.append(stock.name)
+        }
     }
     
+    ///create new stock, or delete if it exist and reappend it
     func createNewStock(stock: Stock) {
-        self.stocks.insert(stock, at: 0) // Prepend the stocks to the array
+        if stocks.contains(stock.name) { //stock must conform to Equatable
+            for (index, favStock) in stocks.enumerated() where stock.name == favStock {
+                deleteStock(index)
+            }
+        }
+        self.stocks.insert(stock.name, at: 0) // Prepend the stocks to the array
         self.saveStocks()
     }
     
     private func saveStocks() {
-        guard let stocksData = try? JSONEncoder().encode(self.stocks) else { //decode array of stocks
+        guard let stocksData = try? JSONEncoder().encode(self.stocks) else { //encode array of stocks
             fatalError("could not encode list of stocks")
         }
         let userDefaults = UserDefaults.standard
@@ -91,49 +99,26 @@ class User: NSObject {
         saveUserLocally(user: self)
     }
     
-    func delete(_ stockIndex: Int) {
+    func deleteStock(_ stockIndex: Int) {
         self.stocks.remove(at: stockIndex)
         // Persist the changes we made to our stocks array
         self.saveStocks()
     }
-    
-//    func markStockAsCompleted(_ stockIndex: Int) -> Stock {
-//        /// Step 12: We create a variable called updatedStock that stores the stock at the given index.
-//        var updatedStock = self.stocks[stockIndex]
-//        /// Step 13: The next step is checking if that stock has been completed for the day. If the habit has not been completed then we increment the number of completions by 1. If it has already been completed then we return out of this function with the same habit
-//        guard updatedStock.completedToday == false else { return updatedStock }
-//        updatedStock.numberOfCompletions += 1
-//        /// Step 14: We create a constant that is going to store the value of the current habit's last completion date With that value we check if that date was yesterday. If so then we increment the streak of the habit by 1. If the it wasn't completed yesterday we set the current streak to 1 denoting either it's a new habit or the user lost their streak on the habit
-//        if let lastCompletionDate = updatedStock.lastCompletionDate, lastCompletionDate.isYesterday {
-//            updatedStock.currentStreak += 1
-//        } else {
-//            updatedStock.currentStreak = 1
-//        }
-//        /// Step 15: We then check if the current streak of our chosen habit is better than that habit's best streak!
-//        if updatedStock.currentStreak > updatedStock.bestStreak {
-//            updatedStock.bestStreak = updatedStock.currentStreak
-//        }
-//        /// Step 16: It's important to update the completion date of the habit so that our previous logic is still accurate at a later time!
-//        let now = Date()
-//        updatedStock.lastCompletionDate = now
-//        /// Step 17: We then change the chosen habit to reflect the updated habit with changes we made
-//        self.habits[habitIndex] = updatedHabit
-//        /// Step 18: Lastly we save our changes made to our habits array and return the newly updated habit
-//        self.saveStocks()
-//        return updatedStock
-//    }
-    
-    /// Step 19: The first function takes to parameters a habitIndex and a destinationIndex representing the two indices of the habits you want to swap - We remove the current habit from it's position and insert it at the destination index - We then save the newly made changes to our habit array
-//    func swapStocks(habitIndex: Int, destinationIndex: Int) {
-//            let habitToSwap = self.habits[habitIndex]
-//            self.habits.remove(at: habitIndex)
-//            self.habits.insert(habitToSwap, at: destinationIndex)
-//            self.saveStocks()
-//        }
 
-    /// Step 20: The next function comes in handy after we added a new habit and update the collection of habits present in the table view!
     func setNeedsToReloadStocks() {
         self.loadStocks()
+    }
+    
+    func getUserStocks() -> [Stock] {
+        var userStocks: [Stock] = []
+        let allStocks: [Stock] = loadAllStocks() //load all stocks
+        for favStockName in self.stocks {
+            if let i = allStocks.firstIndex(where: { $0.name == favStockName }) { //find the index of each stocks in allStocks
+                userStocks.append(allStocks[i])
+            }
+        }
+        print("USER STOCKS ARE = \(userStocks)")
+        return userStocks
     }
 }
 
@@ -183,7 +168,7 @@ func saveUserLocally(user: User) { //save user to UserDefaults
 func getCurrentUser() -> User? {
     guard let userDic = UserDefaults.standard.object(forKey: kCURRENTUSER) as? [String: Any] else { return nil }
     let user = User(_dictionary: userDic)
-    print("Current User = \(user.fullName)")
+    print("Current User = \(user.email)")
     return user
 }
 
