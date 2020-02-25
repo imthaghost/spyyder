@@ -107,21 +107,21 @@ class StockDetailsVC: UIViewController {
     
     fileprivate func setupFollowButton() {
         followButton.isMainButton()
-        updateFollowButton(isSetUp: true)
+        updateFollowButton(senderIsButton: false)
     }
     
 ///update follow button. If it's a setup, then update title. If it's not a setup, delete or create stock in user
-    fileprivate func updateFollowButton(isSetUp: Bool) {
+    fileprivate func updateFollowButton(senderIsButton: Bool) {
         var buttonTitle: String = ""
         let index = user.getStockIndex(stock: stock) //get index of stock
         if stock.isFollowing { //stock is in favorites
             buttonTitle = "Unfollow"
-            if !isSetUp { //if it is not initial set up, meaning user tapped on button
+            if isSetUp { //if it is not initial set up, meaning user tapped on button
                 user.createNewStock(stock: stock)
             }
         } else {
             buttonTitle = "Follow"
-            if !isSetUp { //if user tapped unfollow button
+            if isSetUp { //if user tapped unfollow button
                 user.deleteStock(index)
             }
         }
@@ -131,7 +131,7 @@ class StockDetailsVC: UIViewController {
 //MARK: IBActions
     @IBAction func followButtonTapped(_ sender: UIButton) {
         stock.isFollowing = !stock.isFollowing
-        updateFollowButton(isSetUp: false)
+        updateFollowButton(senderIsButton: true)
     }
     @IBAction func dateButtonTap(_ sender: UIButton) {
         if sender == dayButton {
