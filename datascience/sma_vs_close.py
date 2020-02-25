@@ -28,19 +28,20 @@ def get(data):
     for item in companies:
         if data in companies:
             new_data = companies.get(item)
-            return new_data
+            return api(new_data)
         else:
             return None
 
-    api_key = 'IOLIXAXKGPI3A4QM'
+def api(new_data):
 
+    api_key = 'IOLIXAXKGPI3A4QM'
     ts = TimeSeries(key=api_key, output_format='pandas') # turns data into a pandas dataframe
     data_ts, meta_data_ts = ts.get_intraday(symbol=new_data, interval='1min', outputsize='full') # all data, every minute, from MSFT
     period = 60
     ti = TechIndicators(key=api_key, output_format='pandas')
     data_ti, meta_data_ti = ti.get_sma(symbol='MSFT', interval='1min', time_period=period, series_type='close')
-    df2 = data_ts['4. close'].iloc[period-1::] # we only want the closing column
-    print('this is data: ' + str(df2)) # prints last closing price of chosen company
+    df2 = data_ts['4. close'].iloc[-1] # we only want the closing column
+    return ('this is data: ' +  str(new_data) + str( df2)) # prints last closing price of chosen company
 
 print(get('microsoft'))
 
