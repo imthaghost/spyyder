@@ -9,8 +9,4 @@ import json
 
 
 class companyDetails(Resource):
-    def get(self):
-        pass
-
-    def post(self):
-        pass
+    pass

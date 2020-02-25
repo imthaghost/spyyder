@@ -26,17 +26,20 @@ def api(new_data):
 # Company and Recent Price
 class companyDetails(Resource):
     @token_required
-    def get(self):
+    def get(self, data):
         data = request.get_json()
         company = str(data.get('companyname')).lower()
         companies = { 'microsoft': 'MSFT', 'apple': 'AAPL', 'amazon':'AMZN', 'facebook':'FB', 'bank of america': 'BAC', 'boeing':'BA', 'intel':'INTC', 'johnson&johnson': 'JNJ'}
-        for item in companies:
-            if company in companies:
-                ticker = companies.get(item)
-                closing_price = api(ticker)
-            else:
-                return None
+        
+        ticker = companies.get(company)
+        if ticker:
+            closing_price = api(ticker)
+        else:
+            return None
+            
         return jsonify({'company': ticker,'price': closing_price})
 
-   
+
+name = companyDetails()
+name.get('microsoft')
        
