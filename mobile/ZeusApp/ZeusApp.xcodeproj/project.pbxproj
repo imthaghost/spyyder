@@ -157,7 +157,6 @@
 				3309912B23E24AB800880CC5 /* Controllers */,
 				3309912C23E24AEE00880CC5 /* Models */,
 				3309912D23E24AF400880CC5 /* Views */,
-				334044CE23F1EA6900CEA9A9 /* Networking */,
 				3309912E23E24B0B00880CC5 /* Helpers */,
 				3309912023E213DC00880CC5 /* Assets.xcassets */,
 				3309912223E213DC00880CC5 /* LaunchScreen.storyboard */,
@@ -224,13 +223,6 @@
 				334599F023F7C3D3002C13D5 /* UITextField+extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		334044CE23F1EA6900CEA9A9 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 		334044CF23F1EE9500CEA9A9 /* Auth */ = {

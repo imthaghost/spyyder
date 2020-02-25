@@ -59,6 +59,11 @@ class StockDetailsVC: UIViewController {
         setupViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
 //MARK: Private Methods
     fileprivate func setupViews() {
         if let user = getCurrentUser() {
@@ -101,21 +106,14 @@ class StockDetailsVC: UIViewController {
     }
     
     fileprivate func updateFollowButton() {
-//        for (index, favStock) in user.stocks.enumerated() {
-//            print("Stock index =", index)
-//            if favStock.name == stock.name {
-//                stock = favStock
-//                self.stockIndex = index
-//                break
-//            }
-//        }
-        let buttonTitle: String = stock.isFollowing ? "Unfollow" : "Follow"
+        var buttonTitle: String = ""
+        if stock.isFollowing {
+            buttonTitle = "Unfollow"
+            user.createNewStock(stock: stock)
+        } else {
+            buttonTitle = "Follow"
+        }
         followButton.setTitle(buttonTitle, for: .normal)
-//        user.createNewStock(stock: stock)
-//        user.delete(stockIndex)
-//        user.createNewStock(stock: stock)
-//        guard let delegate = delegate else { return }
-//        delegate.didUpdateStock(stock: stock)
     }
     
 //MARK: IBActions
