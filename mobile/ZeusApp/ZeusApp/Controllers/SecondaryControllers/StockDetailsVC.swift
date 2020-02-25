@@ -24,7 +24,6 @@ class StockDetailsVC: UIViewController {
     var user: User!
     var delegate: StockDetailProtocol!
     var stock: Stock!
-    var stockIndex: Int = -1
     lazy var dummyWhyData: [WhyModel] = [
         WhyModel(title: "Because Trump sold all his \(stock.name) shares", description: "sdjsfj sljfksjkf sjfklsjf "),
         WhyModel(title: "\(stock.name) release an update", description: "Update your app and invest ment"),
@@ -61,7 +60,6 @@ class StockDetailsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
     
 //MARK: Private Methods
@@ -77,6 +75,13 @@ class StockDetailsVC: UIViewController {
         setupFollowButton()
         setupTopLabels()
         populateWhyStackView()
+        setupDescriptionView()
+    }
+    
+    fileprivate func setupDescriptionView() {
+        ceoLabel.text = "\(stock.name) CEO"
+        volumeLabel.text = "1,400,398"
+        headquartersLabel.text = "San Francisco, CA"
     }
     
     fileprivate func populateWhyStackView() {
@@ -102,16 +107,23 @@ class StockDetailsVC: UIViewController {
     
     fileprivate func setupFollowButton() {
         followButton.isMainButton()
-        updateFollowButton()
+        updateFollowButton(isSetUp: true)
     }
     
-    fileprivate func updateFollowButton() {
+///update follow button. If it's a setup, then update title. If it's not a setup, delete or create stock in user
+    fileprivate func updateFollowButton(isSetUp: Bool) {
         var buttonTitle: String = ""
-        if stock.isFollowing {
+        let index = user.getStockIndex(stock: stock) //get index of stock
+        if stock.isFollowing { //stock is in favorites
             buttonTitle = "Unfollow"
-            user.createNewStock(stock: stock)
+            if !isSetUp { //if it is not initial set up, meaning user tapped on button
+                user.createNewStock(stock: stock)
+            }
         } else {
             buttonTitle = "Follow"
+            if !isSetUp { //if user tapped unfollow button
+                user.deleteStock(index)
+            }
         }
         followButton.setTitle(buttonTitle, for: .normal)
     }
@@ -119,7 +131,7 @@ class StockDetailsVC: UIViewController {
 //MARK: IBActions
     @IBAction func followButtonTapped(_ sender: UIButton) {
         stock.isFollowing = !stock.isFollowing
-        updateFollowButton()
+        updateFollowButton(isSetUp: false)
     }
     @IBAction func dateButtonTap(_ sender: UIButton) {
         if sender == dayButton {
