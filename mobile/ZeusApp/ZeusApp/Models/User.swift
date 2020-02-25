@@ -78,15 +78,25 @@ class User: NSObject {
         }
     }
     
-    ///create new stock, or delete if it exist and reappend it
+///create new stock, or delete if it exist and reappend it
     func createNewStock(stock: Stock) {
-        if stocks.contains(stock.name) { //stock must conform to Equatable
-            for (index, favStock) in stocks.enumerated() where stock.name == favStock {
-                deleteStock(index)
-            }
+        let stockIndex = getStockIndex(stock: stock)
+        if stockIndex != -1 { //if stock exist in our stocks...
+            deleteStock(stockIndex)
         }
         self.stocks.insert(stock.name, at: 0) // Prepend the stocks to the array
         self.saveStocks()
+    }
+    
+///Get the index of stock in user's stocks
+    func getStockIndex(stock: Stock) -> Int {
+        var index: Int = -1
+        if stocks.contains(stock.name) { //stock must conform to Equatable
+            for (stockIndex, favStock) in stocks.enumerated() where stock.name == favStock { //loop through each user's stocks until stock.name
+                index = stockIndex
+            }
+        }
+        return index
     }
     
     private func saveStocks() {
