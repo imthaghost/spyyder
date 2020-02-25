@@ -9,6 +9,7 @@
 import Foundation
 
 class Stock: Codable {
+    
     var name: String
     var shortName: String
     var price: String
@@ -24,4 +25,49 @@ class Stock: Codable {
         self.rank = _rank
         self.isFollowing = _isFollowing
     }
+}
+
+extension Stock: Equatable { //to be able to use .contains method
+    static func == (lhs: Stock, rhs: Stock) -> Bool {
+        return lhs.name == rhs.name
+    }
+}
+
+extension Stock: Hashable { //so I can make elemt of array of Stocks unique
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name.hashValue)
+    }
+}
+
+func saveTrendingStocks(stocks: [Stock]) {
+    guard let stocksData = try? JSONEncoder().encode(stocks) else { //decode array of stocks
+        fatalError("could not encode list of stocks")
+    }
+    let userDefaults = UserDefaults.standard
+    userDefaults.set(stocksData, forKey: kTRENDINGSTOCKS)
+    userDefaults.synchronize()
+}
+
+func saveSuggestedStocks(stocks: [Stock]) {
+    guard let stocksData = try? JSONEncoder().encode(stocks) else { //decode array of stocks
+        fatalError("could not encode list of stocks")
+    }
+    let userDefaults = UserDefaults.standard
+    userDefaults.set(stocksData, forKey: kSUGGESTEDSTOCKS)
+    userDefaults.synchronize()
+}
+
+///Get array of unique stocks from trending and suggested
+func loadAllStocks() -> [Stock] {
+    var stocks: [Stock] = []
+    if let trendingData = UserDefaults.standard.data(forKey: kTRENDINGSTOCKS),
+        let trendingStocks = try? JSONDecoder().decode([Stock].self, from: trendingData) {
+        stocks += trendingStocks
+    }
+    if let suggestedData = UserDefaults.standard.data(forKey: kSUGGESTEDSTOCKS),
+        let suggestedStocks = try? JSONDecoder().decode([Stock].self, from: suggestedData) {
+        stocks += suggestedStocks
+    }
+    print("All Trending and Suggested Stocks are: \(stocks)")
+    return Array(Set(stocks)) //makes sure stocks are unique
 }
