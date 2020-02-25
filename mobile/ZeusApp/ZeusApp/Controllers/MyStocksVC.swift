@@ -78,7 +78,8 @@ class MyStocksVC: UIViewController {
 //MARK: Extensions
 extension MyStocksVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        return
+        let stock = stocks[indexPath.row]
+        self.performSegue(withIdentifier: kSEGUETOSTOCKDETAILSVC, sender: stock)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

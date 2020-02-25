@@ -512,6 +512,7 @@
                     <navigationItem key="navigationItem" id="tNJ-TV-d2w"/>
                     <connections>
                         <outlet property="tableView" destination="9I1-ao-k1s" id="xhq-X2-urE"/>
+                        <segue destination="GqM-aS-6aZ" kind="show" identifier="toStockDetailVC" id="9xc-Gu-Jvl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGD-2a-3vS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -564,6 +565,6 @@
         <image name="timer" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SPP-FN-XSg"/>
+        <segue reference="9xc-Gu-Jvl"/>
     </inferredMetricsTieBreakers>
 </document>
