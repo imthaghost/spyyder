@@ -9,7 +9,9 @@ email_route = Blueprint('email', __name__, static_folder='static')
 def email():
 
     if request.method == 'POST':
+        #get users email from user input
         email = request.form.get('email')
+        #get users first name from user input
         first_name = request.form.get('firstname')
         # url for api
         API_ENDPOINT = 'http://3.17.150.127:8000/subscribe'
