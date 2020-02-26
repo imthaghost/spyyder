@@ -48,7 +48,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIP-hj-2vN">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="644"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="f4o-eP-ESB" userLabel="main Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="570"/>
@@ -311,7 +311,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="WmN-fE-cPS"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwh-t2-rzV">
-                                <rect key="frame" x="37.5" y="558" width="300" height="50"/>
+                                <rect key="frame" x="37.5" y="628" width="300" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="h6p-Zq-1Ec"/>
@@ -327,7 +327,7 @@
                             <constraint firstItem="qUm-f1-2Vd" firstAttribute="trailing" secondItem="yIP-hj-2vN" secondAttribute="trailing" id="6sg-Iz-8FJ"/>
                             <constraint firstItem="yIP-hj-2vN" firstAttribute="top" secondItem="qUm-f1-2Vd" secondAttribute="top" id="MQo-6E-rPF"/>
                             <constraint firstItem="cwh-t2-rzV" firstAttribute="bottom" secondItem="yIP-hj-2vN" secondAttribute="bottom" constant="-10" id="SNu-pJ-CEN"/>
-                            <constraint firstItem="cwh-t2-rzV" firstAttribute="bottom" secondItem="qUm-f1-2Vd" secondAttribute="bottom" constant="-10" id="WmH-VQ-7FK"/>
+                            <constraint firstItem="cwh-t2-rzV" firstAttribute="bottom" secondItem="qUm-f1-2Vd" secondAttribute="bottom" constant="60" id="WmH-VQ-7FK"/>
                             <constraint firstItem="yIP-hj-2vN" firstAttribute="leading" secondItem="qUm-f1-2Vd" secondAttribute="leading" id="YoQ-fD-mc2"/>
                             <constraint firstItem="cwh-t2-rzV" firstAttribute="centerX" secondItem="qUm-f1-2Vd" secondAttribute="centerX" id="iLa-GA-g6g"/>
                             <constraint firstItem="cwh-t2-rzV" firstAttribute="width" secondItem="qUm-f1-2Vd" secondAttribute="width" multiplier="0.8" id="uxx-uo-PEA"/>
@@ -342,6 +342,7 @@
                         <outlet property="decisionLabel" destination="ea9-nK-Dsv" id="Td5-gY-caX"/>
                         <outlet property="decisionStackView" destination="rb4-cf-fMH" id="Gf8-4u-jet"/>
                         <outlet property="followButton" destination="cwh-t2-rzV" id="Ziz-hF-HSe"/>
+                        <outlet property="followButton_bottomConstraint" destination="WmH-VQ-7FK" id="fmC-3b-OZg"/>
                         <outlet property="graphView" destination="Iai-BF-xp4" id="81P-Zb-zio"/>
                         <outlet property="headquartersLabel" destination="aC1-2L-Buc" id="lh6-8w-XPV"/>
                         <outlet property="month3Button" destination="Jew-NR-K43" id="i1n-9y-7gH"/>
@@ -350,6 +351,7 @@
                         <outlet property="predictedPercentLabel" destination="ec1-fF-MoR" id="v0E-PU-Y9z"/>
                         <outlet property="priceLabel" destination="ALU-f0-Jgt" id="6ue-nw-jkD"/>
                         <outlet property="pricePercentLabel" destination="1lX-la-Xup" id="EpW-l0-XwP"/>
+                        <outlet property="scrollView" destination="yIP-hj-2vN" id="dKM-aj-VEu"/>
                         <outlet property="volumeLabel" destination="7ub-Tc-E0e" id="EZX-mI-4ed"/>
                         <outlet property="weekButton" destination="55l-jQ-RWY" id="gXf-mP-SM7"/>
                         <outlet property="year5Button" destination="E2Q-wH-LXz" id="9La-j1-alB"/>

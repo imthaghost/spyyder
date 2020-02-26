@@ -18,6 +18,7 @@
 		33232DBA23F22BBC00CF722D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33232DB923F22BBC00CF722D /* Service.swift */; };
 		33232DBC23F25CA200CF722D /* Dictionary+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33232DBB23F25CA200CF722D /* Dictionary+extensions.swift */; };
 		332C9B2E23E3CA51002BB57A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332C9B2D23E3CA51002BB57A /* Constants.swift */; };
+		333BDE952407091B004AD18C /* UIScrollView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333BDE942407091B004AD18C /* UIScrollView+extensions.swift */; };
 		334044CD23F1E57200CEA9A9 /* UIButton+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334044CC23F1E57200CEA9A9 /* UIButton+extensions.swift */; };
 		334044D523F1F27800CEA9A9 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 334044D423F1F27800CEA9A9 /* Auth.storyboard */; };
 		334044D723F1F49F00CEA9A9 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334044D623F1F49F00CEA9A9 /* OnboardingVC.swift */; };
@@ -64,6 +65,7 @@
 		33232DB923F22BBC00CF722D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		33232DBB23F25CA200CF722D /* Dictionary+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+extensions.swift"; sourceTree = "<group>"; };
 		332C9B2D23E3CA51002BB57A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		333BDE942407091B004AD18C /* UIScrollView+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extensions.swift"; sourceTree = "<group>"; };
 		334044CC23F1E57200CEA9A9 /* UIButton+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extensions.swift"; sourceTree = "<group>"; };
 		334044D423F1F27800CEA9A9 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		334044D623F1F49F00CEA9A9 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 		3309912F23E24B1000880CC5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				333BDE942407091B004AD18C /* UIScrollView+extensions.swift */,
 				33CA31A823E6286A009AA3DF /* UIColor+extensions.swift */,
 				33CA31B723E8AB56009AA3DF /* UILayoutGuide+extensions.swift */,
 				33A8BFC323ECA01B00056A0F /* UINavigationController+extensions.swift */,
@@ -446,6 +449,7 @@
 				334044D723F1F49F00CEA9A9 /* OnboardingVC.swift in Sources */,
 				3309911823E213DA00880CC5 /* AppDelegate.swift in Sources */,
 				33232DBC23F25CA200CF722D /* Dictionary+extensions.swift in Sources */,
+				333BDE952407091B004AD18C /* UIScrollView+extensions.swift in Sources */,
 				334044D923F1F4AF00CEA9A9 /* LoginVC.swift in Sources */,
 				33232DB823F229F600CF722D /* String+extensions.swift in Sources */,
 				334044CD23F1E57200CEA9A9 /* UIButton+extensions.swift in Sources */,
