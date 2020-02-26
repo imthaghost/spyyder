@@ -37,7 +37,6 @@ class StockDetailsVC: UIViewController {
     let stockPrices: [Double] = [24.0, 39, 0.8, -10, -13, -25, -90, 50, 64, 32, 43]
     
 //MARK: IBOutlets
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var pricePercentLabel: UILabel!
     @IBOutlet weak var predictedLabel: UILabel!
@@ -76,6 +75,10 @@ class StockDetailsVC: UIViewController {
             self.followButton.isHidden = true
         }
         self.view.backgroundColor = SettingsService.mainColor
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
+        navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
+        self.title = stock.name
         setupFollowButton()
         setupTopLabels()
         populateWhyStackView()
@@ -100,12 +103,10 @@ class StockDetailsVC: UIViewController {
     }
     
     fileprivate func setupTopLabels() {
-        SettingsService.isXLargeLabel(label: &nameLabel)
         SettingsService.isMediumLabel(label: &priceLabel, color: SettingsService.greenColor, weight: .semibold)
         SettingsService.isSmallLabel(label: &pricePercentLabel, color: SettingsService.greenColor, weight: .semibold)
         SettingsService.isMediumLabel(label: &predictedLabel, color: SettingsService.whiteColor, weight: .semibold)
         SettingsService.isSmallLabel(label: &predictedPercentLabel, color: SettingsService.whiteColor, weight: .semibold)
-        nameLabel.text = stock.name
         priceLabel.text = "$1078.32"
         pricePercentLabel.text = "+25%"
         predictedLabel.text = "$1203.98"
