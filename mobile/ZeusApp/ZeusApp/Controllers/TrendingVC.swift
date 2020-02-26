@@ -19,7 +19,6 @@ class TrendingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        setupTabBar()
     }
     
 //MARK: Navigation
@@ -35,26 +34,12 @@ class TrendingVC: UIViewController {
     }
     
 //MARK: Private Methods
-    fileprivate func setupTabBar() {
-        guard var tabBar = self.tabBarController?.tabBar else { return }
-        SettingsService.isMainTabBar(tabBar: &tabBar)
-        //MARK: Tab Bar Size Customization
-        let width = self.view.frame.width - 40
-//        self.view.backgroundColor = kMAINCOLOR
-//        self.tableView.backgroundColor = kMAINCOLOR
-        var newFrame = tabBar.frame
-//        newFrame.size.height = 100
-//        newFrame.origin.y = view.frame.size.height - 100
-        newFrame.size.width = width
-        newFrame.origin.x = (view.frame.width - width) / 2 //centers it
-        tabBar.frame = newFrame
-    }
-    
     fileprivate func setupViews() {
         self.title = "Trending"
-        self.navigationController!.navigationBar.isTranslucent = false
+        self.view.backgroundColor = SettingsService.mainColor
         setupTableView()
         createTestStocks()
+        setupTabBar()
     }
     
     fileprivate func setupTableView() {
@@ -62,6 +47,7 @@ class TrendingVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView() //removes extra unpopulated cells
+        tableView.backgroundColor = SettingsService.mainColor
     }
     
     fileprivate func createTestStocks() {
@@ -79,6 +65,12 @@ class TrendingVC: UIViewController {
         let stock12 = Stock(_name: "IBM", _shortName: "IBM", _price: "146.89", _imageUrl: "", _rank: 12)
         stocks.append(contentsOf: [stock1, stock2, stock3, stock4, stock5, stock6, stock7, stock8, stock9, stock10, stock11, stock12])
         saveTrendingStocks(stocks: self.stocks)
+    }
+    
+    fileprivate func setupTabBar() {
+        guard var tabBar = self.tabBarController?.tabBar else { return }
+        SettingsService.isMainTabBar(tabBar: &tabBar)
+        tabBar.isTranslucent = false
     }
     
 //MARK: IBActions
@@ -109,6 +101,7 @@ extension TrendingVC: UITableViewDataSource {
         cell.selectionStyle = .none //remove the selection indicator
         cell.stock = stocks[indexPath.row]
         cell.populateViews(showRank: true)
+        cell.backgroundColor = SettingsService.mainColor
         return cell
     }
 }

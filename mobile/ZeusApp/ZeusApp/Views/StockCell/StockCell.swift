@@ -45,7 +45,7 @@ class StockCell: UITableViewCell {
     fileprivate func setupBgView() {
         bgView.layer.cornerRadius = bgView.frame.height / 4
         self.clipsToBounds = true
-        bgView.backgroundColor = SettingsService.mainColor
+        bgView.backgroundColor = SettingsService.blackColor
     }
     
     fileprivate func setupLabels() {

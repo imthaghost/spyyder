@@ -37,30 +37,30 @@ class SettingsService {
 //        tabBar.layer.cornerRadius = 20
 //        tabBar.barStyle = .black
         //MARK: Color customization
-        tabBar.backgroundColor = .clear
-        tabBar.backgroundImage = UIImage()
-        tabBar.barTintColor = SettingsService.whiteColor //bar color
-        tabBar.tintColor = kMAINCOLOR //selected tab
+//        tabBar.backgroundColor = .clear
+//        tabBar.backgroundImage = UIImage()
+        tabBar.barTintColor = SettingsService.mainColor //bar color
+        tabBar.tintColor = SettingsService.whiteColor //selected tab
         tabBar.unselectedItemTintColor = .gray
     }
     
-    static func isXSmallLabel(label: inout UILabel, color: UIColor = SettingsService.blackColor, weight: UIFont.Weight = .thin) {
+    static func isXSmallLabel(label: inout UILabel, color: UIColor = SettingsService.whiteColor, weight: UIFont.Weight = .thin) {
         label.font = UIFont.systemFont(ofSize: 9, weight: weight)
         label.textColor = color
     }
-    static func isSmallLabel(label: inout UILabel, color: UIColor = SettingsService.blackColor, weight: UIFont.Weight = .regular) {
+    static func isSmallLabel(label: inout UILabel, color: UIColor = SettingsService.whiteColor, weight: UIFont.Weight = .regular) {
         label.font = UIFont.systemFont(ofSize: 12, weight: weight)
         label.textColor = color
     }
-    static func isMediumLabel(label: inout UILabel, color: UIColor = SettingsService.blackColor, weight: UIFont.Weight = .semibold) {
+    static func isMediumLabel(label: inout UILabel, color: UIColor = SettingsService.whiteColor, weight: UIFont.Weight = .regular) {
         label.font = UIFont.systemFont(ofSize: 18, weight: weight)
         label.textColor = color
     }
-    static func isLargeLabel(label: inout UILabel, color: UIColor = SettingsService.blackColor, weight: UIFont.Weight = .bold) {
+    static func isLargeLabel(label: inout UILabel, color: UIColor = SettingsService.whiteColor, weight: UIFont.Weight = .bold) {
         label.font = UIFont.systemFont(ofSize: 28, weight: weight)
         label.textColor = color
     }
-    static func isXLargeLabel(label: inout UILabel, color: UIColor = SettingsService.blackColor, weight: UIFont.Weight = .bold) {
+    static func isXLargeLabel(label: inout UILabel, color: UIColor = SettingsService.whiteColor, weight: UIFont.Weight = .bold) {
         label.font = UIFont.systemFont(ofSize: 36, weight: weight)
         label.textColor = color
     }

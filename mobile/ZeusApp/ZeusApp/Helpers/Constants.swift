@@ -18,7 +18,7 @@ let kOFFWHITECOLOR: UIColor = UIColor(hexString: "#f0f0f0")
 let kOFFBLACKCOLOR: UIColor = UIColor(hexString: "#101010")
 let kGRAYCOLOR: UIColor = .gray
 let kLIGHTGRAYCOLOR: UIColor = .lightGray
-let kGREENCOLOR: UIColor = UIColor(hexString: "10c44c", alpha: 1.0)
+let kGREENCOLOR: UIColor = UIColor(hexString: "42f578", alpha: 1.0)
 let kREDCOLOR: UIColor = UIColor(hexString: "bf2811", alpha: 1.0)
 
 //MARK: Storyboard Idenfitifiers
