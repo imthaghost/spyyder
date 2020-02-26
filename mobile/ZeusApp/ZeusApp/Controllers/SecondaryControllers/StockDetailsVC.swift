@@ -139,6 +139,7 @@ class StockDetailsVC: UIViewController {
         stock.isFollowing = !stock.isFollowing
         updateFollowButton(senderIsButton: true)
     }
+    
     @IBAction func dateButtonTap(_ sender: UIButton) {
         if sender == dayButton {
             print("Day 1")

@@ -40,6 +40,8 @@ class TrendingVC: UIViewController {
         SettingsService.isMainTabBar(tabBar: &tabBar)
         //MARK: Tab Bar Size Customization
         let width = self.view.frame.width - 40
+//        self.view.backgroundColor = kMAINCOLOR
+//        self.tableView.backgroundColor = kMAINCOLOR
         var newFrame = tabBar.frame
 //        newFrame.size.height = 100
 //        newFrame.origin.y = view.frame.size.height - 100
