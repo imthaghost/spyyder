@@ -25,7 +25,7 @@ class StockDetailsVC: UIViewController {
     var delegate: StockDetailProtocol!
     var stock: Stock!
     lazy var dummyWhyData: [WhyModel] = [
-        WhyModel(title: "Because Trump sold all his \(stock.name) shares", description: "sdjsfj sljfksjkf sjfklsjf "),
+        WhyModel(title: "Because Trump sold all his \(stock.name) shares multiple lines multiple lines", description: "sdjsfj sljfksjkf sjfklsjf "),
         WhyModel(title: "\(stock.name) release an update", description: "Update your app and invest ment"),
         WhyModel(title: "Tesla increase may affect \(stock.name) prices", description: "sdjsfj sljfksjkf sjfklsjf "),
         WhyModel(title: "\(stock.name) raise $5 million on 2nd round", description: "Update your app and invest ment")
@@ -75,13 +75,12 @@ class StockDetailsVC: UIViewController {
         } else {
             self.followButton.isHidden = true
         }
-//        self.title = stock.name
-        self.navigationController!.navigationBar.isTranslucent = false
+        self.view.backgroundColor = SettingsService.mainColor
         setupFollowButton()
         setupTopLabels()
         populateWhyStackView()
         setupDescriptionView()
-        setupGraphView()
+        setupChartView()
     }
     
     fileprivate func setupDescriptionView() {
@@ -92,7 +91,9 @@ class StockDetailsVC: UIViewController {
     
     fileprivate func populateWhyStackView() {
         for whyData in dummyWhyData { //add to decision stack a view with title and decriptions each news from whyData'
-            let label = UILabel(frame: .zero)
+            var label = UILabel(frame: .zero)
+            label.numberOfLines = 0
+            SettingsService.isMediumLabel(label: &label)
             label.text = "• " + whyData.title
             decisionStackView.addArrangedSubview(label)
         }
@@ -100,10 +101,10 @@ class StockDetailsVC: UIViewController {
     
     fileprivate func setupTopLabels() {
         SettingsService.isXLargeLabel(label: &nameLabel)
-        SettingsService.isMediumLabel(label: &priceLabel, color: SettingsService.greenColor)
-        SettingsService.isSmallLabel(label: &pricePercentLabel, color: SettingsService.greenColor)
-        SettingsService.isMediumLabel(label: &predictedLabel, color: SettingsService.mainColor)
-        SettingsService.isSmallLabel(label: &predictedPercentLabel, color: SettingsService.mainColor)
+        SettingsService.isMediumLabel(label: &priceLabel, color: SettingsService.greenColor, weight: .semibold)
+        SettingsService.isSmallLabel(label: &pricePercentLabel, color: SettingsService.greenColor, weight: .semibold)
+        SettingsService.isMediumLabel(label: &predictedLabel, color: SettingsService.whiteColor, weight: .semibold)
+        SettingsService.isSmallLabel(label: &predictedPercentLabel, color: SettingsService.whiteColor, weight: .semibold)
         nameLabel.text = stock.name
         priceLabel.text = "$1078.32"
         pricePercentLabel.text = "+25%"
@@ -112,7 +113,7 @@ class StockDetailsVC: UIViewController {
     }
     
     fileprivate func setupFollowButton() {
-        followButton.isMainButton()
+        followButton.isWhiteButton()
         updateFollowButton(senderIsButton: false)
     }
     
@@ -169,7 +170,18 @@ class StockDetailsVC: UIViewController {
 //MARK: Extensions
 /// Line Chart Codes
 extension StockDetailsVC {
-    fileprivate func setupGraphView() {
+    fileprivate func setupChartView() {
+        populateChartData()
+        dayButton.isDateButton()
+        weekButton.isDateButton()
+        monthButton.isDateButton()
+        month3Button.isDateButton()
+        yearButton.isDateButton()
+        year5Button.isDateButton()
+        allButton.isDateButton()
+    }
+    
+    fileprivate func populateChartData() {
         //get stocks
         struct StockPrice {
             var timestamp: Int
@@ -178,17 +190,15 @@ extension StockDetailsVC {
         var prices: [StockPrice] = []
         for i in 0..<stockPrices.count {
             let stockPrice = StockPrice(timestamp: i+9, price: self.stockPrices[i])
-//            let stock = Stock(_name: self.stock.name, _price: String(self.stockPrices[i]))
-////            let stock = Stock(timestamp: i+9, price: stockPrices[i])
             prices.append(stockPrice)
         }
         
         graphView.xAxis.axisMaximum = Double(timeStamps.count)
         var chartEntries: [ChartDataEntry] = []
         var xStrings: [String] = []
-//        let sortedStockPrices = prices.sorted { (s1: Stock, s2: Stock) -> Bool in
-//            return s1.
-//        }
+        //        let sortedStockPrices = prices.sorted { (s1: Stock, s2: Stock) -> Bool in
+        //            return s1.
+        //        }
         let sortedentriesData = prices.sorted { (s1: StockPrice, s2: StockPrice) -> Bool in //sort by timestamp
             return s1.timestamp < s2.timestamp
         }
@@ -201,14 +211,14 @@ extension StockDetailsVC {
             //            xStrings.append("\(dateFormatter.string(from: Date.init(timeIntervalSince1970: TimeInterval(entry.timestamp))))") //populate xAxis
             xStrings.append(String(price.timestamp))
         }
-        let set: LineChartDataSet = LineChartDataSet(entries: chartEntries, label: "$")
-//        let mainColor = NSUIColor.init().SettingsService.mainColor
-//        set.setColor(NSUIC)
-        set.setColor(NSUIColor.red, alpha: CGFloat(1))
-        set.circleColors = [NSUIColor.blue]
-        set.circleRadius = 3
+        let set: LineChartDataSet = LineChartDataSet(entries: chartEntries, label: nil)
+        set.drawValuesEnabled = false //remove values in the chart
+        //        let mainColor = NSUIColor.init().SettingsService.mainColor
+        //        set.setColor(NSUIC)
+        set.setColor(NSUIColor.white, alpha: CGFloat(1))
+        set.circleColors = [NSUIColor.init(cgColor: SettingsService.grayColor.cgColor)]
+        set.circleRadius = 2
         set.mode = LineChartDataSet.Mode.linear
-        
         let data: LineChartData = LineChartData(dataSet: set)
         //        self.graphView.xAxis.labelRotationAngle = -90 //tilts label
         //        self.graphView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: { (index, axis) -> String in
@@ -222,7 +232,14 @@ extension StockDetailsVC {
         self.graphView.xAxis.axisMaxLabels = timeStamps.count
         self.graphView.xAxis.setLabelCount(timeStamps.count, force: true)
         self.graphView.xAxis.labelPosition = .bottom //put xAxis labels at the bottom, default at top
-        self.graphView.data = data
-        
+        self.graphView.data = data //give graph the data
+        self.graphView.xAxis.drawLabelsEnabled = false //bottom axis labels
+//        self.graphView.xAxis.drawAxisLineEnabled = false
+//        self.graphView.leftAxis.drawLabelsEnabled = false
+        self.graphView.leftAxis.labelTextColor = SettingsService.whiteColor
+        self.graphView.leftAxis.drawAxisLineEnabled = false
+        self.graphView.rightAxis.drawLabelsEnabled = false
+        self.graphView.rightAxis.drawAxisLineEnabled = false
+        self.graphView.xAxis.drawGridLinesEnabled = false //remove graph's vertical line
     }
 }
