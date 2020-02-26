@@ -37,6 +37,9 @@ class TrendingVC: UIViewController {
     fileprivate func setupViews() {
         self.title = "Trending"
         self.view.backgroundColor = SettingsService.mainColor
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
+        navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
         setupTableView()
         createTestStocks()
         setupTabBar()
