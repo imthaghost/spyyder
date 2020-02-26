@@ -10,8 +10,10 @@ import UIKit
 
 public let kAPIURL: String = "http://3.17.150.127:8000"
 
-//Colors
-let kMAINCOLOR: UIColor = UIColor(hexString: "0066e3", alpha: 1.0)
+//Colors //off black = 101010, offwhite = f0f0f0, dark blue = 0066e3, darker blue = 12125e,
+//let kMAINCOLOR: UIColor = UIColor(hexString: "12125e", alpha: 1.0)
+//let kBLUECOLOR: UIColor = UIColor(hexString: "0066e3", alpha: 1.0)
+let kMAINCOLOR: UIColor = UIColor(hexString: "12125e", alpha: 1.0)
 let kOFFWHITECOLOR: UIColor = UIColor(hexString: "#f0f0f0")
 let kOFFBLACKCOLOR: UIColor = UIColor(hexString: "#101010")
 let kGRAYCOLOR: UIColor = .gray
