@@ -1,5 +1,3 @@
-
-
 # Load packages
 import os
 import csv
@@ -90,7 +88,6 @@ def main():
             wr.writerow(("Date", "Actual", "Forecasted"))
             wr.writerows(export_data)
         myfile.close()
-
         return render_template("plot.html", original = round(original_end,2), forecast = round(forecast_start,2), stock_tinker = stock.upper())
 
 if __name__ == "__main__":
