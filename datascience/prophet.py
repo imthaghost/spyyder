@@ -9,9 +9,8 @@ from pathlib import Path
 from fbprophet import Prophet
 from dateutil.easter import easter
 from itertools import zip_longest
-from flask import request, redirect
 import pandas_datareader.data as web
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 from alpha_vantage.timeseries import TimeSeries
 import datetime 
 
