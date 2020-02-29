@@ -34,7 +34,7 @@ class StockDetailsVC: UIViewController {
     var time: [Double] = [9,10,11,12,1,2,3,4,5,6]
     //    let timeStamps: [Int] = [9, 10, 11, 12, 1, 2, 3, 4, 5, 6]
     let timeStamps: [String] = ["9:00", "9:05", "9:10", "9:15", "9:20", "9:25", "9:30", "9:35", "9:40", "9:45", "9:50", "9:55", "10:00",  "10:05", "10:10", "10:15", "10:20", "10:25", "10:30", "10:35", "10:40", "10:45", "10:50", "10:55", "11:00", "11:05", "11:10", "11:15", "11:20", "11:25", "11:30", "11:35", "11:40", "11:45",  "11:50", "11:55", "12:00", "12:05", "12:10", "12:15", "12:20", "12:25", "12:30", "12:35", "12:40", "12:45", "12:50", "12:55","1:00", "1:05", "1:10", "1:15", "1:20", "1:25", "1:30", "1:35", "1:40", "1:45", "1:50", "1:55", "2:00", "2:05", "2:10", "2:15", "2:20", "2:25", "2:30", "2:35", "2:40", "2:45", "2:50", "2:55", "3:00", "3:05", "3:10", "3:15", "3:20", "3:25", "3:30", "3:35", "3:40", "3:45", "3:50", "3:55", "4:00", "4:05", "4:10", "4:15", "4:20", "4:25", "4:30", "4:35", "4:40", "4:45", "4:50", "4:55", "5:00", "5:05", "5:10", "5:15", "5:20", "5:25", "5:30", "5:35", "5:40", "5:45", "5:50", "5:55", "6:00"]
-    let stockPrices: [Double] = [24.0, 39, 0.8, -10, -13, -25, -90, 50, 64, 32, 43]
+    let stockPrices: [Double] = [24.01, 39.77, 0.81, -10.00, -13.00, -25.01, -50.91, 50.21, 64.31, 32.44, 43.09, 99.18, 25.50, 81.90, 79.67, 45.99, 39.87, 89.09, 67.09, 45.88, 103.89, 56.09, 34.98, 45.88, 24.01, 39.77, 0.81, -19.00, 13.00, 25.01, -90.91, 50.21, 64.31, 32.44, 42.09, 99.18, 25.50, 81.90, 74.67, 15.99, 39.87, 9.09, 6.09, 45.08, 13.89, 56.99, 34.98, 45.88,24.01, 39.77, 0.81, -1.00, -15.00, 25.01, -0.91, 51.21, 14.31, 42.44, 41.09, 98.18, 25.50, 81.90, 79.67, 45.99, 39.87, 89.09, 37.09, 42.88, 13.89, 46.99, 31.98, 44.88]
     
 //MARK: IBOutlets
     @IBOutlet weak var scrollView: UIScrollView!
@@ -78,7 +78,7 @@ class StockDetailsVC: UIViewController {
         }
         self.view.backgroundColor = SettingsService.mainColor
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
+//        navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
         navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
         self.title = stock.name
         setupFollowButton()
@@ -175,6 +175,7 @@ class StockDetailsVC: UIViewController {
 /// Line Chart Codes
 extension StockDetailsVC {
     fileprivate func setupChartView() {
+        setupLineChartView()
         populateChartData()
         dayButton.isDateButton()
         weekButton.isDateButton()
@@ -183,6 +184,55 @@ extension StockDetailsVC {
         yearButton.isDateButton()
         year5Button.isDateButton()
         allButton.isDateButton()
+    }
+}
+
+//MARK: ScrollView Delegate
+extension StockDetailsVC: UIScrollViewDelegate {
+    fileprivate func setupScrollView() {
+        scrollView.delegate = self
+        scrollView.showsVerticalScrollIndicator = false
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        //make button appear whenever the navController's large title disappears, and it disappears when scrollView.contentOffset.y > 10
+        if scrollView.contentOffset.y <= scrollView.verticalOffsetForTop + 10 {
+            if followButton_bottomConstraint.constant < 60 {
+                self.followButton_bottomConstraint.constant += 10
+            }
+        } else { //if large title disappears, make the button show up
+            if followButton_bottomConstraint.constant > -10 { //if not at the position we want, keep decrementing the constraint
+                self.followButton_bottomConstraint.constant -= 10
+            }
+        }
+    }
+}
+
+extension StockDetailsVC: ChartViewDelegate {
+    func chartValueSelected(_ chartView: ChartViewBase, entry:
+     ChartDataEntry, highlight: Highlight) { //selected chart
+        print("Time: ",entry.x, " = Cost: ", entry.y)
+        priceLabel.text = "$" + String(entry.y)
+    }
+    
+    fileprivate func setupLineChartView() {
+        self.graphView.delegate = self
+        self.graphView.doubleTapToZoomEnabled = false
+        self.graphView.legend.enabled = false //remove legend label
+        self.graphView.pinchZoomEnabled = false
+//        graphView.leftAxis.drawZeroLineEnabled = false
+        self.graphView.xAxis.axisMaxLabels = timeStamps.count
+        self.graphView.xAxis.setLabelCount(timeStamps.count, force: true)
+        self.graphView.xAxis.labelPosition = .bottom //put xAxis labels at the bottom, default at top
+        self.graphView.xAxis.drawLabelsEnabled = false //bottom axis labels
+        self.graphView.xAxis.drawGridLinesEnabled = false //remove graph's vertical line
+//        self.graphView.xAxis.drawAxisLineEnabled = false
+//        self.graphView.leftAxis.drawLabelsEnabled = false
+        self.graphView.leftAxis.labelTextColor = SettingsService.whiteColor
+        self.graphView.leftAxis.drawAxisLineEnabled = false
+        self.graphView.rightAxis.drawLabelsEnabled = false
+        self.graphView.rightAxis.drawAxisLineEnabled = false
+        print(graphView.xAxis.entries)
     }
     
     fileprivate func populateChartData() {
@@ -233,37 +283,6 @@ extension StockDetailsVC {
             //            print("Axis = \(axis?.axisMaxLabels)")
             return String(self.timeStamps[Int(index)]) //goes out of index if changed
         })
-        self.graphView.xAxis.axisMaxLabels = timeStamps.count
-        self.graphView.xAxis.setLabelCount(timeStamps.count, force: true)
-        self.graphView.xAxis.labelPosition = .bottom //put xAxis labels at the bottom, default at top
-        self.graphView.data = data //give graph the data
-        self.graphView.xAxis.drawLabelsEnabled = false //bottom axis labels
-//        self.graphView.xAxis.drawAxisLineEnabled = false
-//        self.graphView.leftAxis.drawLabelsEnabled = false
-        self.graphView.leftAxis.labelTextColor = SettingsService.whiteColor
-        self.graphView.leftAxis.drawAxisLineEnabled = false
-        self.graphView.rightAxis.drawLabelsEnabled = false
-        self.graphView.rightAxis.drawAxisLineEnabled = false
-        self.graphView.xAxis.drawGridLinesEnabled = false //remove graph's vertical line
-    }
-}
-
-//MARK: ScrollView Delegate
-extension StockDetailsVC: UIScrollViewDelegate {
-    fileprivate func setupScrollView() {
-        scrollView.delegate = self
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        //make button appear whenever the navController's large title disappears, and it disappears when scrollView.contentOffset.y > 10
-        if scrollView.contentOffset.y <= scrollView.verticalOffsetForTop + 10 {
-            if followButton_bottomConstraint.constant < 60 {
-                self.followButton_bottomConstraint.constant += 10
-            }
-        } else { //if large title disappears, make the button show up
-            if followButton_bottomConstraint.constant > -10 { //if not at the position we want, keep decrementing the constraint
-                self.followButton_bottomConstraint.constant -= 10
-            }
-        }
+        graphView.data = data
     }
 }

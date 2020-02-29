@@ -36,7 +36,7 @@ class TrendingVC: UIViewController {
 //MARK: Private Methods
     fileprivate func setupViews() {
         self.title = "Trending"
-        self.view.backgroundColor = SettingsService.mainColor
+        self.view.backgroundColor = SettingsService.blackColor
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
         navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
@@ -50,7 +50,7 @@ class TrendingVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView() //removes extra unpopulated cells
-        tableView.backgroundColor = SettingsService.mainColor
+        tableView.backgroundColor = SettingsService.blackColor
     }
     
     fileprivate func createTestStocks() {
@@ -104,7 +104,8 @@ extension TrendingVC: UITableViewDataSource {
         cell.selectionStyle = .none //remove the selection indicator
         cell.stock = stocks[indexPath.row]
         cell.populateViews(showRank: true)
-        cell.backgroundColor = SettingsService.mainColor
+//        cell.backgroundColor = UIColor(hexString: "#2b2b30")
+        cell.backgroundColor = SettingsService.blackColor
         return cell
     }
 }

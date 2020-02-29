@@ -106,6 +106,7 @@ func login(email: String, password: String, completion: @escaping(_ error: Strin
                     let response = try JSONDecoder().decode(Token.self, from: data) //MARK: Handle Error here in case request does not return any Token
                     userDic[kUSERID] = UUID().uuidString
                     userDic[kTOKEN] = response.token
+                    print("Token \(response.token)")
                     getRequestUser(userDic: userDic) { (error, user) in
                         if let error = error {
                             completion(error, nil)
