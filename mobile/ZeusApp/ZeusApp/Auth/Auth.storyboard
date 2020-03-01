@@ -16,10 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="RWv-Fc-zFT">
-                                <rect key="frame" x="41.5" y="399.5" width="331" height="151"/>
+                                <rect key="frame" x="41.5" y="389.5" width="331" height="171"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7aj-Xc-xgU">
-                                        <rect key="frame" x="0.0" y="0.0" width="331" height="60.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="70.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ab-5a-Ql5">
                                                 <rect key="frame" x="0.0" y="0.0" width="331" height="20.5"/>
@@ -28,9 +28,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dJd-Ll-eDb" customClass="UnderlinedTextField" customModule="ZeusApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="30.5" width="331" height="30"/>
+                                                <rect key="frame" x="0.0" y="30.5" width="331" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="tUT-VD-gsZ"/>
+                                                    <constraint firstAttribute="height" constant="40" id="tUT-VD-gsZ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -42,7 +42,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0uh-lP-jwI">
-                                        <rect key="frame" x="0.0" y="90.5" width="331" height="60.5"/>
+                                        <rect key="frame" x="0.0" y="100.5" width="331" height="70.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2M-4l-BVP">
                                                 <rect key="frame" x="0.0" y="0.0" width="331" height="20.5"/>
@@ -51,9 +51,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lm8-Qz-vWD" customClass="UnderlinedTextField" customModule="ZeusApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="30.5" width="331" height="30"/>
+                                                <rect key="frame" x="0.0" y="30.5" width="331" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="cgd-CJ-5Pc"/>
+                                                    <constraint firstAttribute="height" constant="40" id="cgd-CJ-5Pc"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -67,7 +67,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDk-h7-Rmu">
-                                <rect key="frame" x="41.5" y="580.5" width="331" height="50"/>
+                                <rect key="frame" x="41.5" y="590.5" width="331" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="dHU-jG-WWY"/>
@@ -78,7 +78,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOD-6g-SKx">
-                                <rect key="frame" x="41.5" y="660.5" width="331" height="50"/>
+                                <rect key="frame" x="41.5" y="670.5" width="331" height="50"/>
                                 <state key="normal" title="Switch to Register"/>
                                 <connections>
                                     <action selector="switchButtonTapped:" destination="44c-hw-GRe" eventType="touchUpInside" id="Kb0-q6-Sai"/>
