@@ -50,6 +50,7 @@
 		3361AB52240C4DF3004E9817 /* Page6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AB51240C4DF3004E9817 /* Page6.swift */; };
 		3361AB54240C4DFB004E9817 /* Page7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AB53240C4DFB004E9817 /* Page7.swift */; };
 		3361AB56240C4E00004E9817 /* Page7.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3361AB55240C4E00004E9817 /* Page7.xib */; };
+		3361AB58240C4FE7004E9817 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AB57240C4FE7004E9817 /* QuizVC.swift */; };
 		3385A04023FDBE8400879E19 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3385A03F23FDBE8400879E19 /* SettingsService.swift */; };
 		3385A04B23FE741600879E19 /* DecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3385A04A23FE741600879E19 /* DecisionView.swift */; };
 		3385A04D23FE745C00879E19 /* DecisionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3385A04C23FE745C00879E19 /* DecisionView.xib */; };
@@ -112,6 +113,7 @@
 		3361AB51240C4DF3004E9817 /* Page6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page6.swift; sourceTree = "<group>"; };
 		3361AB53240C4DFB004E9817 /* Page7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page7.swift; sourceTree = "<group>"; };
 		3361AB55240C4E00004E9817 /* Page7.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Page7.xib; sourceTree = "<group>"; };
+		3361AB57240C4FE7004E9817 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
 		3385A03F23FDBE8400879E19 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		3385A04A23FE741600879E19 /* DecisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionView.swift; sourceTree = "<group>"; };
 		3385A04C23FE745C00879E19 /* DecisionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DecisionView.xib; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				3361AB32240C45B2004E9817 /* Quiz.storyboard */,
+				3361AB57240C4FE7004E9817 /* QuizVC.swift */,
 				3361AB38240C4D41004E9817 /* Page1 */,
 				3361AB39240C4D63004E9817 /* Page2 */,
 				3361AB3A240C4D69004E9817 /* Page3 */,
@@ -562,6 +565,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3385A04023FDBE8400879E19 /* SettingsService.swift in Sources */,
+				3361AB58240C4FE7004E9817 /* QuizVC.swift in Sources */,
 				339D771123F48EE300C85169 /* Networking.swift in Sources */,
 				334044D723F1F49F00CEA9A9 /* OnboardingVC.swift in Sources */,
 				3309911823E213DA00880CC5 /* AppDelegate.swift in Sources */,
