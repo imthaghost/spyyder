@@ -32,6 +32,10 @@ class Page3View: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
+        setup()
+    }
+    
+    fileprivate func setup() {
+        self.contentView.backgroundColor = .yellow
     }
 }

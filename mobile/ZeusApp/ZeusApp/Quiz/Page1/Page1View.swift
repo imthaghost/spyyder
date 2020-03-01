@@ -36,5 +36,10 @@ class Page1: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
+        setup()
+    }
+    
+    fileprivate func setup() {
+        self.contentView.backgroundColor = .black
     }
 }
