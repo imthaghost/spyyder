@@ -10,9 +10,9 @@ import UIKit
 
 class LoginVC: UIViewController {
 //MARK: Properties
-    var isLogin: Bool = true
-    var authTitle: String = ""
-    var token = ""
+    lazy var isLogin: Bool = true
+    lazy var authTitle: String = ""
+    lazy var token: String = ""
     
 //MARK: IBOutlets
     @IBOutlet weak var emailTextField: UnderlinedTextField!
@@ -24,6 +24,17 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupKeyboardNotifications()
+        view.frame.origin.y = 64
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        removeKeyboardObervers()
     }
     
 //MARK: Navigation
@@ -40,8 +51,19 @@ class LoginVC: UIViewController {
         self.navigationController!.navigationBar.isTranslucent = false
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleDismissTap(_:)))
         self.view.addGestureRecognizer(tap)
+        updateColors()
     }
     
+    fileprivate func updateColors() {
+        self.view.backgroundColor = SettingsService.whiteColor
+        self.switchButton.isClearButton()
+        self.continueButton.isMainButton()
+        self.emailTextField.setUnderlineColor(color: SettingsService.blackColor)
+        self.passwordTextField.setUnderlineColor(color: SettingsService.blackColor)
+    }
+    
+    
+//MARK: Networking Calls
     fileprivate func authenticateUser() {
         guard let email = emailTextField.text?.trimmedString() else { return } //handle client side empty or invalid textField.text
         guard let password = passwordTextField.text?.trimmedString() else { return }
@@ -95,3 +117,30 @@ class LoginVC: UIViewController {
 }
 
 //MARK: Extensions
+//MARK: Keyboard Helpers
+extension LoginVC {
+    fileprivate func setupKeyboardNotifications() { //setup notifications when keyboard shows or hide
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    fileprivate func removeKeyboardObervers() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) { //makes the view go up by keyboard's height
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if view.frame.origin.y == 64 {
+                view.frame.origin.y -= keyboardSize.height * 0.75
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) { //put the view back to 0
+        if view.frame.origin.y != 0 {
+            view.frame.origin.y = 64
+        }
+    }
+}
+
