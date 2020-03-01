@@ -11,6 +11,14 @@ import UIKit
 class Page1: UIView {
     
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var bottomLabel: UILabel!
+    
+    required init() { //with initializer
+        super.init(frame: .zero)
+        commonInit()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
