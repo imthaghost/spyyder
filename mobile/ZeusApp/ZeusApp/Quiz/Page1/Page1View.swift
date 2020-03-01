@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Page1: UIView {
+class Page1View: UIView {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var imageView: UIImageView!
