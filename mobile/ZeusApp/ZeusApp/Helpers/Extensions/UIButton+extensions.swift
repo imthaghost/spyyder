@@ -38,4 +38,14 @@ extension UIButton {
         self.layer.cornerRadius = self.frame.height / 4
         self.clipsToBounds = true
     }
+    
+    func isClearButton(titleColor: UIColor = SettingsService.mainColor) {
+        self.backgroundColor = .clear
+        self.setTitleColor(titleColor, for: .normal)
+        self.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
+        self.layer.cornerRadius = 10
+        self.clipsToBounds = true
+        self.layer.borderWidth = 2
+        self.layer.borderColor = titleColor.cgColor
+    }
 }
