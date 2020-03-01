@@ -26,7 +26,7 @@ let kMAINTABBARCONTROLLERID: String = "mainTabBarController"
 
 //MARK: Storyboard Segues
 let kSEGUETOSTOCKDETAILSVC: String = "toStockDetailVC"
-let kSEGUETOONBOARDINGVC: String = "toOnboardingVC"
+let kSEGUETOQUIZVC: String = "toQuizVC"
 //let kSEGUETOTABBAR: String = "toMainTabBarController"
 
 //Images

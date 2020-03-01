@@ -9,22 +9,39 @@
 import UIKit
 
 class QuizVC: UIViewController {
-
+//MARK: Properties
+    
+//MARK: IBOutlets
+    @IBOutlet weak var mainStackView: UIStackView!
+    @IBOutlet weak var continueButton: UIButton!
+    
+//MARK: App Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupViews()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//MARK: Private Methods
+    fileprivate func updateColors() {
+        continueButton.isMainButton()
     }
-    */
-
+    
+    fileprivate func setupViews() {
+        continueButton.setTitle("Next", for: .normal)
+        mainStackView.alignment = .fill
+        mainStackView.axis = .horizontal
+        
+        updateColors()
+    }
+    
+    fileprivate func setupNavigationBar() {
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+//MARK: Helpers
 }
+
+//MARK: Extensions

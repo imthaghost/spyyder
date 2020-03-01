@@ -100,71 +100,34 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fsV-VX-eGU"/>
                     </view>
-                    <navigationItem key="navigationItem" id="deA-aP-0Im"/>
+                    <navigationItem key="navigationItem" id="deA-aP-0Im">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="WWv-y4-itl">
+                            <connections>
+                                <segue destination="cbq-lg-4tB" kind="show" id="lJ5-rC-aoX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="continueButton" destination="GDk-h7-Rmu" id="xca-7b-dOE"/>
                         <outlet property="emailTextField" destination="dJd-Ll-eDb" id="a80-dh-miS"/>
                         <outlet property="passwordTextField" destination="Lm8-Qz-vWD" id="35x-f7-we1"/>
                         <outlet property="switchButton" destination="fOD-6g-SKx" id="VG8-iE-LbJ"/>
-                        <segue destination="tjl-og-chW" kind="show" identifier="toOnboardingVC" id="pXh-hu-3zz"/>
+                        <segue destination="cbq-lg-4tB" kind="presentation" identifier="toQuizVC" id="3Bi-gc-t5n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nMX-uI-gkh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1200" y="292.63392857142856"/>
         </scene>
-        <!--OnboardingVC-->
-        <scene sceneID="mzA-Qs-LOt">
+        <!--Quiz-->
+        <scene sceneID="H35-Gq-u3l">
             <objects>
-                <viewController id="tjl-og-chW" customClass="OnboardingVC" customModule="ZeusApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Kw1-kY-ues">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <viewLayoutGuide key="safeArea" id="b4d-nJ-XU6"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="76m-Dc-DQa"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2oJ-XM-0dM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Quiz" id="cbq-lg-4tB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5Nr-dm-bxR"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tUp-4G-Xgr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2325" y="662"/>
-        </scene>
-        <!--RegisterVC-->
-        <scene sceneID="fAQ-JH-zsy">
-            <objects>
-                <viewController id="lr9-iw-Jsx" customClass="RegisterVC" customModule="ZeusApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KcB-Up-DZm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <viewLayoutGuide key="safeArea" id="ccn-R5-ExE"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="YW1-hu-7aP"/>
-                    <connections>
-                        <segue destination="tjl-og-chW" kind="show" identifier="toOnboardingVC" id="Wr1-I3-jaW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xCr-1E-s8V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1200" y="1089.5089285714284"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="CBX-u3-Wx9">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cFV-jT-MHP" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OlJ-1n-ENN">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="lr9-iw-Jsx" kind="relationship" relationship="rootViewController" id="62f-N2-E5y"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q2b-i6-KyF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="289.85507246376812" y="1089.5089285714284"/>
+            <point key="canvasLocation" x="1930" y="293"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dh3-hW-5sg">
@@ -186,6 +149,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pXh-hu-3zz"/>
+        <segue reference="3Bi-gc-t5n"/>
     </inferredMetricsTieBreakers>
 </document>
