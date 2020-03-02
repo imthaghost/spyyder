@@ -23,9 +23,10 @@ struct Message: Decodable {
 
 //MARK: Network Calls
 ///POST get Stock details
-func fetchStockDetails(stock: Stock, token: String, completion: @escaping(_ error: String?, _ user: Stock?) -> Void) {
+func fetchStockDetails(stock: inout Stock, token: String, completion: @escaping(_ error: String?, _ user: Stock?) -> Void) {
     let stock = stock
     let companyName = stock.name.lowercased()
+    print("Getting \(companyName)")
     let companyDic: [String: Any] = [kCOMPANYNAME: companyName]
     if (!JSONSerialization.isValidJSONObject(companyDic)) {
             completion("Invalid Token data", nil)
@@ -38,7 +39,7 @@ func fetchStockDetails(stock: Stock, token: String, completion: @escaping(_ erro
     request.addValue("application/json", forHTTPHeaderField: "Accept")
     request.setValue(token, forHTTPHeaderField: kTOKEN) //sets the header
     do {
-        request.httpBody = try JSONSerialization.data(withJSONObject: companyDic, options: .prettyPrinted)
+        request.httpBody = try JSONSerialization.data(withJSONObject: companyDic, options: .prettyPrinted) //sets the body
         
         let task = session.dataTask(with: request as URLRequest, completionHandler: {(data, response, error) in
             if let response = response {
@@ -60,24 +61,8 @@ func fetchStockDetails(stock: Stock, token: String, completion: @escaping(_ erro
                     guard let response = jsonResponse as? [String: Any] else { completion("Error converting json received", nil); return }
 //                    guard let shortName = response[kSHORTNAME] as? String else { print("Couldnt get shortname"); return }
                     guard let currentPrice = response[kPRICE] as? Double else {print("Couldnt get price"); return }
-//                    let stock: Stock = Stock(_name: "NULL", _shortName: shortName, _price: currentPrice)
                     stock.price = String(currentPrice)
                     completion(nil, stock)
-//                    if let errorMessage = response[kMESSAGE] as? String { //if we get a message response, it means there is an error
-//                        print("Error = \(errorMessage)")
-//                        completion(errorMessage, nil)
-//                    }
-//                    if let _ = response["success"] { //if we have a success key then create user
-////                        let user = User(_dictionary: userDic)
-////                        completion(nil, user)
-//                    }
-//                    if let token = response[kTOKEN] {
-//                        print("Token = ", token)
-//                    } else {
-//                        print("No token found")
-//                    }
-                    //Should not reach here, display unknown error
-//                    completion("Unknown response error", nil)
                 } catch _ {
                     completion("JSON not formatted", nil)
                 }

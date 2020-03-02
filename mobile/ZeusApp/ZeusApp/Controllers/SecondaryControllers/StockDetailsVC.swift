@@ -71,8 +71,8 @@ class StockDetailsVC: UIViewController {
     
     func getStockDetails() {
         guard let token = UserDefaults.standard.string(forKey: kTOKEN) else { print("No token"); return }
-        print("TOKEN TO GET STOCK IS = \(token)")
-        fetchStockDetails(stock: stock, token: token) { (error, stock) in
+//        print("TOKEN TO GET STOCK IS = \(token)")
+        fetchStockDetails(stock: &stock, token: token) { (error, stock) in
             DispatchQueue.main.async {
                 if let error = error {
                     Service.presentAlert(on: self, title: "Stock Error", message: error)
@@ -227,7 +227,7 @@ extension StockDetailsVC: UIScrollViewDelegate {
 extension StockDetailsVC: ChartViewDelegate {
     func chartValueSelected(_ chartView: ChartViewBase, entry:
      ChartDataEntry, highlight: Highlight) { //selected chart
-        print("Time: ",entry.x, " = Cost: ", entry.y)
+//        print("Time: ",entry.x, " = Cost: ", entry.y)
         priceLabel.text = "$" + String(entry.y)
     }
     
