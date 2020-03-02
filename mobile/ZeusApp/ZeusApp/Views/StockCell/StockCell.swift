@@ -36,7 +36,8 @@ class StockCell: UITableViewCell {
         setupLabels()
         rankLabel.isHidden = showRank ? false : true
         rankLabel.text = showRank ? String(stock.rank) : ""
-        priceLabel.text = "+999.99"
+//        priceLabel.text = "+999.99"
+        priceLabel.text = "$\(stock.price)"
         nameLabel.text = stock.name
         categoryLabel.text = "Technology"
         riskLabel.text = "High Risk"
