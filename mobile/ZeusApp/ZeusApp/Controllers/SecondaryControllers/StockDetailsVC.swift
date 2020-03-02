@@ -66,6 +66,22 @@ class StockDetailsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        getStockDetails()
+    }
+    
+    func getStockDetails() {
+        guard let token = UserDefaults.standard.string(forKey: kTOKEN) else { print("No token"); return }
+        print("TOKEN TO GET STOCK IS = \(token)")
+        fetchStockDetails(stock: stock, token: token) { (error, stock) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    Service.presentAlert(on: self, title: "Stock Error", message: error)
+                    return
+                }
+                self.stock = stock
+                self.priceLabel.text = stock?.price
+            }
+        }
     }
     
 //MARK: Private Methods
@@ -110,7 +126,7 @@ class StockDetailsVC: UIViewController {
         SettingsService.isSmallLabel(label: &pricePercentLabel, color: SettingsService.greenColor, weight: .semibold)
         SettingsService.isMediumLabel(label: &predictedLabel, color: SettingsService.whiteColor, weight: .semibold)
         SettingsService.isSmallLabel(label: &predictedPercentLabel, color: SettingsService.whiteColor, weight: .semibold)
-        priceLabel.text = "$1078.32"
+//        priceLabel.text = "$1078.32"
         pricePercentLabel.text = "+25%"
         predictedLabel.text = "$1203.98"
         predictedPercentLabel.text = "+34%"

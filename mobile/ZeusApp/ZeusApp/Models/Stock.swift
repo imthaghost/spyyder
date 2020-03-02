@@ -17,7 +17,7 @@ class Stock: Codable {
     var rank: Int
     var isFollowing: Bool
     
-    init(_name: String, _shortName: String, _price: String, _imageUrl: String, _rank: Int = 0, _isFollowing: Bool = false) {
+    init(_name: String = "", _shortName: String = "", _price: String = "", _imageUrl: String = "", _rank: Int = 0, _isFollowing: Bool = false) {
         self.name = _name
         self.shortName = _shortName
         self.price = _price
