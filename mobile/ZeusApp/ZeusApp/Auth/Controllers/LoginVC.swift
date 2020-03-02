@@ -57,7 +57,7 @@ class LoginVC: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleDismissTap(_:)))
         self.view.addGestureRecognizer(tap)
         updateColors()
-        setupQuizButton()
+        //setupQuizButton()
     }
     
     fileprivate func setupQuizButton() {
@@ -84,9 +84,10 @@ class LoginVC: UIViewController {
     @objc func quizButtonTapped() {
 //        self.navigationController?.popViewController(animated: true)
         print("EYOOO")
-        
-//        navigationController?.initRootVC(vc: QuizVC())
-        self.navigationController?.pushViewController(QuizVC(), animated: true)
+        let vc = QuizVC()
+        vc.modalPresentationStyle = .fullScreen
+        navigationController?.initRootVC(vc: vc)
+//        self.navigationController?.pushViewController(QuizVC(), animated: true)
 //        self.present(QuizVC(), animated: true, completion: nil)
     }
     

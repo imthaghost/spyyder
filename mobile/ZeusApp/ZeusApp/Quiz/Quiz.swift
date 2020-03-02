@@ -6,4 +6,12 @@
 //  Copyright © 2020 SamuelFolledo. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct Quiz { //singleton quiz model
+    static let shared = Quiz()
+    var name: String?
+    var data: [String: Any] = [:]
+
+    private init() { }
+}

@@ -64,7 +64,6 @@ class QuizVC: UIViewController {
         view.insertSubview(scrollView, at: 0)
         scrollView.insertSubview(contentView, at: 1)
         NSLayoutConstraint.activate(
-//            scrollView.pinToEdges(view: self.vi)
             scrollView.frameLayoutGuide.pinToEdgesEqually(view: self.view) //pin scrollView's frameLayoutGuide to the edges of self.view
         )
         NSLayoutConstraint.activate(
@@ -82,7 +81,6 @@ class QuizVC: UIViewController {
 //    }
     
     fileprivate func setupPageViews() {
-//        scrollView.
         let page1View = Page1View()
         let page2View = Page2View()
         let page3View = Page3View()
@@ -136,11 +134,11 @@ class QuizVC: UIViewController {
     }
     
 //MARK: Helpers
-    @objc func continueButtonTapped() {
-        let vc: LoginVC = LoginVC()
-        navigationController?.pushViewController(vc, animated: true)
-//        self.navigationController?.initRootVC(vc: vc, fromRight: true)
-    }
+//    @objc func continueButtonTapped() {
+//        let vc: LoginVC = LoginVC()
+//        navigationController?.pushViewController(vc, animated: true)
+////        self.navigationController?.initRootVC(vc: vc, fromRight: true)
+//    }
 }
 
 extension QuizVC: UIScrollViewDelegate {

@@ -72,14 +72,14 @@ class StockDetailsVC: UIViewController {
     func getStockDetails() {
         guard let token = UserDefaults.standard.string(forKey: kTOKEN) else { print("No token"); return }
 //        print("TOKEN TO GET STOCK IS = \(token)")
-        fetchStockDetails(stock: &stock, token: token) { (error, stock) in
+        fetchStockDetails(stock: stock, token: token) { (error, stock) in
             DispatchQueue.main.async {
                 if let error = error {
                     Service.presentAlert(on: self, title: "Stock Error", message: error)
                     return
                 }
                 self.stock = stock
-                self.priceLabel.text = stock?.price
+                self.priceLabel.text = "$\(stock!.price)"
             }
         }
     }

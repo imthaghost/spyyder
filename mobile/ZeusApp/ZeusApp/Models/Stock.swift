@@ -16,6 +16,8 @@ class Stock: Codable {
     var imageUrl: String
     var rank: Int
     var isFollowing: Bool
+    var trendingStocks: [Stock] = []
+    var suggestedStocks: [Stock] = []
     
     init(_name: String = "", _shortName: String = "", _price: String = "", _imageUrl: String = "", _rank: Int = 0, _isFollowing: Bool = false) {
         self.name = _name
@@ -70,4 +72,26 @@ func loadAllStocks() -> [Stock] {
     }
     print("All Trending and Suggested Stocks are: \(stocks)")
     return Array(Set(stocks)) //makes sure stocks are unique
+}
+
+///Fetches all data of stocks
+func fetchAllStocks(stocks: [Stock], completion: @escaping(_ error: String?, _ stocks: [Stock]) -> Void) {
+    guard let token = UserDefaults.standard.string(forKey: kTOKEN) else { print("No token"); return }
+    var resultStocks: [Stock] = []
+    for stock in stocks {
+        fetchStockDetails(stock: stock, token: token) { (error, stock) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    completion(error, resultStocks)
+                }
+                resultStocks.append(stock!)
+                if resultStocks.count == stocks.count {
+                    for stock in resultStocks {
+                        print("Updated stock = \(stock)")
+                    }
+                    completion(nil, resultStocks)
+                }
+            }
+        }
+    }
 }
