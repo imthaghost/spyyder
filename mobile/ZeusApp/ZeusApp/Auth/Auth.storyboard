@@ -84,6 +84,14 @@
                                     <action selector="switchButtonTapped:" destination="44c-hw-GRe" eventType="touchUpInside" id="Kb0-q6-Sai"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVp-gb-T5H">
+                                <rect key="frame" x="118" y="201" width="178" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="SeA-6X-TK1" kind="show" id="hxH-uK-r0o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -110,7 +118,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nMX-uI-gkh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1200" y="292.63392857142856"/>
+            <point key="canvasLocation" x="1198.5507246376812" y="292.63392857142856"/>
+        </scene>
+        <!--Quiz-->
+        <scene sceneID="BMY-dr-bH0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Quiz" id="SeA-6X-TK1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="RlD-tB-xok"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LPg-e2-XLX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2086" y="170"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dh3-hW-5sg">
