@@ -22,6 +22,74 @@ struct Message: Decodable {
 }
 
 //MARK: Network Calls
+///POST get Stock details
+func fetchStockDetails(stock: Stock, token: String, completion: @escaping(_ error: String?, _ user: Stock?) -> Void) {
+    let stock = stock
+    let companyName = stock.name.lowercased()
+    let companyDic: [String: Any] = [kCOMPANYNAME: companyName]
+    if (!JSONSerialization.isValidJSONObject(companyDic)) {
+            completion("Invalid Token data", nil)
+        }
+    let url: String = "http://3.17.150.127:8000/company"
+    let session = URLSession.shared
+    let request = NSMutableURLRequest(url: NSURL(string: url)! as URL)
+    request.httpMethod = "POST"
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.addValue("application/json", forHTTPHeaderField: "Accept")
+    request.setValue(token, forHTTPHeaderField: kTOKEN) //sets the header
+    do {
+        request.httpBody = try JSONSerialization.data(withJSONObject: companyDic, options: .prettyPrinted)
+        
+        let task = session.dataTask(with: request as URLRequest, completionHandler: {(data, response, error) in
+            if let response = response {
+                let nsHTTPResponse = response as! HTTPURLResponse
+                let statusCode = nsHTTPResponse.statusCode
+                print ("status code = \(statusCode)")
+            }
+            if let error = error {
+                print ("\(error)")
+            }
+            if let data = data {
+//                do {
+//                    let response = try JSONDecoder().decode(Token.self, from: data)
+//                    print(response.token)
+//                } catch { print(error) }
+                do { //MARK: On /create, error is JSON not formatted. On /user error is dataCorrupted... Invalid value around character
+                    let jsonResponse = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions())
+                    print ("jsonResponse: \(jsonResponse)")
+                    guard let response = jsonResponse as? [String: Any] else { completion("Error converting json received", nil); return }
+//                    guard let shortName = response[kSHORTNAME] as? String else { print("Couldnt get shortname"); return }
+                    guard let currentPrice = response[kPRICE] as? Double else {print("Couldnt get price"); return }
+//                    let stock: Stock = Stock(_name: "NULL", _shortName: shortName, _price: currentPrice)
+                    stock.price = String(currentPrice)
+                    completion(nil, stock)
+//                    if let errorMessage = response[kMESSAGE] as? String { //if we get a message response, it means there is an error
+//                        print("Error = \(errorMessage)")
+//                        completion(errorMessage, nil)
+//                    }
+//                    if let _ = response["success"] { //if we have a success key then create user
+////                        let user = User(_dictionary: userDic)
+////                        completion(nil, user)
+//                    }
+//                    if let token = response[kTOKEN] {
+//                        print("Token = ", token)
+//                    } else {
+//                        print("No token found")
+//                    }
+                    //Should not reach here, display unknown error
+//                    completion("Unknown response error", nil)
+                } catch _ {
+                    completion("JSON not formatted", nil)
+                }
+            }
+        })
+        task.resume()
+    } catch _ {
+        print ("Some error :)")
+    }
+}
+
+///POST HTTP create user
 func postRequest(url: String, userDic: [String: Any], completion: @escaping(_ error: String?, _ user: User?) -> Void) { //user for Registering user
     if (!JSONSerialization.isValidJSONObject(userDic)) {
         completion("Invalid email and password data", nil)
@@ -55,14 +123,16 @@ func postRequest(url: String, userDic: [String: Any], completion: @escaping(_ er
                         print("Error = \(errorMessage)")
                         completion(errorMessage, nil)
                     }
+                    if let token = response[kTOKEN] {
+                        print("Token = ", token)
+                        UserDefaults.standard.set(token, forKey: kTOKEN)
+                        UserDefaults.standard.synchronize()
+                    } else {
+                        print("No token found")
+                    }
                     if let _ = response["success"] { //if we have a success key then create user
                         let user = User(_dictionary: userDic)
                         completion(nil, user)
-                    }
-                    if let token = response[kTOKEN] {
-                        print("Token = ", token)
-                    } else {
-                        print("No token found")
                     }
                     //Should not reach here, display unknown error
                     completion("Unknown response error", nil)
@@ -107,6 +177,8 @@ func login(email: String, password: String, completion: @escaping(_ error: Strin
                     userDic[kUSERID] = UUID().uuidString
                     userDic[kTOKEN] = response.token
                     print("Token \(response.token)")
+                    UserDefaults.standard.set(response.token, forKey: kTOKEN)
+                    UserDefaults.standard.synchronize()
                     getRequestUser(userDic: userDic) { (error, user) in
                         if let error = error {
                             completion(error, nil)
