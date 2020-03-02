@@ -23,9 +23,9 @@ struct Message: Decodable {
 
 //MARK: Network Calls
 ///POST get Stock details
-func fetchStockDetails(stock: inout Stock, token: String, completion: @escaping(_ error: String?, _ user: Stock?) -> Void) {
+func fetchStockDetails(stock: Stock, token: String, completion: @escaping(_ error: String?, _ user: Stock?) -> Void) {
     let stock = stock
-    let companyName = stock.name.lowercased()
+    let companyName = stock.name.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) //removes white spaces
     print("Getting \(companyName)")
     let companyDic: [String: Any] = [kCOMPANYNAME: companyName]
     if (!JSONSerialization.isValidJSONObject(companyDic)) {
@@ -61,10 +61,12 @@ func fetchStockDetails(stock: inout Stock, token: String, completion: @escaping(
                     guard let response = jsonResponse as? [String: Any] else { completion("Error converting json received", nil); return }
 //                    guard let shortName = response[kSHORTNAME] as? String else { print("Couldnt get shortname"); return }
                     guard let currentPrice = response[kPRICE] as? Double else {print("Couldnt get price"); return }
-                    stock.price = String(currentPrice)
+                    stock.price = String(format: "%.2f", ceil(currentPrice*100)/100) //2 decimal points
                     completion(nil, stock)
                 } catch _ {
-                    completion("JSON not formatted", nil)
+//                    completion("JSON not formatted", nil)
+                    print("\(companyName) JSON cannot be formatted")
+                    completion(nil, stock)
                 }
             }
         })
