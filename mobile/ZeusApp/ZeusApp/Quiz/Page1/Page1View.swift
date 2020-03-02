@@ -14,6 +14,7 @@ class Page1View: UIView {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var bottomLabel: UILabel!
+    @IBOutlet weak var continueButton: UIButton!
     
     required init() { //with initializer
         super.init(frame: .zero)

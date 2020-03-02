@@ -100,34 +100,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fsV-VX-eGU"/>
                     </view>
-                    <navigationItem key="navigationItem" id="deA-aP-0Im">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="WWv-y4-itl">
-                            <connections>
-                                <segue destination="cbq-lg-4tB" kind="show" id="lJ5-rC-aoX"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="deA-aP-0Im"/>
                     <connections>
                         <outlet property="continueButton" destination="GDk-h7-Rmu" id="xca-7b-dOE"/>
                         <outlet property="emailTextField" destination="dJd-Ll-eDb" id="a80-dh-miS"/>
                         <outlet property="passwordTextField" destination="Lm8-Qz-vWD" id="35x-f7-we1"/>
                         <outlet property="switchButton" destination="fOD-6g-SKx" id="VG8-iE-LbJ"/>
-                        <segue destination="cbq-lg-4tB" kind="presentation" identifier="toQuizVC" id="3Bi-gc-t5n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nMX-uI-gkh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1200" y="292.63392857142856"/>
-        </scene>
-        <!--Quiz-->
-        <scene sceneID="H35-Gq-u3l">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Quiz" id="cbq-lg-4tB" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="5Nr-dm-bxR"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tUp-4G-Xgr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1930" y="293"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dh3-hW-5sg">
@@ -148,7 +131,4 @@
             <point key="canvasLocation" x="289.85507246376812" y="292.63392857142856"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="3Bi-gc-t5n"/>
-    </inferredMetricsTieBreakers>
 </document>

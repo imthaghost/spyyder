@@ -24,6 +24,11 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        
+        
+        //MARK: Remove this
+        let button = UIButton(frame: .zero)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,6 +57,37 @@ class LoginVC: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleDismissTap(_:)))
         self.view.addGestureRecognizer(tap)
         updateColors()
+        setupQuizButton()
+    }
+    
+    fileprivate func setupQuizButton() {
+        let quizButton: UIButton = UIButton(type: .custom)
+        quizButton.isClearButton()
+        quizButton.translatesAutoresizingMaskIntoConstraints = false
+        quizButton.setTitle("Quiz", for: .normal)
+        quizButton.imageView?.contentMode = .scaleAspectFill //contentMode for buttons
+        quizButton.contentMode = .left
+        //        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 0)
+        quizButton.contentHorizontalAlignment = .left //push contents to the left
+        
+        view.addSubview(quizButton)
+        NSLayoutConstraint.activate([
+            quizButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+             quizButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+//            quizButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 5),
+            quizButton.heightAnchor.constraint(equalToConstant: 40),
+            quizButton.widthAnchor.constraint(equalToConstant: 100),
+        ])
+        quizButton.addTarget(self, action: #selector(self.quizButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func quizButtonTapped() {
+//        self.navigationController?.popViewController(animated: true)
+        print("EYOOO")
+        
+//        navigationController?.initRootVC(vc: QuizVC())
+        self.navigationController?.pushViewController(QuizVC(), animated: true)
+//        self.present(QuizVC(), animated: true, completion: nil)
     }
     
     fileprivate func updateColors() {

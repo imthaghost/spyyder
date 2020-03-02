@@ -30,4 +30,17 @@ extension UIScrollView {
         let scrollViewBottomOffset = scrollContentSizeHeight + bottomInset - scrollViewHeight
         return scrollViewBottomOffset
     }
+    
+    ///Thanks to Pontus on this site: https://stackoverflow.com/questions/1926810/change-page-on-uiscrollview
+    func scrollTo(horizontalPage: Int? = 0, verticalPage: Int? = 0, animated: Bool? = true) {
+        /*TO USE:
+         self.scrollView.scrollTo(horizontalPage: 0)
+         self.scrollView.scrollTo(verticalPage: 2, animated: true)
+         self.scrollView.scrollTo(horizontalPage: 1, verticalPage: 2, animated: true)
+         */
+        var frame: CGRect = self.frame
+        frame.origin.x = frame.size.width * CGFloat(horizontalPage ?? 0)
+        frame.origin.y = frame.size.width * CGFloat(verticalPage ?? 0)
+        self.scrollRectToVisible(frame, animated: animated ?? true)
+    }
 }

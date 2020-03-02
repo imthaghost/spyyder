@@ -35,7 +35,6 @@
 		3344298323FB22CC00F0E345 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3344297D23FB22CC00F0E345 /* ProfileVC.swift */; };
 		3344298623FB23F200F0E345 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3344298523FB23F200F0E345 /* SettingsCell.swift */; };
 		334599F123F7C3D3002C13D5 /* UITextField+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334599F023F7C3D3002C13D5 /* UITextField+extensions.swift */; };
-		3361AB33240C45B2004E9817 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3361AB32240C45B2004E9817 /* Quiz.storyboard */; };
 		3361AB35240C4D0C004E9817 /* Page1View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3361AB34240C4D0C004E9817 /* Page1View.xib */; };
 		3361AB37240C4D37004E9817 /* Page1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AB36240C4D37004E9817 /* Page1View.swift */; };
 		3361AB40240C4DA1004E9817 /* Page2View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3361AB3F240C4DA1004E9817 /* Page2View.xib */; };
@@ -51,6 +50,7 @@
 		3361AB54240C4DFB004E9817 /* Page7View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AB53240C4DFB004E9817 /* Page7View.swift */; };
 		3361AB56240C4E00004E9817 /* Page7View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3361AB55240C4E00004E9817 /* Page7View.xib */; };
 		3361AB58240C4FE7004E9817 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AB57240C4FE7004E9817 /* QuizVC.swift */; };
+		3361AB5A240C878F004E9817 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AB59240C878F004E9817 /* UIView+extensions.swift */; };
 		3385A04023FDBE8400879E19 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3385A03F23FDBE8400879E19 /* SettingsService.swift */; };
 		3385A04B23FE741600879E19 /* DecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3385A04A23FE741600879E19 /* DecisionView.swift */; };
 		3385A04D23FE745C00879E19 /* DecisionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3385A04C23FE745C00879E19 /* DecisionView.xib */; };
@@ -98,7 +98,6 @@
 		3344297D23FB22CC00F0E345 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		3344298523FB23F200F0E345 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		334599F023F7C3D3002C13D5 /* UITextField+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+extensions.swift"; sourceTree = "<group>"; };
-		3361AB32240C45B2004E9817 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
 		3361AB34240C4D0C004E9817 /* Page1View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Page1View.xib; sourceTree = "<group>"; };
 		3361AB36240C4D37004E9817 /* Page1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1View.swift; sourceTree = "<group>"; };
 		3361AB3F240C4DA1004E9817 /* Page2View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Page2View.xib; sourceTree = "<group>"; };
@@ -114,6 +113,7 @@
 		3361AB53240C4DFB004E9817 /* Page7View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page7View.swift; sourceTree = "<group>"; };
 		3361AB55240C4E00004E9817 /* Page7View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Page7View.xib; sourceTree = "<group>"; };
 		3361AB57240C4FE7004E9817 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
+		3361AB59240C878F004E9817 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		3385A03F23FDBE8400879E19 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		3385A04A23FE741600879E19 /* DecisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionView.swift; sourceTree = "<group>"; };
 		3385A04C23FE745C00879E19 /* DecisionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DecisionView.xib; sourceTree = "<group>"; };
@@ -252,6 +252,7 @@
 				333BDE942407091B004AD18C /* UIScrollView+extensions.swift */,
 				33CA31A823E6286A009AA3DF /* UIColor+extensions.swift */,
 				33CA31B723E8AB56009AA3DF /* UILayoutGuide+extensions.swift */,
+				3361AB59240C878F004E9817 /* UIView+extensions.swift */,
 				33A8BFC323ECA01B00056A0F /* UINavigationController+extensions.swift */,
 				334044CC23F1E57200CEA9A9 /* UIButton+extensions.swift */,
 				33232DB723F229F600CF722D /* String+extensions.swift */,
@@ -327,7 +328,6 @@
 		3361AB31240C4597004E9817 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				3361AB32240C45B2004E9817 /* Quiz.storyboard */,
 				3361AB57240C4FE7004E9817 /* QuizVC.swift */,
 				3361AB38240C4D41004E9817 /* Page1 */,
 				3361AB39240C4D63004E9817 /* Page2 */,
@@ -509,7 +509,6 @@
 				3309912123E213DC00880CC5 /* Assets.xcassets in Resources */,
 				3361AB46240C4DC6004E9817 /* Page3View.xib in Resources */,
 				3361AB50240C4DE6004E9817 /* Page6View.xib in Resources */,
-				3361AB33240C45B2004E9817 /* Quiz.storyboard in Resources */,
 				33CA31BC23E8AC48009AA3DF /* StockDescriptionView.xib in Resources */,
 				3309911F23E213DA00880CC5 /* Main.storyboard in Resources */,
 				334044D523F1F27800CEA9A9 /* Auth.storyboard in Resources */,
@@ -602,6 +601,7 @@
 				3361AB54240C4DFB004E9817 /* Page7View.swift in Sources */,
 				33CA31BA23E8AC2D009AA3DF /* StockDescriptionView.swift in Sources */,
 				3344298023FB22CC00F0E345 /* RecommendationVC.swift in Sources */,
+				3361AB5A240C878F004E9817 /* UIView+extensions.swift in Sources */,
 				334599F123F7C3D3002C13D5 /* UITextField+extensions.swift in Sources */,
 				33A8BFC423ECA01B00056A0F /* UINavigationController+extensions.swift in Sources */,
 				3344297E23FB22CC00F0E345 /* MyStocksVC.swift in Sources */,
