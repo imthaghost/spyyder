@@ -40,8 +40,10 @@ extension MainTabBarController: UITabBarControllerDelegate {
         }
         return TransitioningObject(tabBarController: tabBarController, fromIndex: fromIndex)
     }
-    
-/// didSelect that can bar item trigger animation
+}
+
+extension MainTabBarController {
+/// didSelect that gives bar item bounce animation on tap
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         // find index if the selected tab bar item, then find the corresponding view and get its image, the view position is offset by 1 because the first item is the background (at least in this case)
         guard let idx = tabBar.items?.firstIndex(of: item), tabBar.subviews.count > idx + 1, let imageView = tabBar.subviews[idx + 1].subviews.compactMap ({ $0 as? UIImageView }).first else {

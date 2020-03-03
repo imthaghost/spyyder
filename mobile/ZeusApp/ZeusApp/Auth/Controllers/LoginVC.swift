@@ -57,7 +57,7 @@ class LoginVC: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleDismissTap(_:)))
         self.view.addGestureRecognizer(tap)
         updateColors()
-        //setupQuizButton()
+        setupQuizButton()
     }
     
     fileprivate func setupQuizButton() {

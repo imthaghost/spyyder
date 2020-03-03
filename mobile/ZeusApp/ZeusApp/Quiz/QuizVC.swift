@@ -38,6 +38,15 @@ class QuizVC: UIViewController {
         view.backgroundColor = .black
         return view
     }()
+    let containerStackView: UIStackView = {
+        let stackView: UIStackView = UIStackView(frame: .zero)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.distribution = .fill
+        stackView.spacing = 10
+        return stackView
+    }()
         
 //MARK: App Life Cycle
     override func loadView() {
@@ -66,9 +75,17 @@ class QuizVC: UIViewController {
         NSLayoutConstraint.activate(
             scrollView.frameLayoutGuide.pinToEdgesEqually(view: self.view) //pin scrollView's frameLayoutGuide to the edges of self.view
         )
-        NSLayoutConstraint.activate(
-            scrollView.contentLayoutGuide.pinToEdgesEqually(view: contentView) //pin scrollView's contentLayoutGuide to edges of contentView
-        )
+        
+        scrollView.addSubview(containerStackView)
+        containerStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+        containerStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        containerStackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        containerStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        containerStackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
+        
+//        NSLayoutConstraint.activate(
+//            scrollView.contentLayoutGuide.pinToEdgesEqually(view: contentView) //pin scrollView's contentLayoutGuide to edges of contentView
+//        )
         scrollView.contentLayoutGuide.heightAnchor.constraint(equalTo: scrollView.frameLayoutGuide.heightAnchor).isActive = true //NOTE: you can get width and height from scrollView's frameLayoutGuide, and you can pin top, left, right, and bottom to scrollView's contentLayoutGuide //refer to Adriana's ScrollView Recipe
     }
     
@@ -90,6 +107,10 @@ class QuizVC: UIViewController {
         let page7View = Page7View()
 //        pages = [page1View, page2View, page3View]
         pages = [page1View, page2View, page3View, page4View, page5View, page6View, page7View]
+        for page in pages {
+            containerStackView.addArrangedSubview(page)
+            page.widthAnchor.constraint(equalToConstant: view.frame.size.width).isActive = true
+        }
 //        for page in pages {
 //            page.translatesAutoresizingMaskIntoConstraints = false
 ////            mainStackView.addArrangedSubview(page)
@@ -102,7 +123,7 @@ class QuizVC: UIViewController {
 //        }
 //        let pinkView = UIView(frame: CGRect(x: 100, y: 40, width: 100, height: 40))
 //        pinkView.backgroundColor = .systemPink
-        applyPageConstraints()
+//        applyPageConstraints()
     }
     
     fileprivate func applyPageConstraints() { //apply constraints to all pages
