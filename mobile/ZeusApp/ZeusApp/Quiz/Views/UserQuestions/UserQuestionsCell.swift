@@ -9,7 +9,13 @@
 import UIKit
 
 class UserQuestionsCell: UITableViewCell {
-
+    
+    static let identifier: String = "UserQuestionsCell"
+    
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var textFiield: UnderlinedTextField!
+    @IBOutlet weak var button: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -17,8 +23,10 @@ class UserQuestionsCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
+    func populateCell() {
+        
+    }
 }
