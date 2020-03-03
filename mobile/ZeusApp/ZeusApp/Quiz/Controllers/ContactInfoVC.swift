@@ -12,6 +12,12 @@ class ContactInfoVC: UIViewController {
 //MARK: Properties
     
 //MARK: IBOutlets
+    @IBOutlet weak var topLabel: UILabel!
+    
+    @IBOutlet weak var address1TextField: UnderlinedTextField!
+    @IBOutlet weak var address2TextField: UnderlinedTextField!
+    @IBOutlet weak var cityTextField: UnderlinedTextField!
+    @IBOutlet weak var continueButton: UIButton!
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
@@ -21,25 +27,27 @@ class ContactInfoVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.navigationBar.isHidden = false
     }
     
 //MARK: Navigation
     
 //MARK: Private Methods
     fileprivate func setupViews() {
-//        self.title = "My Profile"
+        self.title = "Contact Information"
+        continueButton.isMainButton()
 //        self.navigationController!.navigationBar.isTranslucent = false
 //        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(showOptions(controller:)))
     }
     
 //MARK: IBActions
+    @IBAction func continueButtonTapped(_ sender: Any) {
+        print("Go Home")
+    }
     
 //MARK: Helpers
     @objc func showOptions(controller: UIViewController) {

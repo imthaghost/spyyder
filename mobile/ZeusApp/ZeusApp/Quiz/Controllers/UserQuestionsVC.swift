@@ -13,6 +13,7 @@ class UserQuestionsVC: UIViewController {
     var questions: [Quiz] = []
 //MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var continueButton: UIButton!
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
@@ -28,6 +29,7 @@ class UserQuestionsVC: UIViewController {
         self.navigationController!.navigationBar.isTranslucent = false
 //        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
         tableView.tableFooterView = UIView()
+        continueButton.isMainButton()
     }
     
 //MARK: IBActions

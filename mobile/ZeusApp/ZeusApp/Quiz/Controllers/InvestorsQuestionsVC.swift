@@ -34,7 +34,7 @@ class InvestorsQuestionsVC: UIViewController {
 //MARK: Private Methods
     fileprivate func setupViews() {
         self.title = "Investor Questions"
-        
+        continueButton.isMainButton()
     }
     
 //MARK: IBActions

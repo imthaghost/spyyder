@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import Charts
 
 class UserPortfolioVC: UIViewController {
 //MARK: Properties
     
 //MARK: IBOutlets
+    
+    @IBOutlet weak var chartView: PieChartView!
+    @IBOutlet weak var predictionLabel: UILabel!
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var continueButton: UIButton!
+    
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
@@ -21,19 +28,18 @@ class UserPortfolioVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.navigationBar.isHidden = false
     }
     
 //MARK: Navigation
     
 //MARK: Private Methods
     fileprivate func setupViews() {
-//        self.title = "My Profile"
+        self.title = "Your Portfolio"
+        continueButton.isMainButton()
 //        self.navigationController!.navigationBar.isTranslucent = false
 //        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(showOptions(controller:)))

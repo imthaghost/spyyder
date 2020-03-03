@@ -12,6 +12,8 @@ class Page4VC: UIViewController {
 //MARK: Properties
     
 //MARK: IBOutlets
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var continueButton: UIButton!
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
@@ -33,6 +35,7 @@ class Page4VC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
+        continueButton.isMainButton()
 //        self.title = "My Profile"
 //        self.navigationController!.navigationBar.isTranslucent = false
 //        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
