@@ -13,7 +13,7 @@ class UserQuestionsCell: UITableViewCell {
     static let identifier: String = "UserQuestionsCell"
     
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var textFiield: UnderlinedTextField!
+    @IBOutlet weak var textField: UnderlinedTextField!
     @IBOutlet weak var button: UIButton!
     
     override func awakeFromNib() {
@@ -26,7 +26,7 @@ class UserQuestionsCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func populateCell() {
-        
+    func populateCell(question: QuizQuestion) {
+        questionLabel.text = question.question
     }
 }

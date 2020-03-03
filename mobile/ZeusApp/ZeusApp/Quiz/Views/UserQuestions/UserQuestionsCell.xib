@@ -54,7 +54,7 @@
             <connections>
                 <outlet property="button" destination="3Bg-zp-Uvl" id="g0v-j5-UIq"/>
                 <outlet property="questionLabel" destination="Lct-XC-ng8" id="Bqg-Ca-5PC"/>
-                <outlet property="textFiield" destination="e1r-dc-0xS" id="am2-EP-dWH"/>
+                <outlet property="textField" destination="e1r-dc-0xS" id="Fnj-vb-s9y"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </tableViewCell>
