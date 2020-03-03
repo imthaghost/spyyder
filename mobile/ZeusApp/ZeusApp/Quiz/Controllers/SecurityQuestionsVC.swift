@@ -9,22 +9,42 @@
 import UIKit
 
 class SecurityQuestionsVC: UIViewController {
-
+//MARK: Properties
+    
+//MARK: IBOutlets
+    
+//MARK: App Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupViews()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
     }
-    */
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
+    
+//MARK: Navigation
+    
+//MARK: Private Methods
+    fileprivate func setupViews() {
+//        self.title = "My Profile"
+//        self.navigationController!.navigationBar.isTranslucent = false
+//        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(showOptions(controller:)))
+    }
+    
+//MARK: IBActions
+    
+//MARK: Helpers
+    @objc func showOptions(controller: UIViewController) {
+    }
 }
+
+//MARK: Extensions
+
