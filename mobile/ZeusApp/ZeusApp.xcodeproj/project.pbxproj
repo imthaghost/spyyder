@@ -27,6 +27,8 @@
 		333A58D2240E309B003FF6A7 /* SecurityQuestionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333A58D1240E309B003FF6A7 /* SecurityQuestionsVC.swift */; };
 		333A58D4240E30AB003FF6A7 /* UserPortfolioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333A58D3240E30AB003FF6A7 /* UserPortfolioVC.swift */; };
 		333A58D6240E30BA003FF6A7 /* ContactInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333A58D5240E30BA003FF6A7 /* ContactInfoVC.swift */; };
+		333A58DC240E392F003FF6A7 /* UserQuestionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333A58DA240E392F003FF6A7 /* UserQuestionsCell.swift */; };
+		333A58DD240E392F003FF6A7 /* UserQuestionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 333A58DB240E392F003FF6A7 /* UserQuestionsCell.xib */; };
 		333BDE952407091B004AD18C /* UIScrollView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333BDE942407091B004AD18C /* UIScrollView+extensions.swift */; };
 		334044CD23F1E57200CEA9A9 /* UIButton+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334044CC23F1E57200CEA9A9 /* UIButton+extensions.swift */; };
 		334044D523F1F27800CEA9A9 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 334044D423F1F27800CEA9A9 /* Auth.storyboard */; };
@@ -85,6 +87,8 @@
 		333A58D1240E309B003FF6A7 /* SecurityQuestionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityQuestionsVC.swift; sourceTree = "<group>"; };
 		333A58D3240E30AB003FF6A7 /* UserPortfolioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPortfolioVC.swift; sourceTree = "<group>"; };
 		333A58D5240E30BA003FF6A7 /* ContactInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoVC.swift; sourceTree = "<group>"; };
+		333A58DA240E392F003FF6A7 /* UserQuestionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuestionsCell.swift; sourceTree = "<group>"; };
+		333A58DB240E392F003FF6A7 /* UserQuestionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserQuestionsCell.xib; sourceTree = "<group>"; };
 		333BDE942407091B004AD18C /* UIScrollView+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extensions.swift"; sourceTree = "<group>"; };
 		334044CC23F1E57200CEA9A9 /* UIButton+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extensions.swift"; sourceTree = "<group>"; };
 		334044D423F1F27800CEA9A9 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
@@ -266,6 +270,23 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		333A58D7240E38EE003FF6A7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				333A58DE240E3934003FF6A7 /* UserQuestions */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		333A58DE240E3934003FF6A7 /* UserQuestions */ = {
+			isa = PBXGroup;
+			children = (
+				333A58DA240E392F003FF6A7 /* UserQuestionsCell.swift */,
+				333A58DB240E392F003FF6A7 /* UserQuestionsCell.xib */,
+			);
+			path = UserQuestions;
+			sourceTree = "<group>";
+		};
 		334044CF23F1EE9500CEA9A9 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +357,7 @@
 				3361AB57240C4FE7004E9817 /* QuizVC.swift */,
 				333A58C4240CE0A8003FF6A7 /* Quiz.swift */,
 				333A58CC240E3067003FF6A7 /* Controllers */,
+				333A58D7240E38EE003FF6A7 /* Views */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -436,6 +458,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				333A58DD240E392F003FF6A7 /* UserQuestionsCell.xib in Resources */,
 				3309912423E213DC00880CC5 /* LaunchScreen.storyboard in Resources */,
 				33CA31A423E608A7009AA3DF /* StockCellView.xib in Resources */,
 				3385A04D23FE745C00879E19 /* DecisionView.xib in Resources */,
@@ -500,6 +523,7 @@
 				333A58D6240E30BA003FF6A7 /* ContactInfoVC.swift in Sources */,
 				333A58D0240E308E003FF6A7 /* Page4VC.swift in Sources */,
 				334044D723F1F49F00CEA9A9 /* OnboardingVC.swift in Sources */,
+				333A58DC240E392F003FF6A7 /* UserQuestionsCell.swift in Sources */,
 				3309911823E213DA00880CC5 /* AppDelegate.swift in Sources */,
 				33232DBC23F25CA200CF722D /* Dictionary+extensions.swift in Sources */,
 				333BDE952407091B004AD18C /* UIScrollView+extensions.swift in Sources */,

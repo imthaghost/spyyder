@@ -12,6 +12,16 @@ class InvestorsQuestionsVC: UIViewController {
 //MARK: Properties
     
 //MARK: IBOutlets
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var q1Label: UILabel!
+    @IBOutlet weak var q2Label: UILabel!
+    @IBOutlet weak var q3Label: UILabel!
+    @IBOutlet weak var q4Label: UILabel!
+    @IBOutlet weak var switch1: UISwitch!
+    @IBOutlet weak var switch2: UISwitch!
+    @IBOutlet weak var switch3: UISwitch!
+    @IBOutlet weak var switch4: UISwitch!
+    @IBOutlet weak var continueButton: UIButton!
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
@@ -23,10 +33,8 @@ class InvestorsQuestionsVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
-//        self.title = "My Profile"
-//        self.navigationController!.navigationBar.isTranslucent = false
-//        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(showOptions(controller:)))
+        self.title = "Investor Questions"
+        
     }
     
 //MARK: IBActions

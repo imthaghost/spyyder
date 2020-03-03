@@ -12,8 +12,10 @@ class UserQuestionsVC: UIViewController {
 //MARK: Properties
     
 //MARK: IBOutlets
-    @IBOutlet weak var settingsButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var titleCellLabel: UILabel!
+    
+    
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
@@ -35,8 +37,6 @@ class UserQuestionsVC: UIViewController {
     
 //MARK: Helpers
     @objc func showOptions(controller: UIViewController) {
-        let vc: SettingsVC = SettingsVC()
-        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -48,11 +48,18 @@ extension UserQuestionsVC: UITableViewDelegate {
 
 extension UserQuestionsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return months.count
-        return 3
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.section {
+        case 0: //if title
+            let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath)
+            titleCellLabel.text = "Welcome!"
+            return cell
+        default:
+            break
+        }
 //        let cell: BoxCell = tableView.dequeueReusableCell(withIdentifier: BoxCell.identifier, for: indexPath) as! BoxCell
 //        cell.boxLabel.text = months[indexPath.row]
 //        cell.backgroundColor = SettingsService.whiteColor
