@@ -21,20 +21,20 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="professionals" translatesAutoresizingMaskIntoConstraints="NO" id="1vO-Hu-dXi">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="368"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq3-Pf-H8y">
-                                        <rect key="frame" x="0.0" y="398" width="374" height="85"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" text="Spyder works with investment professionals, mathematicians, and a Nobel Prize winning economist to craft our portfolios" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq3-Pf-H8y">
+                                        <rect key="frame" x="0.0" y="398" width="374" height="64.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9j-eb-w1x">
-                                        <rect key="frame" x="0.0" y="513" width="374" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" text="The next few questions will help us recommend the right portfolio for you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9j-eb-w1x">
+                                        <rect key="frame" x="0.0" y="492.5" width="374" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQR-sz-sNy">
-                                        <rect key="frame" x="67" y="563.5" width="240" height="50"/>
+                                        <rect key="frame" x="67" y="565.5" width="240" height="48"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -217,7 +217,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oOG-F3-ny0">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oOG-F3-ny0">
                                 <rect key="frame" x="20" y="373" width="374" height="409"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAq-bt-v1e">
@@ -227,25 +227,25 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iq6-Um-2xj" customClass="UnderlinedTextField" customModule="ZeusApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="30.5" width="374" height="40"/>
+                                        <rect key="frame" x="0.0" y="40.5" width="374" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="l69-VV-mST"/>
+                                            <constraint firstAttribute="height" constant="50" id="BXw-ca-wjt"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LbB-xI-bnf" customClass="UnderlinedTextField" customModule="ZeusApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="80.5" width="374" height="40"/>
+                                        <rect key="frame" x="0.0" y="110.5" width="374" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y8I-Ov-pqE" customClass="UnderlinedTextField" customModule="ZeusApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="130.5" width="374" height="40"/>
+                                        <rect key="frame" x="0.0" y="180.5" width="374" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCy-B8-Jjr">
-                                        <rect key="frame" x="67" y="180.5" width="240" height="228.5"/>
+                                        <rect key="frame" x="67" y="250.5" width="240" height="158.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
@@ -522,28 +522,28 @@
                                 <rect key="frame" x="20" y="202.5" width="374" height="491"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="invest" translatesAutoresizingMaskIntoConstraints="NO" id="k6N-sa-oeR">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="245.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="294.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ok let's start investing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dS-bH-gse">
-                                        <rect key="frame" x="95.5" y="255.5" width="183.5" height="20.5"/>
+                                        <rect key="frame" x="95.5" y="304.5" width="183.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cQ-3J-MSy">
-                                        <rect key="frame" x="166" y="286" width="42" height="20.5"/>
+                                        <rect key="frame" x="166" y="335" width="42" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9J-xu-pEh">
-                                        <rect key="frame" x="67" y="316.5" width="240" height="174.5"/>
+                                        <rect key="frame" x="67" y="365.5" width="240" height="125.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="k6N-sa-oeR" firstAttribute="width" secondItem="R7h-iK-X8b" secondAttribute="width" id="aWC-9B-00m"/>
-                                    <constraint firstItem="k6N-sa-oeR" firstAttribute="height" secondItem="R7h-iK-X8b" secondAttribute="height" multiplier="0.5" id="fPv-aL-h5l"/>
+                                    <constraint firstItem="k6N-sa-oeR" firstAttribute="height" secondItem="R7h-iK-X8b" secondAttribute="height" multiplier="0.6" id="fPv-aL-h5l"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4v-Ic-Eqz">
