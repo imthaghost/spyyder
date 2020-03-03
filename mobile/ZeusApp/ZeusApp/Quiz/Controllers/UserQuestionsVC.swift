@@ -10,12 +10,9 @@ import UIKit
 
 class UserQuestionsVC: UIViewController {
 //MARK: Properties
-    
+    var questions: [Quiz] = []
 //MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var titleCellLabel: UILabel!
-    
-    
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
@@ -47,15 +44,28 @@ extension UserQuestionsVC: UITableViewDelegate {
 }
 
 extension UserQuestionsVC: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2 //for title and question cell
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        switch section {
+        case 0: //if title section
+            return 1
+        case 1:
+            return questions.count
+        default:
+            break
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0: //if title
-            let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath)
-            titleCellLabel.text = "Welcome!"
+            break
+        case 1:
+            let cell: UserQuestionsCell = tableView.dequeueReusableCell(withIdentifier: UserQuestionsCell.identifier, for: indexPath) as! UserQuestionsCell
             return cell
         default:
             break
