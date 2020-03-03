@@ -12,6 +12,10 @@ class Page1VC: UIViewController {
 //MARK: Properties
     
 //MARK: IBOutlets
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var bottomLabel: UILabel!
+    @IBOutlet weak var continueButton: UIButton!
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
@@ -33,17 +37,14 @@ class Page1VC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
-//        self.title = "My Profile"
-//        self.navigationController!.navigationBar.isTranslucent = false
-//        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(showOptions(controller:)))
+        self.title = "Your Recommended Portfolio"
+        topLabel.text = "Spyder works with investment professionals, mathematicians, and a Nobel Prize winning economist to craft our portfolios"
+        bottomLabel.text = "The next few questions will help us recommend the right portfolio for you"
+        continueButton.isMainButton()
     }
     
 //MARK: IBActions
     
-//MARK: Helpers
-    @objc func showOptions(controller: UIViewController) {
-    }
 }
 
 //MARK: Extensions

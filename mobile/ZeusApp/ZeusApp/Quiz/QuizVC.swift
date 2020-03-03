@@ -54,7 +54,7 @@ class QuizVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = true //hide nav
         setupScrollView()
 //        setupPageControl()
-        setupPageViews()
+//        setupPageViews()
     }
     
     override func viewDidLoad() {
@@ -97,34 +97,34 @@ class QuizVC: UIViewController {
 //        applyPageConstraints()
 //    }
     
-    fileprivate func setupPageViews() {
-        let page1View = Page1View()
-        let page2View = Page2View()
-        let page3View = Page3View()
-        let page4View = Page4View()
-        let page5View = Page5View()
-        let page6View = Page6View()
-        let page7View = Page7View()
-//        pages = [page1View, page2View, page3View]
-        pages = [page1View, page2View, page3View, page4View, page5View, page6View, page7View]
-        for page in pages {
-            containerStackView.addArrangedSubview(page)
-            page.widthAnchor.constraint(equalToConstant: view.frame.size.width).isActive = true
-        }
+//    fileprivate func setupPageViews() {
+//        let page1View = Page1View()
+//        let page2View = Page2View()
+//        let page3View = Page3View()
+//        let page4View = Page4View()
+//        let page5View = Page5View()
+//        let page6View = Page6View()
+//        let page7View = Page7View()
+////        pages = [page1View, page2View, page3View]
+//        pages = [page1View, page2View, page3View, page4View, page5View, page6View, page7View]
 //        for page in pages {
-//            page.translatesAutoresizingMaskIntoConstraints = false
-////            mainStackView.addArrangedSubview(page)
-//            self.view.addSubview(page)
-//            NSLayoutConstraint.activate(
-//                page.pinToEdges(view: self.view)
-////                page.pinToEdges(view: mainStackView)
-//            )
-//            page.widthAnchor.constraint(equalToConstant: self.view.frame.size.width).isActive = true
+//            containerStackView.addArrangedSubview(page)
+//            page.widthAnchor.constraint(equalToConstant: view.frame.size.width).isActive = true
 //        }
-//        let pinkView = UIView(frame: CGRect(x: 100, y: 40, width: 100, height: 40))
-//        pinkView.backgroundColor = .systemPink
-//        applyPageConstraints()
-    }
+////        for page in pages {
+////            page.translatesAutoresizingMaskIntoConstraints = false
+//////            mainStackView.addArrangedSubview(page)
+////            self.view.addSubview(page)
+////            NSLayoutConstraint.activate(
+////                page.pinToEdges(view: self.view)
+//////                page.pinToEdges(view: mainStackView)
+////            )
+////            page.widthAnchor.constraint(equalToConstant: self.view.frame.size.width).isActive = true
+////        }
+////        let pinkView = UIView(frame: CGRect(x: 100, y: 40, width: 100, height: 40))
+////        pinkView.backgroundColor = .systemPink
+////        applyPageConstraints()
+//    }
     
     fileprivate func applyPageConstraints() { //apply constraints to all pages
         self.pages.enumerated().forEach { tuple in //this tuple only have offset and element
