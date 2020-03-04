@@ -43,7 +43,9 @@ class LoginVC: UIViewController {
     fileprivate func setupViews() {
 //MARK: For testing purposes
         emailTextField.text = "kobe@gmail.com"
+        emailTextField.keyboardType = .emailAddress
         passwordTextField.text = "zeus"
+        passwordTextField.isSecureTextEntry = true
         authTitle = isLogin ? "Login" : "Register"
         continueButton.setTitle(authTitle, for: .normal)
         continueButton.isMainButton()
