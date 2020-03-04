@@ -23,6 +23,8 @@ let kREDCOLOR: UIColor = UIColor(hexString: "bf2811", alpha: 1.0)
 
 //MARK: Storyboard Idenfitifiers
 let kMAINTABBARCONTROLLERID: String = "mainTabBarController"
+let kPAGE1QUIZVC: String = "page1QuizVC" //the first page in
+//let kQUIZSBID: String = "QuizStoryboard" //Quiz storyboard
 
 //MARK: Storyboard Segues
 let kSEGUETOSTOCKDETAILSVC: String = "toStockDetailVC"

@@ -41,7 +41,7 @@ class LoginVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
-        //MARK: For testing purposes
+//MARK: For testing purposes
         emailTextField.text = "kobe@gmail.com"
         passwordTextField.text = "zeus"
         authTitle = isLogin ? "Login" : "Register"
@@ -52,38 +52,6 @@ class LoginVC: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleDismissTap(_:)))
         self.view.addGestureRecognizer(tap)
         updateColors()
-//        setupQuizButton()
-    }
-    
-    fileprivate func setupQuizButton() {
-        let quizButton: UIButton = UIButton(type: .custom)
-        quizButton.isClearButton()
-        quizButton.translatesAutoresizingMaskIntoConstraints = false
-        quizButton.setTitle("Quiz", for: .normal)
-        quizButton.imageView?.contentMode = .scaleAspectFill //contentMode for buttons
-        quizButton.contentMode = .left
-        //        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 0)
-        quizButton.contentHorizontalAlignment = .left //push contents to the left
-        
-        view.addSubview(quizButton)
-        NSLayoutConstraint.activate([
-            quizButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-             quizButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
-//            quizButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 5),
-            quizButton.heightAnchor.constraint(equalToConstant: 40),
-            quizButton.widthAnchor.constraint(equalToConstant: 100),
-        ])
-        quizButton.addTarget(self, action: #selector(self.quizButtonTapped), for: .touchUpInside)
-    }
-    
-    @objc func quizButtonTapped() {
-//        self.navigationController?.popViewController(animated: true)
-        print("EYOOO")
-        let vc = QuizVC()
-        vc.modalPresentationStyle = .fullScreen
-        navigationController?.initRootVC(vc: vc)
-//        self.navigationController?.pushViewController(QuizVC(), animated: true)
-//        self.present(QuizVC(), animated: true, completion: nil)
     }
     
     fileprivate func updateColors() {
@@ -107,8 +75,7 @@ class LoginVC: UIViewController {
                     }
                     print("Login, ", user!.email)
                     saveUserLocally(user: user!)
-                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: kMAINTABBARCONTROLLERID) as! MainTabBarController
-                    self.present(vc, animated: true, completion: nil)
+                    self.goToNextController()
                 }
             }
         } else {
@@ -120,11 +87,25 @@ class LoginVC: UIViewController {
                     }
                     print("Registered ", user!.email)
                     saveUserLocally(user: user!)//Register currently does not return token
-                    //self.performSegue(withIdentifier: kSEGUETOTABBAR, sender: nil)
-                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: kMAINTABBARCONTROLLERID) as! MainTabBarController
-                    self.present(vc, animated: true, completion: nil)
+                    self.goToNextController(fromLogin: false)
                 }
             }
+        }
+    }
+    
+///Go to HomeVC if login or QuizVC if register
+    fileprivate func goToNextController(fromLogin: Bool = true) {
+        switch fromLogin {
+        case true: //login, go home
+//            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: kMAINTABBARCONTROLLERID) as! MainTabBarController
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()! //instantiate MainTabBarController
+            Service.presentVCWithAnimation(fromVC: self, toVC: vc)
+        case false: //register, go quiz
+//            let vc = UIStoryboard(name: "Quiz", bundle: nil).instantiateViewController(identifier: kPAGE1QUIZVC) as! Page1VC
+            let vc = UIStoryboard(name: "Quiz", bundle: nil).instantiateInitialViewController()! //instantiate page1VC's UINavigationController
+            vc.modalPresentationStyle = .fullScreen
+//            self.navigationController?.initRootVC(vc: vc)
+            Service.presentVCWithAnimation(fromVC: self, toVC: vc)
         }
     }
     
