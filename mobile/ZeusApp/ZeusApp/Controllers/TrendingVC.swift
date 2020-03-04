@@ -94,10 +94,27 @@ class TrendingVC: UIViewController {
         tabBar.isTranslucent = false
     }
     
+/// Fetch prices every 2 seconds
+    func fetchStocksData(){
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
+    }
+    
 //MARK: IBActions
     
 //MARK: Helpers
-    
+    @objc func updateCounting(){
+        fetchAllStocks(stocks: stocks) { (error, resultsStocks) in
+            let sortedStocks = resultsStocks.sorted { $0.rank < $1.rank }
+            DispatchQueue.main.async {
+                if let error = error {
+                    Service.presentAlert(on: self, title: "Fetch All Stocks Error", message: error)
+                    return
+                }
+                self.stocks = sortedStocks
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
 
 //MARK: Extensions
