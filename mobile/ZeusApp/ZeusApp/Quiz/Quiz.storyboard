@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qG6-mc-bo2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rVP-Jb-YbI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -10,25 +10,25 @@
         <!--Page1VC-->
         <scene sceneID="a3W-lV-grf">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="qG6-mc-bo2" customClass="Page1VC" customModule="ZeusApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="page1QuizVC" modalPresentationStyle="fullScreen" id="qG6-mc-bo2" customClass="Page1VC" customModule="ZeusApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0I9-7O-iF5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Kfg-ON-tdB">
-                                <rect key="frame" x="20" y="158.5" width="374" height="613.5"/>
+                                <rect key="frame" x="20" y="191.5" width="374" height="580.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="260" image="professionals" translatesAutoresizingMaskIntoConstraints="NO" id="1vO-Hu-dXi">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="368"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="348.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Spyyder works with investment professionals, mathematicians, and a Nobel Prize winning economist to craft our portfolios" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq3-Pf-H8y">
-                                        <rect key="frame" x="0.0" y="398" width="374" height="64.5"/>
+                                        <rect key="frame" x="0.0" y="378.5" width="374" height="64.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" text="The next few questions will help us recommend the right portfolio for you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9j-eb-w1x">
-                                        <rect key="frame" x="0.0" y="492.5" width="374" height="121"/>
+                                        <rect key="frame" x="0.0" y="473" width="374" height="107.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -65,6 +65,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RYW-22-fdn"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Tft-QC-ajN"/>
                     <connections>
                         <outlet property="bottomLabel" destination="Z9j-eb-w1x" id="PA3-6J-Swh"/>
                         <outlet property="continueButton" destination="qZG-ng-WLT" id="j5x-tO-o84"/>
@@ -74,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IFi-uf-Pyv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-740.57971014492762" y="-43.526785714285715"/>
+            <point key="canvasLocation" x="169.56521739130437" y="-43.526785714285715"/>
         </scene>
         <!--Security QuestionsVC-->
         <scene sceneID="FJ7-ve-faj">
@@ -85,7 +86,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nxO-Q4-40P">
-                                <rect key="frame" x="20" y="207.5" width="374" height="491"/>
+                                <rect key="frame" x="20" y="243" width="374" height="464"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please create a security question thata may be used as an additional layer of securty when you make changes to your account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWB-I2-uHf">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="64.5"/>
@@ -110,7 +111,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kSL-bu-iY9">
-                                        <rect key="frame" x="67" y="204.5" width="240" height="286.5"/>
+                                        <rect key="frame" x="67" y="204.5" width="240" height="259.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
@@ -163,20 +164,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EuK-NP-Vjh">
-                                <rect key="frame" x="20" y="64" width="374" height="708"/>
+                                <rect key="frame" x="20" y="108" width="374" height="664"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXt-Wb-4g0" customClass="PieChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="283"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="265.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're investing in 80% stocks and 20% bonds, with volatility but greataer potential long-term growth." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LU-qj-aDy">
-                                        <rect key="frame" x="0.0" y="293" width="374" height="122"/>
+                                        <rect key="frame" x="0.0" y="275.5" width="374" height="113"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kqr-y2-Jxm">
-                                        <rect key="frame" x="0.0" y="425" width="374" height="283"/>
+                                        <rect key="frame" x="0.0" y="398.5" width="374" height="265.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
@@ -232,7 +233,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="oOG-F3-ny0">
-                                <rect key="frame" x="20" y="240.5" width="374" height="531.5"/>
+                                <rect key="frame" x="20" y="269" width="374" height="503"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spyyder is required to collect this information to open your investment account." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAq-bt-v1e">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
@@ -262,7 +263,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCy-B8-Jjr">
-                                        <rect key="frame" x="67" y="360" width="240" height="171.5"/>
+                                        <rect key="frame" x="67" y="360" width="240" height="143"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
@@ -320,7 +321,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="32b-uN-m7c">
-                                <rect key="frame" x="20" y="64" width="374" height="708"/>
+                                <rect key="frame" x="20" y="108" width="374" height="664"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="These don't apply to most people, but if they apply to you, let us know." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVk-fQ-AUq">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="43"/>
@@ -401,7 +402,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKn-wr-1J9">
-                                        <rect key="frame" x="67" y="443" width="240" height="265"/>
+                                        <rect key="frame" x="67" y="443" width="240" height="221"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -456,7 +457,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqR-am-ZzE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="78" y="-44"/>
+            <point key="canvasLocation" x="986.95652173913049" y="-44.196428571428569"/>
         </scene>
         <!--User QuestionsVC-->
         <scene sceneID="WgI-jr-Ls5">
@@ -467,7 +468,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vr0-lV-fvM">
-                                <rect key="frame" x="0.0" y="44" width="414" height="740"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="696"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="titleCell" id="1Vw-b0-tWn">
@@ -533,7 +534,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ATH-Ij-1Iy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="869.56521739130437" y="-44.196428571428569"/>
+            <point key="canvasLocation" x="1779.7101449275365" y="-44.196428571428569"/>
         </scene>
         <!--Page4VC-->
         <scene sceneID="Yvf-3K-TNV">
@@ -544,25 +545,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="R7h-iK-X8b">
-                                <rect key="frame" x="20" y="202.5" width="374" height="491"/>
+                                <rect key="frame" x="20" y="216" width="374" height="464"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="invest" translatesAutoresizingMaskIntoConstraints="NO" id="k6N-sa-oeR">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="294.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="278.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ok let's start investing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dS-bH-gse">
-                                        <rect key="frame" x="95.5" y="314.5" width="183.5" height="20.5"/>
+                                        <rect key="frame" x="95.5" y="298.5" width="183.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First things first, let's link your bank so you can track your spending and invest your spare change." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cQ-3J-MSy">
-                                        <rect key="frame" x="0.0" y="355" width="374" height="64.5"/>
+                                        <rect key="frame" x="0.0" y="339" width="374" height="64.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9J-xu-pEh">
-                                        <rect key="frame" x="67" y="439.5" width="240" height="51.5"/>
+                                        <rect key="frame" x="67" y="423.5" width="240" height="40.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
@@ -603,7 +604,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDg-17-zQR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1688" y="-44"/>
+            <point key="canvasLocation" x="2597.1014492753625" y="-44.196428571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qct-lE-CPt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rVP-Jb-YbI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cI0-2U-HpU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qG6-mc-bo2" kind="relationship" relationship="rootViewController" id="7ky-2b-yvK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxt-S3-3eC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-740.57971014492762" y="-43.526785714285715"/>
         </scene>
     </scenes>
     <resources>
