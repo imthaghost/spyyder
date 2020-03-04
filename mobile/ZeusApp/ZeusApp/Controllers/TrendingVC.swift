@@ -21,6 +21,11 @@ class TrendingVC: UIViewController {
         setupViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        populateTableView()
+    }
+    
 //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
@@ -41,7 +46,7 @@ class TrendingVC: UIViewController {
         navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
         navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
         setupTableView()
-        createTestStocks()
+        populateTableView()
         setupTabBar()
     }
     
@@ -51,9 +56,10 @@ class TrendingVC: UIViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UIView() //removes extra unpopulated cells
         tableView.backgroundColor = SettingsService.blackColor
+        tableView.separatorStyle = .none //removes separator line
     }
     
-    fileprivate func createTestStocks() {
+    fileprivate func populateTableView() {
         let stock1 = Stock(_name: "Bitcoin", _shortName: "BTC", _price: "00.00", _imageUrl: "", _rank: 1)
         let stock2 = Stock(_name: "Etherium", _shortName: "ETH", _price: "00.00", _imageUrl: "", _rank: 2)
         let stock3 = Stock(_name: "Tesla", _shortName: "TSL", _price: "00.00", _imageUrl: "", _rank: 3)

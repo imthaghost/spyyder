@@ -40,7 +40,7 @@ class Service {
 ///Presents ViewControllers with animation from right to left or vice versa
     static func presentVCWithAnimation(fromVC: UIViewController, toVC: UIViewController, fromRight: Bool = true) {
         let transition = CATransition()
-        transition.duration = 0.5
+        transition.duration = 0.3
         transition.type = CATransitionType.push
         transition.subtype = fromRight ? .fromRight : .fromLeft
         transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
@@ -50,7 +50,7 @@ class Service {
     
     static func presentNavWithAnimation(fromVC: UINavigationController, toVC: UINavigationController, fromRight: Bool = true) {
         let transition = CATransition()
-        transition.duration = 0.5
+        transition.duration = 0.3
         transition.type = CATransitionType.push
         transition.subtype = fromRight ? .fromRight : .fromLeft
         transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)

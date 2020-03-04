@@ -26,8 +26,11 @@ class ProfileVC: UIViewController {
 //MARK: Private Methods
     fileprivate func setupViews() {
         self.title = "My Profile"
-        self.navigationController!.navigationBar.isTranslucent = false
-//        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
+        self.view.backgroundColor = SettingsService.blackColor
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
+        navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
+        //        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
         table.tableFooterView = UIView()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(showOptions(controller:)))
     }

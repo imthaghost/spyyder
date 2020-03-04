@@ -23,7 +23,7 @@ class MyStocksVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        populateStocks()
+        populateTableView()
     }
     
 //MARK: Navigation
@@ -39,7 +39,25 @@ class MyStocksVC: UIViewController {
     }
     
 //MARK: Private Methods
-    fileprivate func populateStocks() {
+    fileprivate func setupViews() {
+        self.title = "My Stocks"
+        self.view.backgroundColor = SettingsService.blackColor
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
+        navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
+        setupTableView()
+        populateTableView()
+    }
+    
+    fileprivate func setupTableView() {
+        tableView.register(UINib(nibName: "StockCell", bundle: nil), forCellReuseIdentifier: "stockCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView() //removes extra unpopulated cells
+        tableView.separatorStyle = .none //removes separator line
+    }
+    
+    fileprivate func populateTableView() {
         if let user = getCurrentUser() {
             user.setNeedsToReloadStocks()
             let userStocks = user.getUserStocks()
@@ -52,21 +70,6 @@ class MyStocksVC: UIViewController {
             let vc = UIStoryboard(name: "Auth", bundle: nil).instantiateInitialViewController()!
             self.navigationController?.present(vc, animated: true, completion: nil)
         }
-    }
-    
-    fileprivate func setupViews() {
-        self.title = "My Stocks"
-        self.navigationController!.navigationBar.isTranslucent = false
-
-        setupTableView()
-        populateStocks()
-    }
-    
-    fileprivate func setupTableView() {
-        tableView.register(UINib(nibName: "StockCell", bundle: nil), forCellReuseIdentifier: "stockCell")
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.tableFooterView = UIView() //removes extra unpopulated cells
     }
     
 //MARK: IBActions

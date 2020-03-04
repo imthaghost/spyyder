@@ -13,12 +13,10 @@ class UserPortfolioVC: UIViewController {
 //MARK: Properties
     
 //MARK: IBOutlets
-    
     @IBOutlet weak var chartView: PieChartView!
     @IBOutlet weak var predictionLabel: UILabel!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var continueButton: UIButton!
-    
     
 //MARK: App Life Cycle
     override func viewDidLoad() {

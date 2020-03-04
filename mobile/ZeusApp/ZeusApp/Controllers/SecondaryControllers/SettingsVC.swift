@@ -60,7 +60,11 @@ class SettingsVC: UIViewController {
 extension SettingsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
-        case settingsData.count - 1:
+        case 1:
+            let vc = UIStoryboard(name: "Quiz", bundle: nil).instantiateInitialViewController()! //instantiate page1VC's UINavigationController
+            vc.modalPresentationStyle = .fullScreen
+            Service.presentVCWithAnimation(fromVC: self, toVC: vc)
+        case settingsData.count - 1: //if last/logout
             deleteCurrentUser()
             let vc = UIStoryboard(name: "Auth", bundle: nil).instantiateInitialViewController()!
             Service.presentVCWithAnimation(fromVC: self, toVC: vc, fromRight: false) // --> side animation to loginVC
