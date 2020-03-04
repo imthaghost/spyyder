@@ -168,7 +168,18 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXt-Wb-4g0" customClass="PieChartView" customModule="Charts">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="265.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graph" translatesAutoresizingMaskIntoConstraints="NO" id="xTe-CM-j59">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="265.5"/>
+                                            </imageView>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="xTe-CM-j59" secondAttribute="bottom" id="dLg-Dp-zyc"/>
+                                            <constraint firstItem="xTe-CM-j59" firstAttribute="top" secondItem="pXt-Wb-4g0" secondAttribute="top" id="dah-ov-zJC"/>
+                                            <constraint firstAttribute="trailing" secondItem="xTe-CM-j59" secondAttribute="trailing" id="lJb-tm-eEA"/>
+                                            <constraint firstItem="xTe-CM-j59" firstAttribute="leading" secondItem="pXt-Wb-4g0" secondAttribute="leading" id="vzH-R0-tij"/>
+                                        </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're investing in 80% stocks and 20% bonds, with volatility but greataer potential long-term growth." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LU-qj-aDy">
                                         <rect key="frame" x="0.0" y="275.5" width="374" height="113"/>
@@ -493,14 +504,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="eCj-CS-aTM" customClass="UserQuestionsCell" customModule="ZeusApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="103.5" width="414" height="80"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eCj-CS-aTM" id="0s2-Sk-x7w">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrL-N8-HN0">
@@ -626,6 +629,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="graph" width="128" height="128"/>
         <image name="invest" width="128" height="128"/>
         <image name="professionals" width="128" height="128"/>
     </resources>

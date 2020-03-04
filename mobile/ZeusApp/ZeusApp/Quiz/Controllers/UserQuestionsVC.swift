@@ -105,23 +105,17 @@ extension UserQuestionsVC: UITableViewDataSource {
             cell.textField.delegate = self
             let question: QuizQuestion = questions[indexPath.row].question
             cell.populateCell(question: question)
-            let answers: [String] = question.answers
-//            let row = sizePicker.numberOfRows(inComponent: 0) > 1 ? 2 : 0
-//            let rowww: Int = answers.count //rows will be number of answers
-//            detailView.sizeButton.setTitle(String(sizePickerValues[row]), for: .normal)
-//            cell.textField.text = answers[row]
             
             let toolBar = UIToolbar()
             toolBar.sizeToFit()
             let flexibleBar = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
             let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.handleEndEditing(_:)))
             toolBar.setItems([flexibleBar, doneButton], animated: true)
-            
             cell.textField.inputAccessoryView = toolBar
             cell.textField.inputView = sizePicker
             cell.textField.clearButtonMode = .never
-            
-            cell.textField.text = questions[selectedIndex].answer
+            let answer = questions[indexPath.row].answer
+            cell.textField.text = answer
             print("selected index=", selectedIndex)
             
             return cell
@@ -151,16 +145,24 @@ extension UserQuestionsVC: UIPickerViewDataSource, UIPickerViewDelegate {
         return ""
     }
     
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //      var rowValue = row
         if pickerView == sizePicker {
-//            detailView.sizeButton.setTitle(String(answers[row]), for: .normal)
-            questions[selectedIndex].answer = questions[selectedIndex].question.answers[row] //assign the answer of the question in the array as the question's answer
-            tableView.reloadData()
+            let answer = questions[selectedIndex].question.answers[row] //assign the answer of the question in the array as the question's answer
+            questions[selectedIndex].answer = answer
+//            tableView.reloadData()
         }
     }
 }
 
 //MARK: TextField
-extension UserQuestionsVC: UITextFieldDelegate {}
+extension UserQuestionsVC: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        tableView.reloadData() //reload only after editing, or clicking done
+    }
+    
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+////        if textField == myTextField {
+////            print("You edit myTextField")
+////        }
+//    }
+}
