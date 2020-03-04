@@ -3,6 +3,7 @@
 
 # external python modules
 import uuid
+from bcrypt import hashpw, gensalt
 # local python modules
 import zeus_api
 
@@ -17,7 +18,8 @@ class User(object):
         self.uuid = None  # initalize no uuid
         self.investor_type = None  # initialize the investor type to None
         self.email = email  # email will be the username
-        self.password = password  # set password
+        self.password = hashpw(password.encode(
+            'utf-8'), gensalt())  # set password
         self.phonenumber = None  # user phone number
 
     def set_uuid(self):
