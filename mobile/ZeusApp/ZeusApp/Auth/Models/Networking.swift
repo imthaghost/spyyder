@@ -25,13 +25,15 @@ struct Message: Decodable {
 ///POST get Stock details
 func fetchStockDetails(stock: Stock, token: String, completion: @escaping(_ error: String?, _ user: Stock?) -> Void) {
     let stock = stock
-    let companyName = stock.name.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) //removes white spaces
-    print("Getting \(companyName)")
-    let companyDic: [String: Any] = [kCOMPANYNAME: companyName]
+    let shortName = stock.shortName.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) //removes white spaces
+    let companyDic: [String: Any] = ["ticker": shortName]
+//    let companyName = stock.name.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) //removes white spaces
+//    print("Getting \(companyName)")
+//    let companyDic: [String: Any] = [kCOMPANYNAME: companyName]
     if (!JSONSerialization.isValidJSONObject(companyDic)) {
             completion("Invalid Token data", nil)
         }
-    let url: String = "http://3.17.150.127:8000/company"
+    let url: String = "http://3.17.150.127:5000/price"
     let session = URLSession.shared
     let request = NSMutableURLRequest(url: NSURL(string: url)! as URL)
     request.httpMethod = "POST"
@@ -65,7 +67,7 @@ func fetchStockDetails(stock: Stock, token: String, completion: @escaping(_ erro
                     completion(nil, stock)
                 } catch _ {
 //                    completion("JSON not formatted", nil)
-                    print("\(companyName) JSON cannot be formatted")
+                    print("\(shortName) JSON cannot be formatted")
                     completion(nil, stock)
                 }
             }

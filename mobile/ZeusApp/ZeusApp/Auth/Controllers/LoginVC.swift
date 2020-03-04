@@ -42,7 +42,7 @@ class LoginVC: UIViewController {
 //MARK: Private Methods
     fileprivate func setupViews() {
 //MARK: For testing purposes
-        emailTextField.text = "kobe@gmail.com"
+        emailTextField.text = "kobe2@gmail.com"
         emailTextField.keyboardType = .emailAddress
         passwordTextField.text = "zeus"
         passwordTextField.isSecureTextEntry = true

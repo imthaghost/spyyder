@@ -50,6 +50,6 @@ extension MainTabBarController {
             return
         }
         // animate the imageView
-        imageView.layer.add(bounceAnimation, forKey: nil)
+//        imageView.layer.add(bounceAnimation, forKey: nil)
     }
 }

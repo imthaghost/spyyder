@@ -62,7 +62,7 @@ extension ProfileVC: UITableViewDelegate {
 extension ProfileVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return months.count
-        return 3
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
