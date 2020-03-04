@@ -11,6 +11,7 @@ import UIKit
 class TrendingVC: UIViewController {
 //MARK: Properties
     var stocks: [Stock] = []
+    var timer = Timer()
     
 //MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -48,6 +49,7 @@ class TrendingVC: UIViewController {
         setupTableView()
         populateTableView()
         setupTabBar()
+        fetchStocksData()
     }
     
     fileprivate func setupTableView() {
@@ -60,11 +62,11 @@ class TrendingVC: UIViewController {
     }
     
     fileprivate func populateTableView() {
-        let stock1 = Stock(_name: "Bitcoin", _shortName: "BTC", _price: "00.00", _imageUrl: "", _rank: 1)
-        let stock2 = Stock(_name: "Etherium", _shortName: "ETH", _price: "00.00", _imageUrl: "", _rank: 2)
-        let stock3 = Stock(_name: "Tesla", _shortName: "TSL", _price: "00.00", _imageUrl: "", _rank: 3)
-        let stock4 = Stock(_name: "Apple", _shortName: "APL", _price: "00.00", _imageUrl: "", _rank: 4)
-        let stock5 = Stock(_name: "Amazon", _shortName: "AMZ", _price: "00.00", _imageUrl: "", _rank: 5)
+//        let stock1 = Stock(_name: "Bitcoin", _shortName: "BTC", _price: "00.00", _imageUrl: "", _rank: 1)
+//        let stock2 = Stock(_name: "Etherium", _shortName: "ETH", _price: "00.00", _imageUrl: "", _rank: 2)
+        let stock3 = Stock(_name: "Tesla", _shortName: "TSLA", _price: "00.00", _imageUrl: "", _rank: 3)
+        let stock4 = Stock(_name: "Apple", _shortName: "AAPL", _price: "00.00", _imageUrl: "", _rank: 4)
+        let stock5 = Stock(_name: "Amazon", _shortName: "AMZN", _price: "00.00", _imageUrl: "", _rank: 5)
         let stock6 = Stock(_name: "Twitter", _shortName: "TWTR", _price: "00.00", _imageUrl: "", _rank: 6)
         let stock7 = Stock(_name: "Facebook", _shortName: "FB", _price: "00.00", _imageUrl: "", _rank: 7)
         let stock8 = Stock(_name: "Microsoft", _shortName: "MSFT", _price: "00.00", _imageUrl: "", _rank: 8)
@@ -72,7 +74,7 @@ class TrendingVC: UIViewController {
         let stock10 = Stock(_name: "Starbucks", _shortName: "SBUX", _price: "00.00", _imageUrl: "", _rank: 10)
         let stock11 = Stock(_name: "Rite Aid", _shortName: "RAD", _price: "00.00", _imageUrl: "", _rank: 11)
         let stock12 = Stock(_name: "IBM", _shortName: "IBM", _price: "00.00", _imageUrl: "", _rank: 12)
-        stocks.append(contentsOf: [stock1, stock2, stock3, stock4, stock5, stock6, stock7, stock8, stock9, stock10, stock11, stock12])
+        stocks = [stock3, stock4, stock5, stock6, stock7, stock8, stock9, stock10, stock11, stock12]
         saveTrendingStocks(stocks: self.stocks)
         fetchAllStocks(stocks: stocks) { (error, resultsStocks) in
             DispatchQueue.main.async {
