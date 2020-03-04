@@ -389,7 +389,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="settingsButton" destination="u99-If-90d" id="K8t-7O-PBX"/>
-                        <outlet property="table" destination="eC2-1B-nZO" id="Z6s-hs-afN"/>
+                        <outlet property="tableView" destination="eC2-1B-nZO" id="f58-kI-Gs9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wI8-w7-uKq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -31,6 +31,7 @@ class ProfileVC: UIViewController {
         navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
         navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
         //        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(showOptions(controller:)))
         setupTableView()
     }
     
@@ -65,6 +66,8 @@ extension ProfileVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.backgroundColor = .clear
 //        let cell: BoxCell = tableView.dequeueReusableCell(withIdentifier: BoxCell.identifier, for: indexPath) as! BoxCell
 //        cell.boxLabel.text = months[indexPath.row]
 //        cell.backgroundColor = SettingsService.whiteColor
