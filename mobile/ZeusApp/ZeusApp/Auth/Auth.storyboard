@@ -75,6 +75,7 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="continueButtonTapped:" destination="44c-hw-GRe" eventType="touchUpInside" id="rU6-Ox-49P"/>
+                                    <segue destination="SeA-6X-TK1" kind="show" identifier="toQuizVC" id="uAi-Aj-0Sd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOD-6g-SKx">
@@ -82,14 +83,6 @@
                                 <state key="normal" title="Switch to Register"/>
                                 <connections>
                                     <action selector="switchButtonTapped:" destination="44c-hw-GRe" eventType="touchUpInside" id="Kb0-q6-Sai"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVp-gb-T5H">
-                                <rect key="frame" x="118" y="201" width="178" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="SeA-6X-TK1" kind="show" id="hxH-uK-r0o"/>
                                 </connections>
                             </button>
                         </subviews>
