@@ -25,7 +25,7 @@ struct Message: Decodable {
 ///POST get Stock details
 func fetchStockDetails(stock: Stock, token: String, completion: @escaping(_ error: String?, _ user: Stock?) -> Void) {
     let stock = stock
-    let shortName = stock.shortName.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) //removes white spaces
+    let shortName = stock.shortName.trimmingCharacters(in: .whitespacesAndNewlines) //removes white spaces
     let companyDic: [String: Any] = ["ticker": shortName]
 //    let companyName = stock.name.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) //removes white spaces
 //    print("Getting \(companyName)")
@@ -62,8 +62,25 @@ func fetchStockDetails(stock: Stock, token: String, completion: @escaping(_ erro
                     print ("jsonResponse: \(jsonResponse)")
                     guard let response = jsonResponse as? [String: Any] else { completion("Error converting json received", nil); return }
 //                    guard let shortName = response[kSHORTNAME] as? String else { print("Couldnt get shortname"); return }
-                    guard let currentPrice = response[kPRICE] as? Double else {print("Couldnt get price"); return }
-                    stock.price = String(format: "%.2f", ceil(currentPrice*100)/100) //2 decimal points
+                    //convert response[kPRICE] to a string
+                    guard let priceDetails = response[kPRICE] as? String else { return }
+                    //get the entire string after USD
+                    let prePrice = priceDetails.components(separatedBy: "USD")[1] //get the second element
+                    //remove all strings after + or -
+                    var characterToRemove: String = "" //+ or - or empty string
+                    for char in prePrice where char == "-" || char == "+" { //look for first instance of + or -
+                        characterToRemove = String(char)
+                        break
+                    }
+                    if characterToRemove == "+" || characterToRemove == "-" {
+                        let price = prePrice.components(separatedBy: characterToRemove)[0] //+ or -, remove the strings after it, giving us the actual price only
+//                    guard let currentPrice = price as? String else { print("\(price) couldnt be turned into a double"); return }
+//                    guard let currentPrice = response[kPRICE] as? Double else {print("Couldnt get price"); return }
+//                    stock.price = String(format: "%.2f", ceil(currentPrice*100)/100) //2 decimal points
+                        stock.price = price
+                    } else {
+                        print("didn't find + or -")
+                    }
                     completion(nil, stock)
                 } catch _ {
 //                    completion("JSON not formatted", nil)
