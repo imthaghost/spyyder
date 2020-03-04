@@ -18,7 +18,7 @@ class create(Resource):
         password = data.get('password')
         # todo: make sure to sanitize unless you want SQL Injection :)
         verify_email = zeus_api.user.find_one({'email': email})
-        # if the users email is foudd in the database and check to see if the password credential matches the encrypted field in the database
+        # if the users email is found in the database and check to see if the password credential matches the encrypted field in the database
         if verify_email is None:
             current_user = zeus_api.models.user.User(
                 fullname, email=email, password=password)

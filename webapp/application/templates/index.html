@@ -4,7 +4,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
-  
+
   <link href="static/styles.css" rel="stylesheet">
 </head>
 
@@ -16,19 +16,20 @@
       <div class="success">
         <a href="{{url_for('index.index')}}" class="logo"></a>
         <h2 class="modal-title first-name" id="title-name"></h2>
-        <p>You're on the list! We'll be in touch.</p>
-        <a href="{{url_for('index.index')}}" class="button">Back home</a>
+        <p>Thanks for signing up!</p>
+        <a href="{{url_for('index.index')}}" class="button">Go to dashboard</a>
       </div>
       <div class="form-content">
         <a href="{{url_for('index.index')}}" class="logo"></a>
-        <h2 class="modal-title">Join the Spyyder Waitlist</h2>
-        <p class="modal-subtitle">We're still in early stages, and we'll let you know once we're ready for more beta
+        <h2 class="modal-title">Join the Spyyder Community</h2>
+
+        <p class="modal-subtitle">We are in the early stages, try out the application now! We love feedback!
           testers.</p>
-        <form class='form' name='Spyyder' action="{{url_for('email.email')}}" method='POST'><input type='hidden'
+        <form class='form' name='Spyyder' action="{{url_for('signup.root')}}" method='POST'><input type='hidden'
             name='form-name' value='Spyyder' />
           <div class="group">
-            <input type="text" id="firstName" name="firstname" placeholder="&nbsp;" autocomplete="off" required>
-            <label for="first-name">First name</label>
+            <input type="text" id="firstName" name="fullname" placeholder="&nbsp;" autocomplete="off" required>
+            <label for="first-name">Full name</label>
             <span class="border"></span>
           </div>
           <div class="group">
@@ -36,7 +37,12 @@
             <label for="email">Email</label>
             <span class="border"></span>
           </div>
-          <button type="submit" class="button">Join the waitlist</button>
+          <div class="group">
+            <input type="password" name="password" placeholder="&nbsp;" autocomplete="off" required>
+            <label for="first-name">Password</label>
+            <span class="border"></span>
+          </div>
+          <button type="submit" class="button">Signup</button>
         </form>
       </div>
     </div>
@@ -53,15 +59,20 @@
           <b>everyone</b>
         </span>
       </h1>
-      <button class="button modal-toggle">Join the waitlist</button>
-      <p class="subtitle">Available soon for iPhone <img src="static/logo-apple.svg" alt="apple" /></p>
+      <div>
+        <button class="button modal-toggle">Signup</button>
+        <a href="{{url_for('login.root')}}"><button class="button">Login</button></a>
+
+      </div>
+
+      <p class="subtitle">Available for iPhone <img src="static/logo-apple.svg" alt="apple" /></p>
     </div>
     <!-- <div class="screen-wrapper">
       <img src="static/mac.png" class="screen" alt="screen" />
     </div> -->
 
     </section>
- 
+
   </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -110,7 +121,7 @@
         $('body').toggleClass('no-scroll');
       });
 
-      // Reserve username form
+      // // Reserve username form
       $(".form").submit(function (e) {
         e.preventDefault();
         var $form = $(this);
@@ -124,7 +135,7 @@
       $(".form").submit(function (e) {
         e.preventDefault();
         var value = $("#firstName").val();
-        $('.first-name').text("Thank you," + " " + value + "!");
+        $('.first-name').text("Welcome," + " " + value + "!");
       });
 
       // Feather icons
