@@ -22,13 +22,18 @@ class TrendingVC: UIViewController {
         setupViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        populateTableView()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         startStockTimer()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        populateTableView()
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.invalidate()
     }
     
 //MARK: Navigation
@@ -65,8 +70,8 @@ class TrendingVC: UIViewController {
     }
     
     fileprivate func populateTableView() {
-        let stock1 = Stock(_name: "Hebron Technology Co. Ltd", _shortName: "HEBT", _price: "00.00", _imageUrl: "", _rank: 1)
-        let stock2 = Stock(_name: "Repro Med Sys Inc", _shortName: "KRMD", _price: "00.00", _imageUrl: "", _rank: 2)
+        let stock1 = Stock(_name: "ABB Ltd", _shortName: "ABB", _price: "00.00", _imageUrl: "", _rank: 1)
+        let stock2 = Stock(_name: "Herbalife Ltd.", _shortName: "HLF", _price: "00.00", _imageUrl: "", _rank: 2)
         let stock3 = Stock(_name: "Tesla", _shortName: "TSLA", _price: "00.00", _imageUrl: "", _rank: 3)
         let stock4 = Stock(_name: "Apple", _shortName: "AAPL", _price: "00.00", _imageUrl: "", _rank: 4)
         let stock5 = Stock(_name: "Amazon", _shortName: "AMZN", _price: "00.00", _imageUrl: "", _rank: 5)
@@ -87,8 +92,8 @@ class TrendingVC: UIViewController {
         tabBar.isTranslucent = false
     }
     
-/// Fetch prices every 2 seconds
-    func startStockTimer(){
+/// Fetch prices every 5 seconds
+    fileprivate func startStockTimer() {
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.fetchAllStocksData), userInfo: nil, repeats: true)
     }
     
@@ -133,7 +138,6 @@ extension TrendingVC: UITableViewDataSource {
         let stock = stocks[indexPath.row]
         cell.stock = stock
         cell.populateViews(showRank: true)
-       
         cell.backgroundColor = SettingsService.blackColor
         return cell
     }

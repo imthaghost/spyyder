@@ -11,6 +11,7 @@ import UIKit
 class RecommendationVC: UIViewController {
 //MARK: Properties
     var stocks: [Stock] = []
+    var timer = Timer()
     
 //MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -24,6 +25,15 @@ class RecommendationVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         populateTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        startStockTimer()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.invalidate()
     }
     
 //MARK: Navigation
@@ -60,11 +70,11 @@ class RecommendationVC: UIViewController {
     }
     
     fileprivate func populateTableView() {
-        let stock1 = Stock(_name: "Bitcoin", _shortName: "BTC", _price: "00.00", _imageUrl: "", _rank: 1)
-        let stock2 = Stock(_name: "Etherium", _shortName: "ETH", _price: "00.00", _imageUrl: "", _rank: 2)
-        let stock3 = Stock(_name: "Tesla", _shortName: "TSL", _price: "00.00", _imageUrl: "", _rank: 3)
-        let stock4 = Stock(_name: "Apple", _shortName: "APL", _price: "00.00", _imageUrl: "", _rank: 4)
-        let stock5 = Stock(_name: "Amazon", _shortName: "AMZ", _price: "00.00", _imageUrl: "", _rank: 5)
+        let stock1 = Stock(_name: "ABB Ltd", _shortName: "ABB", _price: "00.00", _imageUrl: "", _rank: 1)
+        let stock2 = Stock(_name: "Herbalife Ltd.", _shortName: "HLF", _price: "00.00", _imageUrl: "", _rank: 2)
+        let stock3 = Stock(_name: "Tesla", _shortName: "TSLA", _price: "00.00", _imageUrl: "", _rank: 3)
+        let stock4 = Stock(_name: "Apple", _shortName: "AAPL", _price: "00.00", _imageUrl: "", _rank: 4)
+        let stock5 = Stock(_name: "Amazon", _shortName: "AMZN", _price: "00.00", _imageUrl: "", _rank: 5)
         let stock6 = Stock(_name: "Twitter", _shortName: "TWTR", _price: "00.00", _imageUrl: "", _rank: 6)
         let stock7 = Stock(_name: "Facebook", _shortName: "FB", _price: "00.00", _imageUrl: "", _rank: 7)
         let stock8 = Stock(_name: "Microsoft", _shortName: "MSFT", _price: "00.00", _imageUrl: "", _rank: 8)
@@ -72,18 +82,8 @@ class RecommendationVC: UIViewController {
         let stock10 = Stock(_name: "Starbucks", _shortName: "SBUX", _price: "00.00", _imageUrl: "", _rank: 10)
         let stock11 = Stock(_name: "Rite Aid", _shortName: "RAD", _price: "00.00", _imageUrl: "", _rank: 11)
         let stock12 = Stock(_name: "IBM", _shortName: "IBM", _price: "00.00", _imageUrl: "", _rank: 12)
-        stocks.append(contentsOf: [stock1, stock2, stock3, stock4, stock5, stock6, stock7, stock8, stock9, stock10, stock11, stock12])
+        stocks = [stock1, stock2, stock3, stock4, stock5, stock6, stock7, stock8, stock9, stock10, stock11, stock12]
         saveTrendingStocks(stocks: self.stocks)
-        fetchAllStocks(stocks: stocks) { (error, resultsStocks) in
-            DispatchQueue.main.async {
-                if let error = error {
-                    Service.presentAlert(on: self, title: "Fetch All Stocks Error", message: error)
-                    return
-                }
-                self.stocks = resultsStocks
-                self.tableView.reloadData()
-            }
-        }
     }
     
     fileprivate func setupTabBar() {
@@ -92,10 +92,26 @@ class RecommendationVC: UIViewController {
         tabBar.isTranslucent = false
     }
     
+    fileprivate func startStockTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.fetchAllStocksData), userInfo: nil, repeats: true)
+    }
+    
 //MARK: IBActions
     
 //MARK: Helpers
-    
+    @objc func fetchAllStocksData() {
+        fetchAllStocks(stocks: stocks) { (error, resultsStocks) in
+            let sortedStocks = resultsStocks.sorted { $0.rank < $1.rank } //ascendingly sort stocks received by their ranking
+            DispatchQueue.main.async {
+                if let error = error {
+                    Service.presentAlert(on: self, title: "Fetch All Stocks Error", message: error)
+                    return
+                }
+                self.stocks = sortedStocks
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
 
 //MARK: Extensions

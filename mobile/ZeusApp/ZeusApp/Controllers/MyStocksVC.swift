@@ -11,6 +11,7 @@ import UIKit
 class MyStocksVC: UIViewController {
 //MARK: Properties
     var stocks: [Stock] = []
+    var timer = Timer()
     
 //MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -24,6 +25,15 @@ class MyStocksVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         populateTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        startStockTimer()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.invalidate()
     }
     
 //MARK: Navigation
@@ -73,10 +83,26 @@ class MyStocksVC: UIViewController {
         }
     }
     
+    fileprivate func startStockTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.fetchAllStocksData), userInfo: nil, repeats: true)
+    }
+    
 //MARK: IBActions
     
 //MARK: Helpers
-    
+    @objc func fetchAllStocksData() {
+        fetchAllStocks(stocks: stocks) { (error, resultsStocks) in
+            let sortedStocks = resultsStocks.sorted { $0.rank < $1.rank } //ascendingly sort stocks received by their ranking
+            DispatchQueue.main.async {
+                if let error = error {
+                    Service.presentAlert(on: self, title: "Fetch All Stocks Error", message: error)
+                    return
+                }
+                self.stocks = sortedStocks
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
 
 //MARK: Extensions

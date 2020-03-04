@@ -24,6 +24,7 @@ class StockDetailsVC: UIViewController {
     var user: User!
     var delegate: StockDetailProtocol!
     var stock: Stock!
+    var timer = Timer()
     lazy var dummyWhyData: [WhyModel] = [
         WhyModel(title: "Because Trump sold all his \(stock.name) shares multiple lines multiple lines", description: "sdjsfj sljfksjkf sjfklsjf "),
         WhyModel(title: "\(stock.name) release an update", description: "Update your app and invest ment"),
@@ -69,7 +70,17 @@ class StockDetailsVC: UIViewController {
         getStockDetails()
     }
     
-    func getStockDetails() {
+    override func viewDidAppear(_ animated: Bool) {
+        startStockTimer()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.invalidate()
+    }
+    
+//MARK: Private methods
+    fileprivate func getStockDetails() {
         guard let token = UserDefaults.standard.string(forKey: kTOKEN) else { print("No token"); return }
 //        print("TOKEN TO GET STOCK IS = \(token)")
         fetchStockDetails(stock: stock, token: token) { (error, stock) in
@@ -85,7 +96,6 @@ class StockDetailsVC: UIViewController {
         }
     }
     
-//MARK: Private Methods
     fileprivate func setupViews() {
         if let user = getCurrentUser() {
             self.user = user
@@ -157,6 +167,11 @@ class StockDetailsVC: UIViewController {
         followButton.setTitle(buttonTitle, for: .normal)
     }
     
+    /// Fetch prices every 2 seconds
+    fileprivate func startStockTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.fetchAllStocksData), userInfo: nil, repeats: true)
+    }
+    
 //MARK: IBActions
     @IBAction func followButtonTapped(_ sender: UIButton) {
         stock.isFollowing = !stock.isFollowing
@@ -187,6 +202,9 @@ class StockDetailsVC: UIViewController {
     }
     
 //MARK: Helpers
+    @objc func fetchAllStocksData() {
+        getStockDetails()
+    }
 }
 
 //MARK: Extensions
