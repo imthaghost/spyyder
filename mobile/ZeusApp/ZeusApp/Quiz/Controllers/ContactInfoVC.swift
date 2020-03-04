@@ -40,6 +40,9 @@ class ContactInfoVC: UIViewController {
         self.title = "Contact Information"
         continueButton.isMainButton()
         continueButton.setTitle("Finish", for: .normal)
+        address1TextField.placeholder = "Address 1"
+        address2TextField.placeholder = "Address 2"
+        cityTextField.placeholder = "City"
 //        self.navigationController!.navigationBar.isTranslucent = false
 //        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(showOptions(controller:)))

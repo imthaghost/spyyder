@@ -40,6 +40,8 @@ class SecurityQuestionsVC: UIViewController {
         self.title = "Choose a Security Question"
         continueButton.isMainButton()
         continueButton.setTitle("Next", for: .normal)
+        questionTextField.placeholder = "Select a Question"
+        answerTextField.placeholder = "Answer"
 //        self.navigationController!.navigationBar.isTranslucent = false
 //        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(showOptions(controller:)))
