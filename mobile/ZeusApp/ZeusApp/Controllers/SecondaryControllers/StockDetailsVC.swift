@@ -80,6 +80,7 @@ class StockDetailsVC: UIViewController {
                 }
                 self.stock = stock
                 self.priceLabel.text = "$\(stock!.price)"
+                self.priceLabel.textColor = stock!.isPositive ? SettingsService.greenColor : SettingsService.redColor //make textColor green if stock is doing good since market opened
             }
         }
     }
@@ -122,8 +123,9 @@ class StockDetailsVC: UIViewController {
     }
     
     fileprivate func setupTopLabels() {
-        SettingsService.isMediumLabel(label: &priceLabel, color: SettingsService.greenColor, weight: .semibold)
-        SettingsService.isSmallLabel(label: &pricePercentLabel, color: SettingsService.greenColor, weight: .semibold)
+        let greenOrRedColor: UIColor = stock!.isPositive ? SettingsService.greenColor : SettingsService.redColor //make textColor green if stock is doing good since market opened
+        SettingsService.isMediumLabel(label: &priceLabel, color: greenOrRedColor, weight: .semibold)
+        SettingsService.isSmallLabel(label: &pricePercentLabel, color: greenOrRedColor, weight: .semibold)
         SettingsService.isMediumLabel(label: &predictedLabel, color: SettingsService.whiteColor, weight: .semibold)
         SettingsService.isSmallLabel(label: &predictedPercentLabel, color: SettingsService.whiteColor, weight: .semibold)
 //        priceLabel.text = "$1078.32"

@@ -133,7 +133,7 @@ extension TrendingVC: UITableViewDataSource {
         let stock = stocks[indexPath.row]
         cell.stock = stock
         cell.populateViews(showRank: true)
-        cell.priceLabel.textColor = stock.isPositive ? SettingsService.greenColor : SettingsService.redColor //make textColor green if stock is doing good since market opened
+       
         cell.backgroundColor = SettingsService.blackColor
         return cell
     }

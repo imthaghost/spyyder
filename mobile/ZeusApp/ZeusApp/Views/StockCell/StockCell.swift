@@ -54,7 +54,7 @@ class StockCell: UITableViewCell {
         rankLabel.font = UIFont.systemFont(ofSize: 24, weight: .regular)
         nameLabel.textColor = SettingsService.grayColor
         nameLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
-        priceLabel.textColor = SettingsService.greenColor
+        priceLabel.textColor = stock.isPositive ? SettingsService.greenColor : SettingsService.redColor //make textColor green if stock is doing good since market opened
         priceLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         categoryLabel.textColor = SettingsService.grayColor
         categoryLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
