@@ -13,7 +13,6 @@ class ContactInfoVC: UIViewController {
     
 //MARK: IBOutlets
     @IBOutlet weak var topLabel: UILabel!
-    
     @IBOutlet weak var address1TextField: UnderlinedTextField!
     @IBOutlet weak var address2TextField: UnderlinedTextField!
     @IBOutlet weak var cityTextField: UnderlinedTextField!
@@ -50,7 +49,8 @@ class ContactInfoVC: UIViewController {
     
 //MARK: IBActions
     @IBAction func continueButtonTapped(_ sender: Any) {
-        print("Go Home")
+        let vc: MainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: kMAINTABBARCONTROLLERID) as! MainTabBarController
+        Service.presentVCWithAnimation(fromVC: self, toVC: vc)
     }
     
 //MARK: Helpers
