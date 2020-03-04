@@ -24,11 +24,6 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        
-        
-        //MARK: Remove this
-        let button = UIButton(frame: .zero)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,7 +52,7 @@ class LoginVC: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleDismissTap(_:)))
         self.view.addGestureRecognizer(tap)
         updateColors()
-        setupQuizButton()
+//        setupQuizButton()
     }
     
     fileprivate func setupQuizButton() {
