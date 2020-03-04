@@ -10,10 +10,12 @@ import UIKit
 
 class UserQuestionsVC: UIViewController {
 //MARK: Properties
-    var questions: [Quiz] = []
+    var questions: [(question: QuizQuestion, answer: String)] = []
 //MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var continueButton: UIButton!
+    var sizePicker = UIPickerView()
+    var selectedIndex: Int = 0
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
@@ -25,12 +27,30 @@ class UserQuestionsVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: UserQuestionsCell.identifier, bundle: nil), forCellReuseIdentifier: UserQuestionsCell.identifier)
+        sizePicker.delegate = self
         self.title = "Find the Right Portfolio"
         self.navigationController!.navigationBar.isTranslucent = false
 //        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
         tableView.tableFooterView = UIView()
         continueButton.isMainButton()
         continueButton.setTitle("Next", for: .normal)
+        createQuestions()
+    }
+    
+    fileprivate func createQuestions() {
+        questions = [
+            (QuizQuestion(question: "What is your employment status?", answers: ["Working", "Not working", "Prefer not to share"]), ""),
+            (QuizQuestion(question: "What is your yearly income", answers: ["less than $10K", "more than $10K", "less than $50K", "less than $100K", "more than $250K", "more than $500K", "more than $1M"]), ""),
+            (QuizQuestion(question: "How much is all your stuff worth (Networth)?", answers: ["less than $10K", "more than $10K", "less than $50K", "less than $100K", "more than $250K", "more than $500K", "more than $1M", "more than $1B"]), ""),
+            (QuizQuestion(question: "What is your investment goal?", answers: ["High risk", "Medium risk", "Low risk", "Don't care"]), ""),
+            (QuizQuestion(question: "What is your level of financial education?", answers: ["Less than 1 month", "Less than 3 months", "Less than 1 year", "Less than 5 years", "More than 5 years"]), ""),
+            (QuizQuestion(question: "Initially, how much money do you plan to invest?", answers: ["less than $10K", "more than $10K", "less than $50K", "less than $100K", "more than $250K", "more than $500K", "more than $1M", "more than $1B", "morethan $1T"]), ""),
+            (QuizQuestion(question: "What access do you need to your Spyyder investments?", answers: ["Everything", "Nothing", "Some things"]), ""),
+        ]
+        tableView.reloadData()
     }
     
 //MARK: IBActions
@@ -38,11 +58,24 @@ class UserQuestionsVC: UIViewController {
 //MARK: Helpers
     @objc func showOptions(controller: UIViewController) {
     }
+    
+    @objc func handleEndEditing(_ gesture: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
 }
 
 //MARK: Extensions
 extension UserQuestionsVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath:
+        IndexPath) -> CGFloat {
+        return 80
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
+//        answers = questions[indexPath.row].answers //get the answers list
+        let cell: UserQuestionsCell = tableView.cellForRow(at: indexPath) as! UserQuestionsCell
+        cell.textField.becomeFirstResponder() //activate cell's textfield
+        sizePicker.reloadAllComponents() //reload the picker's data
     }
 }
 
@@ -55,29 +88,79 @@ extension UserQuestionsVC: UITableViewDataSource {
         switch section {
         case 0: //if title section
             return 1
-        case 1:
+        case 1: //if questions cells
             return questions.count
         default:
-            break
+            return 0
         }
-        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0: //if title
-            break
+            let titleCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath) //cell from storyboard
+            return titleCell
         case 1:
             let cell: UserQuestionsCell = tableView.dequeueReusableCell(withIdentifier: UserQuestionsCell.identifier, for: indexPath) as! UserQuestionsCell
+            cell.textField.delegate = self
+            let question: QuizQuestion = questions[indexPath.row].question
+            cell.populateCell(question: question)
+            let answers: [String] = question.answers
+//            let row = sizePicker.numberOfRows(inComponent: 0) > 1 ? 2 : 0
+//            let rowww: Int = answers.count //rows will be number of answers
+//            detailView.sizeButton.setTitle(String(sizePickerValues[row]), for: .normal)
+//            cell.textField.text = answers[row]
+            
+            let toolBar = UIToolbar()
+            toolBar.sizeToFit()
+            let flexibleBar = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+            let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.handleEndEditing(_:)))
+            toolBar.setItems([flexibleBar, doneButton], animated: true)
+            
+            cell.textField.inputAccessoryView = toolBar
+            cell.textField.inputView = sizePicker
+            cell.textField.clearButtonMode = .never
+            
+            cell.textField.text = questions[selectedIndex].answer
+            print("selected index=", selectedIndex)
+            
             return cell
         default:
-            break
+            return UITableViewCell()
         }
-//        let cell: BoxCell = tableView.dequeueReusableCell(withIdentifier: BoxCell.identifier, for: indexPath) as! BoxCell
-//        cell.boxLabel.text = months[indexPath.row]
-//        cell.backgroundColor = SettingsService.whiteColor
-//        cell.boxLabel.textColor = SettingsService.darkGrayColor
-//        cell.selectionStyle = .none
-        return UITableViewCell()
     }
 }
+
+//MARK: PickerView DataSource and Delegate
+extension UserQuestionsVC: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == sizePicker {
+            return questions[selectedIndex].question.answers.count
+        }
+        return 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == sizePicker {
+            return questions[selectedIndex].question.answers[row]
+        }
+        return ""
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //      var rowValue = row
+        if pickerView == sizePicker {
+//            detailView.sizeButton.setTitle(String(answers[row]), for: .normal)
+            questions[selectedIndex].answer = questions[selectedIndex].question.answers[row] //assign the answer of the question in the array as the question's answer
+            tableView.reloadData()
+        }
+    }
+}
+
+//MARK: TextField
+extension UserQuestionsVC: UITextFieldDelegate {}
