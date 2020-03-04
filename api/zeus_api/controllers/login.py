@@ -20,7 +20,6 @@ class authenticate(Resource):
         # if there is no json data send a message of a bad request
         if credentials is None:
             return jsonify({'message': 'no data was sent'})
-
         email = credentials.get('email')
         password = credentials.get('password')
         # todo: make sure to sanitize unless you want SQL Injection :)
