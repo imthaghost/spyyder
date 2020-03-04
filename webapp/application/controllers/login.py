@@ -1,4 +1,4 @@
-from flask import session, render_template, request, redirect, Blueprint
+from flask import session, render_template, request, redirect, Blueprint, url_for
 import requests
 import json
 from bson import json_util
@@ -23,8 +23,8 @@ def root():
         LOGIN_ENDPOINT = 'http://0.0.0.0:8000/login'
         LOGIN_PARAMS = {'email': email, 'password': pw}
         l = requests.post(url=LOGIN_ENDPOINT, json=LOGIN_PARAMS)
-        token = l.json()['token']
         if l.status_code == 200:
+            token = l.json()['token']
             # post token to user detail endpoint and create a session
             headers = {'content-type': 'application/json', 'token': token}
 

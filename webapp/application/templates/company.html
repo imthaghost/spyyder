@@ -1,0 +1,288 @@
+<!doctype html>
+<html class="no-js h-100" lang="en">
+
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Spyyder</title>
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" id="main-stylesheet" data-version="1.3.1" href="static/styles/shards-dashboards.1.3.1.min.css">
+  <link rel="stylesheet" href="static/styles/extras.1.3.1.min.css">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body class="h-100">
+  <div class="container-fluid">
+    <div class="row">
+      <main class="main-content col-lg-12 col-md-12 col-sm-12 p-0">
+        <div class="main-navbar  bg-white">
+          <div class="container p-0">
+
+          </div> <!-- / .container -->
+        </div> <!-- / .main-navbar -->
+        <div class="header-navbar collapse d-lg-flex p-0 bg-white border-top">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+
+                  <li class="nav-item">
+                    <a href="{{url_for('dashboard.root')}}" class="nav-link"><i class="material-icons">view_day</i>
+                      Trending</a>
+                  </li>
+
+
+
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown"><i class="material-icons">&#xE8B9;</i> User Account</a>
+                    <div class="dropdown-menu dropdown-menu-small">
+                      <a href="{{url_for('profile.root')}}" class="dropdown-item">User Profile</a>
+                      <a href="{{url_for('edit.root')}}" class="dropdown-item">Edit User
+                        Profile</a>
+                      <a href="{{url_for('logout.root')}}" class="dropdown-item">Logout</a>
+                      <!-- <a href="login.html" class="dropdown-item">Login</a>
+                      <a href="register.html" class="dropdown-item">Register</a>
+                      <a href="forgot-password.html" class="dropdown-item">Forgot Password</a>
+                      <a href="change-password.html" class="dropdown-item">Change Password</a> -->
+                    </div>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main-content-container container">
+          <!-- Page Header -->
+          <div class="page-header row no-gutters py-4">
+
+            <div class="col-12 col-sm-4 d-flex align-items-center">
+
+            </div>
+
+          </div>
+          <!-- End Page Header -->
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-3 mb-4">
+              <div class="stats-small card card-small">
+                <div class="card-body px-0 pb-0">
+                  <div class="d-flex px-3">
+                    <div class="stats-small__data">
+                      <span class="stats-small__label mb-1 text-uppercase">Total Employees</span>
+                      <h6 class="stats-small__value count m-0">2,390</h6>
+                    </div>
+                    <div class="stats-small__data text-right align-items-center">
+                      <span class="stats-small__percentage stats-small__percentage--increase">12.4%</span>
+                    </div>
+                  </div>
+                  <canvas height="60" class="analytics-overview-stats-small-1"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-4">
+              <div class="stats-small card card-small">
+                <div class="card-body px-0 pb-0">
+                  <div class="d-flex px-3">
+                    <div class="stats-small__data">
+                      <span class="stats-small__label mb-1 text-uppercase">Volume</span>
+                      <h6 class="stats-small__value count m-0">8,391</h6>
+                    </div>
+                    <div class="stats-small__data text-right align-items-center">
+                      <span class="stats-small__percentage stats-small__percentage--decrease">7.21%</span>
+                    </div>
+                  </div>
+                  <canvas height="60" class="analytics-overview-stats-small-2"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-4">
+              <div class="stats-small card card-small">
+                <div class="card-body px-0 pb-0">
+                  <div class="d-flex px-3">
+                    <div class="stats-small__data">
+                      <span class="stats-small__label mb-1 text-uppercase">Price</span>
+                      <h6 class="stats-small__value count m-0">21,293</h6>
+                    </div>
+                    <div class="stats-small__data text-right align-items-center">
+                      <span class="stats-small__percentage stats-small__percentage--increase">3.71%</span>
+                    </div>
+                  </div>
+                  <canvas height="60" class="analytics-overview-stats-small-3"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-4">
+              <div class="stats-small card card-small">
+                <div class="card-body px-0 pb-0">
+                  <div class="d-flex px-3">
+                    <div class="stats-small__data">
+                      <span class="stats-small__label mb-1 text-uppercase">Net Worth</span>
+                      <h6 class="stats-small__value count m-0">6.43</h6>
+                    </div>
+                    <div class="stats-small__data text-right align-items-center">
+                      <span class="stats-small__percentage stats-small__percentage--decrease">2,71%</span>
+                    </div>
+                  </div>
+                  <canvas height="60" class="analytics-overview-stats-small-4"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Small Stats Blocks -->
+          <div class="row">
+            <div class="col col-lg-8 col-md-12 col-sm-12 mb-4 ">
+              <div class="card card-small h-100">
+                <div class="card-header border-bottom">
+                  <h6 class="m-0">Current - Predicted Price</h6>
+                  <div class="block-handle"></div>
+                </div>
+                <div class="card-body pt-0">
+                  <div class="row border-bottom py-2 bg-light">
+                    <div class="col-12 col-sm-6 d-flex mb-2 mb-sm-0">
+                      <div class="btn-group btn-group-sm btn-group-toggle d-flex my-auto mx-auto mx-sm-0"
+                        data-toggle="buttons">
+                        <label class="btn btn-white active">
+                          <input type="radio" name="options" id="option1" autocomplete="off" checked=""> Hour </label>
+                        <label class="btn btn-white">
+                          <input type="radio" name="options" id="option2" autocomplete="off"> Day </label>
+                        <label class="btn btn-white">
+                          <input type="radio" name="options" id="option3" autocomplete="off"> Week </label>
+                        <label class="btn btn-white">
+                          <input type="radio" name="options" id="option4" autocomplete="off"> Month </label>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <div id="sessions-overview-date-range"
+                        class="input-daterange input-group input-group-sm my-auto ml-auto mr-auto ml-sm-auto mr-sm-0"
+                        style="max-width: 350px;">
+                        <input type="text" class="input-sm form-control" name="start" placeholder="Start Date"
+                          id="analytics-overview-sessions-date-range-1">
+                        <input type="text" class="input-sm form-control" name="end" placeholder="End Date"
+                          id="analytics-overview-sessions-date-range-2">
+                        <span class="input-group-append">
+                          <span class="input-group-text">
+                            <i class="material-icons"></i>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="analytics-overview-sessions-legend"></div>
+                  <canvas height="120" style="max-width: 100% !important;" class="analytics-overview-sessions"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="card card-small card-post card-post--1">
+                  <div class="card-post__image"
+                    style="background-image: url('static/images/content-management/1.jpg');">
+
+                    <div class="card-post__author d-flex">
+                      <a href="#" class="card-post__author-avatar card-post__author-avatar--small"
+                        style="background-image: url('static/images/avatars/0.jpg');">Written by Anna Kunis</a>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <a class="text-fiord-blue" href="#">Conduct at an replied removal an amongst</a>
+                    </h5>
+                    <p class="card-text d-inline-block mb-3">However venture pursuit he am mr cordial. Forming musical
+                      am
+                      hearing studied be luckily. But in for determine what would see...</p>
+                    <span class="text-muted">28 February 2019</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="card card-small card-post card-post--1">
+                  <div class="card-post__image" style="background-image: url('images/content-management/2.jpg');">
+
+                    <div class="card-post__author d-flex">
+                      <a href="#" class="card-post__author-avatar card-post__author-avatar--small"
+                        style="background-image: url('static/images/avatars/1.jpg');">Written by James Jamerson</a>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <a class="text-fiord-blue" href="#">Off tears are day blind smile alone had ready</a>
+                    </h5>
+                    <p class="card-text d-inline-block mb-3">Is at purse tried jokes china ready decay an. Small its shy
+                      way had woody downs power. To denoting admitted speaking learning my...</p>
+                    <span class="text-muted">29 February 2019</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="card card-small card-post card-post--1">
+                  <div class="card-post__image" style="background-image: url('images/content-management/3.jpg');">
+                    <a href="#" class="card-post__category badge badge-pill badge-royal-blue">Today</a>
+                    <div class="card-post__author d-flex">
+                      <a href="#" class="card-post__author-avatar card-post__author-avatar--small"
+                        style="background-image: url('static/images/avatars/2.jpg');">Written by Jimmy Jackson</a>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <a class="text-fiord-blue" href="#">Difficult in delivered extensive at direction</a>
+                    </h5>
+                    <p class="card-text d-inline-block mb-3">Is at purse tried jokes china ready decay an. Small its shy
+                      way had woody downs power. To denoting admitted speaking learning my...</p>
+                    <span class="text-muted">29 February 2019</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="card card-small card-post card-post--1">
+                  <div class="card-post__image" style="background-image: url('images/content-management/4.jpg');">
+                    <a href="#" class="card-post__category badge badge-pill badge-warning">Today</a>
+                    <div class="card-post__author d-flex">
+                      <a href="#" class="card-post__author-avatar card-post__author-avatar--small"
+                        style="background-image: url('static/images/avatars/3.jpg');">Written by John James</a>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <a class="text-fiord-blue" href="#">It so numerous if he may outlived disposal</a>
+                    </h5>
+                    <p class="card-text d-inline-block mb-3">How but sons mrs lady when. Her especially are unpleasant
+                      out
+                      alteration continuing unreserved ready road market resolution...</p>
+                    <span class="text-muted">29 February 2019</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+    </main>
+  </div>
+  </div>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+  <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
+  <script src="static/scripts/extras.1.3.1.min.js"></script>
+  <script src="static/scripts/shards-dashboards.1.3.1.min.js"></script>
+  <script src="static/scripts/app/app-analytics-overview.1.3.1.min.js"></script>
+</body>
+
+
+</html>

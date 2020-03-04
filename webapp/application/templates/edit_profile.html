@@ -11,8 +11,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" id="main-stylesheet" data-version="1.3.1" href="styles/shards-dashboards.1.3.1.min.css">
-    <link rel="stylesheet" href="styles/extras.1.3.1.min.css">
+    <link rel="stylesheet" id="main-stylesheet" data-version="1.3.1"
+        href="static/styles/shards-dashboards.1.3.1.min.css">
+    <link rel="stylesheet" href="static/styles/extras.1.3.1.min.css">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 
@@ -32,7 +33,8 @@
                                 <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
 
                                     <li class="nav-item">
-                                        <a href="trending.html" class="nav-link"><i class="material-icons">view_day</i>
+                                        <a href="{{url_for('dashboard.root')}}" class="nav-link"><i
+                                                class="material-icons">view_day</i>
                                             Trending</a>
                                     </li>
 
@@ -43,12 +45,11 @@
                                         <a class="nav-link" data-toggle="dropdown"><i
                                                 class="material-icons">&#xE8B9;</i> User Account</a>
                                         <div class="dropdown-menu dropdown-menu-small">
-                                            <a href="user-test.html" class="dropdown-item">User Profile</a>
-                                            <a href="edit-test.html" class="dropdown-item">Edit User Profile</a>
-                                            <!-- <a href="login.html" class="dropdown-item">Login</a>
-                      <a href="register.html" class="dropdown-item">Register</a>
-                      <a href="forgot-password.html" class="dropdown-item">Forgot Password</a>
-                      <a href="change-password.html" class="dropdown-item">Change Password</a> -->
+                                            <a href="{{url_for('profile.root')}}" class="dropdown-item">User Profile</a>
+                                            <a href="{{url_for('edit.root')}}" class="dropdown-item">Edit User
+                                                Profile</a>
+                                            <a href="{{url_for('logout.root')}}" class="dropdown-item">Logout</a>
+
                                         </div>
                                     </li>
 
@@ -68,35 +69,25 @@
                     </div>
                     <!-- End Page Header -->
                     <div class="card card-small edit-user-details mb-4">
-                        <div class="card-header p-0">
+                        <!-- <div class="card-header p-0">
                             <div class="edit-user-details__bg">
-                                <img src="images/user-profile/up-user-details-background.jpg"
+                                <img src="static/images/user-profile/up-user-details-background.jpg"
                                     alt="User Details Background Image">
                                 <label class="edit-user-details__change-background">
                                     <i class="material-icons mr-1">&#xE439;</i> Change Background Photo <input
                                         class="d-none" type="file" />
                                 </label>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="card-body p-0">
                             <div class="border-bottom clearfix d-flex">
-                                <ul class="nav nav-tabs border-0 mt-auto mx-4 pt-2">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="#">General</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Projects</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Collaboration</a>
-                                    </li>
-                                </ul>
+
                             </div>
                             <form action="#" class="py-4">
                                 <div class="form-row mx-4">
                                     <div class="col mb-3">
-                                        <h6 class="form-text m-0">General</h6>
-                                        <p class="form-text text-muted m-0">Setup your general profile details.</p>
+                                        <h6 class="form-text m-0">{{user_data['fullname']}}</h6>
+                                        <p class="form-text text-muted m-0">Edit profile details.</p>
                                     </div>
                                 </div>
                                 <div class="form-row mx-4">
@@ -145,19 +136,17 @@
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="displayEmail">Display Email Publicly</label>
-                                                <select class="custom-select">
-                                                    <option value="1" selected>Yes, display my email</option>
-                                                    <option value="2">No, do not display my email.</option>
-                                                </select>
+                                                <label for="displayEmail">ID</label>
+                                                <p>{{user_data['uuid']}}</p>
+
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4">
+                                    <!-- <div class="col-lg-4">
                                         <label for="userProfilePicture" class="text-center w-100 mb-4">Profile
                                             Picture</label>
                                         <div class="edit-user-details__avatar m-auto">
-                                            <img src="images/avatars/0.jpg" alt="User Avatar">
+                                            <img src="static/images/avatars/0.jpg" alt="User Avatar">
                                             <label class="edit-user-details__avatar__change">
                                                 <i class="material-icons mr-1">&#xE439;</i>
                                                 <input type="file" id="userProfilePicture" class="d-none">
@@ -165,9 +154,9 @@
                                         </div>
                                         <button class="btn btn-sm btn-white d-table mx-auto mt-4"><i
                                                 class="material-icons">&#xE2C3;</i> Upload Image</button>
-                                    </div>
+                                    </div> -->
                                 </div>
-                                <div class="form-row mx-4">
+                                <!-- <div class="form-row mx-4">
                                     <div class="form-group col-md-6">
                                         <label for="userBio">Bio</label>
                                         <textarea style="min-height: 87px;" id="userBio" name="userBio"
@@ -179,8 +168,8 @@
                                             value="User Experience,UI Design, React JS, HTML & CSS, JavaScript, Bootstrap 4"
                                             class="d-none">
                                     </div>
-                                </div>
-                                <hr>
+                                </div> -->
+                                <!-- <hr>
                                 <div class="form-row mx-4">
                                     <div class="col mb-3">
                                         <h6 class="form-text m-0">Social</h6>
@@ -256,7 +245,7 @@
                                             <input type="email" class="form-control" id="socialGoogle">
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <hr>
                                 <div class="form-row mx-4">
                                     <div class="col mb-3">
@@ -279,7 +268,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-row mx-4">
+                                <!-- <div class="form-row mx-4">
                                     <label for="newProjectsEmailsToggle" class="col col-form-label"> New Projects <small
                                             class="form-text text-muted"> Sends notification emails when you are invited
                                             to a new project. </small>
@@ -291,7 +280,7 @@
                                             <label class="custom-control-label" for="newProjectsEmailsToggle"></label>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="form-row mx-4">
                                     <label for="vulnerabilitiesEmailsToggle" class="col col-form-label"> Vulnerability
                                         Alerts <small class="form-text text-muted"> Sends notification emails when
@@ -353,9 +342,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
-    <script src="scripts/extras.1.3.1.min.js"></script>
-    <script src="scripts/shards-dashboards.1.3.1.min.js"></script>
-    <script src="scripts/app/app-analytics-overview.1.3.1.min.js"></script>
+    <script src="static/scripts/extras.1.3.1.min.js"></script>
+    <script src="static/scripts/shards-dashboards.1.3.1.min.js"></script>
+    <script src="static/scripts/app/app-analytics-overview.1.3.1.min.js"></script>
 </body>
 
 <!-- Mirrored from designrevision.com/demo/shards-dashboards/header-navigation.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Mar 2020 17:03:03 GMT -->

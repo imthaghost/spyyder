@@ -33,7 +33,8 @@
                                 <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
 
                                     <li class="nav-item">
-                                        <a href="trending.html" class="nav-link"><i class="material-icons">view_day</i>
+                                        <a href="{{url_for('dashboard.root')}}" class="nav-link"><i
+                                                class="material-icons">view_day</i>
                                             Trending</a>
                                     </li>
 
@@ -44,8 +45,9 @@
                                         <a class="nav-link" data-toggle="dropdown"><i
                                                 class="material-icons">&#xE8B9;</i> User Account</a>
                                         <div class="dropdown-menu dropdown-menu-small">
-                                            <a href="user-test.html" class="dropdown-item">User Profile</a>
-                                            <a href="edit-test.html" class="dropdown-item">Edit User Profile</a>
+                                            <a href="{{url_for('profile.root')}}" class="dropdown-item">User Profile</a>
+                                            <a href="{{url_for('edit.root')}}" class="dropdown-item">Edit User
+                                                Profile</a>
                                             <a href="{{url_for('logout.root')}}" class="dropdown-item">Logout</a>
                                         </div>
                                     </li>
