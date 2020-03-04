@@ -37,6 +37,27 @@ class Service {
         on.present(alertVC, animated: true, completion: nil)
     }
     
+///Presents ViewControllers with animation from right to left or vice versa
+    static func presentVCWithAnimation(fromVC: UIViewController, toVC: UIViewController, fromRight: Bool = true) {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = fromRight ? .fromRight : .fromLeft
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        fromVC.view.window!.layer.add(transition, forKey: kCATransition) //apply its custom transition to the VC
+        fromVC.present(toVC, animated: false, completion: nil)
+    }
+    
+    static func presentNavWithAnimation(fromVC: UINavigationController, toVC: UINavigationController, fromRight: Bool = true) {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = fromRight ? .fromRight : .fromLeft
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        fromVC.view.window!.layer.add(transition, forKey: kCATransition) //apply its custom transition to the VC
+        fromVC.present(toVC, animated: false, completion: nil)
+    }
+    
     //    static func toMenuController(on: UIViewController) {
     //        goToController(on: on, withIdentifier: kMENUCONTROLLER)
     //    }
