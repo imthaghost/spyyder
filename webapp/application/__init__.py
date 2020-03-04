@@ -9,7 +9,7 @@ from application.controllers.user_profile import profile
 from application.controllers.edit_profile import edit
 from flask import Flask, request
 
-app = Flask("digift", template_folder='application/templates',
+app = Flask("spyyder", template_folder='application/templates',
             static_folder='application/static')
 
 app.config['SECRET_KEY'] = os.urandom(24)
