@@ -67,7 +67,7 @@ extension ProfileVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.backgroundColor = .clear
+        cell.backgroundColor = SettingsService.blackColor
 //        let cell: BoxCell = tableView.dequeueReusableCell(withIdentifier: BoxCell.identifier, for: indexPath) as! BoxCell
 //        cell.boxLabel.text = months[indexPath.row]
 //        cell.backgroundColor = SettingsService.whiteColor

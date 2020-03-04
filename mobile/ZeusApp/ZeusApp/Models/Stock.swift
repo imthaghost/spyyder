@@ -18,14 +18,16 @@ class Stock: Codable {
     var isFollowing: Bool
     var trendingStocks: [Stock] = []
     var suggestedStocks: [Stock] = []
+    var isPositive: Bool
     
-    init(_name: String = "", _shortName: String = "", _price: String = "", _imageUrl: String = "", _rank: Int = 0, _isFollowing: Bool = false) {
+    init(_name: String = "", _shortName: String = "", _price: String = "", _imageUrl: String = "", _rank: Int = 0, _isFollowing: Bool = false, _isPositive: Bool = true) {
         self.name = _name
         self.shortName = _shortName
         self.price = _price
         self.imageUrl = _imageUrl
         self.rank = _rank
         self.isFollowing = _isFollowing
+        self.isPositive = _isPositive
     }
 }
 

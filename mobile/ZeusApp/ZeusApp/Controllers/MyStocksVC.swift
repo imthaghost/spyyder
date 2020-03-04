@@ -99,8 +99,12 @@ extension MyStocksVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: StockCell = tableView.dequeueReusableCell(withIdentifier: "stockCell") as! StockCell
         cell.selectionStyle = .none //remove the selection indicator
-        cell.stock = stocks[indexPath.row]
-        cell.populateViews(showRank: false)
+        let stock = stocks[indexPath.row]
+        cell.stock = stock
+        cell.populateViews(showRank: true)
+        cell.priceLabel.textColor = stock.isPositive ? SettingsService.greenColor : SettingsService.redColor //make textColor green if stock is doing good since market opened
+        //        cell.backgroundColor = UIColor(hexString: "#2b2b30")
+        cell.backgroundColor = SettingsService.blackColor
         return cell
     }
 }

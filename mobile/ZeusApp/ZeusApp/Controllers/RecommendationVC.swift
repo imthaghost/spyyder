@@ -40,7 +40,7 @@ class RecommendationVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
-        self.title = "Trending"
+        self.title = "Suggested"
         self.view.backgroundColor = SettingsService.blackColor
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color

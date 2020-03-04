@@ -78,6 +78,8 @@ func fetchStockDetails(stock: Stock, token: String, completion: @escaping(_ erro
 //                    guard let currentPrice = response[kPRICE] as? Double else {print("Couldnt get price"); return }
 //                    stock.price = String(format: "%.2f", ceil(currentPrice*100)/100) //2 decimal points
                         stock.price = price
+                        let isPositive = characterToRemove == "+" ? true : false //if + then stock.isPositive = true
+                        stock.isPositive = isPositive
                     } else {
                         print("didn't find + or -")
                     }
