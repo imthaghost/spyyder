@@ -13,7 +13,7 @@ class ProfileVC: UIViewController {
     
 //MARK: IBOutlets
     @IBOutlet weak var settingsButton: UIBarButtonItem!
-    @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
@@ -31,8 +31,16 @@ class ProfileVC: UIViewController {
         navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
         navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
         //        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
-        table.tableFooterView = UIView()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(showOptions(controller:)))
+        setupTableView()
+    }
+    
+    fileprivate func setupTableView() {
+        tableView.register(UINib(nibName: "StockCell", bundle: nil), forCellReuseIdentifier: "stockCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView() //removes extra unpopulated cells
+        tableView.backgroundColor = SettingsService.blackColor
+        tableView.separatorStyle = .none //removes separator line
     }
     
 //MARK: IBActions

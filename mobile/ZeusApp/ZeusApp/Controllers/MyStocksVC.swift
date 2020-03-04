@@ -54,6 +54,7 @@ class MyStocksVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView() //removes extra unpopulated cells
+        tableView.backgroundColor = SettingsService.blackColor
         tableView.separatorStyle = .none //removes separator line
     }
     
