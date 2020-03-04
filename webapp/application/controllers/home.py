@@ -12,4 +12,4 @@ def index():
             return render_template('trending.html')
         else:
             # take user to home page
-            return render_template('company.html')
+            return render_template('index.html')
