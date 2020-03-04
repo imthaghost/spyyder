@@ -8,7 +8,7 @@ from application.controllers.login import login
 
 from flask import Flask, request
 
-app = Flask("digift", template_folder='application/templates',
+app = Flask("spyyder", template_folder='application/templates',
             static_folder='application/static')
 
 app.config['SECRET_KEY'] = os.urandom(24)
