@@ -18,24 +18,21 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Kfg-ON-tdB">
                                 <rect key="frame" x="20" y="168.5" width="374" height="613.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="professionals" translatesAutoresizingMaskIntoConstraints="NO" id="1vO-Hu-dXi">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="260" image="professionals" translatesAutoresizingMaskIntoConstraints="NO" id="1vO-Hu-dXi">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="368"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" text="Spyder works with investment professionals, mathematicians, and a Nobel Prize winning economist to craft our portfolios" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq3-Pf-H8y">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Spyyder works with investment professionals, mathematicians, and a Nobel Prize winning economist to craft our portfolios" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq3-Pf-H8y">
                                         <rect key="frame" x="0.0" y="398" width="374" height="64.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" text="The next few questions will help us recommend the right portfolio for you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9j-eb-w1x">
-                                        <rect key="frame" x="0.0" y="492.5" width="374" height="43"/>
+                                        <rect key="frame" x="0.0" y="492.5" width="374" height="121"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQR-sz-sNy">
-                                        <rect key="frame" x="67" y="565.5" width="240" height="48"/>
-                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="1vO-Hu-dXi" firstAttribute="width" secondItem="Kfg-ON-tdB" secondAttribute="width" id="Z4I-7q-TcB"/>
@@ -237,7 +234,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="oOG-F3-ny0">
                                 <rect key="frame" x="20" y="250.5" width="374" height="531.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spyder is required to collect this information to open your investment account." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAq-bt-v1e">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spyyder is required to collect this information to open your investment account." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAq-bt-v1e">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="AdK-qs-xMe"/>

@@ -26,16 +26,12 @@ class Page4VC: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.isHidden = false
-    }
-    
 //MARK: Navigation
     
 //MARK: Private Methods
     fileprivate func setupViews() {
         continueButton.isMainButton()
+        continueButton.setTitle("Next", for: .normal)
 //        self.title = "My Profile"
 //        self.navigationController!.navigationBar.isTranslucent = false
 //        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)

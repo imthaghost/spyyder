@@ -39,6 +39,7 @@ class ContactInfoVC: UIViewController {
     fileprivate func setupViews() {
         self.title = "Contact Information"
         continueButton.isMainButton()
+        continueButton.setTitle("Finish", for: .normal)
 //        self.navigationController!.navigationBar.isTranslucent = false
 //        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(showOptions(controller:)))

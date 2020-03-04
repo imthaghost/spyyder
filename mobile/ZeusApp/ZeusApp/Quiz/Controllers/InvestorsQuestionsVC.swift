@@ -29,12 +29,18 @@ class InvestorsQuestionsVC: UIViewController {
         setupViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
+    
 //MARK: Navigation
     
 //MARK: Private Methods
     fileprivate func setupViews() {
         self.title = "Investor Questions"
         continueButton.isMainButton()
+        continueButton.setTitle("Next", for: .normal)
     }
     
 //MARK: IBActions

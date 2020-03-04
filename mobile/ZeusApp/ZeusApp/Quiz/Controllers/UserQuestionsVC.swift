@@ -30,6 +30,7 @@ class UserQuestionsVC: UIViewController {
 //        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
         tableView.tableFooterView = UIView()
         continueButton.isMainButton()
+        continueButton.setTitle("Next", for: .normal)
     }
     
 //MARK: IBActions

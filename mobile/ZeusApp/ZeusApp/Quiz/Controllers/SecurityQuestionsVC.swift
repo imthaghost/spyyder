@@ -26,7 +26,7 @@ class SecurityQuestionsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        navigationController?.navigationBar.isHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -39,6 +39,7 @@ class SecurityQuestionsVC: UIViewController {
     fileprivate func setupViews() {
         self.title = "Choose a Security Question"
         continueButton.isMainButton()
+        continueButton.setTitle("Next", for: .normal)
 //        self.navigationController!.navigationBar.isTranslucent = false
 //        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(showOptions(controller:)))

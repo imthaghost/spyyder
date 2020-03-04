@@ -30,7 +30,6 @@ class Page1VC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.navigationBar.isHidden = false
     }
     
 //MARK: Navigation
@@ -38,9 +37,10 @@ class Page1VC: UIViewController {
 //MARK: Private Methods
     fileprivate func setupViews() {
         self.title = "Your Recommended Portfolio"
-        topLabel.text = "Spyder works with investment professionals, mathematicians, and a Nobel Prize winning economist to craft our portfolios"
-        bottomLabel.text = "The next few questions will help us recommend the right portfolio for you"
+        topLabel.text = "Spyyder works with investment professionals, mathematicians, and a Nobel Prize winning economist to craft our portfolios."
+        bottomLabel.text = "The next few questions will help us recommend the right portfolio for you."
         continueButton.isMainButton()
+        continueButton.setTitle("Start", for: .normal)
     }
     
 //MARK: IBActions
