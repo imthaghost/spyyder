@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		28965C5A4DF3DBB0B4D938ED /* Pods_ZeusApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF439251C7442548493D07BF /* Pods_ZeusApp.framework */; };
+		330256B52410B4DE0019F162 /* StockCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330256B42410B4DE0019F162 /* StockCodable.swift */; };
+		330256B72410EB8A0019F162 /* URLSession+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330256B62410EB8A0019F162 /* URLSession+extensions.swift */; };
 		3309911823E213DA00880CC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309911723E213DA00880CC5 /* AppDelegate.swift */; };
 		3309911A23E213DA00880CC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309911923E213DA00880CC5 /* SceneDelegate.swift */; };
 		3309911F23E213DA00880CC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3309911D23E213DA00880CC5 /* Main.storyboard */; };
@@ -67,6 +69,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		330256B42410B4DE0019F162 /* StockCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCodable.swift; sourceTree = "<group>"; };
+		330256B62410EB8A0019F162 /* URLSession+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+extensions.swift"; sourceTree = "<group>"; };
 		3309911423E213DA00880CC5 /* Spyyder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spyyder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3309911723E213DA00880CC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3309911923E213DA00880CC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				3309913023E24BA800880CC5 /* Stock.swift */,
+				330256B42410B4DE0019F162 /* StockCodable.swift */,
 				33EC1D85240344EF00B92645 /* User.swift */,
 			);
 			path = Models;
@@ -254,6 +259,7 @@
 				33232DB723F229F600CF722D /* String+extensions.swift */,
 				33232DBB23F25CA200CF722D /* Dictionary+extensions.swift */,
 				334599F023F7C3D3002C13D5 /* UITextField+extensions.swift */,
+				330256B62410EB8A0019F162 /* URLSession+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -536,6 +542,7 @@
 				334044D723F1F49F00CEA9A9 /* OnboardingVC.swift in Sources */,
 				333A58DC240E392F003FF6A7 /* UserQuestionsCell.swift in Sources */,
 				3309911823E213DA00880CC5 /* AppDelegate.swift in Sources */,
+				330256B72410EB8A0019F162 /* URLSession+extensions.swift in Sources */,
 				33232DBC23F25CA200CF722D /* Dictionary+extensions.swift in Sources */,
 				333BDE952407091B004AD18C /* UIScrollView+extensions.swift in Sources */,
 				333A590A240EF48B003FF6A7 /* QuizQuestion.swift in Sources */,
@@ -552,6 +559,7 @@
 				3385A04B23FE741600879E19 /* DecisionView.swift in Sources */,
 				334044DD23F1F69A00CEA9A9 /* UnderlinedTextField.swift in Sources */,
 				334044DF23F1F6B800CEA9A9 /* UnderlinedTextField+extensions.swift in Sources */,
+				330256B52410B4DE0019F162 /* StockCodable.swift in Sources */,
 				3344298123FB22CC00F0E345 /* SettingsVC.swift in Sources */,
 				333A58C5240CE0A8003FF6A7 /* Quiz.swift in Sources */,
 				33CA31A923E6286A009AA3DF /* UIColor+extensions.swift in Sources */,

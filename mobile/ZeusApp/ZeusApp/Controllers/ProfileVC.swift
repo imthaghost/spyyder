@@ -36,7 +36,7 @@ class ProfileVC: UIViewController {
     }
     
     fileprivate func setupTableView() {
-        tableView.register(UINib(nibName: "StockCell", bundle: nil), forCellReuseIdentifier: "stockCell")
+        tableView.register(UINib(nibName: StockCell.identifier, bundle: nil), forCellReuseIdentifier: StockCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView() //removes extra unpopulated cells

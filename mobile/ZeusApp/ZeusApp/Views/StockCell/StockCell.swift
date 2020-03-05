@@ -12,6 +12,7 @@ class StockCell: UITableViewCell {
     
 //MARK: Properties
     var stock: Stock!
+    static let identifier: String = "StockCell"
     
 //MARK: IBOutlets
     @IBOutlet weak var nameLabel: UILabel!

@@ -86,12 +86,14 @@ func fetchAllStocks(stocks: [Stock], completion: @escaping(_ error: String?, _ s
                 if let error = error {
                     completion(error, resultStocks)
                 }
-                resultStocks.append(stock!)
-                if resultStocks.count == stocks.count {
-                    for stock in resultStocks {
-                        print("Updated stock = \(stock)")
+                if let stock = stock {
+                    resultStocks.append(stock)
+                    if resultStocks.count == stocks.count {
+                        for stock in resultStocks {
+                            print("Updated stock = \(stock.name) with price \(stock.price)")
+                        }
+                        completion(nil, resultStocks)
                     }
-                    completion(nil, resultStocks)
                 }
             }
         }

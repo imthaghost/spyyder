@@ -68,10 +68,10 @@ class StockDetailsVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getStockDetails()
+        startStockTimer()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        startStockTimer()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -167,7 +167,7 @@ class StockDetailsVC: UIViewController {
         followButton.setTitle(buttonTitle, for: .normal)
     }
     
-    /// Fetch prices every 2 seconds
+/// Fetch prices every 2 seconds
     fileprivate func startStockTimer() {
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.fetchAllStocksData), userInfo: nil, repeats: true)
     }

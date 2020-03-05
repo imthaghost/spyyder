@@ -60,7 +60,7 @@ class MyStocksVC: UIViewController {
     }
     
     fileprivate func setupTableView() {
-        tableView.register(UINib(nibName: "StockCell", bundle: nil), forCellReuseIdentifier: "stockCell")
+        tableView.register(UINib(nibName: StockCell.identifier, bundle: nil), forCellReuseIdentifier: StockCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView() //removes extra unpopulated cells
@@ -123,7 +123,7 @@ extension MyStocksVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: StockCell = tableView.dequeueReusableCell(withIdentifier: "stockCell") as! StockCell
+        let cell: StockCell = tableView.dequeueReusableCell(withIdentifier: StockCell.identifier) as! StockCell
         cell.selectionStyle = .none //remove the selection indicator
         let stock = stocks[indexPath.row]
         cell.stock = stock

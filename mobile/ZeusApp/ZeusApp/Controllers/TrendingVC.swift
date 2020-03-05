@@ -10,7 +10,11 @@ import UIKit
 
 class TrendingVC: UIViewController {
 //MARK: Properties
-    var stocks: [Stock] = []
+    var stocks: [Stock] = [] {
+        didSet {
+            saveTrendingStocks(stocks: self.stocks)
+        }
+    }
     var timer = Timer()
     
 //MARK: IBOutlets
@@ -24,11 +28,10 @@ class TrendingVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        populateTableView()
+        startStockTimer()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        startStockTimer()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -56,12 +59,12 @@ class TrendingVC: UIViewController {
         navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
         navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
         setupTableView()
-        populateTableView()
+        setTableData()
         setupTabBar()
     }
     
     fileprivate func setupTableView() {
-        tableView.register(UINib(nibName: "StockCell", bundle: nil), forCellReuseIdentifier: "stockCell")
+        tableView.register(UINib(nibName: StockCell.identifier, bundle: nil), forCellReuseIdentifier: StockCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView() //removes extra unpopulated cells
@@ -69,7 +72,7 @@ class TrendingVC: UIViewController {
         tableView.separatorStyle = .none //removes separator line
     }
     
-    fileprivate func populateTableView() {
+    fileprivate func setTableData() {
         let stock1 = Stock(_name: "ABB Ltd", _shortName: "ABB", _price: "00.00", _imageUrl: "", _rank: 1)
         let stock2 = Stock(_name: "Herbalife Ltd.", _shortName: "HLF", _price: "00.00", _imageUrl: "", _rank: 2)
         let stock3 = Stock(_name: "Tesla", _shortName: "TSLA", _price: "00.00", _imageUrl: "", _rank: 3)
@@ -83,7 +86,7 @@ class TrendingVC: UIViewController {
         let stock11 = Stock(_name: "Rite Aid", _shortName: "RAD", _price: "00.00", _imageUrl: "", _rank: 11)
         let stock12 = Stock(_name: "IBM", _shortName: "IBM", _price: "00.00", _imageUrl: "", _rank: 12)
         stocks = [stock1, stock2, stock3, stock4, stock5, stock6, stock7, stock8, stock9, stock10, stock11, stock12]
-        saveTrendingStocks(stocks: self.stocks)
+        self.tableView.reloadData()
     }
     
     fileprivate func setupTabBar() {
@@ -133,7 +136,7 @@ extension TrendingVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: StockCell = tableView.dequeueReusableCell(withIdentifier: "stockCell") as! StockCell
+        let cell: StockCell = tableView.dequeueReusableCell(withIdentifier: StockCell.identifier) as! StockCell
         cell.selectionStyle = .none //remove the selection indicator
         let stock = stocks[indexPath.row]
         cell.stock = stock
