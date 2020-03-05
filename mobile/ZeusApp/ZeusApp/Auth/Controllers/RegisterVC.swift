@@ -8,6 +8,7 @@
 
 import UIKit
 
+//MARK: SAMPLE VC SETUP
 class RegisterVC: UIViewController {
 //MARK: Properties
     

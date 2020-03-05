@@ -10,7 +10,12 @@ import UIKit
 
 class TrendingVC: UIViewController {
 //MARK: Properties
-    var stocks: [Stock] = []
+    var stocks: [Stock] = [] {
+        didSet {
+            saveTrendingStocks(stocks: self.stocks)
+        }
+    }
+    var timer = Timer()
     
 //MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -19,7 +24,19 @@ class TrendingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        setupTabBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        startStockTimer()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.invalidate()
     }
     
 //MARK: Navigation
@@ -35,59 +52,70 @@ class TrendingVC: UIViewController {
     }
     
 //MARK: Private Methods
-    fileprivate func setupTabBar() {
-        guard let tabBar = self.tabBarController?.tabBar else { return }
-        tabBar.layer.masksToBounds = true
-        tabBar.layer.cornerRadius = 20
-        tabBar.backgroundColor = .clear
-        tabBar.backgroundImage = UIImage()
-        tabBar.barTintColor = .clear //bar color
-        tabBar.tintColor = kMAINCOLOR //selected tab
-        tabBar.unselectedItemTintColor = SettingsService.blackColor
-        //MARK: Tab Bar Size Customization
-        let width = self.view.frame.width - 100
-        var newFrame = tabBar.frame
-//        newFrame.size.height = 100
-//        newFrame.origin.y = view.frame.size.height - 100
-        newFrame.size.width = width
-        newFrame.origin.x = (view.frame.width - width) / 2 //centers it
-        tabBar.frame = newFrame
-    }
-    
     fileprivate func setupViews() {
         self.title = "Trending"
-        self.navigationController!.navigationBar.isTranslucent = false
+        self.view.backgroundColor = SettingsService.blackColor
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
+        navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
         setupTableView()
-        createTestStocks()
+        setTableData()
+        setupTabBar()
     }
     
     fileprivate func setupTableView() {
-        tableView.register(UINib(nibName: "StockCell", bundle: nil), forCellReuseIdentifier: "stockCell")
+        tableView.register(UINib(nibName: StockCell.identifier, bundle: nil), forCellReuseIdentifier: StockCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView() //removes extra unpopulated cells
+        tableView.backgroundColor = SettingsService.blackColor
+        tableView.separatorStyle = .none //removes separator line
     }
     
-    fileprivate func createTestStocks() {
-        let stock1 = Stock(_name: "Bitcoin", _shortName: "BTC", _price: "8,900", _imageUrl: "", _rank: 1)
-        let stock2 = Stock(_name: "Etherium", _shortName: "ETH", _price: "80", _imageUrl: "", _rank: 2)
-        let stock3 = Stock(_name: "Tesla", _shortName: "TSL", _price: "600", _imageUrl: "", _rank: 3)
-        let stock4 = Stock(_name: "Apple", _shortName: "APL", _price: "8,900", _imageUrl: "", _rank: 4)
-        let stock5 = Stock(_name: "Bitcoin", _shortName: "BTC", _price: "8,900", _imageUrl: "", _rank: 5)
-        let stock6 = Stock(_name: "Etherium", _shortName: "ETH", _price: "80", _imageUrl: "", _rank: 6)
-        let stock7 = Stock(_name: "Tesla", _shortName: "TSL", _price: "600", _imageUrl: "", _rank: 7)
-        let stock8 = Stock(_name: "Apple", _shortName: "APL", _price: "8,900", _imageUrl: "", _rank: 8)
-        let stock9 = Stock(_name: "Bitcoin", _shortName: "BTC", _price: "8,900", _imageUrl: "", _rank: 9)
-        let stock10 = Stock(_name: "Etherium", _shortName: "ETH", _price: "80", _imageUrl: "", _rank: 10)
-        let stock11 = Stock(_name: "Tesla", _shortName: "TSL", _price: "600", _imageUrl: "", _rank: 11)
-        let stock12 = Stock(_name: "Apple", _shortName: "APL", _price: "8,900", _imageUrl: "", _rank: 12)
-        stocks.append(contentsOf: [stock1, stock2, stock3, stock4, stock5, stock6, stock7, stock8, stock9, stock10, stock11, stock12])
+    fileprivate func setTableData() {
+        let stock1 = Stock(_name: "ABB Ltd", _shortName: "ABB", _price: "00.00", _imageUrl: "", _rank: 1)
+        let stock2 = Stock(_name: "Herbalife Ltd.", _shortName: "HLF", _price: "00.00", _imageUrl: "", _rank: 2)
+        let stock3 = Stock(_name: "Tesla", _shortName: "TSLA", _price: "00.00", _imageUrl: "", _rank: 3)
+        let stock4 = Stock(_name: "Apple", _shortName: "AAPL", _price: "00.00", _imageUrl: "", _rank: 4)
+        let stock5 = Stock(_name: "Amazon", _shortName: "AMZN", _price: "00.00", _imageUrl: "", _rank: 5)
+        let stock6 = Stock(_name: "Twitter", _shortName: "TWTR", _price: "00.00", _imageUrl: "", _rank: 6)
+        let stock7 = Stock(_name: "Facebook", _shortName: "FB", _price: "00.00", _imageUrl: "", _rank: 7)
+        let stock8 = Stock(_name: "Microsoft", _shortName: "MSFT", _price: "00.00", _imageUrl: "", _rank: 8)
+        let stock9 = Stock(_name: "Netflix", _shortName: "NFLX", _price: "00.00", _imageUrl: "", _rank: 9)
+        let stock10 = Stock(_name: "Starbucks", _shortName: "SBUX", _price: "00.00", _imageUrl: "", _rank: 10)
+        let stock11 = Stock(_name: "Rite Aid", _shortName: "RAD", _price: "00.00", _imageUrl: "", _rank: 11)
+        let stock12 = Stock(_name: "IBM", _shortName: "IBM", _price: "00.00", _imageUrl: "", _rank: 12)
+        stocks = [stock1, stock2, stock3, stock4, stock5, stock6, stock7, stock8, stock9, stock10, stock11, stock12]
+        self.tableView.reloadData()
+    }
+    
+    fileprivate func setupTabBar() {
+        guard var tabBar = self.tabBarController?.tabBar else { return }
+        SettingsService.isMainTabBar(tabBar: &tabBar)
+        tabBar.isTranslucent = false
+    }
+    
+/// Fetch prices every 5 seconds
+    fileprivate func startStockTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.fetchAllStocksData), userInfo: nil, repeats: true)
     }
     
 //MARK: IBActions
     
 //MARK: Helpers
-    
+    @objc func fetchAllStocksData() {
+        fetchAllStocks(stocks: stocks) { (error, resultsStocks) in
+            let sortedStocks = resultsStocks.sorted { $0.rank < $1.rank } //ascendingly sort stocks received by their ranking
+            DispatchQueue.main.async {
+                if let error = error {
+                    Service.presentAlert(on: self, title: "Fetch All Stocks Error", message: error)
+                    return
+                }
+                self.stocks = sortedStocks
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
 
 //MARK: Extensions
@@ -108,10 +136,23 @@ extension TrendingVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: StockCell = tableView.dequeueReusableCell(withIdentifier: "stockCell") as! StockCell
+        let cell: StockCell = tableView.dequeueReusableCell(withIdentifier: StockCell.identifier) as! StockCell
         cell.selectionStyle = .none //remove the selection indicator
-        cell.stock = stocks[indexPath.row]
+        let stock = stocks[indexPath.row]
+        cell.stock = stock
         cell.populateViews(showRank: true)
+        cell.backgroundColor = SettingsService.blackColor
         return cell
+    }
+}
+
+//MARK: StockDetailsProtocol
+extension TrendingVC: StockDetailProtocol {
+    func didUpdateStock(stock: Stock) {
+        print("Updated fav stock =",stock.name)
+        guard let user = getCurrentUser() else { return }
+        for favStock in user.stocks where stock.name == favStock {
+//            user.delete(<#T##stockIndex: Int##Int#>)
+        }
     }
 }

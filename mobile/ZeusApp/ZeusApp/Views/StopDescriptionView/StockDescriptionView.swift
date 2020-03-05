@@ -20,9 +20,9 @@ class StockDescriptionView: UIView {
     
     required init(stock: Stock) {
         super.init(frame: .zero)
+        commonInit()
         self.stock = stock
 //        self.ceoLabel.text = stock.shortName
-        commonInit()
     }
     
     override init(frame: CGRect) {
@@ -53,6 +53,5 @@ class StockDescriptionView: UIView {
         gradientLayer.colors = [UIColor.white.cgColor, kMAINCOLOR.cgColor] //add colors, first one will be at the top
         gradientLayer.locations = [0.5, 1]
         self.contentView.layer.insertSublayer(gradientLayer, at: 0)
-        
     }
 }

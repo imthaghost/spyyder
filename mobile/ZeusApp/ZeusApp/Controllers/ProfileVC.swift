@@ -13,7 +13,7 @@ class ProfileVC: UIViewController {
     
 //MARK: IBOutlets
     @IBOutlet weak var settingsButton: UIBarButtonItem!
-    @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
@@ -26,10 +26,22 @@ class ProfileVC: UIViewController {
 //MARK: Private Methods
     fileprivate func setupViews() {
         self.title = "My Profile"
-        self.navigationController!.navigationBar.isTranslucent = false
-//        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
-        table.tableFooterView = UIView()
+        self.view.backgroundColor = SettingsService.blackColor
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
+        navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
+        //        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(showOptions(controller:)))
+        setupTableView()
+    }
+    
+    fileprivate func setupTableView() {
+        tableView.register(UINib(nibName: StockCell.identifier, bundle: nil), forCellReuseIdentifier: StockCell.identifier)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView() //removes extra unpopulated cells
+        tableView.backgroundColor = SettingsService.blackColor
+        tableView.separatorStyle = .none //removes separator line
     }
     
 //MARK: IBActions
@@ -50,10 +62,12 @@ extension ProfileVC: UITableViewDelegate {
 extension ProfileVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return months.count
-        return 3
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.backgroundColor = SettingsService.blackColor
 //        let cell: BoxCell = tableView.dequeueReusableCell(withIdentifier: BoxCell.identifier, for: indexPath) as! BoxCell
 //        cell.boxLabel.text = months[indexPath.row]
 //        cell.backgroundColor = SettingsService.whiteColor
