@@ -26,10 +26,12 @@ class ContactInfoVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupKeyboardNotifications()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        removeKeyboardObervers()
     }
     
 //MARK: Navigation
@@ -45,6 +47,8 @@ class ContactInfoVC: UIViewController {
 //        self.navigationController!.navigationBar.isTranslucent = false
 //        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(showOptions(controller:)))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleDismissTap(_:)))
+        self.view.addGestureRecognizer(tap)
     }
     
 //MARK: IBActions
@@ -54,9 +58,36 @@ class ContactInfoVC: UIViewController {
     }
     
 //MARK: Helpers
-    @objc func showOptions(controller: UIViewController) {
+    @objc func handleDismissTap(_ gesture: UITapGestureRecognizer) { //dismiss fields
+        self.view.endEditing(false)
     }
 }
 
 //MARK: Extensions
 
+//MARK: Keyboard Helpers
+extension ContactInfoVC {
+    fileprivate func setupKeyboardNotifications() { //setup notifications when keyboard shows or hide
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    fileprivate func removeKeyboardObervers() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) { //makes the view go up by keyboard's height
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if view.frame.origin.y == 64 {
+                view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) { //put the view back to 0
+        if view.frame.origin.y != 0 {
+            view.frame.origin.y = 64
+        }
+    }
+}
