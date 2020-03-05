@@ -8,20 +8,51 @@
 
 import UIKit
 
-//Colors
-let kMAINCOLOR: UIColor = UIColor(hexString: "0066e3", alpha: 1.0)
+public let kAPIURL: String = "http://3.17.150.127:8000"
+
+//Colors //off black = 101010, offwhite = f0f0f0, dark blue = 0066e3, darker blue = 12125e,
+//let kMAINCOLOR: UIColor = UIColor(hexString: "12125e", alpha: 1.0)
+//let kBLUECOLOR: UIColor = UIColor(hexString: "0066e3", alpha: 1.0)
+let kMAINCOLOR: UIColor = UIColor(hexString: "12125e", alpha: 1.0)
 let kOFFWHITECOLOR: UIColor = UIColor(hexString: "#f0f0f0")
 let kOFFBLACKCOLOR: UIColor = UIColor(hexString: "#101010")
 let kGRAYCOLOR: UIColor = .gray
 let kLIGHTGRAYCOLOR: UIColor = .lightGray
-let kGREENCOLOR: UIColor = UIColor(hexString: "10c44c", alpha: 1.0)
+let kGREENCOLOR: UIColor = UIColor(hexString: "42f578", alpha: 1.0)
 let kREDCOLOR: UIColor = UIColor(hexString: "bf2811", alpha: 1.0)
 
+//MARK: Storyboard Idenfitifiers
+let kMAINTABBARCONTROLLERID: String = "mainTabBarController"
+let kPAGE1QUIZVC: String = "page1QuizVC" //the first page in
+//let kQUIZSBID: String = "QuizStoryboard" //Quiz storyboard
 
-//Segues
+//MARK: Storyboard Segues
 let kSEGUETOSTOCKDETAILSVC: String = "toStockDetailVC"
-let kSEGUETOONBOARDINGVC: String = "toOnboardingVC"
+let kSEGUETOQUIZVC: String = "toQuizVC"
+//let kSEGUETOTABBAR: String = "toMainTabBarController"
 
 //Images
 let kDEFAULTIMAGE: UIImage = UIImage(named: "blankImage")!
 let kMENUIMAGE: UIImage = UIImage(named: "menu")!
+
+//for User model
+public let kUSERID: String = "userId"
+public let kFIRSTNAME: String = "firstName"
+public let kLASTNAME: String = "lastName"
+public let kFULLNAME: String = "fullName"
+public let kEMAIL: String = "email"
+public let kCREATEDAT: String = "createdAt"
+public let kUPDATEDAT: String = "updatedAt"
+public let kPHONENUMBER: String = "phoneNumber"
+public let kSTOCKS: String = "stocks"
+
+public let kCURRENTUSER: String = "currentUser" //for userDefaults
+public let kTOKEN: String = "token"
+public let kMESSAGE: String = "message"
+public let kCOMPANYNAME: String = "companyname"
+public let kSHORTNAME: String = "shortName"
+public let kPRICE: String = "price"
+
+//Stock
+public let kTRENDINGSTOCKS: String = "trendingStocks"
+public let kSUGGESTEDSTOCKS: String = "suggestedStocks"

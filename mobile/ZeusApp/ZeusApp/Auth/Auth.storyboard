@@ -16,21 +16,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="RWv-Fc-zFT">
-                                <rect key="frame" x="41.5" y="399.5" width="331" height="151"/>
+                                <rect key="frame" x="41.5" y="388.5" width="331" height="173"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7aj-Xc-xgU">
-                                        <rect key="frame" x="0.0" y="0.0" width="331" height="60.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="71.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ab-5a-Ql5">
-                                                <rect key="frame" x="0.0" y="0.0" width="331" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="331" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dJd-Ll-eDb" customClass="UnderlinedTextField" customModule="ZeusApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="30.5" width="331" height="30"/>
+                                                <rect key="frame" x="0.0" y="31.5" width="331" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="tUT-VD-gsZ"/>
+                                                    <constraint firstAttribute="height" constant="40" id="tUT-VD-gsZ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -42,18 +42,18 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0uh-lP-jwI">
-                                        <rect key="frame" x="0.0" y="90.5" width="331" height="60.5"/>
+                                        <rect key="frame" x="0.0" y="101.5" width="331" height="71.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2M-4l-BVP">
-                                                <rect key="frame" x="0.0" y="0.0" width="331" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="331" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lm8-Qz-vWD" customClass="UnderlinedTextField" customModule="ZeusApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="30.5" width="331" height="30"/>
+                                                <rect key="frame" x="0.0" y="31.5" width="331" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="cgd-CJ-5Pc"/>
+                                                    <constraint firstAttribute="height" constant="40" id="cgd-CJ-5Pc"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -67,7 +67,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDk-h7-Rmu">
-                                <rect key="frame" x="41.5" y="580.5" width="331" height="50"/>
+                                <rect key="frame" x="41.5" y="591.5" width="331" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="dHU-jG-WWY"/>
@@ -78,7 +78,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOD-6g-SKx">
-                                <rect key="frame" x="41.5" y="660.5" width="331" height="50"/>
+                                <rect key="frame" x="41.5" y="671.5" width="331" height="50"/>
                                 <state key="normal" title="Switch to Register"/>
                                 <connections>
                                     <action selector="switchButtonTapped:" destination="44c-hw-GRe" eventType="touchUpInside" id="Kb0-q6-Sai"/>
@@ -100,82 +100,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fsV-VX-eGU"/>
                     </view>
-                    <navigationItem key="navigationItem" id="deA-aP-0Im">
-                        <barButtonItem key="rightBarButtonItem" title="Home" id="QUg-Gx-hmi">
-                            <connections>
-                                <action selector="homeButtonTapped:" destination="44c-hw-GRe" id="ciL-Eg-WUw"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="deA-aP-0Im"/>
                     <connections>
                         <outlet property="continueButton" destination="GDk-h7-Rmu" id="xca-7b-dOE"/>
                         <outlet property="emailTextField" destination="dJd-Ll-eDb" id="a80-dh-miS"/>
                         <outlet property="passwordTextField" destination="Lm8-Qz-vWD" id="35x-f7-we1"/>
                         <outlet property="switchButton" destination="fOD-6g-SKx" id="VG8-iE-LbJ"/>
-                        <segue destination="tjl-og-chW" kind="show" identifier="toOnboardingVC" id="pXh-hu-3zz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nMX-uI-gkh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1200" y="292.63392857142856"/>
-        </scene>
-        <!--OnboardingVC-->
-        <scene sceneID="mzA-Qs-LOt">
-            <objects>
-                <viewController id="tjl-og-chW" customClass="OnboardingVC" customModule="ZeusApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Kw1-kY-ues">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <viewLayoutGuide key="safeArea" id="b4d-nJ-XU6"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="76m-Dc-DQa"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2oJ-XM-0dM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2325" y="662"/>
-        </scene>
-        <!--RegisterVC-->
-        <scene sceneID="fAQ-JH-zsy">
-            <objects>
-                <viewController id="lr9-iw-Jsx" customClass="RegisterVC" customModule="ZeusApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KcB-Up-DZm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <viewLayoutGuide key="safeArea" id="ccn-R5-ExE"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="YW1-hu-7aP"/>
-                    <connections>
-                        <segue destination="tjl-og-chW" kind="show" identifier="toOnboardingVC" id="Wr1-I3-jaW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xCr-1E-s8V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1200" y="1089.5089285714284"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="CBX-u3-Wx9">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cFV-jT-MHP" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OlJ-1n-ENN">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="lr9-iw-Jsx" kind="relationship" relationship="rootViewController" id="62f-N2-E5y"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q2b-i6-KyF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="289.85507246376812" y="1089.5089285714284"/>
+            <point key="canvasLocation" x="1198.5507246376812" y="292.63392857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dh3-hW-5sg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J0s-XQ-91q" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="J0s-XQ-91q" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yZK-XX-tZM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -191,7 +131,4 @@
             <point key="canvasLocation" x="289.85507246376812" y="292.63392857142856"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="pXh-hu-3zz"/>
-    </inferredMetricsTieBreakers>
 </document>

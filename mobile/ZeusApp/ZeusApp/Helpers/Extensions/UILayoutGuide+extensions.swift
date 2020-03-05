@@ -8,8 +8,8 @@
 
 import UIKit
 
-extension UIView {
-    func pinToEdges(view: UIView, inset: UIEdgeInsets = UIEdgeInsets.zero) -> [NSLayoutConstraint] { //pins view to edge - returns array of constraints that needs to be activated
+extension UILayoutGuide {
+    func pinToEdgesEqually(view: UIView, inset: UIEdgeInsets = UIEdgeInsets.zero) -> [NSLayoutConstraint] { //pins view to edge - returns array of constraints that needs to be activated
         return [
             leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: inset.left),
             trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: inset.right),
@@ -18,4 +18,3 @@ extension UIView {
         ]
     }
 }
-
