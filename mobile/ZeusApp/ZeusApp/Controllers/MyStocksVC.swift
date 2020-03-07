@@ -11,6 +11,7 @@ import UIKit
 class MyStocksVC: UIViewController {
 //MARK: Properties
     var stocks: [Stock] = []
+    var timer = Timer()
     
 //MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -19,6 +20,20 @@ class MyStocksVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        populateTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        startStockTimer()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.invalidate()
     }
     
 //MARK: Navigation
@@ -36,46 +51,65 @@ class MyStocksVC: UIViewController {
 //MARK: Private Methods
     fileprivate func setupViews() {
         self.title = "My Stocks"
-        self.navigationController!.navigationBar.isTranslucent = false
+        self.view.backgroundColor = SettingsService.blackColor
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
+        navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
         setupTableView()
-        createTestStocks()
+        populateTableView()
     }
     
     fileprivate func setupTableView() {
-        tableView.register(UINib(nibName: "StockCell", bundle: nil), forCellReuseIdentifier: "stockCell")
+        tableView.register(UINib(nibName: StockCell.identifier, bundle: nil), forCellReuseIdentifier: StockCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView() //removes extra unpopulated cells
+        tableView.backgroundColor = SettingsService.blackColor
+        tableView.separatorStyle = .none //removes separator line
     }
     
-    fileprivate func createTestStocks() {
-        let stock1 = Stock(_name: "Bitcoin", _shortName: "BTC", _price: "8,900", _imageUrl: "")
-        let stock2 = Stock(_name: "Etherium", _shortName: "ETH", _price: "80", _imageUrl: "")
-        let stock3 = Stock(_name: "Tesla", _shortName: "TSL", _price: "600", _imageUrl: "")
-        let stock4 = Stock(_name: "Apple", _shortName: "APL", _price: "8,900", _imageUrl: "")
-        let stock5 = Stock(_name: "Bitcoin", _shortName: "BTC", _price: "8,900", _imageUrl: "")
-        let stock6 = Stock(_name: "Etherium", _shortName: "ETH", _price: "80", _imageUrl: "")
-        let stock7 = Stock(_name: "Tesla", _shortName: "TSL", _price: "600", _imageUrl: "")
-        let stock8 = Stock(_name: "Apple", _shortName: "APL", _price: "8,900", _imageUrl: "")
-        let stock9 = Stock(_name: "Bitcoin", _shortName: "BTC", _price: "8,900", _imageUrl: "")
-        let stock10 = Stock(_name: "Etherium", _shortName: "ETH", _price: "80", _imageUrl: "")
-        let stock11 = Stock(_name: "Tesla", _shortName: "TSL", _price: "600", _imageUrl: "")
-        let stock12 = Stock(_name: "Apple", _shortName: "APL", _price: "8,900", _imageUrl: "")
-        stocks.append(contentsOf: [stock1, stock2, stock3, stock4, stock5, stock6, stock7, stock8, stock9, stock10, stock11, stock12])
+    fileprivate func populateTableView() {
+        if let user = getCurrentUser() {
+            user.setNeedsToReloadStocks()
+            let userStocks = user.getUserStocks()
+            DispatchQueue.main.async {
+                self.stocks = userStocks
+                self.tableView.reloadData()
+            }
+        } else { //if no user...
+            deleteCurrentUser()
+            let vc = UIStoryboard(name: "Auth", bundle: nil).instantiateInitialViewController()!
+            self.navigationController?.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    fileprivate func startStockTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.fetchAllStocksData), userInfo: nil, repeats: true)
     }
     
 //MARK: IBActions
     
 //MARK: Helpers
-    
+    @objc func fetchAllStocksData() {
+        fetchAllStocks(stocks: stocks) { (error, resultsStocks) in
+            let sortedStocks = resultsStocks.sorted { $0.rank < $1.rank } //ascendingly sort stocks received by their ranking
+            DispatchQueue.main.async {
+                if let error = error {
+                    Service.presentAlert(on: self, title: "Fetch All Stocks Error", message: error)
+                    return
+                }
+                self.stocks = sortedStocks
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
 
 //MARK: Extensions
 extension MyStocksVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        return
-//        let stock = stocks[indexPath.row]
-//        self.performSegue(withIdentifier: kSEGUETOSTOCKDETAILSVC, sender: stock)
+        let stock = stocks[indexPath.row]
+        self.performSegue(withIdentifier: kSEGUETOSTOCKDETAILSVC, sender: stock)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -89,10 +123,14 @@ extension MyStocksVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: StockCell = tableView.dequeueReusableCell(withIdentifier: "stockCell") as! StockCell
+        let cell: StockCell = tableView.dequeueReusableCell(withIdentifier: StockCell.identifier) as! StockCell
         cell.selectionStyle = .none //remove the selection indicator
-        cell.stock = stocks[indexPath.row]
-        cell.populateViews(showRank: false)
+        let stock = stocks[indexPath.row]
+        cell.stock = stock
+        cell.populateViews(showRank: true)
+        cell.priceLabel.textColor = stock.isPositive ? SettingsService.greenColor : SettingsService.redColor //make textColor green if stock is doing good since market opened
+        //        cell.backgroundColor = UIColor(hexString: "#2b2b30")
+        cell.backgroundColor = SettingsService.blackColor
         return cell
     }
 }

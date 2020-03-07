@@ -12,6 +12,7 @@ class StockCell: UITableViewCell {
     
 //MARK: Properties
     var stock: Stock!
+    static let identifier: String = "StockCell"
     
 //MARK: IBOutlets
     @IBOutlet weak var nameLabel: UILabel!
@@ -36,7 +37,8 @@ class StockCell: UITableViewCell {
         setupLabels()
         rankLabel.isHidden = showRank ? false : true
         rankLabel.text = showRank ? String(stock.rank) : ""
-        priceLabel.text = "+999.99"
+//        priceLabel.text = "+999.99"
+        priceLabel.text = "$\(stock.price)"
         nameLabel.text = stock.name
         categoryLabel.text = "Technology"
         riskLabel.text = "High Risk"
@@ -45,7 +47,7 @@ class StockCell: UITableViewCell {
     fileprivate func setupBgView() {
         bgView.layer.cornerRadius = bgView.frame.height / 4
         self.clipsToBounds = true
-        bgView.backgroundColor = SettingsService.blackColor
+        bgView.backgroundColor = UIColor(hexString: "#2b2b30")
     }
     
     fileprivate func setupLabels() {
@@ -53,7 +55,7 @@ class StockCell: UITableViewCell {
         rankLabel.font = UIFont.systemFont(ofSize: 24, weight: .regular)
         nameLabel.textColor = SettingsService.grayColor
         nameLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
-        priceLabel.textColor = SettingsService.greenColor
+        priceLabel.textColor = stock.isPositive ? SettingsService.greenColor : SettingsService.redColor //make textColor green if stock is doing good since market opened
         priceLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         categoryLabel.textColor = SettingsService.grayColor
         categoryLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)

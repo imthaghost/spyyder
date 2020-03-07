@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28965C5A4DF3DBB0B4D938ED /* Pods_ZeusApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF439251C7442548493D07BF /* Pods_ZeusApp.framework */; };
+		330256B52410B4DE0019F162 /* StockCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330256B42410B4DE0019F162 /* StockCodable.swift */; };
+		330256B72410EB8A0019F162 /* URLSession+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330256B62410EB8A0019F162 /* URLSession+extensions.swift */; };
 		3309911823E213DA00880CC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309911723E213DA00880CC5 /* AppDelegate.swift */; };
 		3309911A23E213DA00880CC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309911923E213DA00880CC5 /* SceneDelegate.swift */; };
 		3309911F23E213DA00880CC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3309911D23E213DA00880CC5 /* Main.storyboard */; };
@@ -17,6 +20,19 @@
 		33232DBA23F22BBC00CF722D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33232DB923F22BBC00CF722D /* Service.swift */; };
 		33232DBC23F25CA200CF722D /* Dictionary+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33232DBB23F25CA200CF722D /* Dictionary+extensions.swift */; };
 		332C9B2E23E3CA51002BB57A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332C9B2D23E3CA51002BB57A /* Constants.swift */; };
+		333A58C5240CE0A8003FF6A7 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333A58C4240CE0A8003FF6A7 /* Quiz.swift */; };
+		333A58C7240D9772003FF6A7 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 333A58C6240D9772003FF6A7 /* Quiz.storyboard */; };
+		333A58C9240E2FDF003FF6A7 /* Page1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333A58C8240E2FDF003FF6A7 /* Page1VC.swift */; };
+		333A58CB240E303F003FF6A7 /* InvestorsQuestionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333A58CA240E303F003FF6A7 /* InvestorsQuestionsVC.swift */; };
+		333A58CE240E307F003FF6A7 /* UserQuestionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333A58CD240E307F003FF6A7 /* UserQuestionsVC.swift */; };
+		333A58D0240E308E003FF6A7 /* Page4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333A58CF240E308E003FF6A7 /* Page4VC.swift */; };
+		333A58D2240E309B003FF6A7 /* SecurityQuestionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333A58D1240E309B003FF6A7 /* SecurityQuestionsVC.swift */; };
+		333A58D4240E30AB003FF6A7 /* UserPortfolioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333A58D3240E30AB003FF6A7 /* UserPortfolioVC.swift */; };
+		333A58D6240E30BA003FF6A7 /* ContactInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333A58D5240E30BA003FF6A7 /* ContactInfoVC.swift */; };
+		333A58DC240E392F003FF6A7 /* UserQuestionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333A58DA240E392F003FF6A7 /* UserQuestionsCell.swift */; };
+		333A58DD240E392F003FF6A7 /* UserQuestionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 333A58DB240E392F003FF6A7 /* UserQuestionsCell.xib */; };
+		333A590A240EF48B003FF6A7 /* QuizQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333A5909240EF48B003FF6A7 /* QuizQuestion.swift */; };
+		333BDE952407091B004AD18C /* UIScrollView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333BDE942407091B004AD18C /* UIScrollView+extensions.swift */; };
 		334044CD23F1E57200CEA9A9 /* UIButton+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334044CC23F1E57200CEA9A9 /* UIButton+extensions.swift */; };
 		334044D523F1F27800CEA9A9 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 334044D423F1F27800CEA9A9 /* Auth.storyboard */; };
 		334044D723F1F49F00CEA9A9 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334044D623F1F49F00CEA9A9 /* OnboardingVC.swift */; };
@@ -33,8 +49,13 @@
 		3344298323FB22CC00F0E345 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3344297D23FB22CC00F0E345 /* ProfileVC.swift */; };
 		3344298623FB23F200F0E345 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3344298523FB23F200F0E345 /* SettingsCell.swift */; };
 		334599F123F7C3D3002C13D5 /* UITextField+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334599F023F7C3D3002C13D5 /* UITextField+extensions.swift */; };
+		3361AB58240C4FE7004E9817 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AB57240C4FE7004E9817 /* QuizVC.swift */; };
+		3361AB5A240C878F004E9817 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AB59240C878F004E9817 /* UIView+extensions.swift */; };
 		3385A04023FDBE8400879E19 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3385A03F23FDBE8400879E19 /* SettingsService.swift */; };
-		339D771123F48EE300C85169 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339D771023F48EE300C85169 /* User.swift */; };
+		3385A04B23FE741600879E19 /* DecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3385A04A23FE741600879E19 /* DecisionView.swift */; };
+		3385A04D23FE745C00879E19 /* DecisionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3385A04C23FE745C00879E19 /* DecisionView.xib */; };
+		3385A05223FF0B8800879E19 /* TransitioningObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3385A05123FF0B8800879E19 /* TransitioningObject.swift */; };
+		339D771123F48EE300C85169 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339D771023F48EE300C85169 /* Networking.swift */; };
 		33A8BFC423ECA01B00056A0F /* UINavigationController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8BFC323ECA01B00056A0F /* UINavigationController+extensions.swift */; };
 		33CA31A423E608A7009AA3DF /* StockCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CA31A323E608A7009AA3DF /* StockCellView.xib */; };
 		33CA31A623E608B6009AA3DF /* StockCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31A523E608B6009AA3DF /* StockCellView.swift */; };
@@ -44,10 +65,13 @@
 		33CA31B823E8AB56009AA3DF /* UILayoutGuide+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31B723E8AB56009AA3DF /* UILayoutGuide+extensions.swift */; };
 		33CA31BA23E8AC2D009AA3DF /* StockDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31B923E8AC2D009AA3DF /* StockDescriptionView.swift */; };
 		33CA31BC23E8AC48009AA3DF /* StockDescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CA31BB23E8AC48009AA3DF /* StockDescriptionView.xib */; };
+		33EC1D86240344EF00B92645 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EC1D85240344EF00B92645 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3309911423E213DA00880CC5 /* ZeusApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeusApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		330256B42410B4DE0019F162 /* StockCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCodable.swift; sourceTree = "<group>"; };
+		330256B62410EB8A0019F162 /* URLSession+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+extensions.swift"; sourceTree = "<group>"; };
+		3309911423E213DA00880CC5 /* Spyyder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spyyder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3309911723E213DA00880CC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3309911923E213DA00880CC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3309911E23E213DA00880CC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +83,19 @@
 		33232DB923F22BBC00CF722D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		33232DBB23F25CA200CF722D /* Dictionary+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+extensions.swift"; sourceTree = "<group>"; };
 		332C9B2D23E3CA51002BB57A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		333A58C4240CE0A8003FF6A7 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		333A58C6240D9772003FF6A7 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
+		333A58C8240E2FDF003FF6A7 /* Page1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1VC.swift; sourceTree = "<group>"; };
+		333A58CA240E303F003FF6A7 /* InvestorsQuestionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestorsQuestionsVC.swift; sourceTree = "<group>"; };
+		333A58CD240E307F003FF6A7 /* UserQuestionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuestionsVC.swift; sourceTree = "<group>"; };
+		333A58CF240E308E003FF6A7 /* Page4VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page4VC.swift; sourceTree = "<group>"; };
+		333A58D1240E309B003FF6A7 /* SecurityQuestionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityQuestionsVC.swift; sourceTree = "<group>"; };
+		333A58D3240E30AB003FF6A7 /* UserPortfolioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPortfolioVC.swift; sourceTree = "<group>"; };
+		333A58D5240E30BA003FF6A7 /* ContactInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoVC.swift; sourceTree = "<group>"; };
+		333A58DA240E392F003FF6A7 /* UserQuestionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuestionsCell.swift; sourceTree = "<group>"; };
+		333A58DB240E392F003FF6A7 /* UserQuestionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserQuestionsCell.xib; sourceTree = "<group>"; };
+		333A5909240EF48B003FF6A7 /* QuizQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestion.swift; sourceTree = "<group>"; };
+		333BDE942407091B004AD18C /* UIScrollView+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extensions.swift"; sourceTree = "<group>"; };
 		334044CC23F1E57200CEA9A9 /* UIButton+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extensions.swift"; sourceTree = "<group>"; };
 		334044D423F1F27800CEA9A9 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		334044D623F1F49F00CEA9A9 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
@@ -75,8 +112,13 @@
 		3344297D23FB22CC00F0E345 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		3344298523FB23F200F0E345 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		334599F023F7C3D3002C13D5 /* UITextField+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+extensions.swift"; sourceTree = "<group>"; };
+		3361AB57240C4FE7004E9817 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
+		3361AB59240C878F004E9817 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		3385A03F23FDBE8400879E19 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
-		339D771023F48EE300C85169 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3385A04A23FE741600879E19 /* DecisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionView.swift; sourceTree = "<group>"; };
+		3385A04C23FE745C00879E19 /* DecisionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DecisionView.xib; sourceTree = "<group>"; };
+		3385A05123FF0B8800879E19 /* TransitioningObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitioningObject.swift; sourceTree = "<group>"; };
+		339D771023F48EE300C85169 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		33A8BFC323ECA01B00056A0F /* UINavigationController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+extensions.swift"; sourceTree = "<group>"; };
 		33CA31A323E608A7009AA3DF /* StockCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockCellView.xib; sourceTree = "<group>"; };
 		33CA31A523E608B6009AA3DF /* StockCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCellView.swift; sourceTree = "<group>"; };
@@ -86,6 +128,10 @@
 		33CA31B723E8AB56009AA3DF /* UILayoutGuide+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutGuide+extensions.swift"; sourceTree = "<group>"; };
 		33CA31B923E8AC2D009AA3DF /* StockDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDescriptionView.swift; sourceTree = "<group>"; };
 		33CA31BB23E8AC48009AA3DF /* StockDescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockDescriptionView.xib; sourceTree = "<group>"; };
+		33EC1D85240344EF00B92645 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B4F256AEDE0F2881E9A8CF95 /* Pods-ZeusApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZeusApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZeusApp/Pods-ZeusApp.release.xcconfig"; sourceTree = "<group>"; };
+		D358281AD3236C67DFA9AAA5 /* Pods-ZeusApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZeusApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZeusApp/Pods-ZeusApp.debug.xcconfig"; sourceTree = "<group>"; };
+		FF439251C7442548493D07BF /* Pods_ZeusApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZeusApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,24 +139,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28965C5A4DF3DBB0B4D938ED /* Pods_ZeusApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05EF12804489082F92851019 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF439251C7442548493D07BF /* Pods_ZeusApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2E4D7EF449DECF22CD68C561 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D358281AD3236C67DFA9AAA5 /* Pods-ZeusApp.debug.xcconfig */,
+				B4F256AEDE0F2881E9A8CF95 /* Pods-ZeusApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3309910B23E213DA00880CC5 = {
 			isa = PBXGroup;
 			children = (
 				3309911623E213DA00880CC5 /* ZeusApp */,
 				3309911523E213DA00880CC5 /* Products */,
+				2E4D7EF449DECF22CD68C561 /* Pods */,
+				05EF12804489082F92851019 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		3309911523E213DA00880CC5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3309911423E213DA00880CC5 /* ZeusApp.app */,
+				3309911423E213DA00880CC5 /* Spyyder.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,12 +186,12 @@
 			children = (
 				3309911723E213DA00880CC5 /* AppDelegate.swift */,
 				3309911923E213DA00880CC5 /* SceneDelegate.swift */,
+				3361AB31240C4597004E9817 /* Quiz */,
 				334044CF23F1EE9500CEA9A9 /* Auth */,
 				3309911D23E213DA00880CC5 /* Main.storyboard */,
 				3309912B23E24AB800880CC5 /* Controllers */,
 				3309912C23E24AEE00880CC5 /* Models */,
 				3309912D23E24AF400880CC5 /* Views */,
-				334044CE23F1EA6900CEA9A9 /* Networking */,
 				3309912E23E24B0B00880CC5 /* Helpers */,
 				3309912023E213DC00880CC5 /* Assets.xcassets */,
 				3309912223E213DC00880CC5 /* LaunchScreen.storyboard */,
@@ -151,6 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				3309913023E24BA800880CC5 /* Stock.swift */,
+				330256B42410B4DE0019F162 /* StockCodable.swift */,
+				33EC1D85240344EF00B92645 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,8 +229,9 @@
 				3344298523FB23F200F0E345 /* SettingsCell.swift */,
 				33CA31B023E64471009AA3DF /* StockCell */,
 				33CA31A723E6098B009AA3DF /* StockCellView-Dropdown */,
-				33CA31B923E8AC2D009AA3DF /* StockDescriptionView.swift */,
-				33CA31BB23E8AC48009AA3DF /* StockDescriptionView.xib */,
+				3385A04923FE73EB00879E19 /* StopDescriptionView */,
+				3385A04A23FE741600879E19 /* DecisionView.swift */,
+				3385A04C23FE745C00879E19 /* DecisionView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,22 +250,58 @@
 		3309912F23E24B1000880CC5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				333BDE942407091B004AD18C /* UIScrollView+extensions.swift */,
 				33CA31A823E6286A009AA3DF /* UIColor+extensions.swift */,
 				33CA31B723E8AB56009AA3DF /* UILayoutGuide+extensions.swift */,
+				3361AB59240C878F004E9817 /* UIView+extensions.swift */,
 				33A8BFC323ECA01B00056A0F /* UINavigationController+extensions.swift */,
 				334044CC23F1E57200CEA9A9 /* UIButton+extensions.swift */,
 				33232DB723F229F600CF722D /* String+extensions.swift */,
 				33232DBB23F25CA200CF722D /* Dictionary+extensions.swift */,
 				334599F023F7C3D3002C13D5 /* UITextField+extensions.swift */,
+				330256B62410EB8A0019F162 /* URLSession+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		334044CE23F1EA6900CEA9A9 /* Networking */ = {
+		333A58CC240E3067003FF6A7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				333A58C8240E2FDF003FF6A7 /* Page1VC.swift */,
+				333A58CA240E303F003FF6A7 /* InvestorsQuestionsVC.swift */,
+				333A58CD240E307F003FF6A7 /* UserQuestionsVC.swift */,
+				333A58CF240E308E003FF6A7 /* Page4VC.swift */,
+				333A58D1240E309B003FF6A7 /* SecurityQuestionsVC.swift */,
+				333A58D3240E30AB003FF6A7 /* UserPortfolioVC.swift */,
+				333A58D5240E30BA003FF6A7 /* ContactInfoVC.swift */,
 			);
-			path = Networking;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		333A58D7240E38EE003FF6A7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				333A58DE240E3934003FF6A7 /* UserQuestions */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		333A58DE240E3934003FF6A7 /* UserQuestions */ = {
+			isa = PBXGroup;
+			children = (
+				333A58DA240E392F003FF6A7 /* UserQuestionsCell.swift */,
+				333A58DB240E392F003FF6A7 /* UserQuestionsCell.xib */,
+			);
+			path = UserQuestions;
+			sourceTree = "<group>";
+		};
+		333A5908240EF479003FF6A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				333A58C4240CE0A8003FF6A7 /* Quiz.swift */,
+				333A5909240EF48B003FF6A7 /* QuizQuestion.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		334044CF23F1EE9500CEA9A9 /* Auth */ = {
@@ -232,7 +337,7 @@
 		334044D223F1EF9C00CEA9A9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				339D771023F48EE300C85169 /* User.swift */,
+				339D771023F48EE300C85169 /* Networking.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -262,6 +367,27 @@
 			path = SecondaryControllers;
 			sourceTree = "<group>";
 		};
+		3361AB31240C4597004E9817 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				333A58C6240D9772003FF6A7 /* Quiz.storyboard */,
+				3361AB57240C4FE7004E9817 /* QuizVC.swift */,
+				333A5908240EF479003FF6A7 /* Model */,
+				333A58CC240E3067003FF6A7 /* Controllers */,
+				333A58D7240E38EE003FF6A7 /* Views */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+		3385A04923FE73EB00879E19 /* StopDescriptionView */ = {
+			isa = PBXGroup;
+			children = (
+				33CA31B923E8AC2D009AA3DF /* StockDescriptionView.swift */,
+				33CA31BB23E8AC48009AA3DF /* StockDescriptionView.xib */,
+			);
+			path = StopDescriptionView;
+			sourceTree = "<group>";
+		};
 		33CA31A723E6098B009AA3DF /* StockCellView-Dropdown */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				3344297623FB228700F0E345 /* MainTabBarController.swift */,
+				3385A05123FF0B8800879E19 /* TransitioningObject.swift */,
 			);
 			path = TabBarController;
 			sourceTree = "<group>";
@@ -295,9 +422,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3309912823E213DC00880CC5 /* Build configuration list for PBXNativeTarget "ZeusApp" */;
 			buildPhases = (
+				FBD1ED5BA721759B3AA14657 /* [CP] Check Pods Manifest.lock */,
 				3309911023E213DA00880CC5 /* Sources */,
 				3309911123E213DA00880CC5 /* Frameworks */,
 				3309911223E213DA00880CC5 /* Resources */,
+				502CA25FB91C349AF006863C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,7 +434,7 @@
 			);
 			name = ZeusApp;
 			productName = ZeusApp;
-			productReference = 3309911423E213DA00880CC5 /* ZeusApp.app */;
+			productReference = 3309911423E213DA00880CC5 /* Spyyder.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -346,17 +475,59 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				333A58DD240E392F003FF6A7 /* UserQuestionsCell.xib in Resources */,
 				3309912423E213DC00880CC5 /* LaunchScreen.storyboard in Resources */,
 				33CA31A423E608A7009AA3DF /* StockCellView.xib in Resources */,
+				3385A04D23FE745C00879E19 /* DecisionView.xib in Resources */,
 				33CA31AF23E6444D009AA3DF /* StockCell.xib in Resources */,
 				3309912123E213DC00880CC5 /* Assets.xcassets in Resources */,
 				33CA31BC23E8AC48009AA3DF /* StockDescriptionView.xib in Resources */,
 				3309911F23E213DA00880CC5 /* Main.storyboard in Resources */,
 				334044D523F1F27800CEA9A9 /* Auth.storyboard in Resources */,
+				333A58C7240D9772003FF6A7 /* Quiz.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		502CA25FB91C349AF006863C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ZeusApp/Pods-ZeusApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZeusApp/Pods-ZeusApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBD1ED5BA721759B3AA14657 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZeusApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3309911023E213DA00880CC5 /* Sources */ = {
@@ -364,35 +535,53 @@
 			buildActionMask = 2147483647;
 			files = (
 				3385A04023FDBE8400879E19 /* SettingsService.swift in Sources */,
-				339D771123F48EE300C85169 /* User.swift in Sources */,
+				3361AB58240C4FE7004E9817 /* QuizVC.swift in Sources */,
+				339D771123F48EE300C85169 /* Networking.swift in Sources */,
+				333A58D6240E30BA003FF6A7 /* ContactInfoVC.swift in Sources */,
+				333A58D0240E308E003FF6A7 /* Page4VC.swift in Sources */,
 				334044D723F1F49F00CEA9A9 /* OnboardingVC.swift in Sources */,
+				333A58DC240E392F003FF6A7 /* UserQuestionsCell.swift in Sources */,
 				3309911823E213DA00880CC5 /* AppDelegate.swift in Sources */,
+				330256B72410EB8A0019F162 /* URLSession+extensions.swift in Sources */,
 				33232DBC23F25CA200CF722D /* Dictionary+extensions.swift in Sources */,
+				333BDE952407091B004AD18C /* UIScrollView+extensions.swift in Sources */,
+				333A590A240EF48B003FF6A7 /* QuizQuestion.swift in Sources */,
+				333A58D2240E309B003FF6A7 /* SecurityQuestionsVC.swift in Sources */,
 				334044D923F1F4AF00CEA9A9 /* LoginVC.swift in Sources */,
 				33232DB823F229F600CF722D /* String+extensions.swift in Sources */,
 				334044CD23F1E57200CEA9A9 /* UIButton+extensions.swift in Sources */,
 				3309913123E24BA800880CC5 /* Stock.swift in Sources */,
+				333A58CE240E307F003FF6A7 /* UserQuestionsVC.swift in Sources */,
 				3344297723FB228700F0E345 /* MainTabBarController.swift in Sources */,
 				332C9B2E23E3CA51002BB57A /* Constants.swift in Sources */,
+				333A58CB240E303F003FF6A7 /* InvestorsQuestionsVC.swift in Sources */,
 				334044DB23F1F4B800CEA9A9 /* RegisterVC.swift in Sources */,
+				3385A04B23FE741600879E19 /* DecisionView.swift in Sources */,
 				334044DD23F1F69A00CEA9A9 /* UnderlinedTextField.swift in Sources */,
 				334044DF23F1F6B800CEA9A9 /* UnderlinedTextField+extensions.swift in Sources */,
+				330256B52410B4DE0019F162 /* StockCodable.swift in Sources */,
 				3344298123FB22CC00F0E345 /* SettingsVC.swift in Sources */,
+				333A58C5240CE0A8003FF6A7 /* Quiz.swift in Sources */,
 				33CA31A923E6286A009AA3DF /* UIColor+extensions.swift in Sources */,
 				33CA31AE23E6444D009AA3DF /* StockCell.swift in Sources */,
 				3344298323FB22CC00F0E345 /* ProfileVC.swift in Sources */,
 				3344298623FB23F200F0E345 /* SettingsCell.swift in Sources */,
+				3385A05223FF0B8800879E19 /* TransitioningObject.swift in Sources */,
 				3344298223FB22CC00F0E345 /* TrendingVC.swift in Sources */,
 				33CA31A623E608B6009AA3DF /* StockCellView.swift in Sources */,
 				3309911A23E213DA00880CC5 /* SceneDelegate.swift in Sources */,
+				333A58C9240E2FDF003FF6A7 /* Page1VC.swift in Sources */,
 				33232DBA23F22BBC00CF722D /* Service.swift in Sources */,
 				3344297F23FB22CC00F0E345 /* StockDetailsVC.swift in Sources */,
 				33CA31B823E8AB56009AA3DF /* UILayoutGuide+extensions.swift in Sources */,
 				33CA31BA23E8AC2D009AA3DF /* StockDescriptionView.swift in Sources */,
 				3344298023FB22CC00F0E345 /* RecommendationVC.swift in Sources */,
+				333A58D4240E30AB003FF6A7 /* UserPortfolioVC.swift in Sources */,
+				3361AB5A240C878F004E9817 /* UIView+extensions.swift in Sources */,
 				334599F123F7C3D3002C13D5 /* UITextField+extensions.swift in Sources */,
 				33A8BFC423ECA01B00056A0F /* UINavigationController+extensions.swift in Sources */,
 				3344297E23FB22CC00F0E345 /* MyStocksVC.swift in Sources */,
+				33EC1D86240344EF00B92645 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +723,7 @@
 		};
 		3309912923E213DC00880CC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D358281AD3236C67DFA9AAA5 /* Pods-ZeusApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -544,7 +734,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SamuelFolledo.ZeusApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Spyyder;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -552,6 +742,7 @@
 		};
 		3309912A23E213DC00880CC5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4F256AEDE0F2881E9A8CF95 /* Pods-ZeusApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -562,7 +753,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SamuelFolledo.ZeusApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Spyyder;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
