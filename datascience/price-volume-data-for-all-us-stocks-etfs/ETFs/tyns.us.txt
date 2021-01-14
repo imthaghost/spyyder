@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bab19f0a4ef23d5e147050918cc26bfe58fd8afa1c688217afcd027227d09fea
-size 183
+Date,Open,High,Low,Close,Volume,OpenInt
+2017-09-01,27.79,27.8032,27.79,27.8032,300,0
+2017-10-03,28.1396,28.1396,28.1396,28.1396,550,0
+2017-10-17,28.08,28.0905,28.08,28.0905,200,0
