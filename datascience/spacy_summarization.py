@@ -1,3 +1,4 @@
+''' Text Summarizer using an ML library '''
 import spacy 
 nlp = spacy.load('en_core_web_sm')
 
